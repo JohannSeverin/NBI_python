@@ -1,0 +1,22 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: notebooks/Basal_python
+- file: notebooks/Intro_til_pakker
+  sections:
+  - file: notebooks/pakker/Numpy
+  - file: notebooks/pakker/Matplotlib_pyplot
+  - file: notebooks/pakker/Sympy
+- file: notebooks/sympy/Notebook1
+  sections:
+  - file: notebooks/sympy/Notebook2
+  - file: notebooks/sympy/Notebook3_ligninger
+  - file: notebooks/sympy/Notebook3_plot
+  - file: notebooks/sympy/Notebook4
+  - file: notebooks/sympy/Notebook_LinAlg1
+  - file: notebooks/sympy/Notebook_LinAlg_2
+  - file: notebooks/sympy/Notebook_kompleks
+  - file: notebooks/sympy/Notebook_FlereVar
