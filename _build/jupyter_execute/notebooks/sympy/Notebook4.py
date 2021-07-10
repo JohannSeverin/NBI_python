@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+# **Foreslået ændringer:** 
+# Der er ret mange småting, som vi igen her med god grund kan indrage.
+# Christian er dog ret utilfreds med afsnittet med gaffel funktioner og vores differentiering af $\frac{(x+2)(x-2)}{x+2} = x-2\quad,$
+# Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre motivationen mere tydelig, da det for en fysikstuderende faktisk kan være ligegyldig (i langt de flest situationer), og at det kun er når man betragter nogle usædvanlige situationer i matematikken, at SymPy ikke nødvendigvis opfører sig som den skal. 
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Reduktion" data-toc-modified-id="Reduktion-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Reduktion</a></span></li><li><span><a href="#Differentiation" data-toc-modified-id="Differentiation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Differentiation</a></span><ul class="toc-item"><li><span><a href="#Taylorudvikling" data-toc-modified-id="Taylorudvikling-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Taylorudvikling</a></span></li></ul></li><li><span><a href="#Integration" data-toc-modified-id="Integration-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Integration</a></span></li><li><span><a href="#Alternativ-Syntaks" data-toc-modified-id="Alternativ-Syntaks-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Alternativ Syntaks</a></span></li></ul></div>
+# # Differential- og integralregning for funktioner af en variabel
 
 # Vi vil i denne notebook gennemgå hvordan vi benytter SymPy til at differentiere og integrere funktioner af en variabel, samt hvordan vi bestemmer Taylorpolynomier.
 # 
@@ -20,7 +22,7 @@ sp.init_printing()                         # Aktiver pretty-printing
 from IPython.display import display        # Hent vores printer til matematiske udtryk
 
 
-# ## Reduktion
+# # Reduktion
 
 # SymPy viser differentierede eller integrerede funktioner på en måde, der nogle gange i højere grad afspejler den bagvedliggende algoritme end almindelig notationspraksis. Inden vi går i gang med at differentiere og integrere vil vi derfor først stifte bekendtskab med SymPys reduktions-værktøj.
 # 
@@ -84,7 +86,7 @@ udtryk3 = (x/2+3*a+3*b)**2 - (x/2+a+b)**2 - (x+4*a+4*b)*(2*a+2*b)
 display(sp.simplify(udtryk3))
 
 
-# ## Differentiation
+# # Differentiation
 # Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier i notebooken for uge 2. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>
 # 
 # Hvis vi eksempelvis ønsker at differentiere $\displaystyle b x^{a}$ med hensyn til $x$, kan vi altså gøre følgende:
@@ -147,7 +149,7 @@ display(sp.simplify(sp.diff((x**2 - 4)/(x + 2))))
 
 # Vi ser at det første udtryk er korrekt, men at SymPy uden forbehold reducerer udtrykket uden hensyntagen til at $h(x)$ slet ikke er defineret for $x=-2$. Man skal altså selv være særlig opmærksom på punkter, hvor en givet funktion ikke er defineret eller ikke er differentiabel!
 
-# ### Taylorudvikling
+# ## Taylorudvikling
 # Vi kan benytte SymPy til at lave en Taylorudvikling for en given funktion omkring et punkt $x_0$. Dette gøres med <code>sp.series()</code>, der skal have argumenterne <code>sp.series(funktionsudtryk, variabelnavn, x_0, orden)</code>  .  
 # Vi kan eksempevis udvikle $e^{3x}$ omkring $x_0=0$ til 5. orden ved at skrive:
 
@@ -211,7 +213,7 @@ figur.show()
 
 # Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet $x_0 = 1$.
 
-# ## Integration
+# # Integration
 # Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved <code>sp.integrate(udtryk, variabel)</code>, mens bestemte integraler beregnes med <code>sp.integrate(udtryk, (variabel, fra, til))</code>. Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.
 # 
 # Vær opmærksom på, at SymPys integrationsresultater udelader den vilkårlige additive integrationskonstant.
@@ -255,7 +257,7 @@ expr = x ** 3 - 1
 sp.integrate(expr, (x, a, b))
 
 
-# ## Alternativ Syntaks
+# # Alternativ Syntaks
 
 # I løbet af denne Notebook har vi benyttet os af en forholdsvis stringent metode at skrive funktioner op på, som altid indeholder <code>sp.funktion()</code>. Mange af disse metoder er dog også allerede indbygget i de enkelte udtryks syntaks. Vi kan f.eks. i stedet for at skrive <code>sp.simplify(expr)</code> skrive <code>expr.simplify()</code>. Dette er en lille smutvej, men det giver nogle gange god mening at bruge. Herunder er vist nogle korte eksempler:
 

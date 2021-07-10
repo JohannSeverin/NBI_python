@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel &#8212; Python i LinAlys og MekRel</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python i LinAlys og MekRel</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../intro.html">
+   Python i MekRel og LinAlys
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../notebooks/Basal_python.html">
+   Hvad er Python?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks/Intro_til_pakker.html">
+   Intro til pakker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Matplotlib_pyplot.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks/sympy/Notebook1.html">
+   Introduktion til Python i LinAlys
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook2.html">
+     SymPy i LinAlys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook3_ligninger.html">
+     Ligningsløsning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook3_plot.html">
+     Plotting i SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook4.html">
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_FlereVar.html">
+     Funktioner af flere variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_LinAlg1.html">
+     Indledende Lineær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_kompleks.html">
+     Komplekse tal i SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/docs/jupyter_execute/notebooks/sympy/Notebook4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JohannSeverin/NBI_python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JohannSeverin/NBI_python/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/notebooks/sympy/Notebook4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/JohannSeverin/NBI_python/master?urlpath=tree/~/docs/jupyter_execute/notebooks/sympy/Notebook4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduktion">
+   Reduktion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation">
+   Differentiation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taylorudvikling">
+     Taylorudvikling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration">
+   Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternativ-syntaks">
+   Alternativ Syntaks
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-sympy-notebook-til-linalys-uge-4-differential-og-integralregning-for-funktioner-af-en-variabel">
+<h1>Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel<a class="headerlink" href="#python-sympy-notebook-til-linalys-uge-4-differential-og-integralregning-for-funktioner-af-en-variabel" title="Permalink to this headline">¶</a></h1>
+<h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Reduktion" data-toc-modified-id="Reduktion-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Reduktion</a></span></li><li><span><a href="#Differentiation" data-toc-modified-id="Differentiation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Differentiation</a></span><ul class="toc-item"><li><span><a href="#Taylorudvikling" data-toc-modified-id="Taylorudvikling-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Taylorudvikling</a></span></li></ul></li><li><span><a href="#Integration" data-toc-modified-id="Integration-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Integration</a></span></li><li><span><a href="#Alternativ-Syntaks" data-toc-modified-id="Alternativ-Syntaks-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Alternativ Syntaks</a></span></li></ul></div><p>Vi vil i denne notebook gennemgå hvordan vi benytter SymPy til at differentiere og integrere funktioner af en variabel, samt hvordan vi bestemmer Taylorpolynomier.</p>
+<p>For simpelhedens skyld vil vi i hele notebooken benytte <span class="math notranslate nohighlight">\(x\)</span> som den uafhængige variabel, mens <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(\omega\)</span> er konstanter. Vi starter med at importere SymPy og definere de variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                         <span class="c1"># Importer sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">x</span>    <span class="c1"># Vi definerer vores symbolske variabel og konstanter</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>                <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># Aktiver pretty-printing</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>        <span class="c1"># Hent vores printer til matematiske udtryk</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="reduktion">
+<h2>Reduktion<a class="headerlink" href="#reduktion" title="Permalink to this headline">¶</a></h2>
+<p>SymPy viser differentierede eller integrerede funktioner på en måde, der nogle gange i højere grad afspejler den bagvedliggende algoritme end almindelig notationspraksis. Inden vi går i gang med at differentiere og integrere vil vi derfor først stifte bekendtskab med SymPys reduktions-værktøj.</p>
+<p>En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code>.</p>
+<p>Eksempel: Reducér <span class="math notranslate nohighlight">\(2\cos^2(x) + \sin^2(x)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi definerer funktionen f:</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Vi reducere det nu</span>
+<span class="n">f_reduced</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">f_reduced</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_6_0.png" src="../../../../_images/Notebook4_6_0.png" />
+<img alt="../../../../_images/Notebook4_6_1.png" src="../../../../_images/Notebook4_6_1.png" />
+</div>
+</div>
+<p>Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet <span class="math notranslate nohighlight">\(\cos^2(x) + sin^2(x) = 1\)</span>.</p>
+<p>Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket naturligvis ikke altid stemmer med vores egne præferencer.</p>
+<p>Eksempel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">udtryk1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">display</span><span class="p">(</span><span class="n">udtryk1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">udtryk1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_8_0.png" src="../../../../_images/Notebook4_8_0.png" />
+<img alt="../../../../_images/Notebook4_8_1.png" src="../../../../_images/Notebook4_8_1.png" />
+</div>
+</div>
+<p>SymPy foretrækker således denne form frem for den udgave, hvor parenteserne er ganget ud.
+Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner i SymPy, der laver omskrivninger til mere specifikke formater. <a class="reference external" href="https://docs.sympy.org/latest/tutorial/simplification.html">Se en liste her</a>. I dette tilfælde kan man f.eks. bruge funktionen <code>expand</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">udtryk1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_10_0.png" src="../../../../_images/Notebook4_10_0.png" />
+</div>
+</div>
+<p>Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:</p>
+<p>Vi skal reducere udtrykket <span class="math notranslate nohighlight">\((\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2\)</span> i en pointopgave uden hjælpemidler, og genkender i et lyst øjeblik den såkaldte tredje kvadratsætning <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = c^2-d^2\)</span>. Hvis vi sætter <span class="math notranslate nohighlight">\(c=\frac{1}{2}x+3a+3b\)</span> og <span class="math notranslate nohighlight">\(d=\frac{1}{2}x+a+b\)</span> får vi <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)\)</span>. Det er nydeligt, men vi vil gerne tjekke med Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">udtryk2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">display</span><span class="p">(</span><span class="n">udtryk2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">udtryk2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_12_0.png" src="../../../../_images/Notebook4_12_0.png" />
+<img alt="../../../../_images/Notebook4_12_1.png" src="../../../../_images/Notebook4_12_1.png" />
+</div>
+</div>
+<p>Dette er også et nydeligt udtryk, og uden at vi kender sammenhængen kan vi ikke afgøre hvilket et, der er det pæneste rent notationsmæssigt. Men hvis vi vil tjekke at de to udtryk er ens (f.eks. for at være sikker på at vi har regnet rigtigt), kunne vi nu gange <span class="math notranslate nohighlight">\((x+4a+4b)\cdot(2a+2b)\)</span> ud og sammenligne led, men vi kan også blot beregne forskellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">udtryk3</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">udtryk3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_14_0.png" src="../../../../_images/Notebook4_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="differentiation">
+<h2>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h2>
+<p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier i notebooken for uge 2. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code></p>
+<p>Hvis vi eksempelvis ønsker at differentiere <span class="math notranslate nohighlight">\(\displaystyle b x^{a}\)</span> med hensyn til <span class="math notranslate nohighlight">\(x\)</span>, kan vi altså gøre følgende:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="n">a</span>                <span class="c1"># Vi definerer udtrykket</span>
+<span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+
+<span class="n">diff_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>     <span class="c1"># Her differentieres det</span>
+<span class="n">display</span><span class="p">(</span><span class="n">diff_expr</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_16_0.png" src="../../../../_images/Notebook4_16_0.png" />
+<img alt="../../../../_images/Notebook4_16_1.png" src="../../../../_images/Notebook4_16_1.png" />
+</div>
+</div>
+<p>Som kan simplificeres med <code>sp.simplify()</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">diff_expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_18_0.png" src="../../../../_images/Notebook4_18_0.png" />
+</div>
+</div>
+<p>Ønsker vi at differentiere en funktion flere gange, angiver vi blot antallet af gange, vi vil differentiere funktionen, som ekstra argument: <code>sp.diff(udtryk, variabel, antalgange)</code>.</p>
+<p>Eksempel: Lad os differentiere funktionen <span class="math notranslate nohighlight">\(f(x) = A \cos(\omega x)\)</span> med hensyn til <span class="math notranslate nohighlight">\(x\)</span> fem gange.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>      <span class="c1"># Definer udtrykket</span>
+<span class="n">diff_f5</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>     <span class="c1"># Angiv differentieringen, med det ekstra argument: 5, for at differentiere fem gange</span>
+<span class="n">display</span><span class="p">(</span><span class="n">diff_f5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_20_0.png" src="../../../../_images/Notebook4_20_0.png" />
+</div>
+</div>
+<p>Bemærk at SymPy godt kan snydes. Vi betragter f.eks. den stykvist lineære funktion fra notebooken i uge 3, og differentierer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+
+<span class="n">diff_g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">diff_g</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">diff_g</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} -1 &amp; \text{for}\: x &lt; 4 \\x - 5 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} 0 &amp; \text{for}\: x &lt; 4 \\1 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<img alt="../../../../_images/Notebook4_22_2.png" src="../../../../_images/Notebook4_22_2.png" />
+</div>
+</div>
+<p>Vi ser at SymPy håndterer differentiationen rimeligt godt, men at <span class="math notranslate nohighlight">\(g'(4)\)</span> angives til 1 selvom <span class="math notranslate nohighlight">\(g\)</span> ikke er differentiabel her. Den “lodrette del af grafen” ved <span class="math notranslate nohighlight">\(x=4\)</span> burde også vække vores mistanke.</p>
+<p>Et andet relateret eksempel er funktionen <span class="math notranslate nohighlight">\(h(x) = \frac{x^2-4}{x+2}\)</span>, som ikke er defineret for <span class="math notranslate nohighlight">\(x=-2\)</span> fordi nævneren da bliver nul, men som for <span class="math notranslate nohighlight">\(x\neq-2\)</span> kan reduceres ved hjælp af tredje kvadratsætning (idet tælleren omskrives <span class="math notranslate nohighlight">\(x^2-4 = (x+2)(x-2)\)</span>) til <span class="math notranslate nohighlight">\(h(x) = x-2\)</span>. Vi beder SymPy om at differentiere hhv. med og uden efterfølgende reduktion af resultatet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_24_0.png" src="../../../../_images/Notebook4_24_0.png" />
+<img alt="../../../../_images/Notebook4_24_1.png" src="../../../../_images/Notebook4_24_1.png" />
+</div>
+</div>
+<p>Vi ser at det første udtryk er korrekt, men at SymPy uden forbehold reducerer udtrykket uden hensyntagen til at <span class="math notranslate nohighlight">\(h(x)\)</span> slet ikke er defineret for <span class="math notranslate nohighlight">\(x=-2\)</span>. Man skal altså selv være særlig opmærksom på punkter, hvor en givet funktion ikke er defineret eller ikke er differentiabel!</p>
+<div class="section" id="taylorudvikling">
+<h3>Taylorudvikling<a class="headerlink" href="#taylorudvikling" title="Permalink to this headline">¶</a></h3>
+<p>Vi kan benytte SymPy til at lave en Taylorudvikling for en given funktion omkring et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Dette gøres med <code>sp.series()</code>, der skal have argumenterne <code>sp.series(funktionsudtryk, variabelnavn, x_0, orden)</code>  .<br />
+Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0=0\)</span> til 5. orden ved at skrive:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>                    <span class="c1"># Definer funktionsudtrykket. </span>
+<span class="n">taylor_exp</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># Lav en taylorrække omkring x_0 = 0 af udtrykket til 5. orden</span>
+<span class="n">display</span><span class="p">(</span><span class="n">taylor_exp</span><span class="p">)</span>                   <span class="c1"># Vis udtrykket</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_27_0.png" src="../../../../_images/Notebook4_27_0.png" />
+</div>
+</div>
+<p>Et andet eksempel hvor leddene ikke præsenteres i samme logiske orden er udviklingen til 4. orden af funktionen <span class="math notranslate nohighlight">\(f(x) = \frac{3}{1-3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>                       <span class="c1"># Definer</span>
+<span class="n">taylor_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># Beregn taylorudviklingen / Taylorrækken</span>
+<span class="n">display</span><span class="p">(</span><span class="n">taylor_expr</span><span class="p">)</span>                     <span class="c1"># Vis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_29_0.png" src="../../../../_images/Notebook4_29_0.png" />
+</div>
+</div>
+<p>Hvis vi skal regne videre med dette udtryk uden restleddet eller tegne grafer, kan vi fjerne restleddet ved at skrive <code>expr.removeO()</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taylor_expr</span> <span class="o">=</span> <span class="n">taylor_expr</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">taylor_expr</span><span class="p">)</span>                     <span class="c1"># Vis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_31_0.png" src="../../../../_images/Notebook4_31_0.png" />
+</div>
+</div>
+<p>Nu kan vi tegne grafen for Taylorapproximationen til <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>   <span class="c1"># Importer plot-funktionen</span>
+
+<span class="c1"># Vi genererer nu vores graf som en figur med passende titel og limits</span>
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">taylor_expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Taylorapproksimation&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Taylor 4. orden&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_33_0.png" src="../../../../_images/Notebook4_33_0.png" />
+</div>
+</div>
+<p>Vi tilføjer nu vores originale funktion for at sammenligne:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi laver nu en ny graf med den originale funktion.</span>
+<span class="c1"># Bemærk, at vi skriver show = False for ikke at vise denne inden vi er færdige</span>
+<span class="n">original</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Vi tilføjer vores original graf til vores figur ved at bruge .append() ... se notebooken fra uge 3 for en forklaring.</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">original</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Vi skal nu tilpasse y.aksen, da det originale udtryk får meget store, negative værdier for x -&gt; 1/3</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Til sidst viser vi figuren</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_35_0.png" src="../../../../_images/Notebook4_35_0.png" />
+</div>
+</div>
+<p>Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
+</div>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved <code>sp.integrate(udtryk, variabel)</code>, mens bestemte integraler beregnes med <code>sp.integrate(udtryk, (variabel, fra, til))</code>. Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.</p>
+<p>Vær opmærksom på, at SymPys integrationsresultater udelader den vilkårlige additive integrationskonstant.</p>
+<p>Eksempel: Find stamfunktionen til <span class="math notranslate nohighlight">\(x^4\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">4</span>                               <span class="c1"># Definer udtryk</span>
+<span class="n">stamfunktion_expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># Integrer udtrykket med hensyn til x</span>
+<span class="n">display</span><span class="p">(</span><span class="n">stamfunktion_expr</span><span class="p">)</span>                  <span class="c1"># vis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_38_0.png" src="../../../../_images/Notebook4_38_0.png" />
+</div>
+</div>
+<p>På samme måde findes det bestemte integral <span class="math notranslate nohighlight">\(\int_0^{6\pi}(\sin(x))^2dx = \int_0^{6\pi}\sin^2(x)dx\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>                 <span class="c1"># Definer udtryk</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">pi</span><span class="p">))</span>    <span class="c1"># Integrer udtrykket med hensyn til x fra 0 til 6 pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_40_0.png" src="../../../../_images/Notebook4_40_0.png" />
+</div>
+</div>
+<p>Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i grænserne for sit bestemte integral.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi kan eventuelt udregne integralet for en gaussisk funktion</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_42_0.png" src="../../../../_images/Notebook4_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eller vi kan integrere en polynomium fra a til b</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_43_0.png" src="../../../../_images/Notebook4_43_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="alternativ-syntaks">
+<h2>Alternativ Syntaks<a class="headerlink" href="#alternativ-syntaks" title="Permalink to this headline">¶</a></h2>
+<p>I løbet af denne Notebook har vi benyttet os af en forholdsvis stringent metode at skrive funktioner op på, som altid indeholder <code>sp.funktion()</code>. Mange af disse metoder er dog også allerede indbygget i de enkelte udtryks syntaks. Vi kan f.eks. i stedet for at skrive <code>sp.simplify(expr)</code> skrive <code>expr.simplify()</code>. Dette er en lille smutvej, men det giver nogle gange god mening at bruge. Herunder er vist nogle korte eksempler:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi viser, at man kan differentiere på følgende to ekvivalente måder:</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_46_0.png" src="../../../../_images/Notebook4_46_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_47_0.png" src="../../../../_images/Notebook4_47_0.png" />
+</div>
+</div>
+<p>Ligeledes kan vi benytte simplify og integration på denne måde:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Vi simplificerer</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>                   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_49_0.png" src="../../../../_images/Notebook4_49_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beregner et bestemt integral</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="p">))</span>        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_50_0.png" src="../../../../_images/Notebook4_50_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finder stamfunktion ved brug af integrate</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook4_51_0.png" src="../../../../_images/Notebook4_51_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/jupyter_execute/notebooks/sympy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jonathan og Johann<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

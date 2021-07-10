@@ -16,7 +16,8 @@ chapters:
   - file: notebooks/sympy/Notebook3_ligninger
   - file: notebooks/sympy/Notebook3_plot
   - file: notebooks/sympy/Notebook4
+  - file: notebooks/sympy/Notebook_FlereVar
   - file: notebooks/sympy/Notebook_LinAlg1
   - file: notebooks/sympy/Notebook_LinAlg_2
   - file: notebooks/sympy/Notebook_kompleks
-  - file: notebooks/sympy/Notebook_FlereVar
+

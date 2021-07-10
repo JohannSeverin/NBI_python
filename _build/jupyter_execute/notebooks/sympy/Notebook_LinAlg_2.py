@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Transponering,-adjungering-og-konjugering" data-toc-modified-id="Transponering,-adjungering-og-konjugering-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Transponering, adjungering og konjugering</a></span></li><li><span><a href="#Nulrum-og-søjlerum" data-toc-modified-id="Nulrum-og-søjlerum-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Nulrum og søjlerum</a></span></li><li><span><a href="#Gram-Scmidt-ortogonalisering" data-toc-modified-id="Gram-Scmidt-ortogonalisering-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Gram Scmidt ortogonalisering</a></span></li><li><span><a href="#Determinant" data-toc-modified-id="Determinant-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Determinant</a></span></li><li><span><a href="#Sporet-/-Trace" data-toc-modified-id="Sporet-/-Trace-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Sporet / Trace</a></span></li><li><span><a href="#Krydsprodukt,-vektorprodukt-/-Cross-product" data-toc-modified-id="Krydsprodukt,-vektorprodukt-/-Cross-product-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Krydsprodukt, vektorprodukt / Cross product</a></span></li><li><span><a href="#Egenværdier-og--vektorer" data-toc-modified-id="Egenværdier-og--vektorer-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Egenværdier og -vektorer</a></span></li><li><span><a href="#Diagonalisering" data-toc-modified-id="Diagonalisering-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Diagonalisering</a></span></li></ul></div>
+# **Foreslået ændringer**  
+# Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilpasse den til at overholde de nye konventioner, som vi sætter for os selv. Dvs tænke over import og lign.. Ellers burde den være good to go
 
-# # Lineær Algebra - notebook nr. 2
+# # Flere metoder i Linær Algebra
 # Målet for denne notebook er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra. Vi arbejder videre hvor den første notebook om lineær algebra slap, så fra starten antager vi at læseren kan lave matrix- og vektormanipulationer. 
 # 
 # Langt de fleste funktioner i denne notebook virker på samme måde som matrixinversion, som for en matrix $A$ findes ved <code>A.inv()</code>.

@@ -54,8 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Funktioner af flere variable" href="Notebook_FlereVar.html" />
-    <link rel="prev" title="Indledende Lineær Algebra" href="Notebook_LinAlg1.html" />
+    <link rel="prev" title="Flere metoder i Linær Algebra" href="Notebook_LinAlg_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,19 +85,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -116,6 +115,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -130,22 +134,27 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -153,14 +162,14 @@
      Indledende Lineær Algebra
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Komplekse tal i SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_FlereVar.html">
-     Funktioner af flere variable
     </a>
    </li>
   </ul>
@@ -329,8 +338,9 @@
         
               <div>
                 
-  <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Almindelige-regneoperationer-med-komplekse-tal" data-toc-modified-id="Almindelige-regneoperationer-med-komplekse-tal-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Almindelige regneoperationer med komplekse tal</a></span></li><li><span><a href="#Komplekse-egenskaber" data-toc-modified-id="Komplekse-egenskaber-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Komplekse egenskaber</a></span><ul class="toc-item"><li><span><a href="#Modulus-og-argument" data-toc-modified-id="Modulus-og-argument-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Modulus og arguement</a></span></li><li><span><a href="#Kompleks-konjugering" data-toc-modified-id="Kompleks-konjugering-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Kompleks konjugering</a></span></li></ul></li><li><span><a href="#Rødder-og-ligninger" data-toc-modified-id="Rødder-og-ligninger-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Rødder og ligninger</a></span></li><li><span><a href="#Visualisering-af-det-komplekse-plan" data-toc-modified-id="Visualisering-af-det-komplekse-plan-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Visualisering af det komplekse plan</a></span></li></ul></div><div class="section" id="komplekse-tal-i-sympy">
+  <p><strong>Foreslået ændringer:</strong><br />
+Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse tal på, til at benytte numpys mulighed for at have komplekse arrays.</p>
+<div class="section" id="komplekse-tal-i-sympy">
 <h1>Komplekse tal i SymPy<a class="headerlink" href="#komplekse-tal-i-sympy" title="Permalink to this headline">¶</a></h1>
 <p>I LinALys lærer du at regne med komplekse tal. SymPy kan være en hjælp f.eks. til at visualisere alle løsninger til komplekse ligninger, men er i kurset primært et værktøj som du kan bruge til at checke de beregninger, der indgår i pointopgaverne og den afsluttende eksamen. Især hvis du har erfaring med at du laver mange regnefejl i omfattende beregninger, kan det være godt at checke beregningerne trin for trin i SymPy.</p>
 <p>Vi starter med at importere den imaginære enhed ved hjælp af <code>from sympy import I</code>, <span class="math notranslate nohighlight">\(I\)</span> er SymPys standardsyntaks for det imaginære tal <span class="math notranslate nohighlight">\(i\)</span>.</p>
@@ -355,7 +365,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_6_0.png" src="../../_images/Notebook_kompleks_6_0.png" />
+<img alt="../../_images/Notebook_kompleks_6_01.png" src="../../_images/Notebook_kompleks_6_01.png" />
 </div>
 </div>
 <p>Eller vi kan lave et mere generelt udtryk, hvor vi istedet benytter symboler:</p>
@@ -368,7 +378,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_8_0.png" src="../../_images/Notebook_kompleks_8_0.png" />
+<img alt="../../_images/Notebook_kompleks_8_01.png" src="../../_images/Notebook_kompleks_8_01.png" />
 </div>
 </div>
 <p>Når vi først har defineret vores udtryk, så kan vi regne med dem på samme måde som med alle andre (reelle) tal. Regneoperationerne <code>+</code>, <code>-</code>, <code>*</code> og <code>/</code> fungerer som de skal.</p>
@@ -381,7 +391,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_10_0.png" src="../../_images/Notebook_kompleks_10_0.png" />
+<img alt="../../_images/Notebook_kompleks_10_01.png" src="../../_images/Notebook_kompleks_10_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -391,7 +401,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_11_0.png" src="../../_images/Notebook_kompleks_11_0.png" />
+<img alt="../../_images/Notebook_kompleks_11_01.png" src="../../_images/Notebook_kompleks_11_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -401,7 +411,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_12_0.png" src="../../_images/Notebook_kompleks_12_0.png" />
+<img alt="../../_images/Notebook_kompleks_12_01.png" src="../../_images/Notebook_kompleks_12_01.png" />
 </div>
 </div>
 <p>Ved multiplikation og division er det nogle gange en god idé at bede SymPy om at reducere udtrykket. Især, hvis man gerne vil have det på en <span class="math notranslate nohighlight">\(x + yi\)</span> form:</p>
@@ -412,7 +422,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_14_0.png" src="../../_images/Notebook_kompleks_14_0.png" />
+<img alt="../../_images/Notebook_kompleks_14_01.png" src="../../_images/Notebook_kompleks_14_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -423,8 +433,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_15_0.png" src="../../_images/Notebook_kompleks_15_0.png" />
-<img alt="../../_images/Notebook_kompleks_15_1.png" src="../../_images/Notebook_kompleks_15_1.png" />
+<img alt="../../_images/Notebook_kompleks_15_01.png" src="../../_images/Notebook_kompleks_15_01.png" />
+<img alt="../../_images/Notebook_kompleks_15_11.png" src="../../_images/Notebook_kompleks_15_11.png" />
 </div>
 </div>
 <p>Man kan desuden beregne potenser af et kompleks tal på sædvandligvis ved at bruge <code>**</code>:</p>
@@ -435,7 +445,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_17_0.png" src="../../_images/Notebook_kompleks_17_0.png" />
+<img alt="../../_images/Notebook_kompleks_17_01.png" src="../../_images/Notebook_kompleks_17_01.png" />
 </div>
 </div>
 <p>I dette tilfælde er der ikke meget hjælp at hente i <code>simplify</code>:</p>
@@ -446,7 +456,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_19_0.png" src="../../_images/Notebook_kompleks_19_0.png" />
+<img alt="../../_images/Notebook_kompleks_19_01.png" src="../../_images/Notebook_kompleks_19_01.png" />
 </div>
 </div>
 <p>Vi kan til gengæld bede SymPy om at gange parentesen ud med <code>sp.expand</code>:</p>
@@ -457,7 +467,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_21_0.png" src="../../_images/Notebook_kompleks_21_0.png" />
+<img alt="../../_images/Notebook_kompleks_21_01.png" src="../../_images/Notebook_kompleks_21_01.png" />
 </div>
 </div>
 <p>SymPy ved hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
@@ -477,9 +487,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_25_0.png" src="../../_images/Notebook_kompleks_25_0.png" />
-<img alt="../../_images/Notebook_kompleks_25_1.png" src="../../_images/Notebook_kompleks_25_1.png" />
-<img alt="../../_images/Notebook_kompleks_25_2.png" src="../../_images/Notebook_kompleks_25_2.png" />
+<img alt="../../_images/Notebook_kompleks_25_01.png" src="../../_images/Notebook_kompleks_25_01.png" />
+<img alt="../../_images/Notebook_kompleks_25_11.png" src="../../_images/Notebook_kompleks_25_11.png" />
+<img alt="../../_images/Notebook_kompleks_25_21.png" src="../../_images/Notebook_kompleks_25_21.png" />
 </div>
 </div>
 <p>Men det er mere oplysende, hvis vores komplekse tal har en anden form, for eksempel <span class="math notranslate nohighlight">\(4 e^{i \pi / 3}\)</span>:</p>
@@ -493,9 +503,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_27_0.png" src="../../_images/Notebook_kompleks_27_0.png" />
-<img alt="../../_images/Notebook_kompleks_27_1.png" src="../../_images/Notebook_kompleks_27_1.png" />
-<img alt="../../_images/Notebook_kompleks_27_2.png" src="../../_images/Notebook_kompleks_27_2.png" />
+<img alt="../../_images/Notebook_kompleks_27_01.png" src="../../_images/Notebook_kompleks_27_01.png" />
+<img alt="../../_images/Notebook_kompleks_27_11.png" src="../../_images/Notebook_kompleks_27_11.png" />
+<img alt="../../_images/Notebook_kompleks_27_21.png" src="../../_images/Notebook_kompleks_27_21.png" />
 </div>
 </div>
 </div>
@@ -510,8 +520,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_30_0.png" src="../../_images/Notebook_kompleks_30_0.png" />
-<img alt="../../_images/Notebook_kompleks_30_1.png" src="../../_images/Notebook_kompleks_30_1.png" />
+<img alt="../../_images/Notebook_kompleks_30_01.png" src="../../_images/Notebook_kompleks_30_01.png" />
+<img alt="../../_images/Notebook_kompleks_30_11.png" src="../../_images/Notebook_kompleks_30_11.png" />
 </div>
 </div>
 <p>Argumentet findes ved <code>sp.arg()</code> :</p>
@@ -523,8 +533,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_32_0.png" src="../../_images/Notebook_kompleks_32_0.png" />
-<img alt="../../_images/Notebook_kompleks_32_1.png" src="../../_images/Notebook_kompleks_32_1.png" />
+<img alt="../../_images/Notebook_kompleks_32_01.png" src="../../_images/Notebook_kompleks_32_01.png" />
+<img alt="../../_images/Notebook_kompleks_32_11.png" src="../../_images/Notebook_kompleks_32_11.png" />
 </div>
 </div>
 <p>Hvorefter vi som nævnt tidligere kan bruge <code>.evalf()</code>, hvis vi vil have et bud på værdien af <span class="math notranslate nohighlight">\(-\arctan (7/10)\)</span> med fire decimaler</p>
@@ -535,7 +545,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_34_0.png" src="../../_images/Notebook_kompleks_34_0.png" />
+<img alt="../../_images/Notebook_kompleks_34_01.png" src="../../_images/Notebook_kompleks_34_01.png" />
 </div>
 </div>
 </div>
@@ -551,9 +561,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_37_0.png" src="../../_images/Notebook_kompleks_37_0.png" />
-<img alt="../../_images/Notebook_kompleks_37_1.png" src="../../_images/Notebook_kompleks_37_1.png" />
-<img alt="../../_images/Notebook_kompleks_37_2.png" src="../../_images/Notebook_kompleks_37_2.png" />
+<img alt="../../_images/Notebook_kompleks_37_01.png" src="../../_images/Notebook_kompleks_37_01.png" />
+<img alt="../../_images/Notebook_kompleks_37_11.png" src="../../_images/Notebook_kompleks_37_11.png" />
+<img alt="../../_images/Notebook_kompleks_37_21.png" src="../../_images/Notebook_kompleks_37_21.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -564,8 +574,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_38_0.png" src="../../_images/Notebook_kompleks_38_0.png" />
-<img alt="../../_images/Notebook_kompleks_38_1.png" src="../../_images/Notebook_kompleks_38_1.png" />
+<img alt="../../_images/Notebook_kompleks_38_01.png" src="../../_images/Notebook_kompleks_38_01.png" />
+<img alt="../../_images/Notebook_kompleks_38_11.png" src="../../_images/Notebook_kompleks_38_11.png" />
 </div>
 </div>
 </div>
@@ -581,7 +591,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_41_0.png" src="../../_images/Notebook_kompleks_41_0.png" />
+<img alt="../../_images/Notebook_kompleks_41_01.png" src="../../_images/Notebook_kompleks_41_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -591,7 +601,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_42_0.png" src="../../_images/Notebook_kompleks_42_0.png" />
+<img alt="../../_images/Notebook_kompleks_42_01.png" src="../../_images/Notebook_kompleks_42_01.png" />
 </div>
 </div>
 <p>Dette er utvivlsomt korrekt, men når man ønsker et mere anvendeligt svar, kan man f.eks. tvinge SymPy til at udregne real-delen og imaginærdelen som vi gjorde ovenfor:</p>
@@ -604,8 +614,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_44_0.png" src="../../_images/Notebook_kompleks_44_0.png" />
-<img alt="../../_images/Notebook_kompleks_44_1.png" src="../../_images/Notebook_kompleks_44_1.png" />
+<img alt="../../_images/Notebook_kompleks_44_01.png" src="../../_images/Notebook_kompleks_44_01.png" />
+<img alt="../../_images/Notebook_kompleks_44_11.png" src="../../_images/Notebook_kompleks_44_11.png" />
 </div>
 </div>
 <p>Vi vil nu se på rødderne i et simplere tilfælde, nemlig <span class="math notranslate nohighlight">\(\sqrt[4]{-4}\)</span>.</p>
@@ -618,7 +628,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_46_0.png" src="../../_images/Notebook_kompleks_46_0.png" />
+<img alt="../../_images/Notebook_kompleks_46_01.png" src="../../_images/Notebook_kompleks_46_01.png" />
 </div>
 </div>
 <p>Eller vi kan beregne rødderne en efter en ved hjælp af en for-løkke:</p>
@@ -631,10 +641,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_48_0.png" src="../../_images/Notebook_kompleks_48_0.png" />
-<img alt="../../_images/Notebook_kompleks_48_1.png" src="../../_images/Notebook_kompleks_48_1.png" />
-<img alt="../../_images/Notebook_kompleks_48_2.png" src="../../_images/Notebook_kompleks_48_2.png" />
-<img alt="../../_images/Notebook_kompleks_48_3.png" src="../../_images/Notebook_kompleks_48_3.png" />
+<img alt="../../_images/Notebook_kompleks_48_01.png" src="../../_images/Notebook_kompleks_48_01.png" />
+<img alt="../../_images/Notebook_kompleks_48_11.png" src="../../_images/Notebook_kompleks_48_11.png" />
+<img alt="../../_images/Notebook_kompleks_48_21.png" src="../../_images/Notebook_kompleks_48_21.png" />
+<img alt="../../_images/Notebook_kompleks_48_31.png" src="../../_images/Notebook_kompleks_48_31.png" />
 </div>
 </div>
 <p>Vi kan finde rødder til polynomier ved hjælp af <code>sp.solve()</code>. Vi minder om at hvis vi kun giver <code>sp.solve()</code> et udtryk (og altså ikke en ligning, f.eks. dannet ved hjælp af <code>sp.Eq</code>), så finder funktionen løsninger til den ligning, der fremkommer når udtrykket sættes lig 0:</p>
@@ -653,8 +663,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_50_0.png" src="../../_images/Notebook_kompleks_50_0.png" />
-<img alt="../../_images/Notebook_kompleks_50_1.png" src="../../_images/Notebook_kompleks_50_1.png" />
+<img alt="../../_images/Notebook_kompleks_50_01.png" src="../../_images/Notebook_kompleks_50_01.png" />
+<img alt="../../_images/Notebook_kompleks_50_11.png" src="../../_images/Notebook_kompleks_50_11.png" />
 </div>
 </div>
 </div>
@@ -679,7 +689,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_54_0.png" src="../../_images/Notebook_kompleks_54_0.png" />
+<img alt="../../_images/Notebook_kompleks_54_01.png" src="../../_images/Notebook_kompleks_54_01.png" />
 </div>
 </div>
 <p>Vi viser her to mulige måder at visualisere disse tal på. Den første bruger SymPy, mens vi i den anden bruger NumPy til at lave en lidt nemmere numerisk løsning</p>
@@ -703,7 +713,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_57_0.png" src="../../_images/Notebook_kompleks_57_0.png" />
+<img alt="../../_images/Notebook_kompleks_57_01.png" src="../../_images/Notebook_kompleks_57_01.png" />
 </div>
 </div>
 <p>Vi ser at værdierne starter i <span class="math notranslate nohighlight">\(z^0 = 1\)</span> og spiralerer udaf idet <span class="math notranslate nohighlight">\(|z|&gt;1\)</span> og modulus af <span class="math notranslate nohighlight">\(z^n\)</span> derfor vokser for stigende n. Argumentet vokser med en fast værdi hver gang <span class="math notranslate nohighlight">\(n\)</span> vokser med 1.</p>
@@ -728,7 +738,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_59_0.png" src="../../_images/Notebook_kompleks_59_0.png" />
+<img alt="../../_images/Notebook_kompleks_59_01.png" src="../../_images/Notebook_kompleks_59_01.png" />
 </div>
 </div>
 <p>Vi kan også bruge metoden til at vise rødderne i et polynomium.</p>
@@ -742,7 +752,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_61_0.png" src="../../_images/Notebook_kompleks_61_0.png" />
+<img alt="../../_images/Notebook_kompleks_61_01.png" src="../../_images/Notebook_kompleks_61_01.png" />
 </div>
 </div>
 <p>Her tegner vi ved hjælp af funktionen <code>scatter</code>, der giver mange grafiske muligheder for grafer bestående af enkelte “prikker”, altså ikke-forbundne talpar.</p>
@@ -758,7 +768,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_63_0.png" src="../../_images/Notebook_kompleks_63_0.png" />
+<img alt="../../_images/Notebook_kompleks_63_01.png" src="../../_images/Notebook_kompleks_63_01.png" />
 </div>
 </div>
 </div>
@@ -790,8 +800,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1.html" title="previous page">Indledende Lineær Algebra</a>
-    <a class='right-next' id="next-link" href="Notebook_FlereVar.html" title="next page">Funktioner af flere variable</a>
+    <a class='left-prev' id="prev-link" href="Notebook_LinAlg_2.html" title="previous page">Flere metoder i Linær Algebra</a>
 
         </div>
         

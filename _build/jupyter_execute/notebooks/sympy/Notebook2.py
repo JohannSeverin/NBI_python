@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python/SymPy-notebook til LinALys uge 2.
+# # SymPy i LinAlys
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Symboler-og-tal" data-toc-modified-id="Symboler-og-tal-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Symboler og tal</a></span><ul class="toc-item"><li><span><a href="#Eksakt-repræsentation-af-tal" data-toc-modified-id="Eksakt-repræsentation-af-tal-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Eksakt repræsentation af tal</a></span></li></ul></li><li><span><a href="#Evaluer-udtryk" data-toc-modified-id="Evaluer-udtryk-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Evaluer udtryk</a></span><ul class="toc-item"><li><span><a href="#Symbolsk-substituering" data-toc-modified-id="Symbolsk-substituering-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Symbolsk substituering</a></span></li><li><span><a href="#Numerisk-evaluering" data-toc-modified-id="Numerisk-evaluering-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Numerisk evaluering</a></span></li></ul></li><li><span><a href="#Grænser" data-toc-modified-id="Grænser-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Grænser</a></span></li><li><span><a href="#Anbefalet-import-blok" data-toc-modified-id="Anbefalet-import-blok-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Anbefalet import-blok</a></span></li></ul></div>
+# __Foreslået ændringer:__ 
+# I denne her Notebook er der ikke brug for de store ændringer til struktur. 
+# 
+# Når jeg har talt med de andre kurser, er vi dog blevet enige om, at man skal have en forståelse af pakkerne, og vi skal derfor måske bevæge os væk fra en "anbefalet" blok af tekst, men i stedet bare hente tingene ind, når vi skal bruge dem. 
+# 
+# Med denne nye struktur, burde vi også overveje om grænser skal rykkes til en anden notebook, så vi i stedet blot har overskrifter og ikke nødvendigvis har det på ugentlig basis.
+# 
+# Desuden bør vi nok gennemgå, hvad der er syntaks, og hvad der er kaldesekvens. Dette gør jeg, når jeg retter dem til. 
 
 # # Hvad er SymPy?
 

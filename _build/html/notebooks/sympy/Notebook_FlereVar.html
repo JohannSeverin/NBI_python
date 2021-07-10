@@ -54,7 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Komplekse tal i SymPy" href="Notebook_kompleks.html" />
+    <link rel="next" title="Indledende Lineær Algebra" href="Notebook_LinAlg1.html" />
+    <link rel="prev" title="Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,19 +86,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -115,6 +116,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -129,22 +135,27 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -153,13 +164,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_kompleks.html">
-     Komplekse tal i SymPy
+    <a class="reference internal" href="Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Funktioner af flere variable
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_kompleks.html">
+     Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -268,44 +279,49 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Funktioner af flere variable
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differentiation-af-funktioner-af-flere-variable">
    Differentiation af funktioner af flere variable
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#partielt-afledede">
      Partielt afledede
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#gradienter-og-retningsafledede">
      Gradienter og retningsafledede
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hessematricen">
      Hessematricen
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graftegning-for-funktioner-af-flere-variable">
    Graftegning for funktioner af flere variable
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#graftegning-i-3d">
      Graftegning i 3D
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#konturer">
      Konturer
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#niveaukurver">
      Niveaukurver
     </a>
@@ -323,9 +339,11 @@
         
               <div>
                 
-  <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Differentiation-af-funktioner-af-flere-variable" data-toc-modified-id="Differentiation-af-funktioner-af-flere-variable-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Differentiation af funktioner af flere variable</a></span><ul class="toc-item"><li><span><a href="#Partielt-afledede" data-toc-modified-id="Partielt-afledede-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Partielt afledede</a></span></li><li><span><a href="#Gradienter-og-retningsafledede" data-toc-modified-id="Gradienter-og-retningsafledede-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Gradienter og retningsafledede</a></span></li><li><span><a href="#Hessematricen" data-toc-modified-id="Hessematricen-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Hessematricen</a></span></li></ul></li><li><span><a href="#Graftegning-for-funktioner-af-flere-variable" data-toc-modified-id="Graftegning-for-funktioner-af-flere-variable-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Graftegning for funktioner af flere variable</a></span><ul class="toc-item"><li><span><a href="#Graftegning-i-3D" data-toc-modified-id="Graftegning-i-3D-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Graftegning i 3D</a></span></li><li><span><a href="#Konturer" data-toc-modified-id="Konturer-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Konturer</a></span></li><li><span><a href="#Niveaukurver" data-toc-modified-id="Niveaukurver-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Niveaukurver</a></span></li></ul></li></ul></div><div class="section" id="funktioner-af-flere-variable">
+  <div class="section" id="funktioner-af-flere-variable">
 <h1>Funktioner af flere variable<a class="headerlink" href="#funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h1>
+<p><strong>Foreslået ændringer</strong><br />
+Jeg overvejer, om man skulle dele denne notebook op. Så der bliver en til flere variabel calculus og en til flere variabel plotting. Det ville give mere mening, når vi har denne nye struktur.
+Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skrive ind. Vi skal dog bare lige være opmærksom på, om de bliver for avanceret.</p>
 <p>Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Vi tilføjer dog de variable <span class="math notranslate nohighlight">\(y\)</span> og <span class="math notranslate nohighlight">\(z\)</span>  til vores standard startblok:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -339,11 +357,12 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="differentiation-af-funktioner-af-flere-variable">
-<h2>Differentiation af funktioner af flere variable<a class="headerlink" href="#differentiation-af-funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h2>
+<h1>Differentiation af funktioner af flere variable<a class="headerlink" href="#differentiation-af-funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h1>
 <p>For funktioner af flere variable bliver diffentialkvotienterne <span class="math notranslate nohighlight">\(f'\)</span>, <span class="math notranslate nohighlight">\(f''\)</span> afløst af lidt flere begreber. Vi vil i det følgende demonstrere hvordan man beregner partielt afledede, gradienter og Hesse-matricer (som dog først bliver berørt til sidst i LinAlys-kurset).</p>
 <div class="section" id="partielt-afledede">
-<h3>Partielt afledede<a class="headerlink" href="#partielt-afledede" title="Permalink to this headline">¶</a></h3>
+<h2>Partielt afledede<a class="headerlink" href="#partielt-afledede" title="Permalink to this headline">¶</a></h2>
 <p>Når vi går fra en til flere variable, spiller de partielt afledede en central rolle. De beregnes på en helt tilsvarende måde som vi tidligere har beregnet <span class="math notranslate nohighlight">\(f'\)</span>, idet vi blot skal være opmærksomme på, hvilken variabel, vi differentiere i forhold til. Vi har også ved differentiation af funktioner af en variabel (se notebook til uge 4) angivet navnet på den variable, f.eks. <code>sp.diff(expr, x)</code>, men dette var faktisk ikke strengt nødvendigt for simple funktioner, da SymPy i mange tilfælde kan gætte hvad der er den variable. Når vi har to variable, er det derimod afgørende at vi angiver den relevante variabel eksplicit.</p>
 <p>Ellers foregår mange beregninger på samme måde:</p>
 <div class="cell docutils container">
@@ -355,8 +374,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_6_0.png" src="../../_images/Notebook_FlereVar_6_0.png" />
-<img alt="../../_images/Notebook_FlereVar_6_1.png" src="../../_images/Notebook_FlereVar_6_1.png" />
+<img alt="../../_images/Notebook_FlereVar_6_01.png" src="../../_images/Notebook_FlereVar_6_01.png" />
+<img alt="../../_images/Notebook_FlereVar_6_11.png" src="../../_images/Notebook_FlereVar_6_11.png" />
 </div>
 </div>
 <p>Derimod giver <code>display(sp.diff(expr))</code> en fejlmeddelelse. Vi kan også differentiere flere gange efter hinanden i én kommando: Hvis vi f.eks. ønsker at udregne <span class="math notranslate nohighlight">\(\frac{\partial^2}{\partial x \partial y}\left ( x^2\cdot e^y\right )\)</span>, skriver vi <code>sp.diff(expr, y, x)</code>. Bemærk rækkefølgen af <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> her: i <span class="math notranslate nohighlight">\(\frac{\partial^2}{\partial x \partial y}\)</span> står <span class="math notranslate nohighlight">\(\partial y\)</span> bagerst, og logikken er, at da dette er nærmest funktionsudtrykket, skal vi differentiere efter <span class="math notranslate nohighlight">\(y\)</span> først. Mere formelt er <span class="math notranslate nohighlight">\(\frac{\partial^2f}{\partial x \partial y} \equiv \frac{\partial}{\partial x}\left ( \frac{\partial f}{\partial y} \right )\)</span>. Syntaksen i Python er derimod at de variable skal listes  i differentiations/integrationsrækkefølgen i almindelig læseretning. Dette giver os:</p>
@@ -371,15 +390,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_8_0.png" src="../../_images/Notebook_FlereVar_8_0.png" />
-<img alt="../../_images/Notebook_FlereVar_8_1.png" src="../../_images/Notebook_FlereVar_8_1.png" />
-<img alt="../../_images/Notebook_FlereVar_8_2.png" src="../../_images/Notebook_FlereVar_8_2.png" />
-<img alt="../../_images/Notebook_FlereVar_8_3.png" src="../../_images/Notebook_FlereVar_8_3.png" />
+<img alt="../../_images/Notebook_FlereVar_8_01.png" src="../../_images/Notebook_FlereVar_8_01.png" />
+<img alt="../../_images/Notebook_FlereVar_8_11.png" src="../../_images/Notebook_FlereVar_8_11.png" />
+<img alt="../../_images/Notebook_FlereVar_8_21.png" src="../../_images/Notebook_FlereVar_8_21.png" />
+<img alt="../../_images/Notebook_FlereVar_8_31.png" src="../../_images/Notebook_FlereVar_8_31.png" />
 </div>
 </div>
 </div>
 <div class="section" id="gradienter-og-retningsafledede">
-<h3>Gradienter og retningsafledede<a class="headerlink" href="#gradienter-og-retningsafledede" title="Permalink to this headline">¶</a></h3>
+<h2>Gradienter og retningsafledede<a class="headerlink" href="#gradienter-og-retningsafledede" title="Permalink to this headline">¶</a></h2>
 <p>Et centralt begreb for funktioner af flere variable er gradienten, som vi skriver som <span class="math notranslate nohighlight">\(\nabla f(x,y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\)</span>. Vi tager altså den partielle differentieret i forhold til vores variable og sætter dem sammen som en vektor.</p>
 <p>Der er flere måder at beregne gradienten på i Python/SymPy, men her vil vi anvende en måde, der læner sig op af den måde, vi udregner den på i hånden. Vi vil altså lave en vektor bestående af de forskellige partielt afledede. Vi gør dette med <code>sp.derive_by_array()</code>, der som input skal bruge en funktion og en liste af de variable, der skal differentieres efter.</p>
 <p>Eksempel: Vi vil finde gradienten af <span class="math notranslate nohighlight">\(f(x,y) = e^{- x^2 - y^2}\)</span>.</p>
@@ -393,7 +412,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_11_0.png" src="../../_images/Notebook_FlereVar_11_0.png" />
+<img alt="../../_images/Notebook_FlereVar_11_01.png" src="../../_images/Notebook_FlereVar_11_01.png" />
 </div>
 </div>
 <p>Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra notebooken om Linær Algebra.</p>
@@ -418,15 +437,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_13_0.png" src="../../_images/Notebook_FlereVar_13_0.png" />
-<img alt="../../_images/Notebook_FlereVar_13_1.png" src="../../_images/Notebook_FlereVar_13_1.png" />
-<img alt="../../_images/Notebook_FlereVar_13_2.png" src="../../_images/Notebook_FlereVar_13_2.png" />
-<img alt="../../_images/Notebook_FlereVar_13_3.png" src="../../_images/Notebook_FlereVar_13_3.png" />
+<img alt="../../_images/Notebook_FlereVar_13_01.png" src="../../_images/Notebook_FlereVar_13_01.png" />
+<img alt="../../_images/Notebook_FlereVar_13_11.png" src="../../_images/Notebook_FlereVar_13_11.png" />
+<img alt="../../_images/Notebook_FlereVar_13_21.png" src="../../_images/Notebook_FlereVar_13_21.png" />
+<img alt="../../_images/Notebook_FlereVar_13_31.png" src="../../_images/Notebook_FlereVar_13_31.png" />
 </div>
 </div>
 </div>
 <div class="section" id="hessematricen">
-<h3>Hessematricen<a class="headerlink" href="#hessematricen" title="Permalink to this headline">¶</a></h3>
+<h2>Hessematricen<a class="headerlink" href="#hessematricen" title="Permalink to this headline">¶</a></h2>
 <p>Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en <span class="math notranslate nohighlight">\(n\times n\)</span>-matrix, der indeholder alle andenordens afledede for en funktion af <span class="math notranslate nohighlight">\(n\)</span> variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variables omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).</p>
 <p>Man kunne beregne Hessematricen ved at beregne de dobbelt afledede som beskrevet ovenfor, men det er nemmere at importere den fra underbiblioteket af SymPy, som hedder <code>sympy.matrices</code> med kommandoen <code>from sympy.matrices import hessian</code>. Vi kan nu benytte <code>hessian(udtryk, variabelliste)</code> på samme måde, som vi brugte <code>sp.derive_by_array</code> til at udregne gradienten:</p>
 <div class="cell docutils container">
@@ -440,7 +459,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_15_0.png" src="../../_images/Notebook_FlereVar_15_0.png" />
+<img alt="../../_images/Notebook_FlereVar_15_01.png" src="../../_images/Notebook_FlereVar_15_01.png" />
 </div>
 </div>
 <p>Og hvis vi nu vil beregne værdien for <span class="math notranslate nohighlight">\((x, y) = (0, 1)\)</span>, kan vi benytte <code>.subs()</code> to gange:</p>
@@ -451,16 +470,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_17_0.png" src="../../_images/Notebook_FlereVar_17_0.png" />
+<img alt="../../_images/Notebook_FlereVar_17_01.png" src="../../_images/Notebook_FlereVar_17_01.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="graftegning-for-funktioner-af-flere-variable">
-<h2>Graftegning for funktioner af flere variable<a class="headerlink" href="#graftegning-for-funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h2>
+<h1>Graftegning for funktioner af flere variable<a class="headerlink" href="#graftegning-for-funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h1>
 <p>Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.</p>
 <div class="section" id="graftegning-i-3d">
-<h3>Graftegning i 3D<a class="headerlink" href="#graftegning-i-3d" title="Permalink to this headline">¶</a></h3>
+<h2>Graftegning i 3D<a class="headerlink" href="#graftegning-i-3d" title="Permalink to this headline">¶</a></h2>
 <p>For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D-tilfældet, men i stedet for at importere <code>plot</code> fra <code>sympy.plotting</code>, importerer vi nu i stedet <code>plot3d</code>. Herefter kan vi skrive <code>plot3d(expr, (x, y))</code> eller f.eks. <code>plot3d(expr, (x, -2, 2), (y, -2, 2))</code> hvis vi vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figures, så vi benytter her <code>%matplotlib notebook</code> som gør vores figurer interaktiv. Hvis man eksempelvis vil plotte <span class="math notranslate nohighlight">\(xy^2\)</span> i området omkring origo, kan man gøre følgende:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1399,7 +1418,7 @@ if (IPython.notebook.kernel !== null) {
 <p>Python-SymPy-kombinationen har en meget uheldig svaghed her, idet det ikke umiddelbart er nemt at tilføje akselabels. Et workaround er at vælge forskellige akseskaleringer for <span class="math notranslate nohighlight">\(x\)</span>-aksen og <span class="math notranslate nohighlight">\(y\)</span>-aksen, så man kan se forskel også når man har roteret grafen.</p>
 </div>
 <div class="section" id="konturer">
-<h3>Konturer<a class="headerlink" href="#konturer" title="Permalink to this headline">¶</a></h3>
+<h2>Konturer<a class="headerlink" href="#konturer" title="Permalink to this headline">¶</a></h2>
 <p>Konturplot findes ved at lave en 2D-afbildning af værdien af den pågældende funktion af flere variable langs en linje. I tilfældet med en funktion af 2 variable ligger linjen i <span class="math notranslate nohighlight">\(xy\)</span>-planen, og konturen svarer til grafens skæring med den plan, der kan rejses vinkelret på <span class="math notranslate nohighlight">\(xy\)</span>-planen og som indeholder den pågældende linje. Se TK afsnit 1.2.1. De simpleste konturer fås ved at holde værdien af enten <span class="math notranslate nohighlight">\(x\)</span> eller <span class="math notranslate nohighlight">\(y\)</span> fast og så plotte <span class="math notranslate nohighlight">\(f(x,y)\)</span> som funktion af den anden variabel. Vi vil her følge TK eksempel 1.6 og betragter funktionen:
 $<span class="math notranslate nohighlight">\(f(x,y) = 2x^2+ 4x - y^2 + 4y\)</span><span class="math notranslate nohighlight">\(
 Vi kan altså lave et konturplot ved at kigge på funktionens variation med \)</span>x<span class="math notranslate nohighlight">\( mens vi eksempelvis sætter \)</span>y = 1$:</p>
@@ -4225,7 +4244,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 </div>
 <div class="section" id="niveaukurver">
-<h3>Niveaukurver<a class="headerlink" href="#niveaukurver" title="Permalink to this headline">¶</a></h3>
+<h2>Niveaukurver<a class="headerlink" href="#niveaukurver" title="Permalink to this headline">¶</a></h2>
 <p>Mens konturer er snit mellem grafen for en funktion og “opretstående planer”, er niveaukurver snit med vandrette planer <span class="math notranslate nohighlight">\(z=c\)</span> (se TK 1.2.2). Vi vil altså tegne løsninger til <span class="math notranslate nohighlight">\(f(x,y) = c\)</span> i <span class="math notranslate nohighlight">\(xy\)</span>-planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen <code>plot_contour</code> (bemærk at <code>plot_contour</code> her bliver brugt til at tegne niveaukurver og <em>ikke</em> konturplot) som importeres fra <code>sympy.plotting.plot</code>. Funktionen følger samme syntaks som <code>3dplot</code>, og giver os et bud på, hvordan niveaukurverne ligger. Desværre har vi ret begrænsede muligheder for selv at vælge indstillinger for denne funktion.</p>
 <p>Her undersøger vi (ligesom i TK 1.10) funktionen:
 $<span class="math notranslate nohighlight">\( f(x, y) = x^2 + 4y^2 \)</span>$</p>
@@ -8916,7 +8935,6 @@ if (IPython.notebook.kernel !== null) {
 </div>
 </div>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -8943,7 +8961,8 @@ if (IPython.notebook.kernel !== null) {
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_kompleks.html" title="previous page">Komplekse tal i SymPy</a>
+    <a class='left-prev' id="prev-link" href="Notebook4.html" title="previous page">Differential- og integralregning for funktioner af en variabel</a>
+    <a class='right-next' id="next-link" href="Notebook_LinAlg1.html" title="next page">Indledende Lineær Algebra</a>
 
         </div>
         

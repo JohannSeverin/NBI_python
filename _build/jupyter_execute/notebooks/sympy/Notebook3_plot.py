@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python/SymPy-notebook til LinALys uge 3: Plotning
-
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Plot-med-SymPy" data-toc-modified-id="Plot-med-SymPy-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Plot med SymPy</a></span><ul class="toc-item"><li><span><a href="#Parametre-for-Plot" data-toc-modified-id="Parametre-for-Plot-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametre for Plot</a></span></li><li><span><a href="#Figurer-som-lister" data-toc-modified-id="Figurer-som-lister-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Figurer som lister</a></span></li></ul></li><li><span><a href="#Gaffelfunktioner" data-toc-modified-id="Gaffelfunktioner-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Gaffelfunktioner</a></span></li></ul></div>
-
-# ## Plot med SymPy
+# # Plotting i SymPy
+# 
+# **Foreslået ændringer:**  
+# I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt. 
+# 
+# Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre. 
 
 # Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:
 
@@ -58,7 +58,7 @@ plot(expr, (x, 0, 2*pi));
 plot(sp.sin(x), sp.cos(x), (x, 0, 2*pi));
 
 
-# ### Parametre for Plot
+# ## Parametre for Plot
 # Udover at angive funktionen/udtrykket og afgrænsningen af den variable, kan man til <code>plot</code> angive en del andre oplysninger, som angives ved at tilføje <code>keyword = værdi</code> i slutningen af udtrykket. Nogle hyppigt anvendte keywords er:
 # - <code>title</code> angiver titlen på figuren. Angiv værdien som en string, altså som "Ønsket titel"
 # - <code>legend</code> angiver om der skal stå en beskrivelse af graferne. Angiv i så fald værdien <code>True</code>
@@ -70,7 +70,7 @@ plot(sp.sin(x), sp.cos(x), (x, 0, 2*pi));
 
 # Med disse muligheder kan vi forbedre vores seneste figur:
 
-# In[14]:
+# In[6]:
 
 
 plot(sp.cos(x), sp.sin(x), (x, 0, 2*pi), title = "Harmoniske svingninger", legend = True, xlabel = "x", ylabel = 'Amplitude');
@@ -78,7 +78,7 @@ plot(sp.cos(x), sp.sin(x), (x, 0, 2*pi), title = "Harmoniske svingninger", legen
 
 # Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger:
 
-# In[15]:
+# In[7]:
 
 
 # Vi tegner en graf og navngiver resultatet som et objekt ved navn "figur"
@@ -101,7 +101,7 @@ figur[1].line_color = (0.6, 0.4, 0.2)
 figur.show()
 
 
-# ### Figurer som lister
+# ## Figurer som lister
 
 # I overstående eksempler har vi benyttet indeksering (som vi kender det fra lister) til at ændre på forskellige parametre. En af fordelene ved dette er at vi kan udvide vores figur ved brug af <code>.append()</code> og <code>.extend()</code> til at bygge videre på en figur, hvis vi ønsker at samle flere plots i en figur. Som eksempel vil vi bruge <code>.append()</code> til at tilføje en ekstra kurve til overstående figur. 
 
@@ -124,12 +124,12 @@ figur.show()
 
 # Hvis man vil kombinere figurer, som alle har flere kurver, kan man bruge <code>.extend()</code> til at tilføje alle plots fra en figur til den anden. Hvis <code>figur2</code> således havde haft 2 kurver, ville vi kunne tilføje begge  til <code>figur</code> ved at skrive <code>figur.extend(figur2)</code>.
 
-# ## Gaffelfunktioner 
+# # Gaffelfunktioner 
 # Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som "gaffelfunktioner"), kan vi benytte <code>sp.Piecewise()</code>. Syntaksen  er <code>sp.Piecewise((udtryk1, intervalbetingelse1), (udtryk2, intervalbetingelse2))</code>. Funktionen 
 # $$f(x) = \begin{cases} -1 \quad &x < 4 \\ x - 5 \quad &x \geq 4\end{cases}$$
 # angives derfor som
 
-# In[16]:
+# In[11]:
 
 
 f = sp.Piecewise((-1, x < 4), (x-5, x >= 4))
@@ -143,7 +143,7 @@ figur3 = plot(f, (x, 0, 10), title = "Gaffelfunktion")
 # $$g_2(x) = \begin{cases} x^2 \quad &|x|\leq 2\\ 2|x| \quad &\mbox{ellers}\end{cases}$$
 # På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
 
-# In[25]:
+# In[12]:
 
 
 g1 = sp.Piecewise((-2*x, x<-2), (x**2, abs(x) <= 2),(2*x, x>2))
@@ -156,7 +156,7 @@ figur = plot(g1, g2, (x, -5, 5), title = "Gaffelfunktion 2") # Vi ser kun en kur
 
 # Angives udtrykkene derimod i omvendt rækkefølge, kommer udtrykket $x^2$ aldrig i brug, da betingelsen <code>True</code> altid er opfyldt, og det er blot <code>abs(x)</code>, dvs. $|x|$, der tegnes
 
-# In[26]:
+# In[13]:
 
 
 g = sp.Piecewise((2*abs(x), True), (x**2, abs(x) < 2))

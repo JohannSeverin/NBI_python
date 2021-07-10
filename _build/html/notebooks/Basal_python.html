@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jupyter Notebooks &#8212; Python i LinAlys og MekRel</title>
+    <title>Hvad er Python? &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mere end bare vanilje" href="Intro_til_pakker.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+    <link rel="next" title="Intro til pakker" href="Intro_til_pakker.html" />
+    <link rel="prev" title="Python i MekRel og LinAlys" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,19 +86,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -116,6 +116,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,22 +135,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sympy/Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -154,13 +164,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sympy/Notebook_kompleks.html">
-     Komplekse tal i SymPy
+    <a class="reference internal" href="sympy/Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sympy/Notebook_FlereVar.html">
-     Funktioner af flere variable
+    <a class="reference internal" href="sympy/Notebook_kompleks.html">
+     Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -269,51 +279,46 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Jupyter Notebooks
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hvordan-virker-python">
    Hvordan virker Python?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variabel-typer">
      Variabel typer
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lister-af-variable">
      Lister af variable
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basale-regneoperationer">
    Basale regneoperationer
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#aendring-af-variable">
      Ændring af variable
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#logik-i-python">
    Logik i Python
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-else-statements">
    If-else-statements
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lokker-loops">
    Løkker/loops
   </a>
@@ -329,13 +334,13 @@
         
               <div>
                 
-  <div class="section" id="jupyter-notebooks">
-<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hvad-er-python">
+<h1>Hvad er Python?<a class="headerlink" href="#hvad-er-python" title="Permalink to this headline">¶</a></h1>
+<p>I løbet af de første halve år på jeres uddannelse i fysik, kommer I til at bruge python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da denne indeholder alt, hvad man umiddelbart skal bruge.</p>
 <p>I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Code celler er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske ift. jeres forsøg. Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en celle, og bevæge sig videre til den næste i rækken.</p>
-<p>Derudover er det vigtigt at understrege at i <strong>ikke</strong> skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og <strong>skal</strong> afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse må <em>godt</em> afleveres som Notebooks, men det hører i mere om senere.</p>
-</div>
+<p>Derudover er det vigtigt at understrege at i <strong>ikke</strong> skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og <strong>skal</strong> afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse <strong>må</strong> <em>godt</em> afleveres som Notebooks, men det hører i mere om senere.</p>
 <div class="section" id="hvordan-virker-python">
-<h1>Hvordan virker Python?<a class="headerlink" href="#hvordan-virker-python" title="Permalink to this headline">¶</a></h1>
+<h2>Hvordan virker Python?<a class="headerlink" href="#hvordan-virker-python" title="Permalink to this headline">¶</a></h2>
 <p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Man koger derfor ens opgave ned i små dele, som kan bliver udført i træk. Alt hvad der står efter et <code>#</code> i koden bliver dog ikke læst, og dette skal forstås, som at det er en kommentar til den, der læser koden.</p>
 <p>Når man arbejder i python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definerer en variabel. Dette kunne eksempelvis være <code> a = 5 </code>, så vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu blive betragtet som <code>5</code>.</p>
 <p>En god måde at se en værdi på, er ved at bede Python om at printe den, dette gøres ved at skrive <code>print(X)</code>, hvor X kan være et hvilket som helst variabelnavn.</p>
@@ -367,7 +372,7 @@
 </div>
 </div>
 <div class="section" id="variabel-typer">
-<h2>Variabel typer<a class="headerlink" href="#variabel-typer" title="Permalink to this headline">¶</a></h2>
+<h3>Variabel typer<a class="headerlink" href="#variabel-typer" title="Permalink to this headline">¶</a></h3>
 <p>Udover tekststrenge, som vi så i overstående eksempel, findes flere forskellige typer variable, som man kan benytte sig af. I Python er det dog ikke nødvendigt at angive disse, da sproget selv finder ud af det fra kontekst.</p>
 <p>De mest almindelige variable typer er:</p>
 <ul class="simple">
@@ -378,7 +383,7 @@
 </ul>
 </div>
 <div class="section" id="lister-af-variable">
-<h2>Lister af variable<a class="headerlink" href="#lister-af-variable" title="Permalink to this headline">¶</a></h2>
+<h3>Lister af variable<a class="headerlink" href="#lister-af-variable" title="Permalink to this headline">¶</a></h3>
 <p>Vi kan sammensætte lister af flere værdier, eksempelvis en samling af tal. Dette gøres mest almindeligt ved at lave en liste.:
 <code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud. <strong>Bemærk at Python starter ved nul (nul-indeksering), så det første element er altså <code>tal[0]</code>.</strong></p>
 <div class="cell docutils container">
@@ -413,7 +418,7 @@
 </div>
 </div>
 <div class="section" id="basale-regneoperationer">
-<h1>Basale regneoperationer<a class="headerlink" href="#basale-regneoperationer" title="Permalink to this headline">¶</a></h1>
+<h2>Basale regneoperationer<a class="headerlink" href="#basale-regneoperationer" title="Permalink to this headline">¶</a></h2>
 <p>Python indeholder som udgangspunkt de mest basale regne-operationer, som man kender fra sin lommeregner. Eksempelvis kan vi lægge til, trække fra, gange og divdere ved blot at skrive udtrykket op med ‘+’, ‘-‘, ‘*’ og ‘/’. På sædvanligvis  kan vi også benytte parenteser til at give rækkefølgen for operationerne. Nogle enkelte eksempler er givet nedenunder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,27 +506,9 @@
 </div>
 </div>
 </div>
-<p>Man kan også komme ud for at skulle bruge integer-division: <code>//</code> eller modulo <code>%</code>. Som kan opfattes som hhv. division med efterfølgende nedrunding til nærmeste helttal og at bestemme resten af en division. Eksempelvis, hvis vi ønsker at kende den heltallige division og resten af 100 med 11, regnes det som:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">division</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">//</span> <span class="mi">11</span>    <span class="c1"># // for integer-division</span>
-<span class="n">rest</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">%</span> <span class="mi">11</span>         <span class="c1"># %  for rest</span>
-
-<span class="c1"># Ved at benytte + mellem strenge sættes de i forlængelse af hinanden</span>
-<span class="c1"># Vi benytter str(tal) for at lave tallet til en string, så den kan plusses med de andre strings</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Divisionen giver: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">division</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; med rest: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Divisionen giver: 9 med rest: 1
-</pre></div>
-</div>
-</div>
-</div>
 <p>Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere.</p>
 <div class="section" id="aendring-af-variable">
-<h2>Ændring af variable<a class="headerlink" href="#aendring-af-variable" title="Permalink to this headline">¶</a></h2>
+<h3>Ændring af variable<a class="headerlink" href="#aendring-af-variable" title="Permalink to this headline">¶</a></h3>
 <p>Der kan være mange årsager til, at man skal ændre værdien på en varibel, det kunne f. eks. være i en simulation, hvor positionen skal opdateres. Sætter vi variabel navnet lig med en ny værdi ændres dette blot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,7 +566,7 @@
 </div>
 </div>
 <div class="section" id="logik-i-python">
-<h1>Logik i Python<a class="headerlink" href="#logik-i-python" title="Permalink to this headline">¶</a></h1>
+<h2>Logik i Python<a class="headerlink" href="#logik-i-python" title="Permalink to this headline">¶</a></h2>
 <p>Når vi skriver kode, er vi ret ofte interesseret i, om et udtryk er sandt eller falsk for vide, hvordan vi skal eksekvere resten af koden. Til dette benytter vi boolean variable, som enten kan være <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code>. Enten kan vi selv definerer en variabel som værende sand ved at skrive <code class="docutils literal notranslate"><span class="pre">switch</span> <span class="pre">=</span> <span class="pre">True</span></code>, men oftere skal vi dog tjekke om noget er sandt.</p>
 <p>Når man benytter to lighedstegn <code class="docutils literal notranslate"><span class="pre">==</span></code> tjekker Python om udtrykkende på hver side er lig hinanden. Eksempelvis kan vi se om vores defineret værdi er lig med 10: <em>Bemærk denne forskel et lighedstegn definerer og to sammenligner:</em></p>
 <div class="cell docutils container">
@@ -619,7 +606,7 @@
 </ul>
 </div>
 <div class="section" id="if-else-statements">
-<h1>If-else-statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h1>
+<h2>If-else-statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h2>
 <p>Særligt gøre boolean logik sig nyttig, når vi skal eksekvere noget kode, hvis et bestemt udtryk er sandt og noget andet, hvis det ikke er. Her kan vi benytte if/else statements. Her ser syntaksen sådan her ud:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Statement</span><span class="p">:</span>
     <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span>
@@ -699,7 +686,7 @@ Bemærk at indrykningen spiller en vigtig rolle i at afgrænse hvad der skal gø
 I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker først “Statement”, og hvis denne er sand vil den <strong>kun</strong> køre den tilhørende del af koden uanset om “Second_statement” også er sand. Ellers vil den tjekke <code>elif</code>-statementerne i rækkefølge. Hvis ingen af de givne betingelser er opfyldt, vil den køre koden der følger efter <code>else</code>.</p>
 </div>
 <div class="section" id="lokker-loops">
-<h1>Løkker/loops<a class="headerlink" href="#lokker-loops" title="Permalink to this headline">¶</a></h1>
+<h2>Løkker/loops<a class="headerlink" href="#lokker-loops" title="Permalink to this headline">¶</a></h2>
 <p>Ofte bruger vi computeren til at gentage opgaver mange gange. Dette gør vi ved brug af løkker, som ofte kaldes loops. Der er to typer: en <code>for</code>-løkke og en <code>while</code>-løkke, i denne Notebook vil vi dog kun vise for-løkker, som benyttes som:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variabel</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
     <span class="n">Gør</span> <span class="n">det</span> <span class="n">her</span>
@@ -773,6 +760,7 @@ Og summen er 180
 </div>
 <p>Vi havde fået samme resultat, hvis vi i stedet for 45 havde skrevet 41, da range forsætter ind til i’et er større eller lig med vores <code>stop</code>.</p>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -799,8 +787,8 @@ Og summen er 180
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Welcome to your Jupyter Book</a>
-    <a class='right-next' id="next-link" href="Intro_til_pakker.html" title="next page">Mere end bare vanilje</a>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Python i MekRel og LinAlys</a>
+    <a class='right-next' id="next-link" href="Intro_til_pakker.html" title="next page">Intro til pakker</a>
 
         </div>
         

@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Almindelige-regneoperationer-med-komplekse-tal" data-toc-modified-id="Almindelige-regneoperationer-med-komplekse-tal-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Almindelige regneoperationer med komplekse tal</a></span></li><li><span><a href="#Komplekse-egenskaber" data-toc-modified-id="Komplekse-egenskaber-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Komplekse egenskaber</a></span><ul class="toc-item"><li><span><a href="#Modulus-og-argument" data-toc-modified-id="Modulus-og-argument-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Modulus og arguement</a></span></li><li><span><a href="#Kompleks-konjugering" data-toc-modified-id="Kompleks-konjugering-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Kompleks konjugering</a></span></li></ul></li><li><span><a href="#Rødder-og-ligninger" data-toc-modified-id="Rødder-og-ligninger-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Rødder og ligninger</a></span></li><li><span><a href="#Visualisering-af-det-komplekse-plan" data-toc-modified-id="Visualisering-af-det-komplekse-plan-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Visualisering af det komplekse plan</a></span></li></ul></div>
+# **Foreslået ændringer:**   
+# Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse tal på, til at benytte numpys mulighed for at have komplekse arrays.
+#     
 
 # # Komplekse tal i SymPy
 

@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python/SymPy-notebook til LinALys uge 3: Plotning &#8212; Python i LinAlys og MekRel</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python i LinAlys og MekRel</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../intro.html">
+   Python i MekRel og LinAlys
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../notebooks/Basal_python.html">
+   Hvad er Python?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks/Intro_til_pakker.html">
+   Intro til pakker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Matplotlib_pyplot.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks/sympy/Notebook1.html">
+   Introduktion til Python i LinAlys
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook2.html">
+     SymPy i LinAlys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook3_ligninger.html">
+     Ligningsløsning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook3_plot.html">
+     Plotting i SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook4.html">
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_FlereVar.html">
+     Funktioner af flere variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_LinAlg1.html">
+     Indledende Lineær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/sympy/Notebook_kompleks.html">
+     Komplekse tal i SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/docs/jupyter_execute/notebooks/sympy/Notebook3_plot.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JohannSeverin/NBI_python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JohannSeverin/NBI_python/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/notebooks/sympy/Notebook3_plot.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/JohannSeverin/NBI_python/master?urlpath=tree/~/docs/jupyter_execute/notebooks/sympy/Notebook3_plot.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-med-sympy">
+   Plot med SymPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametre-for-plot">
+     Parametre for Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figurer-som-lister">
+     Figurer som lister
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaffelfunktioner">
+   Gaffelfunktioner
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-sympy-notebook-til-linalys-uge-3-plotning">
+<h1>Python/SymPy-notebook til LinALys uge 3: Plotning<a class="headerlink" href="#python-sympy-notebook-til-linalys-uge-3-plotning" title="Permalink to this headline">¶</a></h1>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Plot-med-SymPy" data-toc-modified-id="Plot-med-SymPy-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Plot med SymPy</a></span><ul class="toc-item"><li><span><a href="#Parametre-for-Plot" data-toc-modified-id="Parametre-for-Plot-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametre for Plot</a></span></li><li><span><a href="#Figurer-som-lister" data-toc-modified-id="Figurer-som-lister-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Figurer som lister</a></span></li></ul></li><li><span><a href="#Gaffelfunktioner" data-toc-modified-id="Gaffelfunktioner-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Gaffelfunktioner</a></span></li></ul></div><div class="section" id="plot-med-sympy">
+<h2>Plot med SymPy<a class="headerlink" href="#plot-med-sympy" title="Permalink to this headline">¶</a></h2>
+<p>Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Den anbefalede standardblok for SymPy:</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>               <span class="c1"># Vi vælger at importere x som symbolsk variabel.</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>           <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                    <span class="c1"># Aktiver pretty-printing</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>   <span class="c1"># Hent vores printer til matematiske udtryk</span>
+
+<span class="c1"># Specifik import til plotteformål:</span>
+<span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For at komme i gang vil vi gerne tegne grafen for en sinuskurve og definerer derfor først sinus som et udtryk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>og tegner derefter ved at bruge funktionen <code>plot</code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_8_0.png" src="../../../../_images/Notebook3_plot_8_0.png" />
+</div>
+</div>
+<p>Bemærk semikolonet, der beder Python om ikke at skrive outputtet, som her ville være en kode i stil med <code>sympy.plotting.plot.Plot at 0x136af246608</code>, som ikke er så relevant i denne kontekst.</p>
+<p>Hvis man ønsker at tegne grafen for et bestemt <span class="math notranslate nohighlight">\(x\)</span>-interval, skriver man <code>plot(udtryk, (variabel, start, slut))</code>. Eksempel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_10_0.png" src="../../../../_images/Notebook3_plot_10_0.png" />
+</div>
+</div>
+<p>Man behøver naturligvis ikke at definere udtrykket først som en variabel, men kan skrive funktionen eller udtrykket direkte ind i <code>plot</code>. Hvis man ønsker at lave flere grafer i samme figur, kan man skrive <code>plot(udtryk_1, udtryk_2, (variabel, start, slut))</code> som det fremgår her:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_12_0.png" src="../../../../_images/Notebook3_plot_12_0.png" />
+</div>
+</div>
+<div class="section" id="parametre-for-plot">
+<h3>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h3>
+<p>Udover at angive funktionen/udtrykket og afgrænsningen af den variable, kan man til <code>plot</code> angive en del andre oplysninger, som angives ved at tilføje <code>keyword = værdi</code> i slutningen af udtrykket. Nogle hyppigt anvendte keywords er:</p>
+<ul class="simple">
+<li><p><code>title</code> angiver titlen på figuren. Angiv værdien som en string, altså som “Ønsket titel”</p></li>
+<li><p><code>legend</code> angiver om der skal stå en beskrivelse af graferne. Angiv i så fald værdien <code>True</code></p></li>
+<li><p><code>line_color</code> giver grafen en bestemt farve. Angiv værdien som en string, der indeholder en standardfarve, eksempelvis “red”, “green”, eller som en RGB-farvekode (r, g, b), hvor de tre værdier er mellem 0 og 1</p></li>
+<li><p><code>xlim</code> og <code>ylim</code> fastlægger aksernes afgrænsninger i hhv. vandret og lodret retning. Angiv to værdier <code>(fra, til)</code> for hver akse.</p></li>
+<li><p><code>xlabel</code> og <code>ylabel</code> sætter navne på hhv. <span class="math notranslate nohighlight">\(x-\)</span> og <span class="math notranslate nohighlight">\(y-\)</span>akse. Angiv som string.</p></li>
+</ul>
+<p>Andre keywords kan findes i <a class="reference external" href="https://docs.sympy.org/latest/modules/plotting.html">dokumentationen her</a></p>
+<p>Med disse muligheder kan vi forbedre vores seneste figur:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harmoniske svingninger&quot;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_15_0.png" src="../../../../_images/Notebook3_plot_15_0.png" />
+</div>
+</div>
+<p>Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi tegner en graf og navngiver resultatet som et objekt ved navn &quot;figur&quot;</span>
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_17_0.png" src="../../../../_images/Notebook3_plot_17_0.png" />
+</div>
+</div>
+<p>Når vi vil ændre indstillingerne for en eksisterende graf, er syntaksen <code>figurnavn.keyword = ny_værdi</code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Forskellige harmoniske svingninger&quot;</span>
+<span class="n">figur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>  <span class="c1"># Der er flere kurver i figuren, og hver af dem har en farve. </span>
+                             <span class="c1"># Kurverne har nummer 0, 1, 2, ... i den rækkefølge, de blev tegnet, så cosinus-kurven er 0</span>
+<span class="n">figur</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  
+                             <span class="c1"># ... og sinus er nummer 1. Her bruges RGB-farvekode. Farven er brun!</span>
+                             
+<span class="c1"># Efter at have ændret indstillingerne, beder vi Python om at opdatere figuren:</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_19_0.png" src="../../../../_images/Notebook3_plot_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="figurer-som-lister">
+<h3>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h3>
+<p>I overstående eksempler har vi benyttet indeksering (som vi kender det fra lister) til at ændre på forskellige parametre. En af fordelene ved dette er at vi kan udvide vores figur ved brug af <code>.append()</code> og <code>.extend()</code> til at bygge videre på en figur, hvis vi ønsker at samle flere plots i en figur. Som eksempel vil vi bruge <code>.append()</code> til at tilføje en ekstra kurve til overstående figur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">figur2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span> <span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_22_0.png" src="../../../../_images/Notebook3_plot_22_0.png" />
+</div>
+</div>
+<p>Denne kurve har nu fået objektnavnet <code>figur2[0]</code> fordi det er den første kurve i figuren, og vi kan nu tilføje den til <code>figur</code> ovenfor ved hjælp af <code>append</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">figur2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_24_0.png" src="../../../../_images/Notebook3_plot_24_0.png" />
+</div>
+</div>
+<p>Hvis man vil kombinere figurer, som alle har flere kurver, kan man bruge <code>.extend()</code> til at tilføje alle plots fra en figur til den anden. Hvis <code>figur2</code> således havde haft 2 kurver, ville vi kunne tilføje begge  til <code>figur</code> ved at skrive <code>figur.extend(figur2)</code>.</p>
+</div>
+</div>
+<div class="section" id="gaffelfunktioner">
+<h2>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h2>
+<p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Syntaksen  er <code>sp.Piecewise((udtryk1, intervalbetingelse1), (udtryk2, intervalbetingelse2))</code>. Funktionen
+$<span class="math notranslate nohighlight">\(f(x) = \begin{cases} -1 \quad &amp;x &lt; 4 \\ x - 5 \quad &amp;x \geq 4\end{cases}\)</span>$
+angives derfor som</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">figur3</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_27_0.png" src="../../../../_images/Notebook3_plot_27_0.png" />
+</div>
+</div>
+<p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde hvis man skal tegne en gaffelfunktion, hvor samme udtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Hvis forklaringen ikke er tydelig, håber vi at et eksempel kan hjælpe: Betragt funtionen
+$<span class="math notranslate nohighlight">\(g_1(x) = \begin{cases} -2x \quad &amp;x &lt; -2 \\ x^2 \quad &amp;-2\leq x\leq 2\\ 2x \quad &amp;2 &lt; x\quad \end{cases}\)</span><span class="math notranslate nohighlight">\(
+som kan skrives kortere som 
+\)</span><span class="math notranslate nohighlight">\(g_2(x) = \begin{cases} x^2 \quad &amp;|x|\leq 2\\ 2|x| \quad &amp;\mbox{ellers}\end{cases}\)</span>$
+På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">&lt;-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">True</span><span class="p">))</span>   <span class="c1"># Bemærk at vi for andet udtryk med vilje</span>
+<span class="c1"># ikke skriver nogen betingelse for x, men blot &#39;True&#39;, som altid er opfyldt, idet vi ønsker at bruge det</span>
+<span class="c1"># andet udtryk når betingelsen for første udtryk (abs(x)&lt;=2) ikke er opfyldt.</span>
+
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion 2&quot;</span><span class="p">)</span> <span class="c1"># Vi ser kun en kurve, da udtrykkene er ens.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_29_0.png" src="../../../../_images/Notebook3_plot_29_0.png" />
+</div>
+</div>
+<p>Angives udtrykkene derimod i omvendt rækkefølge, kommer udtrykket <span class="math notranslate nohighlight">\(x^2\)</span> aldrig i brug, da betingelsen <code>True</code> altid er opfyldt, og det er blot <code>abs(x)</code>, dvs. <span class="math notranslate nohighlight">\(|x|\)</span>, der tegnes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">True</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion (fejldefineret)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Notebook3_plot_31_0.png" src="../../../../_images/Notebook3_plot_31_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/jupyter_execute/notebooks/sympy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jonathan og Johann<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

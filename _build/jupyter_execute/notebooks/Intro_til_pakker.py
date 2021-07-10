@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Mere end bare vanilje
+# # Intro til pakker
 # 
 # Python er et af de mest brugte programmering sprog i verden specielt i den akademiske verden. Derfor er der også en kæmpe mængde pakker. Her i starten skal i stifte bekendskab med 4:
 #  * Sympy
@@ -61,10 +61,7 @@ plt.plot(x,y)
 
 # Dette er det helt fundementale for hvordan pakker hentes og funktioner fra en pakke kaldes. Nu skal du så læsse de individuelle noter for at kunne bruge dem i dine studier.
 
-# ### Instaltion af Pakker
 # 
-# Dette afsnit er kun hvis vil hente flere pakker eller du for fejlen
-# ` No module named '[pakke navn]' `. Tjek først at du har stavet rigtigt. Hvis du har stavet rigtigt så prøv at åbne en `ananconda terminal`. Gør dette ved at skrive 'ananconda terminal' i 'Type here to search' på windows eller i 'Spotlight search' på mac. Skriv da `conda install ` også navnet på pakken fx `conda install scipy`. Dette kan også bruges til at installere andre pakker hvis du vil det. 
 
 # In[ ]:
 

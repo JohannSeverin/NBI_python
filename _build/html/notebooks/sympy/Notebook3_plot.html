@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python/SymPy-notebook til LinALys uge 3: Plotning &#8212; Python i LinAlys og MekRel</title>
+    <title>Plotting i SymPy &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
-    <link rel="prev" title="Python/SymPy-notebook til LinALys uge 3: Ligningsløsning" href="Notebook3_ligninger.html" />
+    <link rel="next" title="Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
+    <link rel="prev" title="Ligningsløsning" href="Notebook3_ligninger.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,19 +86,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -116,6 +116,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -130,22 +135,27 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -154,13 +164,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_kompleks.html">
-     Komplekse tal i SymPy
+    <a class="reference internal" href="Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_FlereVar.html">
-     Funktioner af flere variable
+    <a class="reference internal" href="Notebook_kompleks.html">
+     Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -269,24 +279,24 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-med-sympy">
-   Plot med SymPy
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Plotting i SymPy
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#parametre-for-plot">
      Parametre for Plot
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#figurer-som-lister">
      Figurer som lister
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gaffelfunktioner">
    Gaffelfunktioner
   </a>
@@ -302,11 +312,11 @@
         
               <div>
                 
-  <div class="section" id="python-sympy-notebook-til-linalys-uge-3-plotning">
-<h1>Python/SymPy-notebook til LinALys uge 3: Plotning<a class="headerlink" href="#python-sympy-notebook-til-linalys-uge-3-plotning" title="Permalink to this headline">¶</a></h1>
-<h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Plot-med-SymPy" data-toc-modified-id="Plot-med-SymPy-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Plot med SymPy</a></span><ul class="toc-item"><li><span><a href="#Parametre-for-Plot" data-toc-modified-id="Parametre-for-Plot-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametre for Plot</a></span></li><li><span><a href="#Figurer-som-lister" data-toc-modified-id="Figurer-som-lister-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Figurer som lister</a></span></li></ul></li><li><span><a href="#Gaffelfunktioner" data-toc-modified-id="Gaffelfunktioner-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Gaffelfunktioner</a></span></li></ul></div><div class="section" id="plot-med-sympy">
-<h2>Plot med SymPy<a class="headerlink" href="#plot-med-sympy" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="plotting-i-sympy">
+<h1>Plotting i SymPy<a class="headerlink" href="#plotting-i-sympy" title="Permalink to this headline">¶</a></h1>
+<p><strong>Foreslået ændringer:</strong><br />
+I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt.</p>
+<p>Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre.</p>
 <p>Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -339,7 +349,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_8_0.png" src="../../_images/Notebook3_plot_8_0.png" />
+<img alt="../../_images/Notebook3_plot_6_0.png" src="../../_images/Notebook3_plot_6_0.png" />
 </div>
 </div>
 <p>Bemærk semikolonet, der beder Python om ikke at skrive outputtet, som her ville være en kode i stil med <code>sympy.plotting.plot.Plot at 0x136af246608</code>, som ikke er så relevant i denne kontekst.</p>
@@ -351,7 +361,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_10_0.png" src="../../_images/Notebook3_plot_10_0.png" />
+<img alt="../../_images/Notebook3_plot_8_01.png" src="../../_images/Notebook3_plot_8_01.png" />
 </div>
 </div>
 <p>Man behøver naturligvis ikke at definere udtrykket først som en variabel, men kan skrive funktionen eller udtrykket direkte ind i <code>plot</code>. Hvis man ønsker at lave flere grafer i samme figur, kan man skrive <code>plot(udtryk_1, udtryk_2, (variabel, start, slut))</code> som det fremgår her:</p>
@@ -362,11 +372,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_12_0.png" src="../../_images/Notebook3_plot_12_0.png" />
+<img alt="../../_images/Notebook3_plot_10_01.png" src="../../_images/Notebook3_plot_10_01.png" />
 </div>
 </div>
 <div class="section" id="parametre-for-plot">
-<h3>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h3>
+<h2>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h2>
 <p>Udover at angive funktionen/udtrykket og afgrænsningen af den variable, kan man til <code>plot</code> angive en del andre oplysninger, som angives ved at tilføje <code>keyword = værdi</code> i slutningen af udtrykket. Nogle hyppigt anvendte keywords er:</p>
 <ul class="simple">
 <li><p><code>title</code> angiver titlen på figuren. Angiv værdien som en string, altså som “Ønsket titel”</p></li>
@@ -384,7 +394,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_15_0.png" src="../../_images/Notebook3_plot_15_0.png" />
+<img alt="../../_images/Notebook3_plot_13_0.png" src="../../_images/Notebook3_plot_13_0.png" />
 </div>
 </div>
 <p>Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger:</p>
@@ -396,7 +406,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_17_0.png" src="../../_images/Notebook3_plot_17_0.png" />
+<img alt="../../_images/Notebook3_plot_15_01.png" src="../../_images/Notebook3_plot_15_01.png" />
 </div>
 </div>
 <p>Når vi vil ændre indstillingerne for en eksisterende graf, er syntaksen <code>figurnavn.keyword = ny_værdi</code></p>
@@ -415,12 +425,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_19_0.png" src="../../_images/Notebook3_plot_19_0.png" />
+<img alt="../../_images/Notebook3_plot_17_01.png" src="../../_images/Notebook3_plot_17_01.png" />
 </div>
 </div>
 </div>
 <div class="section" id="figurer-som-lister">
-<h3>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h3>
+<h2>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h2>
 <p>I overstående eksempler har vi benyttet indeksering (som vi kender det fra lister) til at ændre på forskellige parametre. En af fordelene ved dette er at vi kan udvide vores figur ved brug af <code>.append()</code> og <code>.extend()</code> til at bygge videre på en figur, hvis vi ønsker at samle flere plots i en figur. Som eksempel vil vi bruge <code>.append()</code> til at tilføje en ekstra kurve til overstående figur.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -431,7 +441,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_22_0.png" src="../../_images/Notebook3_plot_22_0.png" />
+<img alt="../../_images/Notebook3_plot_20_0.png" src="../../_images/Notebook3_plot_20_0.png" />
 </div>
 </div>
 <p>Denne kurve har nu fået objektnavnet <code>figur2[0]</code> fordi det er den første kurve i figuren, og vi kan nu tilføje den til <code>figur</code> ovenfor ved hjælp af <code>append</code>:</p>
@@ -443,14 +453,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_24_0.png" src="../../_images/Notebook3_plot_24_0.png" />
+<img alt="../../_images/Notebook3_plot_22_01.png" src="../../_images/Notebook3_plot_22_01.png" />
 </div>
 </div>
 <p>Hvis man vil kombinere figurer, som alle har flere kurver, kan man bruge <code>.extend()</code> til at tilføje alle plots fra en figur til den anden. Hvis <code>figur2</code> således havde haft 2 kurver, ville vi kunne tilføje begge  til <code>figur</code> ved at skrive <code>figur.extend(figur2)</code>.</p>
 </div>
 </div>
 <div class="section" id="gaffelfunktioner">
-<h2>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h2>
+<h1>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h1>
 <p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Syntaksen  er <code>sp.Piecewise((udtryk1, intervalbetingelse1), (udtryk2, intervalbetingelse2))</code>. Funktionen
 $<span class="math notranslate nohighlight">\(f(x) = \begin{cases} -1 \quad &amp;x &lt; 4 \\ x - 5 \quad &amp;x \geq 4\end{cases}\)</span>$
 angives derfor som</p>
@@ -463,7 +473,7 @@ angives derfor som</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_27_0.png" src="../../_images/Notebook3_plot_27_0.png" />
+<img alt="../../_images/Notebook3_plot_25_0.png" src="../../_images/Notebook3_plot_25_0.png" />
 </div>
 </div>
 <p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde hvis man skal tegne en gaffelfunktion, hvor samme udtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Hvis forklaringen ikke er tydelig, håber vi at et eksempel kan hjælpe: Betragt funtionen
@@ -483,7 +493,7 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_29_0.png" src="../../_images/Notebook3_plot_29_0.png" />
+<img alt="../../_images/Notebook3_plot_27_01.png" src="../../_images/Notebook3_plot_27_01.png" />
 </div>
 </div>
 <p>Angives udtrykkene derimod i omvendt rækkefølge, kommer udtrykket <span class="math notranslate nohighlight">\(x^2\)</span> aldrig i brug, da betingelsen <code>True</code> altid er opfyldt, og det er blot <code>abs(x)</code>, dvs. <span class="math notranslate nohighlight">\(|x|\)</span>, der tegnes</p>
@@ -496,8 +506,7 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_31_0.png" src="../../_images/Notebook3_plot_31_0.png" />
-</div>
+<img alt="../../_images/Notebook3_plot_29_01.png" src="../../_images/Notebook3_plot_29_01.png" />
 </div>
 </div>
 </div>
@@ -527,8 +536,8 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page">Python/SymPy-notebook til LinALys uge 3: Ligningsløsning</a>
-    <a class='right-next' id="next-link" href="Notebook4.html" title="next page">Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel</a>
+    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page">Ligningsløsning</a>
+    <a class='right-next' id="next-link" href="Notebook4.html" title="next page">Differential- og integralregning for funktioner af en variabel</a>
 
         </div>
         

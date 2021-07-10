@@ -5,6 +5,8 @@
 # 
 # Numpy bruges til at lave nummeriske beregniner og vil være jeres primære værktøj i laboratoriet. Det skyldes at man kan bruge `numpy arrays`. Det er en data type som gør operationer på mange tal hurtigt og forhåbenlig intuativt når i har arbejdet lidt med det.
 # 
+# **OBS:** Hvis du gerne vil downloade og køre denne notebook skal du også bruge filen `Testdata.csv` som kan hentes her [link til host](https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker)
+# 
 
 # 
 # ## Numpy arrays

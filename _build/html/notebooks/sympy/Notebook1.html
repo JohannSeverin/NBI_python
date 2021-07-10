@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python/SymPy-notebook til LinALys uge 2." href="Notebook2.html" />
+    <link rel="next" title="SymPy i LinAlys" href="Notebook2.html" />
     <link rel="prev" title="SymPy" href="../pakker/Sympy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,12 +93,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -135,22 +135,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -160,17 +165,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     Lineær Algebra - notebook nr. 2
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
      Komplekse tal i SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_FlereVar.html">
-     Funktioner af flere variable
     </a>
    </li>
   </ul>
@@ -332,14 +332,17 @@
         
               <div>
                 
-  <div class="section" id="introduktion-til-python-i-linalys">
+  <p><strong>Foreslået ændringer</strong><br />
+Denne note book bliver skrevet om til et fælles dokument med MekRel</p>
+<p>Se derfor ændringer under <em>introduktion til python</em>.</p>
+<p>Overordnet er dokumentet kogt ned, så den blot indeholder det mest vigtige. Da det er skrevet sammen med MekRel har vi valgt stadig at beholde if/else statements og løkker, da de også er vigtige for en programmerings tankegang.</p>
+<div class="section" id="introduktion-til-python-i-linalys">
 <h1>Introduktion til Python i LinAlys<a class="headerlink" href="#introduktion-til-python-i-linalys" title="Permalink to this headline">¶</a></h1>
 <p>LinALys-kurset indeholder to spor (analyse og lineær algebra) og har fokus på “blyantsregning” og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I år har vi valgt at bruge Python-modulet SymPy som CAS-værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel-kurset). Dette dokument er det første af en række notebooks, der introducerer de nødvendige koncepter.</p>
 <p>Det er vigtigt at være opmærksom på, at modsat CAS-værktøjer som Maple, TI_Nspire og WordMat, så er Python ikke lavet specifikt til symbolske udregninger, men er et generelt anvendeligt programmeringssprog. Man skal derfor vænne sig til både Pythons syntaks og programmering som helhed for at få det maksimale ud af SymPy. Når det til gengæld er klaret, er det muligt at benytte SymPy i en lang række sammenhænge, og f.eks. nemt skifte mellem numeriske og symbolske anvendelser. Dette vil vi vende tilbage til, når vi har forudsætningerne på plads.</p>
 <p>Dette er ikke en grundig indføring i Python, men vi vil i stedet med eksempler vise hvordan man benytter SymPy til at løse typiske opgaver og tegne funktioner. I nogle tilfælde stilles der i kurset opgaver, hvor man skal arbejde  videre med disse eksempler. Hvis man ønsker en dybere forståelse for Python, kan vi anbefale det online (gratis) kursus i Python på <a class="reference external" href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a>, hvorefter man kan prøve kræfter med nogle udfordringer på <a class="reference external" href="https://projecteuler.net/">https://projecteuler.net/</a>.</p>
 <p><em><strong>Studerende, der allerede er bekendt med Python anbefales at springe let hen over teksterne men at kigge kode-eksemplerne igennem for at bekræfte, at man har forstået dem.</strong></em></p>
-<h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Hvordan-virker-en-Jupyter-notebook?" data-toc-modified-id="Hvordan-virker-en-Jupyter-notebook?-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Hvordan virker en Jupyter notebook?</a></span></li><li><span><a href="#I-Python-er-alt-en-variabel" data-toc-modified-id="I-Python-er-alt-en-variabel-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>I Python er alt en variabel</a></span></li><li><span><a href="#Basale-regneoperationer" data-toc-modified-id="Basale-regneoperationer-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Basale regneoperationer</a></span><ul class="toc-item"><li><span><a href="#Redefinering-af-variable" data-toc-modified-id="Redefinering-af-variable-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Redefinering af variable</a></span></li></ul></li><li><span><a href="#Lighedstegnets-dobbelte-betydning" data-toc-modified-id="Lighedstegnets-dobbelte-betydning-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Lighedstegnets dobbelte betydning</a></span></li><li><span><a href="#If-else-statements" data-toc-modified-id="If-else-statements-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>If-else-statements</a></span></li><li><span><a href="#Løkker/loops" data-toc-modified-id="Løkker/loops-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Løkker/loops</a></span></li><li><span><a href="#Import-af-biblioteker/libaries" data-toc-modified-id="Import-af-biblioteker/libaries-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Import af biblioteker/libaries</a></span></li></ul></div><div class="section" id="hvordan-virker-en-jupyter-notebook">
+<div class="section" id="hvordan-virker-en-jupyter-notebook">
 <h2>Hvordan virker en Jupyter notebook?<a class="headerlink" href="#hvordan-virker-en-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <p>I en Notebook skriver man Python-kode i forskellige celler (felter), og man kører derefter koden i den celle, man befinder sig i. Koden bliver læst linje fra linje i den enkelte celle fra top til bund, og efter cellens kode er blivet kørt, vil notebooken huske de variable man har indlæst, og man kan forsætte med kode, der bruger disse variable i en celle længere nede. Hvis man ønsker at køre en enkelt celle, er det smart at benytte genvejen <code>shift</code> + <code>enter</code>.</p>
 <p>Felterne i en notebook kommer i to typer: markdowns og kode. Det felt, du læser nu, er eksempelvis et Markdowns-felt, hvor resultatet er formatteret tekst. Derudover er der kodefelter, som vi vil se snart, hvor vi skriver selve koden og kan køre/afvikle den.</p>
@@ -888,7 +891,7 @@ Og summen er 180
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../pakker/Sympy.html" title="previous page">SymPy</a>
-    <a class='right-next' id="next-link" href="Notebook2.html" title="next page">Python/SymPy-notebook til LinALys uge 2.</a>
+    <a class='right-next' id="next-link" href="Notebook2.html" title="next page">SymPy i LinAlys</a>
 
         </div>
         

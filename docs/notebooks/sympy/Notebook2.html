@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python/SymPy-notebook til LinALys uge 2. &#8212; Python i LinAlys og MekRel</title>
+    <title>SymPy i LinAlys &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python/SymPy-notebook til LinALys uge 3: Ligningsløsning" href="Notebook3_ligninger.html" />
+    <link rel="next" title="Ligningsløsning" href="Notebook3_ligninger.html" />
     <link rel="prev" title="Introduktion til Python i LinAlys" href="Notebook1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -86,19 +86,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -116,6 +116,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -130,22 +135,27 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -154,13 +164,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_kompleks.html">
-     Komplekse tal i SymPy
+    <a class="reference internal" href="Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_FlereVar.html">
-     Funktioner af flere variable
+    <a class="reference internal" href="Notebook_kompleks.html">
+     Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -271,7 +281,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Python/SymPy-notebook til LinALys uge 2.
+   SymPy i LinAlys
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -331,10 +341,14 @@
         
               <div>
                 
-  <div class="section" id="python-sympy-notebook-til-linalys-uge-2">
-<h1>Python/SymPy-notebook til LinALys uge 2.<a class="headerlink" href="#python-sympy-notebook-til-linalys-uge-2" title="Permalink to this headline">¶</a></h1>
-<h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Symboler-og-tal" data-toc-modified-id="Symboler-og-tal-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Symboler og tal</a></span><ul class="toc-item"><li><span><a href="#Eksakt-repræsentation-af-tal" data-toc-modified-id="Eksakt-repræsentation-af-tal-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Eksakt repræsentation af tal</a></span></li></ul></li><li><span><a href="#Evaluer-udtryk" data-toc-modified-id="Evaluer-udtryk-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Evaluer udtryk</a></span><ul class="toc-item"><li><span><a href="#Symbolsk-substituering" data-toc-modified-id="Symbolsk-substituering-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Symbolsk substituering</a></span></li><li><span><a href="#Numerisk-evaluering" data-toc-modified-id="Numerisk-evaluering-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Numerisk evaluering</a></span></li></ul></li><li><span><a href="#Grænser" data-toc-modified-id="Grænser-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Grænser</a></span></li><li><span><a href="#Anbefalet-import-blok" data-toc-modified-id="Anbefalet-import-blok-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Anbefalet import-blok</a></span></li></ul></div></div>
+  <div class="section" id="sympy-i-linalys">
+<h1>SymPy i LinAlys<a class="headerlink" href="#sympy-i-linalys" title="Permalink to this headline">¶</a></h1>
+<p><strong>Foreslået ændringer:</strong>
+I denne her Notebook er der ikke brug for de store ændringer til struktur.</p>
+<p>Når jeg har talt med de andre kurser, er vi dog blevet enige om, at man skal have en forståelse af pakkerne, og vi skal derfor måske bevæge os væk fra en “anbefalet” blok af tekst, men i stedet bare hente tingene ind, når vi skal bruge dem.</p>
+<p>Med denne nye struktur, burde vi også overveje om grænser skal rykkes til en anden notebook, så vi i stedet blot har overskrifter og ikke nødvendigvis har det på ugentlig basis.</p>
+<p>Desuden bør vi nok gennemgå, hvad der er syntaks, og hvad der er kaldesekvens. Dette gør jeg, når jeg retter dem til.</p>
+</div>
 <div class="section" id="hvad-er-sympy">
 <h1>Hvad er SymPy?<a class="headerlink" href="#hvad-er-sympy" title="Permalink to this headline">¶</a></h1>
 <p>I denne notebook vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er et bibliotek i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde, som vi importerede  biblioteker i den sidste notebook. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for biblioteket: <code>import sympy as sp</code>.<br />
@@ -367,7 +381,7 @@ Den normale <code>print()</code> i Python printer output i “string”-format, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_9_0.png" src="../../_images/Notebook2_9_0.png" />
+<img alt="../../_images/Notebook2_9_01.png" src="../../_images/Notebook2_9_01.png" />
 </div>
 </div>
 <p>Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python-operationer såsom: <code>+</code>, <code>-</code>, <code>*</code>,<code>/</code> eller <code>**</code>. Derudover kan vi benytte en del andre regneoperationer ved at skrive <code>sp.</code> foran operationen.
@@ -387,7 +401,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_11_0.png" src="../../_images/Notebook2_11_0.png" />
+<img alt="../../_images/Notebook2_11_01.png" src="../../_images/Notebook2_11_01.png" />
 </div>
 </div>
 <p>Vi kan også danne nye symbolske variable ud fra eksisterende variable. Vi kan f.eks. definere en funktion <span class="math notranslate nohighlight">\(f\)</span> baseret på tal og eksisterende symbolske variable:</p>
@@ -406,7 +420,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_15_0.png" src="../../_images/Notebook2_15_0.png" />
+<img alt="../../_images/Notebook2_15_01.png" src="../../_images/Notebook2_15_01.png" />
 </div>
 </div>
 <div class="section" id="eksakt-repraesentation-af-tal">
@@ -420,7 +434,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_18_0.png" src="../../_images/Notebook2_18_0.png" />
+<img alt="../../_images/Notebook2_18_01.png" src="../../_images/Notebook2_18_01.png" />
 </div>
 </div>
 <p>En brøk bestående bestående af symboler lider ikke under samme problem, så der kan vi bare bruge almindelig division.</p>
@@ -432,7 +446,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_20_0.png" src="../../_images/Notebook2_20_0.png" />
+<img alt="../../_images/Notebook2_20_01.png" src="../../_images/Notebook2_20_01.png" />
 </div>
 </div>
 <p>Vi kan regne med brøkerne ved hjælp af de almindelige regnearter:</p>
@@ -449,8 +463,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_22_0.png" src="../../_images/Notebook2_22_0.png" />
-<img alt="../../_images/Notebook2_22_1.png" src="../../_images/Notebook2_22_1.png" />
+<img alt="../../_images/Notebook2_22_01.png" src="../../_images/Notebook2_22_01.png" />
+<img alt="../../_images/Notebook2_22_11.png" src="../../_images/Notebook2_22_11.png" />
 </div>
 </div>
 <p>Vi får ofte brug for eksakte værdier af <span class="math notranslate nohighlight">\(\pi\)</span> og evt. andre særlige tal. En eksakt værdi af <span class="math notranslate nohighlight">\(\pi\)</span> får vi ved at skrive <code>from sympy import pi</code>. Når vi sammensætter symbolske variable og <span class="math notranslate nohighlight">\(\pi\)</span> med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for <code>sp.Rational(tæller, nævner)</code>, da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede tal (<em>floats</em>):</p>
@@ -463,7 +477,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_24_0.png" src="../../_images/Notebook2_24_0.png" />
+<img alt="../../_images/Notebook2_24_01.png" src="../../_images/Notebook2_24_01.png" />
 </div>
 </div>
 <p>Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o’er og ligner et uendelighedstegn hvis man har lidt fantasi).</p>
@@ -475,7 +489,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_26_0.png" src="../../_images/Notebook2_26_0.png" />
+<img alt="../../_images/Notebook2_26_01.png" src="../../_images/Notebook2_26_01.png" />
 </div>
 </div>
 <p>På samme måde kan vi også importere den imaginære enhed <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. <em>Hvis du ikke kender til de komplekse talk, så gå ikke i panik. De bliver introduceret i slutningen af blok 1</em></p>
@@ -489,8 +503,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_28_0.png" src="../../_images/Notebook2_28_0.png" />
-<img alt="../../_images/Notebook2_28_1.png" src="../../_images/Notebook2_28_1.png" />
+<img alt="../../_images/Notebook2_28_01.png" src="../../_images/Notebook2_28_01.png" />
+<img alt="../../_images/Notebook2_28_11.png" src="../../_images/Notebook2_28_11.png" />
 </div>
 </div>
 <p>Vi vil vende tilbage til imaginære tal i SymPy i en senere notebook.</p>
@@ -514,8 +528,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_33_0.png" src="../../_images/Notebook2_33_0.png" />
-<img alt="../../_images/Notebook2_33_1.png" src="../../_images/Notebook2_33_1.png" />
+<img alt="../../_images/Notebook2_33_01.png" src="../../_images/Notebook2_33_01.png" />
+<img alt="../../_images/Notebook2_33_11.png" src="../../_images/Notebook2_33_11.png" />
 </div>
 </div>
 <p>Vi kan også indsætte et udtryk ind i et andet:</p>
@@ -533,9 +547,9 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_35_0.png" src="../../_images/Notebook2_35_0.png" />
-<img alt="../../_images/Notebook2_35_1.png" src="../../_images/Notebook2_35_1.png" />
-<img alt="../../_images/Notebook2_35_2.png" src="../../_images/Notebook2_35_2.png" />
+<img alt="../../_images/Notebook2_35_01.png" src="../../_images/Notebook2_35_01.png" />
+<img alt="../../_images/Notebook2_35_11.png" src="../../_images/Notebook2_35_11.png" />
+<img alt="../../_images/Notebook2_35_21.png" src="../../_images/Notebook2_35_21.png" />
 </div>
 </div>
 <p>Her har vi altså defineret to udtryk og erstattet alle forekomster af x i det første udtryk med <span class="math notranslate nohighlight">\(g = a^2 + b^2\)</span>. Vi kunne have opået det samme (nemmere, men mindre generelt) ved at skrive:</p>
@@ -549,7 +563,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_37_0.png" src="../../_images/Notebook2_37_0.png" />
+<img alt="../../_images/Notebook2_37_01.png" src="../../_images/Notebook2_37_01.png" />
 </div>
 </div>
 </div>
@@ -563,7 +577,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_40_0.png" src="../../_images/Notebook2_40_0.png" />
+<img alt="../../_images/Notebook2_40_01.png" src="../../_images/Notebook2_40_01.png" />
 </div>
 </div>
 <p>Vi kan benytte de to metoder i kombination, hvis vi eksempelvis vil finde værdien af et udtryk og så approksimere det.</p>
@@ -582,9 +596,9 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_42_0.png" src="../../_images/Notebook2_42_0.png" />
-<img alt="../../_images/Notebook2_42_1.png" src="../../_images/Notebook2_42_1.png" />
-<img alt="../../_images/Notebook2_42_2.png" src="../../_images/Notebook2_42_2.png" />
+<img alt="../../_images/Notebook2_42_01.png" src="../../_images/Notebook2_42_01.png" />
+<img alt="../../_images/Notebook2_42_11.png" src="../../_images/Notebook2_42_11.png" />
+<img alt="../../_images/Notebook2_42_21.png" src="../../_images/Notebook2_42_21.png" />
 </div>
 </div>
 </div>
@@ -603,8 +617,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_44_0.png" src="../../_images/Notebook2_44_0.png" />
-<img alt="../../_images/Notebook2_44_1.png" src="../../_images/Notebook2_44_1.png" />
+<img alt="../../_images/Notebook2_44_01.png" src="../../_images/Notebook2_44_01.png" />
+<img alt="../../_images/Notebook2_44_11.png" src="../../_images/Notebook2_44_11.png" />
 </div>
 </div>
 <p>hvilket ikke er den store overraskelse, eftersom <span class="math notranslate nohighlight">\(e^{-x}\)</span> er defineret i <span class="math notranslate nohighlight">\(x=0\)</span>, er kontinuert, og <span class="math notranslate nohighlight">\(e^0=1\)</span>.</p>
@@ -616,7 +630,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_46_0.png" src="../../_images/Notebook2_46_0.png" />
+<img alt="../../_images/Notebook2_46_01.png" src="../../_images/Notebook2_46_01.png" />
 </div>
 </div>
 <p>Vær særligt opmærksom på situationer, hvor grænseværdien kunne være forskellig oppefra og nedefra, hvilket oftest forkommer for udtryk på brøkform i det/de <span class="math notranslate nohighlight">\(x\)</span>-værdier, hvor nævneren antager værdien nul. Betragt f.eks. <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\)</span> når <span class="math notranslate nohighlight">\(x \to 0\)</span>:</p>
@@ -636,8 +650,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_48_0.png" src="../../_images/Notebook2_48_0.png" />
-<img alt="../../_images/Notebook2_48_1.png" src="../../_images/Notebook2_48_1.png" />
+<img alt="../../_images/Notebook2_48_01.png" src="../../_images/Notebook2_48_01.png" />
+<img alt="../../_images/Notebook2_48_11.png" src="../../_images/Notebook2_48_11.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -648,7 +662,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_49_0.png" src="../../_images/Notebook2_49_0.png" />
+<img alt="../../_images/Notebook2_49_01.png" src="../../_images/Notebook2_49_01.png" />
 </div>
 </div>
 </div>
@@ -698,7 +712,7 @@ Herunder er der et godt forslag til, hvad man kan importere i starten af en note
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Notebook1.html" title="previous page">Introduktion til Python i LinAlys</a>
-    <a class='right-next' id="next-link" href="Notebook3_ligninger.html" title="next page">Python/SymPy-notebook til LinALys uge 3: Ligningsløsning</a>
+    <a class='right-next' id="next-link" href="Notebook3_ligninger.html" title="next page">Ligningsløsning</a>
 
         </div>
         

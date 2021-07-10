@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Jupyter Notebooks
+# # Hvad er Python? 
+# I løbet af de første halve år på jeres uddannelse i fysik, kommer I til at bruge python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da denne indeholder alt, hvad man umiddelbart skal bruge.
+# 
 # I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Code celler er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske ift. jeres forsøg. Man kan med fordel bruge tastaturgenvejen `shift` + `enter` for at køre en celle, og bevæge sig videre til den næste i rækken.
 # 
-# Derudover er det vigtigt at understrege at i **ikke** skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og **skal** afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse må *godt* afleveres som Notebooks, men det hører i mere om senere.
+# Derudover er det vigtigt at understrege at i **ikke** skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og **skal** afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse __må__ *godt* afleveres som Notebooks, men det hører i mere om senere.
 
 # ## Hvordan virker Python?
 # 
@@ -112,19 +114,6 @@ print(81 ** (1/2)) # Eller benytte at kvadratroden af x er x**(1/2) til at finde
 
 
 print(81 ** 1/2) # Bemærk at dette IKKE beregner kvadratroden af 81 ligesom ovenfor:forskellen er parentesen
-
-
-# Man kan også komme ud for at skulle bruge integer-division: <code>//</code> eller modulo <code>%</code>. Som kan opfattes som hhv. division med efterfølgende nedrunding til nærmeste helttal og at bestemme resten af en division. Eksempelvis, hvis vi ønsker at kende den heltallige division og resten af 100 med 11, regnes det som:  
-
-# In[7]:
-
-
-division = 100 // 11    # // for integer-division
-rest = 100 % 11         # %  for rest
-
-# Ved at benytte + mellem strenge sættes de i forlængelse af hinanden
-# Vi benytter str(tal) for at lave tallet til en string, så den kan plusses med de andre strings
-print("Divisionen giver: " + str(division) + " med rest: " + str(rest))
 
 
 # Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere.

@@ -93,12 +93,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -135,22 +135,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
@@ -160,17 +165,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_LinAlg_2.html">
-     Lineær Algebra - notebook nr. 2
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_kompleks.html">
      Komplekse tal i SymPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sympy/Notebook_FlereVar.html">
-     Funktioner af flere variable
     </a>
    </li>
   </ul>
@@ -285,8 +285,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculus-i">
-   Calculus i
+  <a class="reference internal nav-link" href="#calculus-i-sympy">
+   Calculus i SymPy
   </a>
  </li>
 </ul>
@@ -373,9 +373,50 @@
 </div>
 </div>
 </div>
-<div class="section" id="calculus-i">
-<h2>Calculus i<a class="headerlink" href="#calculus-i" title="Permalink to this headline">¶</a></h2>
-<p>Jeg er sådan lidt usikker på, hvor meget jeg skal skrive i den her notebook, når vi også laver en stor samnling.</p>
+<div class="section" id="calculus-i-sympy">
+<h2>Calculus i SymPy<a class="headerlink" href="#calculus-i-sympy" title="Permalink to this headline">¶</a></h2>
+<p>Der, hvor vi virkelig får glæde af SymPy er, når vi benytte det til differentiering, integration og til eksempelvis at finde grænser. Hvis vi nu har funktionen:<br />
+<span class="math notranslate nohighlight">\( f(x) = \frac{x^2 - 4}{x + 2} \cdot e^{-x}\)</span></p>
+<p>Kan vi benytte sympy til at finde grænser for <span class="math notranslate nohighlight">\(x \longrightarrow 2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
+</div>
+</div>
+<p>Den afledte funktion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 x^{3} e^{- x^{2}} + 2 x e^{- x^{2}}\]</div>
+</div>
+</div>
+<p>Eller til integration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \left(1 - a\right) e^{- a} + \left(1 - b\right) e^{- b}\]</div>
+</div>
+</div>
+<p>For en nøjere gennemgang af SymPy og de mange andre muligheder, som det tilbyder, referer vi til <strong>Indsæt link til SymPy Notebooks</strong></p>
 </div>
 </div>
 

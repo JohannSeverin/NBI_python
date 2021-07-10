@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Komplekse tal i SymPy" href="Notebook_kompleks.html" />
-    <link rel="prev" title="Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
+    <link rel="next" title="Flere metoder i Linær Algebra" href="Notebook_LinAlg_2.html" />
+    <link rel="prev" title="Funktioner af flere variable" href="Notebook_FlereVar.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,19 +86,19 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Python i MekRel og LinAlys
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
-   Jupyter Notebooks
+   Hvad er Python?
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Mere end bare vanilje
+   Intro til pakker
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -116,6 +116,11 @@
      Matplotlib
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pakker/Sympy.html">
+     SymPy
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -130,22 +135,27 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     Python/SymPy-notebook til LinALys uge 2.
+     SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+     Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     Python/SymPy-notebook til LinALys uge 3: Plotning
+     Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_FlereVar.html">
+     Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -154,13 +164,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_kompleks.html">
-     Komplekse tal i SymPy
+    <a class="reference internal" href="Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Notebook_FlereVar.html">
-     Funktioner af flere variable
+    <a class="reference internal" href="Notebook_kompleks.html">
+     Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -327,8 +337,9 @@
         
               <div>
                 
-  <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Vektorer-og-matricer" data-toc-modified-id="Vektorer-og-matricer-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Vektorer og matricer</a></span><ul class="toc-item"><li><span><a href="#Vektorer---definition-og-regneoperationer" data-toc-modified-id="Vektorer---definition-og-regneoperationer-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Vektorer - definition og regneoperationer</a></span></li><li><span><a href="#Matricer---definition-og-regneoperationer" data-toc-modified-id="Matricer---definition-og-regneoperationer-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Matricer - definition og regneoperationer</a></span></li><li><span><a href="#Nogle-indbyggede-matricer:-Identitets-,-nul-,-et--og-diagonalmatricer" data-toc-modified-id="Nogle-indbyggede-matricer:-Identitets-,-nul-,-et--og-diagonalmatricer-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Nogle indbyggede matricer: Identitets-, nul-, et- og diagonalmatricer</a></span></li></ul></li><li><span><a href="#Matrix-reduktion" data-toc-modified-id="Matrix-reduktion-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Matrix-reduktion</a></span></li><li><span><a href="#Ligningssystemer-med-een-løsning" data-toc-modified-id="Ligningssystemer-med-een-løsning-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Ligningssystemer med een løsning</a></span></li><li><span><a href="#Omvendte/inverse-matricer" data-toc-modified-id="Omvendte/inverse-matricer-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Omvendte/inverse matricer</a></span></li><li><span><a href="#Matrixrang" data-toc-modified-id="Matrixrang-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Matrixrang</a></span></li><li><span><a href="#Ligningssystemer-med-flere-løsninger:-frie-parametre" data-toc-modified-id="Ligningssystemer-med-flere-løsninger:-frie-parametre-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Ligningssystemer med flere løsninger: frie parametre</a></span></li></ul></div><div class="section" id="indledende-lineaer-algebra">
+  <p><strong>Foreslået ændringer</strong><br />
+I denne notebook skal der nok kun foretages småændringer, så den er konsistent med resten. Vi skal lige overveje, om det giver mening at have disse kapitler sammen, eller om det skal splittes yderligere. Jeg tænker primært på, at man skal kunne finde rundt i Notebooks, så vi skal nok have en bedre titel end indledende og avanceret, så man kan finde ud af, om eksempelvis en invers matrix er i den ene eller i den anden.</p>
+<div class="section" id="indledende-lineaer-algebra">
 <h1>Indledende Lineær Algebra<a class="headerlink" href="#indledende-lineaer-algebra" title="Permalink to this headline">¶</a></h1>
 <p>I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere de relevante moduler og aktiverer funktionen til visning af matematiske udtryk:</p>
 <div class="cell docutils container">
@@ -361,7 +372,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_7_0.png" src="../../_images/Notebook_LinAlg1_7_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_7_01.png" src="../../_images/Notebook_LinAlg1_7_01.png" />
 </div>
 </div>
 <p>Det ligger os selvfølgelig også frit for at kombinere tal og variable:</p>
@@ -373,7 +384,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_9_0.png" src="../../_images/Notebook_LinAlg1_9_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_9_01.png" src="../../_images/Notebook_LinAlg1_9_01.png" />
 </div>
 </div>
 <p>De to vektorer <code>vektor</code> og <code>vektor2</code> kan nu kombineres på sædvanlig vis ved addition, subtraktion og skalarmultiplikation:</p>
@@ -384,7 +395,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_11_0.png" src="../../_images/Notebook_LinAlg1_11_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_11_01.png" src="../../_images/Notebook_LinAlg1_11_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -394,7 +405,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_12_0.png" src="../../_images/Notebook_LinAlg1_12_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_12_01.png" src="../../_images/Notebook_LinAlg1_12_01.png" />
 </div>
 </div>
 <p>Hvis vi til gengæld forsøger at multiplicere de to vektorer får vi en fejl, da <code>*</code> mellem to Matrix-elementer er matrix-multiplikation, som ikke er defineret for to 3 x 1 matricer. Vi vender tilbage til matrixmultiplikation nedenfor, mens krydsprodukter (også kendt som vektor-produkter) må vente til den næste notebook om lineær algebra.</p>
@@ -407,7 +418,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_14_0.png" src="../../_images/Notebook_LinAlg1_14_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_14_01.png" src="../../_images/Notebook_LinAlg1_14_01.png" />
 </div>
 </div>
 <p>Som forventet får vi summen af produkterne af vektorens indgange, dog i en anden rækkefølge end vi normalt ville vælge ved udregning i hånden.</p>
@@ -423,7 +434,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_18_0.png" src="../../_images/Notebook_LinAlg1_18_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_18_01.png" src="../../_images/Notebook_LinAlg1_18_01.png" />
 </div>
 </div>
 <p>Det er naturligvis en forudsætning, at alle rækkerne har lige mange elementer.</p>
@@ -436,7 +447,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_20_0.png" src="../../_images/Notebook_LinAlg1_20_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_20_01.png" src="../../_images/Notebook_LinAlg1_20_01.png" />
 </div>
 </div>
 <p>Også addition og skalarmultiplikation fungerer som for vektorer:</p>
@@ -447,7 +458,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_22_0.png" src="../../_images/Notebook_LinAlg1_22_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_22_01.png" src="../../_images/Notebook_LinAlg1_22_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -457,7 +468,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_23_0.png" src="../../_images/Notebook_LinAlg1_23_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_23_01.png" src="../../_images/Notebook_LinAlg1_23_01.png" />
 </div>
 </div>
 <p>Matricer kan også multipliceres med hinanden (se Messer afsnit 5.1) så længe de har passende dimensioner. Man kan opfatte indgangen på plads (i,j) i produktet AB som prikproduktet af den i’te række i A med den j’te søjle i B, og for at dette kan lade sig gøre, skal antallet af søjler i A være det samme som antallet af rækker i B. Vi kan også skrive betingelsen som at hvis A er en matrix af dimension <span class="math notranslate nohighlight">\(m \times n\)</span>, skal B have dimension <span class="math notranslate nohighlight">\(n \times p\)</span>). I dette tilfælde kan vi gange dem sammen ved at benytte <code>*</code>:</p>
@@ -468,7 +479,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_25_0.png" src="../../_images/Notebook_LinAlg1_25_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_25_01.png" src="../../_images/Notebook_LinAlg1_25_01.png" />
 </div>
 </div>
 </div>
@@ -487,7 +498,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_27_0.png" src="../../_images/Notebook_LinAlg1_27_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_27_01.png" src="../../_images/Notebook_LinAlg1_27_01.png" />
 </div>
 </div>
 <p><strong>0- og 1-matricer:</strong> Funktionerne <code>zeros(dimension)</code> og <code>ones(dimension)</code> giver en matrix af den ønskede størrelse fyldt med hhv. 0 eller 1-taller. Her kan <code>dimension</code> være to tal <code>n, m</code> eller et enkelt tal <code>n</code>, hvilket resulterer i en <span class="math notranslate nohighlight">\(n \times n\)</span> matrix:</p>
@@ -501,7 +512,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_29_0.png" src="../../_images/Notebook_LinAlg1_29_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_29_01.png" src="../../_images/Notebook_LinAlg1_29_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -512,7 +523,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_30_0.png" src="../../_images/Notebook_LinAlg1_30_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_30_01.png" src="../../_images/Notebook_LinAlg1_30_01.png" />
 </div>
 </div>
 <p><strong>Diagonalmatricer:</strong> laves med funktionen <code>diag(liste)</code>. Denne funktion giver man som input blot en liste med de ønskede diagonalelementer. Alle andre indgange er <span class="math notranslate nohighlight">\(0\)</span>:</p>
@@ -526,7 +537,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_32_0.png" src="../../_images/Notebook_LinAlg1_32_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_32_01.png" src="../../_images/Notebook_LinAlg1_32_01.png" />
 </div>
 </div>
 <p>Man kan også indsætte matricer langs diagonalen i større maricer, således at man får en blok-diagonal-matrix. Man kan f.eks. indsætte en matrix, der beskriver en rotation i planen, i en større matrix, der beskriver samme rotation i <span class="math notranslate nohighlight">\((x,y)\)</span>-planen indlejret i et tredimensionalt rum:</p>
@@ -541,7 +552,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_34_0.png" src="../../_images/Notebook_LinAlg1_34_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_34_01.png" src="../../_images/Notebook_LinAlg1_34_01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -553,7 +564,7 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_35_0.png" src="../../_images/Notebook_LinAlg1_35_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_35_01.png" src="../../_images/Notebook_LinAlg1_35_01.png" />
 </div>
 </div>
 <p>Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. <a class="reference external" href="https://docs.sympy.org/latest/modules/matrices/matrices.html">Disse metoder kan findes i dokumentationen her</a> med vil sjældent være nødvendige i LinALys-kurset.</p>
@@ -571,8 +582,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_38_0.png" src="../../_images/Notebook_LinAlg1_38_0.png" />
-<img alt="../../_images/Notebook_LinAlg1_38_1.png" src="../../_images/Notebook_LinAlg1_38_1.png" />
+<img alt="../../_images/Notebook_LinAlg1_38_01.png" src="../../_images/Notebook_LinAlg1_38_01.png" />
+<img alt="../../_images/Notebook_LinAlg1_38_11.png" src="../../_images/Notebook_LinAlg1_38_11.png" />
 </div>
 </div>
 <p>Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>.</p>
@@ -601,7 +612,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_46_0.png" src="../../_images/Notebook_LinAlg1_46_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_46_01.png" src="../../_images/Notebook_LinAlg1_46_01.png" />
 </div>
 </div>
 <p>Skulle vi være mistroiske overfor moderne datamater, kan vi nu verificere at</p>
@@ -616,7 +627,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_48_0.png" src="../../_images/Notebook_LinAlg1_48_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_48_01.png" src="../../_images/Notebook_LinAlg1_48_01.png" />
 </div>
 </div>
 <p>Vi kan lave tilsvarende operationer med symbolske variable. Lad <span class="math notranslate nohighlight">\(A\)</span> være matricen angivet ovenfor, men i stedet ønsker vi nu at finde en generel løsning til</p>
@@ -634,7 +645,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_51_0.png" src="../../_images/Notebook_LinAlg1_51_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_51_01.png" src="../../_images/Notebook_LinAlg1_51_01.png" />
 </div>
 </div>
 <p>Såfremt den omvendte/inverse matrix for <span class="math notranslate nohighlight">\(A\)</span> eksisterer, kan vi derfor også løse det ovenstående ligningssystem som</p>
@@ -651,7 +662,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_53_0.png" src="../../_images/Notebook_LinAlg1_53_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_53_01.png" src="../../_images/Notebook_LinAlg1_53_01.png" />
 </div>
 </div>
 </div>
@@ -667,7 +678,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_55_0.png" src="../../_images/Notebook_LinAlg1_55_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_55_01.png" src="../../_images/Notebook_LinAlg1_55_01.png" />
 </div>
 </div>
 </div>
@@ -688,7 +699,7 @@ I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ik
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_57_0.png" src="../../_images/Notebook_LinAlg1_57_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_57_01.png" src="../../_images/Notebook_LinAlg1_57_01.png" />
 </div>
 </div>
 <p>Vi sætter <span class="math notranslate nohighlight">\(x_3 = r\)</span> og <span class="math notranslate nohighlight">\(x_4 = s\)</span> da der ikke er ledende indgange i 3. og 4. kolonne. Herefter opskriver vi løsningen som
@@ -706,7 +717,7 @@ I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ik
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_59_0.png" src="../../_images/Notebook_LinAlg1_59_0.png" />
+<img alt="../../_images/Notebook_LinAlg1_59_01.png" src="../../_images/Notebook_LinAlg1_59_01.png" />
 </div>
 </div>
 </div>
@@ -737,8 +748,8 @@ I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ik
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook4.html" title="previous page">Python/SymPy-notebook til LinALys uge 4: Differential- og integralregning for funktioner af en variabel</a>
-    <a class='right-next' id="next-link" href="Notebook_kompleks.html" title="next page">Komplekse tal i SymPy</a>
+    <a class='left-prev' id="prev-link" href="Notebook_FlereVar.html" title="previous page">Funktioner af flere variable</a>
+    <a class='right-next' id="next-link" href="Notebook_LinAlg_2.html" title="next page">Flere metoder i Linær Algebra</a>
 
         </div>
         

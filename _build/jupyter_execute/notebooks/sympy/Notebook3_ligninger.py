@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python/SymPy-notebook til LinALys uge 3: Ligningsløsning
+# # Ligningsløsning
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Ligninger" data-toc-modified-id="Ligninger-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Ligninger</a></span><ul class="toc-item"><li><span><a href="#Solveset" data-toc-modified-id="Solveset-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Solveset</a></span></li><li><span><a href="#Solve" data-toc-modified-id="Solve-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Solve</a></span></li></ul></li><li><span><a href="#Numerisk-løsning" data-toc-modified-id="Numerisk-løsning-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Numerisk løsning</a></span></li></ul></div>
+# __Foreslået ændringer__: 
+# Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.
+# 
+# Og så skal vi lige gentænke, hvordan vi præsenterer den numeriske løsning. Eventuelt kan vi bruge et andet eksempel. Men jeg synes stadig vi skal have det med, selv om Christian ikke er fan, så har vi alligevel brugt det ret meget i kurset. 
 
-# ## Ligninger
+# # Ligninger
 
 # Første trin for at løse ligninger er at få skrevet ligninger op i et sprog, Pyhton kan forstå. Det afgørende er her at indse at et lighedstegn kan have flere fundamentalt forskellige betydninger. Tidligere har vi tildelt variable bestemte værdier ved f.eks. at skrive <code>k = 4</code>, mens vi her vil bruge lighedstegnet til at beskrive et udsagn om sammenhængen mellem to udtryk. I SymPy-sprog er dette en _equality_ og syntaksen er (når vi har importeret SymPy som <code>sp</code> som vi plejer) givet ved <code>sp.Eq(venstre side, højre side)</code>. Pythagoras' læresætning kan f.eks. opskrives som:
 
@@ -36,7 +38,7 @@ display(cos_relation)
 
 # Nu når vi har lighederne på plads, er det blevet tid til at lade SymPy regne for os. SymPy giver os to forskellige værktøjer til at løse ligninger, og det er lidt forskelligt, hvad de hver især er gode til. 
 
-# ### Solveset
+# ## Solveset
 # Den første metode hedder solveset(), som kan oversættes til "løsningsmængde". Dette er den relativ ny metode, og SymPy-teamet arbejder på at denne skal være den primære løsningsmetode i fremtiden. Den løser dog ikke alle opgaver godt endnu, hvorfor vi nedenfor vil præsentere et alternativ.
 # 
 # Lad os prøve at løse en af overstående ligninger. Lad os tage helt standard Pythagoras $a^2 + b^2 = c^2$ (ligningen defineret som <code>Pytha</code> ovenfor). Hvis vi nu  kender $c=5$ og $a=3$ og ønsker at finde $b$, indsætter vi først værdierne i ligningen:
@@ -117,7 +119,7 @@ sp.solveset(cos_relation, theta)
 
 # Hvilket jo er rigtig nok (sammenlign med selve cosinusrelationen!), men ikke fortæller os så meget, vi ikke vidste i forvejen. Det leder os videre til den anden metode til ligningsløsning:
 # 
-# ### Solve
+# ## Solve
 # <code>Solve()</code> er den ældre funktion, som på trods af at være mindre generel oftest giver os en brugbar løsning. Syntaksen for input til <code>Solve()</code> er den samme som for <code>Solveset()</code>
 
 # In[11]:
@@ -155,7 +157,7 @@ sp.solve(sp.Eq(sp.sin(theta), 1), theta)
 sp.solveset(sp.Eq(sp.sin(theta), 1), theta)
 
 
-# ## Numerisk løsning
+# # Numerisk løsning
 # Nogle gange kan vi komme ud for en situation, hvor en opgave ikke har en brugbar eksakt, symbolsk løsning, eller at hverken <code>solve</code> eller <code>solveset</code> giver et svar, vi kan bruge. Vi kan så benytte <code>sp.nsolve</code> til numerisk løsning af ligninger. Vi bruger således SymPy (som er designet til at være et symbolsk værktøj) til et formål, der er på kanten af dets anvendelsesområde, og vi skal derfor bruge værktøjet med forsigtighed. Det er derfor en god idé i disse tilfælde at tegne grafer for at illustrere opgaven. Derved kan vi checke at svaret rent faktisk giver mening i forhold til opgaven, og det tillader os også at give et ret godt gæt på en løsning.
 # 
 # Derefter indskriver man den numeriske løsning som:  

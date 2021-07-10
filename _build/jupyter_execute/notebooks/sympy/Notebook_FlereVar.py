@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Differentiation-af-funktioner-af-flere-variable" data-toc-modified-id="Differentiation-af-funktioner-af-flere-variable-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Differentiation af funktioner af flere variable</a></span><ul class="toc-item"><li><span><a href="#Partielt-afledede" data-toc-modified-id="Partielt-afledede-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Partielt afledede</a></span></li><li><span><a href="#Gradienter-og-retningsafledede" data-toc-modified-id="Gradienter-og-retningsafledede-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Gradienter og retningsafledede</a></span></li><li><span><a href="#Hessematricen" data-toc-modified-id="Hessematricen-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Hessematricen</a></span></li></ul></li><li><span><a href="#Graftegning-for-funktioner-af-flere-variable" data-toc-modified-id="Graftegning-for-funktioner-af-flere-variable-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Graftegning for funktioner af flere variable</a></span><ul class="toc-item"><li><span><a href="#Graftegning-i-3D" data-toc-modified-id="Graftegning-i-3D-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Graftegning i 3D</a></span></li><li><span><a href="#Konturer" data-toc-modified-id="Konturer-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Konturer</a></span></li><li><span><a href="#Niveaukurver" data-toc-modified-id="Niveaukurver-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Niveaukurver</a></span></li></ul></li></ul></div>
-
 # # Funktioner af flere variable
+
+# **Foreslået ændringer**  
+# Jeg overvejer, om man skulle dele denne notebook op. Så der bliver en til flere variabel calculus og en til flere variabel plotting. Det ville give mere mening, når vi har denne nye struktur.
+# Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skrive ind. Vi skal dog bare lige være opmærksom på, om de bliver for avanceret. 
 
 # Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Vi tilføjer dog de variable $y$ og $z$  til vores standard startblok:
 
@@ -19,11 +20,11 @@ sp.init_printing()                    # Aktiver pretty-printing
 from IPython.display import display   # Hent vores printer til matematiske udtryk
 
 
-# ## Differentiation af funktioner af flere variable
+# # Differentiation af funktioner af flere variable
 
 # For funktioner af flere variable bliver diffentialkvotienterne $f'$, $f''$ afløst af lidt flere begreber. Vi vil i det følgende demonstrere hvordan man beregner partielt afledede, gradienter og Hesse-matricer (som dog først bliver berørt til sidst i LinAlys-kurset).
 # 
-# ### Partielt afledede
+# ## Partielt afledede
 # Når vi går fra en til flere variable, spiller de partielt afledede en central rolle. De beregnes på en helt tilsvarende måde som vi tidligere har beregnet $f'$, idet vi blot skal være opmærksomme på, hvilken variabel, vi differentiere i forhold til. Vi har også ved differentiation af funktioner af en variabel (se notebook til uge 4) angivet navnet på den variable, f.eks. <code>sp.diff(expr, x)</code>, men dette var faktisk ikke strengt nødvendigt for simple funktioner, da SymPy i mange tilfælde kan gætte hvad der er den variable. Når vi har to variable, er det derimod afgørende at vi angiver den relevante variabel eksplicit.
 # 
 # Ellers foregår mange beregninger på samme måde:
@@ -48,7 +49,7 @@ display(sp.diff(expr, y))
 display(sp.diff(expr, y, x))
 
 
-# ### Gradienter og retningsafledede
+# ## Gradienter og retningsafledede
 
 # Et centralt begreb for funktioner af flere variable er gradienten, som vi skriver som $\nabla f(x,y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)$. Vi tager altså den partielle differentieret i forhold til vores variable og sætter dem sammen som en vektor. 
 # 
@@ -89,7 +90,7 @@ resultat = prikket.subs(x, 1).subs(y, 2)
 display(resultat)
 
 
-# ### Hessematricen
+# ## Hessematricen
 # Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en $n\times n$-matrix, der indeholder alle andenordens afledede for en funktion af $n$ variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variables omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).
 # 
 # Man kunne beregne Hessematricen ved at beregne de dobbelt afledede som beskrevet ovenfor, men det er nemmere at importere den fra underbiblioteket af SymPy, som hedder <code>sympy.matrices</code> med kommandoen <code>from sympy.matrices import hessian</code>. Vi kan nu benytte <code>hessian(udtryk, variabelliste)</code> på samme måde, som vi brugte <code>sp.derive_by_array</code> til at udregne gradienten:
@@ -112,11 +113,11 @@ display(H)
 H.subs(x, 0).subs(y, 1)
 
 
-# ## Graftegning for funktioner af flere variable
+# # Graftegning for funktioner af flere variable
 # Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.
 # 
 
-# ### Graftegning i 3D
+# ## Graftegning i 3D
 # For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D-tilfældet, men i stedet for at importere <code>plot</code> fra <code>sympy.plotting</code>, importerer vi nu i stedet <code>plot3d</code>. Herefter kan vi skrive <code>plot3d(expr, (x, y))</code> eller f.eks. <code>plot3d(expr, (x, -2, 2), (y, -2, 2))</code> hvis vi vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figures, så vi benytter her <code>%matplotlib notebook</code> som gør vores figurer interaktiv. Hvis man eksempelvis vil plotte $xy^2$ i området omkring origo, kan man gøre følgende:
 
 # In[17]:
@@ -132,7 +133,7 @@ plot3d(expr, (x, -2.5, 2.5), (y, -2, 2));     # Plot med fastsatte akse-interval
 
 # Python-SymPy-kombinationen har en meget uheldig svaghed her, idet det ikke umiddelbart er nemt at tilføje akselabels. Et workaround er at vælge forskellige akseskaleringer for $x$-aksen og $y$-aksen, så man kan se forskel også når man har roteret grafen.
 
-# ### Konturer
+# ## Konturer
 
 # Konturplot findes ved at lave en 2D-afbildning af værdien af den pågældende funktion af flere variable langs en linje. I tilfældet med en funktion af 2 variable ligger linjen i $xy$-planen, og konturen svarer til grafens skæring med den plan, der kan rejses vinkelret på $xy$-planen og som indeholder den pågældende linje. Se TK afsnit 1.2.1. De simpleste konturer fås ved at holde værdien af enten $x$ eller $y$ fast og så plotte $f(x,y)$ som funktion af den anden variabel. Vi vil her følge TK eksempel 1.6 og betragter funktionen:
 # $$f(x,y) = 2x^2+ 4x - y^2 + 4y$$
@@ -192,7 +193,7 @@ for x_val in x_værdier:
 PlotGrid(2, 3, *figurer);                      # Nu samler vi de 6 figurer i et gitterplot
 
 
-# ### Niveaukurver
+# ## Niveaukurver
 
 # Mens konturer er snit mellem grafen for en funktion og "opretstående planer", er niveaukurver snit med vandrette planer $z=c$ (se TK 1.2.2). Vi vil altså tegne løsninger til $f(x,y) = c$ i $xy$-planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen <code>plot_contour</code> (bemærk at <code>plot_contour</code> her bliver brugt til at tegne niveaukurver og _ikke_ konturplot) som importeres fra <code>sympy.plotting.plot</code>. Funktionen følger samme syntaks som <code>3dplot</code>, og giver os et bud på, hvordan niveaukurverne ligger. Desværre har vi ret begrænsede muligheder for selv at vælge indstillinger for denne funktion.
 # 

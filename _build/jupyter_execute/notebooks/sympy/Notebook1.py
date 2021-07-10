@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# __Foreslået ændringer__  
+# Denne note book bliver skrevet om til et fælles dokument med MekRel
+# 
+# Se derfor ændringer under _introduktion til python_. 
+# 
+# Overordnet er dokumentet kogt ned, så den blot indeholder det mest vigtige. Da det er skrevet sammen med MekRel har vi valgt stadig at beholde if/else statements og løkker, da de også er vigtige for en programmerings tankegang. 
+# 
+
 # # Introduktion til Python i LinAlys
 # 
 # LinALys-kurset indeholder to spor (analyse og lineær algebra) og har fokus på "blyantsregning" og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I år har vi valgt at bruge Python-modulet SymPy som CAS-værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel-kurset). Dette dokument er det første af en række notebooks, der introducerer de nødvendige koncepter.
@@ -10,9 +18,6 @@
 # Dette er ikke en grundig indføring i Python, men vi vil i stedet med eksempler vise hvordan man benytter SymPy til at løse typiske opgaver og tegne funktioner. I nogle tilfælde stilles der i kurset opgaver, hvor man skal arbejde  videre med disse eksempler. Hvis man ønsker en dybere forståelse for Python, kan vi anbefale det online (gratis) kursus i Python på https://www.kaggle.com/learn/python, hvorefter man kan prøve kræfter med nogle udfordringer på https://projecteuler.net/.
 # 
 # ___Studerende, der allerede er bekendt med Python anbefales at springe let hen over teksterne men at kigge kode-eksemplerne igennem for at bekræfte, at man har forstået dem.___
-
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Hvordan-virker-en-Jupyter-notebook?" data-toc-modified-id="Hvordan-virker-en-Jupyter-notebook?-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Hvordan virker en Jupyter notebook?</a></span></li><li><span><a href="#I-Python-er-alt-en-variabel" data-toc-modified-id="I-Python-er-alt-en-variabel-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>I Python er alt en variabel</a></span></li><li><span><a href="#Basale-regneoperationer" data-toc-modified-id="Basale-regneoperationer-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Basale regneoperationer</a></span><ul class="toc-item"><li><span><a href="#Redefinering-af-variable" data-toc-modified-id="Redefinering-af-variable-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Redefinering af variable</a></span></li></ul></li><li><span><a href="#Lighedstegnets-dobbelte-betydning" data-toc-modified-id="Lighedstegnets-dobbelte-betydning-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Lighedstegnets dobbelte betydning</a></span></li><li><span><a href="#If-else-statements" data-toc-modified-id="If-else-statements-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>If-else-statements</a></span></li><li><span><a href="#Løkker/loops" data-toc-modified-id="Løkker/loops-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Løkker/loops</a></span></li><li><span><a href="#Import-af-biblioteker/libaries" data-toc-modified-id="Import-af-biblioteker/libaries-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Import af biblioteker/libaries</a></span></li></ul></div>
 
 # ## Hvordan virker en Jupyter notebook?
 
