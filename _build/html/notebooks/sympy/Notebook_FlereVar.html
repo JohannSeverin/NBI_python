@@ -92,6 +92,11 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
    Hvad er Python?
   </a>
@@ -374,8 +379,8 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_6_01.png" src="../../_images/Notebook_FlereVar_6_01.png" />
-<img alt="../../_images/Notebook_FlereVar_6_11.png" src="../../_images/Notebook_FlereVar_6_11.png" />
+<img alt="../../_images/Notebook_FlereVar_6_0.png" src="../../_images/Notebook_FlereVar_6_0.png" />
+<img alt="../../_images/Notebook_FlereVar_6_1.png" src="../../_images/Notebook_FlereVar_6_1.png" />
 </div>
 </div>
 <p>Derimod giver <code>display(sp.diff(expr))</code> en fejlmeddelelse. Vi kan også differentiere flere gange efter hinanden i én kommando: Hvis vi f.eks. ønsker at udregne <span class="math notranslate nohighlight">\(\frac{\partial^2}{\partial x \partial y}\left ( x^2\cdot e^y\right )\)</span>, skriver vi <code>sp.diff(expr, y, x)</code>. Bemærk rækkefølgen af <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> her: i <span class="math notranslate nohighlight">\(\frac{\partial^2}{\partial x \partial y}\)</span> står <span class="math notranslate nohighlight">\(\partial y\)</span> bagerst, og logikken er, at da dette er nærmest funktionsudtrykket, skal vi differentiere efter <span class="math notranslate nohighlight">\(y\)</span> først. Mere formelt er <span class="math notranslate nohighlight">\(\frac{\partial^2f}{\partial x \partial y} \equiv \frac{\partial}{\partial x}\left ( \frac{\partial f}{\partial y} \right )\)</span>. Syntaksen i Python er derimod at de variable skal listes  i differentiations/integrationsrækkefølgen i almindelig læseretning. Dette giver os:</p>
@@ -390,10 +395,10 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_8_01.png" src="../../_images/Notebook_FlereVar_8_01.png" />
-<img alt="../../_images/Notebook_FlereVar_8_11.png" src="../../_images/Notebook_FlereVar_8_11.png" />
-<img alt="../../_images/Notebook_FlereVar_8_21.png" src="../../_images/Notebook_FlereVar_8_21.png" />
-<img alt="../../_images/Notebook_FlereVar_8_31.png" src="../../_images/Notebook_FlereVar_8_31.png" />
+<img alt="../../_images/Notebook_FlereVar_8_0.png" src="../../_images/Notebook_FlereVar_8_0.png" />
+<img alt="../../_images/Notebook_FlereVar_8_1.png" src="../../_images/Notebook_FlereVar_8_1.png" />
+<img alt="../../_images/Notebook_FlereVar_8_2.png" src="../../_images/Notebook_FlereVar_8_2.png" />
+<img alt="../../_images/Notebook_FlereVar_8_3.png" src="../../_images/Notebook_FlereVar_8_3.png" />
 </div>
 </div>
 </div>
@@ -412,7 +417,7 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_11_01.png" src="../../_images/Notebook_FlereVar_11_01.png" />
+<img alt="../../_images/Notebook_FlereVar_11_0.png" src="../../_images/Notebook_FlereVar_11_0.png" />
 </div>
 </div>
 <p>Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra notebooken om Linær Algebra.</p>
@@ -437,10 +442,10 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_13_01.png" src="../../_images/Notebook_FlereVar_13_01.png" />
-<img alt="../../_images/Notebook_FlereVar_13_11.png" src="../../_images/Notebook_FlereVar_13_11.png" />
-<img alt="../../_images/Notebook_FlereVar_13_21.png" src="../../_images/Notebook_FlereVar_13_21.png" />
-<img alt="../../_images/Notebook_FlereVar_13_31.png" src="../../_images/Notebook_FlereVar_13_31.png" />
+<img alt="../../_images/Notebook_FlereVar_13_0.png" src="../../_images/Notebook_FlereVar_13_0.png" />
+<img alt="../../_images/Notebook_FlereVar_13_1.png" src="../../_images/Notebook_FlereVar_13_1.png" />
+<img alt="../../_images/Notebook_FlereVar_13_2.png" src="../../_images/Notebook_FlereVar_13_2.png" />
+<img alt="../../_images/Notebook_FlereVar_13_3.png" src="../../_images/Notebook_FlereVar_13_3.png" />
 </div>
 </div>
 </div>
@@ -459,7 +464,7 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_15_01.png" src="../../_images/Notebook_FlereVar_15_01.png" />
+<img alt="../../_images/Notebook_FlereVar_15_0.png" src="../../_images/Notebook_FlereVar_15_0.png" />
 </div>
 </div>
 <p>Og hvis vi nu vil beregne værdien for <span class="math notranslate nohighlight">\((x, y) = (0, 1)\)</span>, kan vi benytte <code>.subs()</code> to gange:</p>
@@ -470,7 +475,7 @@ Til plottingdelen benytter Christian sig af en del tricks, som vi godt kan skriv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_FlereVar_17_01.png" src="../../_images/Notebook_FlereVar_17_01.png" />
+<img alt="../../_images/Notebook_FlereVar_17_0.png" src="../../_images/Notebook_FlereVar_17_0.png" />
 </div>
 </div>
 </div>

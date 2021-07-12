@@ -92,6 +92,11 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
    Hvad er Python?
   </a>
@@ -381,7 +386,7 @@ Den normale <code>print()</code> i Python printer output i “string”-format, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_9_01.png" src="../../_images/Notebook2_9_01.png" />
+<img alt="../../_images/Notebook2_9_0.png" src="../../_images/Notebook2_9_0.png" />
 </div>
 </div>
 <p>Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python-operationer såsom: <code>+</code>, <code>-</code>, <code>*</code>,<code>/</code> eller <code>**</code>. Derudover kan vi benytte en del andre regneoperationer ved at skrive <code>sp.</code> foran operationen.
@@ -401,7 +406,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_11_01.png" src="../../_images/Notebook2_11_01.png" />
+<img alt="../../_images/Notebook2_11_0.png" src="../../_images/Notebook2_11_0.png" />
 </div>
 </div>
 <p>Vi kan også danne nye symbolske variable ud fra eksisterende variable. Vi kan f.eks. definere en funktion <span class="math notranslate nohighlight">\(f\)</span> baseret på tal og eksisterende symbolske variable:</p>
@@ -420,7 +425,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_15_01.png" src="../../_images/Notebook2_15_01.png" />
+<img alt="../../_images/Notebook2_15_0.png" src="../../_images/Notebook2_15_0.png" />
 </div>
 </div>
 <div class="section" id="eksakt-repraesentation-af-tal">
@@ -434,7 +439,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_18_01.png" src="../../_images/Notebook2_18_01.png" />
+<img alt="../../_images/Notebook2_18_0.png" src="../../_images/Notebook2_18_0.png" />
 </div>
 </div>
 <p>En brøk bestående bestående af symboler lider ikke under samme problem, så der kan vi bare bruge almindelig division.</p>
@@ -446,7 +451,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_20_01.png" src="../../_images/Notebook2_20_01.png" />
+<img alt="../../_images/Notebook2_20_0.png" src="../../_images/Notebook2_20_0.png" />
 </div>
 </div>
 <p>Vi kan regne med brøkerne ved hjælp af de almindelige regnearter:</p>
@@ -463,8 +468,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_22_01.png" src="../../_images/Notebook2_22_01.png" />
-<img alt="../../_images/Notebook2_22_11.png" src="../../_images/Notebook2_22_11.png" />
+<img alt="../../_images/Notebook2_22_0.png" src="../../_images/Notebook2_22_0.png" />
+<img alt="../../_images/Notebook2_22_1.png" src="../../_images/Notebook2_22_1.png" />
 </div>
 </div>
 <p>Vi får ofte brug for eksakte værdier af <span class="math notranslate nohighlight">\(\pi\)</span> og evt. andre særlige tal. En eksakt værdi af <span class="math notranslate nohighlight">\(\pi\)</span> får vi ved at skrive <code>from sympy import pi</code>. Når vi sammensætter symbolske variable og <span class="math notranslate nohighlight">\(\pi\)</span> med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for <code>sp.Rational(tæller, nævner)</code>, da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede tal (<em>floats</em>):</p>
@@ -477,7 +482,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_24_01.png" src="../../_images/Notebook2_24_01.png" />
+<img alt="../../_images/Notebook2_24_0.png" src="../../_images/Notebook2_24_0.png" />
 </div>
 </div>
 <p>Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o’er og ligner et uendelighedstegn hvis man har lidt fantasi).</p>
@@ -489,7 +494,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_26_01.png" src="../../_images/Notebook2_26_01.png" />
+<img alt="../../_images/Notebook2_26_0.png" src="../../_images/Notebook2_26_0.png" />
 </div>
 </div>
 <p>På samme måde kan vi også importere den imaginære enhed <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. <em>Hvis du ikke kender til de komplekse talk, så gå ikke i panik. De bliver introduceret i slutningen af blok 1</em></p>
@@ -503,8 +508,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_28_01.png" src="../../_images/Notebook2_28_01.png" />
-<img alt="../../_images/Notebook2_28_11.png" src="../../_images/Notebook2_28_11.png" />
+<img alt="../../_images/Notebook2_28_0.png" src="../../_images/Notebook2_28_0.png" />
+<img alt="../../_images/Notebook2_28_1.png" src="../../_images/Notebook2_28_1.png" />
 </div>
 </div>
 <p>Vi vil vende tilbage til imaginære tal i SymPy i en senere notebook.</p>
@@ -528,8 +533,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_33_01.png" src="../../_images/Notebook2_33_01.png" />
-<img alt="../../_images/Notebook2_33_11.png" src="../../_images/Notebook2_33_11.png" />
+<img alt="../../_images/Notebook2_33_0.png" src="../../_images/Notebook2_33_0.png" />
+<img alt="../../_images/Notebook2_33_1.png" src="../../_images/Notebook2_33_1.png" />
 </div>
 </div>
 <p>Vi kan også indsætte et udtryk ind i et andet:</p>
@@ -547,9 +552,9 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_35_01.png" src="../../_images/Notebook2_35_01.png" />
-<img alt="../../_images/Notebook2_35_11.png" src="../../_images/Notebook2_35_11.png" />
-<img alt="../../_images/Notebook2_35_21.png" src="../../_images/Notebook2_35_21.png" />
+<img alt="../../_images/Notebook2_35_0.png" src="../../_images/Notebook2_35_0.png" />
+<img alt="../../_images/Notebook2_35_1.png" src="../../_images/Notebook2_35_1.png" />
+<img alt="../../_images/Notebook2_35_2.png" src="../../_images/Notebook2_35_2.png" />
 </div>
 </div>
 <p>Her har vi altså defineret to udtryk og erstattet alle forekomster af x i det første udtryk med <span class="math notranslate nohighlight">\(g = a^2 + b^2\)</span>. Vi kunne have opået det samme (nemmere, men mindre generelt) ved at skrive:</p>
@@ -563,7 +568,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_37_01.png" src="../../_images/Notebook2_37_01.png" />
+<img alt="../../_images/Notebook2_37_0.png" src="../../_images/Notebook2_37_0.png" />
 </div>
 </div>
 </div>
@@ -577,7 +582,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_40_01.png" src="../../_images/Notebook2_40_01.png" />
+<img alt="../../_images/Notebook2_40_0.png" src="../../_images/Notebook2_40_0.png" />
 </div>
 </div>
 <p>Vi kan benytte de to metoder i kombination, hvis vi eksempelvis vil finde værdien af et udtryk og så approksimere det.</p>
@@ -596,9 +601,9 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_42_01.png" src="../../_images/Notebook2_42_01.png" />
-<img alt="../../_images/Notebook2_42_11.png" src="../../_images/Notebook2_42_11.png" />
-<img alt="../../_images/Notebook2_42_21.png" src="../../_images/Notebook2_42_21.png" />
+<img alt="../../_images/Notebook2_42_0.png" src="../../_images/Notebook2_42_0.png" />
+<img alt="../../_images/Notebook2_42_1.png" src="../../_images/Notebook2_42_1.png" />
+<img alt="../../_images/Notebook2_42_2.png" src="../../_images/Notebook2_42_2.png" />
 </div>
 </div>
 </div>
@@ -617,8 +622,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_44_01.png" src="../../_images/Notebook2_44_01.png" />
-<img alt="../../_images/Notebook2_44_11.png" src="../../_images/Notebook2_44_11.png" />
+<img alt="../../_images/Notebook2_44_0.png" src="../../_images/Notebook2_44_0.png" />
+<img alt="../../_images/Notebook2_44_1.png" src="../../_images/Notebook2_44_1.png" />
 </div>
 </div>
 <p>hvilket ikke er den store overraskelse, eftersom <span class="math notranslate nohighlight">\(e^{-x}\)</span> er defineret i <span class="math notranslate nohighlight">\(x=0\)</span>, er kontinuert, og <span class="math notranslate nohighlight">\(e^0=1\)</span>.</p>
@@ -630,7 +635,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_46_01.png" src="../../_images/Notebook2_46_01.png" />
+<img alt="../../_images/Notebook2_46_0.png" src="../../_images/Notebook2_46_0.png" />
 </div>
 </div>
 <p>Vær særligt opmærksom på situationer, hvor grænseværdien kunne være forskellig oppefra og nedefra, hvilket oftest forkommer for udtryk på brøkform i det/de <span class="math notranslate nohighlight">\(x\)</span>-værdier, hvor nævneren antager værdien nul. Betragt f.eks. <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\)</span> når <span class="math notranslate nohighlight">\(x \to 0\)</span>:</p>
@@ -650,8 +655,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_48_01.png" src="../../_images/Notebook2_48_01.png" />
-<img alt="../../_images/Notebook2_48_11.png" src="../../_images/Notebook2_48_11.png" />
+<img alt="../../_images/Notebook2_48_0.png" src="../../_images/Notebook2_48_0.png" />
+<img alt="../../_images/Notebook2_48_1.png" src="../../_images/Notebook2_48_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -662,7 +667,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_49_01.png" src="../../_images/Notebook2_49_01.png" />
+<img alt="../../_images/Notebook2_49_0.png" src="../../_images/Notebook2_49_0.png" />
 </div>
 </div>
 </div>

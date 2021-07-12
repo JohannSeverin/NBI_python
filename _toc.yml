@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: notebooks/Download_guide_anaconda/Download_anaconda_jupyter
 - file: notebooks/Basal_python
 - file: notebooks/Intro_til_pakker
   sections:

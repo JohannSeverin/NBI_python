@@ -92,6 +92,11 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
    Hvad er Python?
   </a>
@@ -339,7 +344,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_4_01.png" src="../../_images/Notebook3_ligninger_4_01.png" />
+<img alt="../../_images/Notebook3_ligninger_4_0.png" src="../../_images/Notebook3_ligninger_4_0.png" />
 </div>
 </div>
 <p>Man kan ligeledes danne ligninger ved at sammensætte allerede definerede udtryk, her eksemplificeret ved cosinusrelationen:</p>
@@ -354,8 +359,8 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_6_01.png" src="../../_images/Notebook3_ligninger_6_01.png" />
-<img alt="../../_images/Notebook3_ligninger_6_11.png" src="../../_images/Notebook3_ligninger_6_11.png" />
+<img alt="../../_images/Notebook3_ligninger_6_0.png" src="../../_images/Notebook3_ligninger_6_0.png" />
+<img alt="../../_images/Notebook3_ligninger_6_1.png" src="../../_images/Notebook3_ligninger_6_1.png" />
 </div>
 </div>
 <p>Nu når vi har lighederne på plads, er det blevet tid til at lade SymPy regne for os. SymPy giver os to forskellige værktøjer til at løse ligninger, og det er lidt forskelligt, hvad de hver især er gode til.</p>
@@ -372,8 +377,8 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_9_01.png" src="../../_images/Notebook3_ligninger_9_01.png" />
-<img alt="../../_images/Notebook3_ligninger_9_11.png" src="../../_images/Notebook3_ligninger_9_11.png" />
+<img alt="../../_images/Notebook3_ligninger_9_0.png" src="../../_images/Notebook3_ligninger_9_0.png" />
+<img alt="../../_images/Notebook3_ligninger_9_1.png" src="../../_images/Notebook3_ligninger_9_1.png" />
 </div>
 </div>
 <p>Vi benytter nu solveset() til at løse denne. For en ligning virker denne funktion ved, at man angiver ligningen og den variabel, som man ønsker at løse for:</p>
@@ -385,7 +390,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_11_01.png" src="../../_images/Notebook3_ligninger_11_01.png" />
+<img alt="../../_images/Notebook3_ligninger_11_0.png" src="../../_images/Notebook3_ligninger_11_0.png" />
 </div>
 </div>
 <p>Vi har altså nu fundet løsningerne til ligningen. I tilfældet med Pythagoras’ sætning leder vi efter en sidelængde, så vores løsning skal være et positivt tal. Vi kan indskrænke løsningsdomænet ved at give <code>solveset</code> et “domain”-keyword. Dette skal være et såkaldt <em>SymPy-set</em>, som er en lidt indviklet størrelse, men i langt de fleste tilfælde kan man slippe afsted med at bede om reelle tal ved at skrive <code>sp.Reals</code> eller ved at give et interval med <code>sp.Interval(<em>fra</em>, <em>til</em>)</code>, hvor man kan bruge <code>oo</code> for uendelig (forudsat at <code>oo</code> er blevet importeret). For mere avancerede løsningsdomæner henvises til dokumentationen <a class="reference external" href="https://docs.sympy.org/latest/modules/sets.html">her</a>. I dette tilfælde angiver vi et interval:</p>
@@ -398,7 +403,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_13_01.png" src="../../_images/Notebook3_ligninger_13_01.png" />
+<img alt="../../_images/Notebook3_ligninger_13_0.png" src="../../_images/Notebook3_ligninger_13_0.png" />
 </div>
 </div>
 <p><code>solveset</code> virker også hvis vi istedet for en ligning angiver et udtryk (altså uden lighedstegn). Da sætter SymPy udtrykket lig med 0 og løser den derved fremkomne ligning (i dette eksempel <span class="math notranslate nohighlight">\(b^2-16 = 0\)</span>):</p>
@@ -410,7 +415,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_15_01.png" src="../../_images/Notebook3_ligninger_15_01.png" />
+<img alt="../../_images/Notebook3_ligninger_15_0.png" src="../../_images/Notebook3_ligninger_15_0.png" />
 </div>
 </div>
 <p>Vi vil bruge den samme syntaks her, hvor vi vil finde rødder i et fjerdegrads polynomium.</p>
@@ -424,7 +429,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_17_01.png" src="../../_images/Notebook3_ligninger_17_01.png" />
+<img alt="../../_images/Notebook3_ligninger_17_0.png" src="../../_images/Notebook3_ligninger_17_0.png" />
 </div>
 </div>
 <p>Er vi kun interesserede i reelle løsninger, kan vi indskrænke domænet til de reelle tal:</p>
@@ -436,7 +441,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_19_01.png" src="../../_images/Notebook3_ligninger_19_01.png" />
+<img alt="../../_images/Notebook3_ligninger_19_0.png" src="../../_images/Notebook3_ligninger_19_0.png" />
 </div>
 </div>
 <p>Solveset virker også, hvis vi ikke har en numerisk værdi for alle symboler, men ønsker den generelle løsning. Hvis vi f.eks. vil finde <span class="math notranslate nohighlight">\(b\)</span> i cosinusrelationen som defineret tidligere, kan vi skrive følgende:</p>
@@ -449,8 +454,8 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_21_01.png" src="../../_images/Notebook3_ligninger_21_01.png" />
-<img alt="../../_images/Notebook3_ligninger_21_11.png" src="../../_images/Notebook3_ligninger_21_11.png" />
+<img alt="../../_images/Notebook3_ligninger_21_0.png" src="../../_images/Notebook3_ligninger_21_0.png" />
+<img alt="../../_images/Notebook3_ligninger_21_1.png" src="../../_images/Notebook3_ligninger_21_1.png" />
 </div>
 </div>
 <p>Solveset() giver os løsninger skrevet op i mængdenotation for at give os de generelle fuldstændige løsninger. Selvom dette kan være meget fint i nogle tilfælde, ender vi dog i andre tilfælde med en generel og ganske ubrugelig løsning. Dette sker eksempelvis, hvis vi prøver at løse for <span class="math notranslate nohighlight">\(\theta\)</span> direkte:</p>
@@ -461,7 +466,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_23_01.png" src="../../_images/Notebook3_ligninger_23_01.png" />
+<img alt="../../_images/Notebook3_ligninger_23_0.png" src="../../_images/Notebook3_ligninger_23_0.png" />
 </div>
 </div>
 <p>Hvilket jo er rigtig nok (sammenlign med selve cosinusrelationen!), men ikke fortæller os så meget, vi ikke vidste i forvejen. Det leder os videre til den anden metode til ligningsløsning:</p>
@@ -476,7 +481,7 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_25_01.png" src="../../_images/Notebook3_ligninger_25_01.png" />
+<img alt="../../_images/Notebook3_ligninger_25_0.png" src="../../_images/Notebook3_ligninger_25_0.png" />
 </div>
 </div>
 <p>men man kan dog ikke angive et domæne. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen <span class="math notranslate nohighlight">\(b\)</span> ved hjælp af Pythagoras’ sætning, vil opgaven i solve-sprog lyde:</p>
@@ -489,8 +494,8 @@ Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_27_01.png" src="../../_images/Notebook3_ligninger_27_01.png" />
-<img alt="../../_images/Notebook3_ligninger_27_11.png" src="../../_images/Notebook3_ligninger_27_11.png" />
+<img alt="../../_images/Notebook3_ligninger_27_0.png" src="../../_images/Notebook3_ligninger_27_0.png" />
+<img alt="../../_images/Notebook3_ligninger_27_1.png" src="../../_images/Notebook3_ligninger_27_1.png" />
 </div>
 </div>
 <p>Overordnet set er <code>solve</code> rigtig god til at give én løsning. Det kan altså ofte bruges i sammenhænge, hvor man vil tjekke et resultat, eller hvis man blot skal bruge en vilkårlig løsning og ikke den fuldstændige løsning.
@@ -502,7 +507,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_29_01.png" src="../../_images/Notebook3_ligninger_29_01.png" />
+<img alt="../../_images/Notebook3_ligninger_29_0.png" src="../../_images/Notebook3_ligninger_29_0.png" />
 </div>
 </div>
 <p>Her får vi altså en løsning, og det vil ofte være den løsning, vi leder efter. Men da <span class="math notranslate nohighlight">\(\sin(x)\)</span> er periodisk, ved vi, at der er flere løsninger. Så svaret er ikke fuldkomment.</p>
@@ -514,7 +519,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_31_01.png" src="../../_images/Notebook3_ligninger_31_01.png" />
+<img alt="../../_images/Notebook3_ligninger_31_0.png" src="../../_images/Notebook3_ligninger_31_0.png" />
 </div>
 </div>
 </div>
@@ -535,7 +540,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_34_01.png" src="../../_images/Notebook3_ligninger_34_01.png" />
+<img alt="../../_images/Notebook3_ligninger_34_0.png" src="../../_images/Notebook3_ligninger_34_0.png" />
 </div>
 </div>
 <p>Heraf ser vi altså, at et godt start gæt ville være omkring <span class="math notranslate nohighlight">\(x=1.7\)</span>. Dette vil vi nu bruge.</p>
@@ -548,8 +553,8 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_36_01.png" src="../../_images/Notebook3_ligninger_36_01.png" />
-<img alt="../../_images/Notebook3_ligninger_36_11.png" src="../../_images/Notebook3_ligninger_36_11.png" />
+<img alt="../../_images/Notebook3_ligninger_36_0.png" src="../../_images/Notebook3_ligninger_36_0.png" />
+<img alt="../../_images/Notebook3_ligninger_36_1.png" src="../../_images/Notebook3_ligninger_36_1.png" />
 </div>
 </div>
 <p>Havde vi gættet anderledes eksempelvis <span class="math notranslate nohighlight">\(x = - 1\)</span> havde vi også fået et andet resultat, da nsolve forsøger at finde en løsning uden at bekymre sig om hvorvidt løsningen er korrekt. Her er eksempel:</p>
@@ -560,7 +565,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_38_01.png" src="../../_images/Notebook3_ligninger_38_01.png" />
+<img alt="../../_images/Notebook3_ligninger_38_0.png" src="../../_images/Notebook3_ligninger_38_0.png" />
 </div>
 </div>
 <p>som er et tal tæt på 0. De to grafer er rigtigt nok tæt på hinanden for meget små værdier af <span class="math notranslate nohighlight">\(x\)</span>, og på grafen kan det se ud som om at de to grafer krydser i <span class="math notranslate nohighlight">\(x = 0\)</span>. Da <span class="math notranslate nohighlight">\(x\log(x)\)</span> slet ikke er defineret for <span class="math notranslate nohighlight">\(x=0\)</span>, beregner vi (som vi så det i notebook 2)  grænseværdien:</p>
@@ -571,7 +576,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_40_01.png" src="../../_images/Notebook3_ligninger_40_01.png" />
+<img alt="../../_images/Notebook3_ligninger_40_0.png" src="../../_images/Notebook3_ligninger_40_0.png" />
 </div>
 </div>
 <p>hvilket bekræfter at den med <code>nsolve</code> fundne løsning ikke er helt tosset, selvom den ikke er rigtig.

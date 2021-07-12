@@ -92,6 +92,11 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
    Hvad er Python?
   </a>
@@ -361,7 +366,7 @@ Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_4_01.png" src="../../_images/Notebook_LinAlg_2_4_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_4_0.png" src="../../_images/Notebook_LinAlg_2_4_0.png" />
 </div>
 </div>
 <p>Den transponerede beregnes med <code>.T</code></p>
@@ -372,7 +377,7 @@ Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_6_01.png" src="../../_images/Notebook_LinAlg_2_6_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_6_0.png" src="../../_images/Notebook_LinAlg_2_6_0.png" />
 </div>
 </div>
 <p>Messer arbejder ikke med komplekse tal som indgange i matricer, men hvis man gør (og det er der mange gode grunde til, f.eks. i kvantemekanik), vil man også møde den såkaldte konjugerede matrix <code>A.conjugate()</code> (der fremkommer ved kompleks konjugering af indgangene af <span class="math notranslate nohighlight">\(A\)</span>) og den såkaldte adjungerede (matricen der er <span class="math notranslate nohighlight">\(A\)</span>s transponerede konjugerede matrix) <code>A.adjoint()</code> eller nemmere <code>A.H</code> . Notationen med H kommer af at den adjungerede matrix også kaldes den hermitisk konjugerede.
@@ -386,8 +391,8 @@ Eksempelvis kan vi finde den konjugerede matrix her:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_8_01.png" src="../../_images/Notebook_LinAlg_2_8_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_8_11.png" src="../../_images/Notebook_LinAlg_2_8_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_8_0.png" src="../../_images/Notebook_LinAlg_2_8_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_8_1.png" src="../../_images/Notebook_LinAlg_2_8_1.png" />
 </div>
 </div>
 <p>hvor vi ser at alle imaginærdelene har skiftet fortegn.
@@ -399,7 +404,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_10_01.png" src="../../_images/Notebook_LinAlg_2_10_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_10_0.png" src="../../_images/Notebook_LinAlg_2_10_0.png" />
 </div>
 </div>
 </div>
@@ -415,8 +420,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_12_01.png" src="../../_images/Notebook_LinAlg_2_12_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_12_11.png" src="../../_images/Notebook_LinAlg_2_12_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_12_0.png" src="../../_images/Notebook_LinAlg_2_12_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_12_1.png" src="../../_images/Notebook_LinAlg_2_12_1.png" />
 </div>
 </div>
 <p>Hvilket giver en liste (her med eet element) af vektorer som er basis for matricens nulrum. Altså vektorer som opfylder ligningen <span class="math notranslate nohighlight">\(M\boldsymbol{x} = \boldsymbol{0}\)</span>. Dette gælder derfor også for linearkombinationer af vektorerne i nulrummet.</p>
@@ -428,7 +433,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_14_01.png" src="../../_images/Notebook_LinAlg_2_14_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_14_0.png" src="../../_images/Notebook_LinAlg_2_14_0.png" />
 </div>
 </div>
 <p>Herved får vi en liste af vektorer, som udspænder søjlerummet, og som består af de søjler fra <span class="math notranslate nohighlight">\(M\)</span>, der indeholder ledende indgange når <span class="math notranslate nohighlight">\(M\)</span> er bragt på række-echelonform. Dette verificerer vi ved at betragte <span class="math notranslate nohighlight">\(M\)</span>s ækvivalente matrix på reduceret række-echelonform:</p>
@@ -439,7 +444,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_16_01.png" src="../../_images/Notebook_LinAlg_2_16_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_16_0.png" src="../../_images/Notebook_LinAlg_2_16_0.png" />
 </div>
 </div>
 </div>
@@ -459,7 +464,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_19_01.png" src="../../_images/Notebook_LinAlg_2_19_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_19_0.png" src="../../_images/Notebook_LinAlg_2_19_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -470,7 +475,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_20_01.png" src="../../_images/Notebook_LinAlg_2_20_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_20_0.png" src="../../_images/Notebook_LinAlg_2_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -481,7 +486,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_21_01.png" src="../../_images/Notebook_LinAlg_2_21_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_21_0.png" src="../../_images/Notebook_LinAlg_2_21_0.png" />
 </div>
 </div>
 <p>hvilket kan ses at passe med Messers</p>
@@ -501,8 +506,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_24_01.png" src="../../_images/Notebook_LinAlg_2_24_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_24_11.png" src="../../_images/Notebook_LinAlg_2_24_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_24_0.png" src="../../_images/Notebook_LinAlg_2_24_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_24_1.png" src="../../_images/Notebook_LinAlg_2_24_1.png" />
 </div>
 </div>
 <p>Vi kan også beregne determinanten for en symbolsk matrix:</p>
@@ -518,8 +523,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_26_01.png" src="../../_images/Notebook_LinAlg_2_26_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_26_11.png" src="../../_images/Notebook_LinAlg_2_26_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_26_0.png" src="../../_images/Notebook_LinAlg_2_26_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_26_1.png" src="../../_images/Notebook_LinAlg_2_26_1.png" />
 </div>
 </div>
 <p>i overensstemmelse med, hvordan vi selv ville regne den.</p>
@@ -536,8 +541,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_29_01.png" src="../../_images/Notebook_LinAlg_2_29_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_29_11.png" src="../../_images/Notebook_LinAlg_2_29_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_29_0.png" src="../../_images/Notebook_LinAlg_2_29_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_29_1.png" src="../../_images/Notebook_LinAlg_2_29_1.png" />
 </div>
 </div>
 </div>
@@ -555,9 +560,9 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_31_01.png" src="../../_images/Notebook_LinAlg_2_31_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_31_11.png" src="../../_images/Notebook_LinAlg_2_31_11.png" />
-<img alt="../../_images/Notebook_LinAlg_2_31_21.png" src="../../_images/Notebook_LinAlg_2_31_21.png" />
+<img alt="../../_images/Notebook_LinAlg_2_31_0.png" src="../../_images/Notebook_LinAlg_2_31_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_31_1.png" src="../../_images/Notebook_LinAlg_2_31_1.png" />
+<img alt="../../_images/Notebook_LinAlg_2_31_2.png" src="../../_images/Notebook_LinAlg_2_31_2.png" />
 </div>
 </div>
 </div>
@@ -573,7 +578,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_33_01.png" src="../../_images/Notebook_LinAlg_2_33_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_33_0.png" src="../../_images/Notebook_LinAlg_2_33_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -583,7 +588,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_34_01.png" src="../../_images/Notebook_LinAlg_2_34_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_34_0.png" src="../../_images/Notebook_LinAlg_2_34_0.png" />
 </div>
 </div>
 <p>Dette giver os nu en liste over egenværdierne (altså, 1, 2 og 11) og deres algebraiske multiplicitet, altså hvor mange gange den pågældende egenværdi er rod i det karakteristiske polynomium (her har alle egenværdierne algebraiske multiplicitet 1). For at illustrere hvordan resultaterne vises, “beregner” vi her egenværdierne for et trivielt eksempel:</p>
@@ -596,7 +601,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_36_01.png" src="../../_images/Notebook_LinAlg_2_36_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_36_0.png" src="../../_images/Notebook_LinAlg_2_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -606,7 +611,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_37_01.png" src="../../_images/Notebook_LinAlg_2_37_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_37_0.png" src="../../_images/Notebook_LinAlg_2_37_0.png" />
 </div>
 </div>
 <p>Funktionen <code>.eigenvects</code> virker på samme måde og giver både egenværdier og -vektorerne:</p>
@@ -617,7 +622,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_39_01.png" src="../../_images/Notebook_LinAlg_2_39_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_39_0.png" src="../../_images/Notebook_LinAlg_2_39_0.png" />
 </div>
 </div>
 <p>Her er resultatet altså givet som en liste med (egenværdi, multiplictet, egenvektorer). Vi kan igen prøve eksemplet med det trivielle eksempel for at vise, hvad der sker, når en egenværdi har flere tilhørende egenvektorer:</p>
@@ -628,7 +633,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_41_01.png" src="../../_images/Notebook_LinAlg_2_41_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_41_0.png" src="../../_images/Notebook_LinAlg_2_41_0.png" />
 </div>
 </div>
 <p>I matematikkurser har matricerne gerne pæne (ofte heltallige) egenværdier, mens man i praksis sjældent oplever matricer med så velopdragne egenværdier. Dertil kommer, at store matricer kan gøre det meget hårdt for computeren at regne det hele symbolsk. Derfor vil man (når man eksempelvis beregner egenværdier i kvantemekanik) i stedet bruge NumPy, da der her er nogle ret hurtige implementeringer til at give gode numeriske løsninger. Heldigvis ligner metoderne meget hinanden, og hvis man skulle komme ud for at skulle løse et problem, der er for krævende med sumbolske beregninger, kan man finde NumPys LinAlg værktøjer <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">i den relevante dokumentation</a>.</p>
@@ -643,7 +648,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_44_01.png" src="../../_images/Notebook_LinAlg_2_44_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_44_0.png" src="../../_images/Notebook_LinAlg_2_44_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -653,7 +658,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_45_01.png" src="../../_images/Notebook_LinAlg_2_45_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_45_0.png" src="../../_images/Notebook_LinAlg_2_45_0.png" />
 </div>
 </div>
 <p>Outputtet for denne funktion er matricerne <span class="math notranslate nohighlight">\(P\)</span> og <span class="math notranslate nohighlight">\(D\)</span>. Vi genkender at matricen <span class="math notranslate nohighlight">\(D\)</span> netop indeholder egenværdierne langs diagonalen og at <span class="math notranslate nohighlight">\(P\)</span> består at (multipla af) egenvektorerne. Vi kan få de pågældende matricer ud så vi kan regne videre med dem på følgende måde:</p>
@@ -665,8 +670,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_47_01.png" src="../../_images/Notebook_LinAlg_2_47_01.png" />
-<img alt="../../_images/Notebook_LinAlg_2_47_11.png" src="../../_images/Notebook_LinAlg_2_47_11.png" />
+<img alt="../../_images/Notebook_LinAlg_2_47_0.png" src="../../_images/Notebook_LinAlg_2_47_0.png" />
+<img alt="../../_images/Notebook_LinAlg_2_47_1.png" src="../../_images/Notebook_LinAlg_2_47_1.png" />
 </div>
 </div>
 <p>Og vi demonstrerer endelig at matricerne sammensættes som forventet. Først <span class="math notranslate nohighlight">\(D = P^{-1}AP\)</span>:</p>
@@ -677,7 +682,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_49_01.png" src="../../_images/Notebook_LinAlg_2_49_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_49_0.png" src="../../_images/Notebook_LinAlg_2_49_0.png" />
 </div>
 </div>
 <p>Eller omvendt <span class="math notranslate nohighlight">\(A = P D P^{-1}\)</span></p>
@@ -688,7 +693,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_51_01.png" src="../../_images/Notebook_LinAlg_2_51_01.png" />
+<img alt="../../_images/Notebook_LinAlg_2_51_0.png" src="../../_images/Notebook_LinAlg_2_51_0.png" />
 </div>
 </div>
 </div>

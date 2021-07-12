@@ -92,6 +92,11 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Basal_python.html">
    Hvad er Python?
   </a>
@@ -360,8 +365,8 @@ Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_6_01.png" src="../../_images/Notebook4_6_01.png" />
-<img alt="../../_images/Notebook4_6_11.png" src="../../_images/Notebook4_6_11.png" />
+<img alt="../../_images/Notebook4_6_0.png" src="../../_images/Notebook4_6_0.png" />
+<img alt="../../_images/Notebook4_6_1.png" src="../../_images/Notebook4_6_1.png" />
 </div>
 </div>
 <p>Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet <span class="math notranslate nohighlight">\(\cos^2(x) + sin^2(x) = 1\)</span>.</p>
@@ -376,8 +381,8 @@ Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_8_01.png" src="../../_images/Notebook4_8_01.png" />
-<img alt="../../_images/Notebook4_8_11.png" src="../../_images/Notebook4_8_11.png" />
+<img alt="../../_images/Notebook4_8_0.png" src="../../_images/Notebook4_8_0.png" />
+<img alt="../../_images/Notebook4_8_1.png" src="../../_images/Notebook4_8_1.png" />
 </div>
 </div>
 <p>SymPy foretrækker således denne form frem for den udgave, hvor parenteserne er ganget ud.
@@ -389,7 +394,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_10_01.png" src="../../_images/Notebook4_10_01.png" />
+<img alt="../../_images/Notebook4_10_0.png" src="../../_images/Notebook4_10_0.png" />
 </div>
 </div>
 <p>Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:</p>
@@ -403,8 +408,8 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_12_01.png" src="../../_images/Notebook4_12_01.png" />
-<img alt="../../_images/Notebook4_12_11.png" src="../../_images/Notebook4_12_11.png" />
+<img alt="../../_images/Notebook4_12_0.png" src="../../_images/Notebook4_12_0.png" />
+<img alt="../../_images/Notebook4_12_1.png" src="../../_images/Notebook4_12_1.png" />
 </div>
 </div>
 <p>Dette er også et nydeligt udtryk, og uden at vi kender sammenhængen kan vi ikke afgøre hvilket et, der er det pæneste rent notationsmæssigt. Men hvis vi vil tjekke at de to udtryk er ens (f.eks. for at være sikker på at vi har regnet rigtigt), kunne vi nu gange <span class="math notranslate nohighlight">\((x+4a+4b)\cdot(2a+2b)\)</span> ud og sammenligne led, men vi kan også blot beregne forskellen:</p>
@@ -416,7 +421,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_14_01.png" src="../../_images/Notebook4_14_01.png" />
+<img alt="../../_images/Notebook4_14_0.png" src="../../_images/Notebook4_14_0.png" />
 </div>
 </div>
 </div>
@@ -435,8 +440,8 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_16_01.png" src="../../_images/Notebook4_16_01.png" />
-<img alt="../../_images/Notebook4_16_11.png" src="../../_images/Notebook4_16_11.png" />
+<img alt="../../_images/Notebook4_16_0.png" src="../../_images/Notebook4_16_0.png" />
+<img alt="../../_images/Notebook4_16_1.png" src="../../_images/Notebook4_16_1.png" />
 </div>
 </div>
 <p>Som kan simplificeres med <code>sp.simplify()</code>:</p>
@@ -447,7 +452,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_18_01.png" src="../../_images/Notebook4_18_01.png" />
+<img alt="../../_images/Notebook4_18_0.png" src="../../_images/Notebook4_18_0.png" />
 </div>
 </div>
 <p>Ønsker vi at differentiere en funktion flere gange, angiver vi blot antallet af gange, vi vil differentiere funktionen, som ekstra argument: <code>sp.diff(udtryk, variabel, antalgange)</code>.</p>
@@ -461,7 +466,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_20_01.png" src="../../_images/Notebook4_20_01.png" />
+<img alt="../../_images/Notebook4_20_0.png" src="../../_images/Notebook4_20_0.png" />
 </div>
 </div>
 <p>Bemærk at SymPy godt kan snydes. Vi betragter f.eks. den stykvist lineære funktion fra notebooken i uge 3, og differentierer:</p>
@@ -483,7 +488,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 \[\begin{split}\displaystyle \begin{cases} -1 &amp; \text{for}\: x &lt; 4 \\x - 5 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{cases} 0 &amp; \text{for}\: x &lt; 4 \\1 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
-<img alt="../../_images/Notebook4_22_21.png" src="../../_images/Notebook4_22_21.png" />
+<img alt="../../_images/Notebook4_22_2.png" src="../../_images/Notebook4_22_2.png" />
 </div>
 </div>
 <p>Vi ser at SymPy håndterer differentiationen rimeligt godt, men at <span class="math notranslate nohighlight">\(g'(4)\)</span> angives til 1 selvom <span class="math notranslate nohighlight">\(g\)</span> ikke er differentiabel her. Den “lodrette del af grafen” ved <span class="math notranslate nohighlight">\(x=4\)</span> burde også vække vores mistanke.</p>
@@ -496,8 +501,8 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_24_01.png" src="../../_images/Notebook4_24_01.png" />
-<img alt="../../_images/Notebook4_24_11.png" src="../../_images/Notebook4_24_11.png" />
+<img alt="../../_images/Notebook4_24_0.png" src="../../_images/Notebook4_24_0.png" />
+<img alt="../../_images/Notebook4_24_1.png" src="../../_images/Notebook4_24_1.png" />
 </div>
 </div>
 <p>Vi ser at det første udtryk er korrekt, men at SymPy uden forbehold reducerer udtrykket uden hensyntagen til at <span class="math notranslate nohighlight">\(h(x)\)</span> slet ikke er defineret for <span class="math notranslate nohighlight">\(x=-2\)</span>. Man skal altså selv være særlig opmærksom på punkter, hvor en givet funktion ikke er defineret eller ikke er differentiabel!</p>
@@ -514,7 +519,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_27_01.png" src="../../_images/Notebook4_27_01.png" />
+<img alt="../../_images/Notebook4_27_0.png" src="../../_images/Notebook4_27_0.png" />
 </div>
 </div>
 <p>Et andet eksempel hvor leddene ikke præsenteres i samme logiske orden er udviklingen til 4. orden af funktionen <span class="math notranslate nohighlight">\(f(x) = \frac{3}{1-3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
@@ -527,7 +532,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_29_01.png" src="../../_images/Notebook4_29_01.png" />
+<img alt="../../_images/Notebook4_29_0.png" src="../../_images/Notebook4_29_0.png" />
 </div>
 </div>
 <p>Hvis vi skal regne videre med dette udtryk uden restleddet eller tegne grafer, kan vi fjerne restleddet ved at skrive <code>expr.removeO()</code>:</p>
@@ -539,7 +544,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_31_01.png" src="../../_images/Notebook4_31_01.png" />
+<img alt="../../_images/Notebook4_31_0.png" src="../../_images/Notebook4_31_0.png" />
 </div>
 </div>
 <p>Nu kan vi tegne grafen for Taylorapproximationen til <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
@@ -553,7 +558,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_33_01.png" src="../../_images/Notebook4_33_01.png" />
+<img alt="../../_images/Notebook4_33_0.png" src="../../_images/Notebook4_33_0.png" />
 </div>
 </div>
 <p>Vi tilføjer nu vores originale funktion for at sammenligne:</p>
@@ -575,7 +580,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_35_01.png" src="../../_images/Notebook4_35_01.png" />
+<img alt="../../_images/Notebook4_35_0.png" src="../../_images/Notebook4_35_0.png" />
 </div>
 </div>
 <p>Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
@@ -595,7 +600,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_38_01.png" src="../../_images/Notebook4_38_01.png" />
+<img alt="../../_images/Notebook4_38_0.png" src="../../_images/Notebook4_38_0.png" />
 </div>
 </div>
 <p>På samme måde findes det bestemte integral <span class="math notranslate nohighlight">\(\int_0^{6\pi}(\sin(x))^2dx = \int_0^{6\pi}\sin^2(x)dx\)</span>:</p>
@@ -607,7 +612,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_40_01.png" src="../../_images/Notebook4_40_01.png" />
+<img alt="../../_images/Notebook4_40_0.png" src="../../_images/Notebook4_40_0.png" />
 </div>
 </div>
 <p>Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i grænserne for sit bestemte integral.</p>
@@ -620,7 +625,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_42_01.png" src="../../_images/Notebook4_42_01.png" />
+<img alt="../../_images/Notebook4_42_0.png" src="../../_images/Notebook4_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -634,7 +639,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_43_01.png" src="../../_images/Notebook4_43_01.png" />
+<img alt="../../_images/Notebook4_43_0.png" src="../../_images/Notebook4_43_0.png" />
 </div>
 </div>
 </div>
@@ -651,7 +656,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_46_01.png" src="../../_images/Notebook4_46_01.png" />
+<img alt="../../_images/Notebook4_46_0.png" src="../../_images/Notebook4_46_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +666,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_47_01.png" src="../../_images/Notebook4_47_01.png" />
+<img alt="../../_images/Notebook4_47_0.png" src="../../_images/Notebook4_47_0.png" />
 </div>
 </div>
 <p>Ligeledes kan vi benytte simplify og integration på denne måde:</p>
@@ -675,7 +680,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_49_01.png" src="../../_images/Notebook4_49_01.png" />
+<img alt="../../_images/Notebook4_49_0.png" src="../../_images/Notebook4_49_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -686,7 +691,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_50_01.png" src="../../_images/Notebook4_50_01.png" />
+<img alt="../../_images/Notebook4_50_0.png" src="../../_images/Notebook4_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -697,7 +702,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_51_01.png" src="../../_images/Notebook4_51_01.png" />
+<img alt="../../_images/Notebook4_51_0.png" src="../../_images/Notebook4_51_0.png" />
 </div>
 </div>
 </div>
