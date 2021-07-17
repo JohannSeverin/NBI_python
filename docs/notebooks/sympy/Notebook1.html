@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduktion til Python i LinAlys &#8212; Python i LinAlys og MekRel</title>
+    <title>Python i LinAlys &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="SymPy i LinAlys" href="Notebook2.html" />
-    <link rel="prev" title="SymPy" href="../pakker/Sympy.html" />
+    <link rel="prev" title="Matplotlib" href="../MekRel/Matplotlib_pyplot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,14 +96,9 @@
    Installation af Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Basal_python.html">
-   Hvad er Python?
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Intro_til_pakker.html">
-   Intro til pakker
+  <a class="reference internal" href="../Basal_python.html">
+   Kom i gang med Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -112,28 +107,45 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../pakker/Numpy.html">
+    <a class="reference internal" href="../Andet_python.html">
+     Kontrolstrukturer og Løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Intro_til_pakker.html">
+   Intro til pakker
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MekRel/Intro.html">
+   Python i MekRel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MekRel/Numpy.html">
      Numpy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../pakker/Matplotlib_pyplot.html">
+    <a class="reference internal" href="../MekRel/Matplotlib_pyplot.html">
      Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pakker/Sympy.html">
-     SymPy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Introduktion til Python i LinAlys
+   Python i LinAlys
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -341,8 +353,8 @@
 Denne note book bliver skrevet om til et fælles dokument med MekRel</p>
 <p>Se derfor ændringer under <em>introduktion til python</em>.</p>
 <p>Overordnet er dokumentet kogt ned, så den blot indeholder det mest vigtige. Da det er skrevet sammen med MekRel har vi valgt stadig at beholde if/else statements og løkker, da de også er vigtige for en programmerings tankegang.</p>
-<div class="section" id="introduktion-til-python-i-linalys">
-<h1>Introduktion til Python i LinAlys<a class="headerlink" href="#introduktion-til-python-i-linalys" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="python-i-linalys">
+<h1>Python i LinAlys<a class="headerlink" href="#python-i-linalys" title="Permalink to this headline">¶</a></h1>
 <p>LinALys-kurset indeholder to spor (analyse og lineær algebra) og har fokus på “blyantsregning” og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I år har vi valgt at bruge Python-modulet SymPy som CAS-værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel-kurset). Dette dokument er det første af en række notebooks, der introducerer de nødvendige koncepter.</p>
 <p>Det er vigtigt at være opmærksom på, at modsat CAS-værktøjer som Maple, TI_Nspire og WordMat, så er Python ikke lavet specifikt til symbolske udregninger, men er et generelt anvendeligt programmeringssprog. Man skal derfor vænne sig til både Pythons syntaks og programmering som helhed for at få det maksimale ud af SymPy. Når det til gengæld er klaret, er det muligt at benytte SymPy i en lang række sammenhænge, og f.eks. nemt skifte mellem numeriske og symbolske anvendelser. Dette vil vi vende tilbage til, når vi har forudsætningerne på plads.</p>
 <p>Dette er ikke en grundig indføring i Python, men vi vil i stedet med eksempler vise hvordan man benytter SymPy til at løse typiske opgaver og tegne funktioner. I nogle tilfælde stilles der i kurset opgaver, hvor man skal arbejde  videre med disse eksempler. Hvis man ønsker en dybere forståelse for Python, kan vi anbefale det online (gratis) kursus i Python på <a class="reference external" href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a>, hvorefter man kan prøve kræfter med nogle udfordringer på <a class="reference external" href="https://projecteuler.net/">https://projecteuler.net/</a>.</p>
@@ -895,7 +907,7 @@ Og summen er 180
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../pakker/Sympy.html" title="previous page">SymPy</a>
+    <a class='left-prev' id="prev-link" href="../MekRel/Matplotlib_pyplot.html" title="previous page">Matplotlib</a>
     <a class='right-next' id="next-link" href="Notebook2.html" title="next page">SymPy i LinAlys</a>
 
         </div>

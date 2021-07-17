@@ -95,14 +95,9 @@
    Installation af Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/Basal_python.html">
-   Hvad er Python?
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="notebooks/Intro_til_pakker.html">
-   Intro til pakker
+  <a class="reference internal" href="notebooks/Basal_python.html">
+   Kom i gang med Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -111,28 +106,45 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/pakker/Numpy.html">
+    <a class="reference internal" href="notebooks/Andet_python.html">
+     Kontrolstrukturer og Løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Intro_til_pakker.html">
+   Intro til pakker
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks/MekRel/Intro.html">
+   Python i MekRel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/MekRel/Numpy.html">
      Numpy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/pakker/Matplotlib_pyplot.html">
+    <a class="reference internal" href="notebooks/MekRel/Matplotlib_pyplot.html">
      Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/pakker/Sympy.html">
-     SymPy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="notebooks/sympy/Notebook1.html">
-   Introduktion til Python i LinAlys
+   Python i LinAlys
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -261,6 +273,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python i MekRel og LinAlys
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hvad-er-python">
+   Hvad er Python?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hvad-skal-vi-bruge-det-til">
+   Hvad skal vi bruge det til?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -269,8 +304,10 @@
         
               <div>
                 
-  <div class="section" id="python-i-mekrel-og-linalys">
+  <!-- #region -->
+<div class="section" id="python-i-mekrel-og-linalys">
 <h1>Python i MekRel og LinAlys<a class="headerlink" href="#python-i-mekrel-og-linalys" title="Permalink to this headline">¶</a></h1>
+<p><strong>Skriv lige sammen, delene er der, men de er ikke optimeret</strong></p>
 <p>På denne side er alt python, som I skal bruge i løbet af det første halve år på fysik samlet. Det er bygget op således, at vi først har en grundlæggende note til python, som går ind i de meget overordnet emner.</p>
 <p>Vi vil også kort give en oversigt over de primære pakker, som I skal bruge:</p>
 <ul class="simple">
@@ -278,6 +315,17 @@
 <li><p>Sympy til symbolske udregninger</p></li>
 <li><p>Matplotlib til at plotte</p></li>
 </ul>
+</div>
+<div class="section" id="hvad-er-python">
+<h1>Hvad er Python?<a class="headerlink" href="#hvad-er-python" title="Permalink to this headline">¶</a></h1>
+<p>Når vi programmerer en computer, vælger vi et programmeringssprog. Dette sprog afgør, hvordan vores idé og instruktioner bliver oversat til maskinkode, som så kan køre på vores computer.</p>
+<p>Der finder mange forskellige programmeringssprog med hver deres fordele og ulemper. Eksempelvis benytter man nogle sprog, når man gerne vil lave en hurtig implementation end man ville gøre, hvis man ville have et sprog, der var nemmere at kode i. Python er bygget op til at ligge så tæt så muligt på det engelske sprog så muligt, så det forhåbentlig er lidt mere <em>intuitivt</em> end mange andre sprog kan vise sig at være. Desuden har Python den fordel, at det er i meget hurtig vækst, så man kan næsten finde implementationer af alle tænkelige algoritmer i sproget.</p>
+</div>
+<div class="section" id="hvad-skal-vi-bruge-det-til">
+<h1>Hvad skal vi bruge det til?<a class="headerlink" href="#hvad-skal-vi-bruge-det-til" title="Permalink to this headline">¶</a></h1>
+<p>På fysik benyttes Python til mange forskellige opgaver, og det er derfor en rigtig godt investering af tid at lære. Allerede i løbet af det første halve år, vil I se det blive brugt til databehandling i laboratoriet og til symbolske udregninger i LinAlys. Senere vil man også se det simuleringer, numeriske udregninger og måske bare til at automatiserer udregninger, som man foretager ofte.</p>
+<p>I blok 1 og 2 forventer vi dog ikke, at I for alvor lærer programmering, det skal nok komme senere. Det er snarere meningen, at man skal stifte bekendtskab med Python som værktøj, og med brugen af de forskellige noter  på den her side, er det forhåbentligt muligt at stykke små koder sammen, som kan løse de problemer, som I støder på.</p>
+<!-- #endregion -->
 <div class="toctree-wrapper compound">
 </div>
 </div>

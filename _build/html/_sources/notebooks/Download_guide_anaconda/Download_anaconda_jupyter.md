@@ -26,4 +26,22 @@ Tryk Next > I agree > Next, vælg det sted du vil installere anaconda jeg anbefa
 
 Tryk så på New(oppe til højre) > Python 3. 
 
-Du har nu åbnet en python notebook og kan nu skrive Python. For at komme videre her fra skal du kigge i noten `Basal Python`.
+Du har nu åbnet en python notebook og kan nu skrive Python. Selv Notebooken har følgene layout:
+
+![](Jupyter_layout.png)
+
+De vigtigste knapper at kende på værktøjsbjælken kan findes her:
+
+![](Jupyter_layout_toolbar.png)
+
+
+
+
+
+```python
+
+```
+
+```python
+
+```

@@ -9,7 +9,7 @@
 # Overordnet er dokumentet kogt ned, så den blot indeholder det mest vigtige. Da det er skrevet sammen med MekRel har vi valgt stadig at beholde if/else statements og løkker, da de også er vigtige for en programmerings tankegang. 
 # 
 
-# # Introduktion til Python i LinAlys
+# # Python i LinAlys
 # 
 # LinALys-kurset indeholder to spor (analyse og lineær algebra) og har fokus på "blyantsregning" og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I år har vi valgt at bruge Python-modulet SymPy som CAS-værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel-kurset). Dette dokument er det første af en række notebooks, der introducerer de nødvendige koncepter.
 # 
