@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matplotlib &#8212; Python i LinAlys og MekRel</title>
+    <title>7.2. Matplotlib &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python i LinAlys" href="../sympy/Notebook1.html" />
-    <link rel="prev" title="Numpy" href="Numpy.html" />
+    <link rel="next" title="8. Python i LinAlys" href="../sympy/Notebook1.html" />
+    <link rel="prev" title="7.1. Numpy" href="Numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,12 +93,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
-   Installation af Python
+   1. Installation af Python
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Basal_python.html">
-   Kom i gang med Python
+   2. Kom i gang med Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,19 +108,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Andet_python.html">
-     Kontrolstrukturer og Løkker
+     2.3. Kontrolstrukturer og Løkker
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Intro_til_pakker.html">
-   Intro til pakker
+   3. Intro til pakker
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Intro.html">
-   Python i MekRel
+   7. Python i MekRel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -130,19 +130,19 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Numpy.html">
-     Numpy
+     7.1. Numpy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Matplotlib
+     7.2. Matplotlib
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../sympy/Notebook1.html">
-   Python i LinAlys
+   8. Python i LinAlys
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -152,42 +152,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook2.html">
-     SymPy i LinAlys
+     8.8. SymPy i LinAlys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook3_ligninger.html">
-     Ligningsløsning
+     8.10. Ligningsløsning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook3_plot.html">
-     Plotting i SymPy
+     8.13. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook4.html">
-     Differential- og integralregning for funktioner af en variabel
+     8.15. Differential- og integralregning for funktioner af en variabel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_FlereVar.html">
-     Funktioner af flere variable
+     8.20. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_LinAlg1.html">
-     Indledende Lineær Algebra
+     8.23. Indledende Lineær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_LinAlg_2.html">
-     Flere metoder i Linær Algebra
+     8.24. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../sympy/Notebook_kompleks.html">
-     Komplekse tal i SymPy
+     8.25. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -298,7 +298,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots">
-   Plots
+   7.2.1. Plots
   </a>
  </li>
 </ul>
@@ -313,12 +313,12 @@
               <div>
                 
   <div class="section" id="matplotlib">
-<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7.2. </span>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
 <p>Vi vil ofte i lab gerne formidle vores data i form af en figur. For at lave figurer bruger vi pakken Matplotlib.</p>
 <p>Matplotlib er et kæmpe bibliotek og kan rigtig rigtig meget. Det er faktisk så stort at du kun skal bruge en lille del af det <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Derfor skriver man <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>, det svarer lidt til kun at læsse bøgerne i fysik afdelingen af et bibliotek.</p>
 <p>Man skal også passe på når man laver plots med matplotlib. Det mixer dårligt med <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> da matplotlib laver plots ud fra tal og ikke analytiske udtryk som er det Sympy giver. Hvis man skal lave et plot med Sympy så kig i noten om Sympy.</p>
 <div class="section" id="plots">
-<h2>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.1. </span>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
 <p>For at lave et plot skal vi først have data at arbejde med.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,8 +408,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Numpy.html" title="previous page">Numpy</a>
-    <a class='right-next' id="next-link" href="../sympy/Notebook1.html" title="next page">Python i LinAlys</a>
+    <a class='left-prev' id="prev-link" href="Numpy.html" title="previous page"><span class="section-number">7.1. </span>Numpy</a>
+    <a class='right-next' id="next-link" href="../sympy/Notebook1.html" title="next page"><span class="section-number">8. </span>Python i LinAlys</a>
 
         </div>
         

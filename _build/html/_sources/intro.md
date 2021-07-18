@@ -1,6 +1,8 @@
 <!-- #region -->
 # Python i MekRel og LinAlys
-__Skriv lige sammen, delene er der, men de er ikke optimeret__
+__Jonathan Melcher, Johann Bock Severin, Linea Stausbøll Hedemark, Børge Svane Nielsen, Sune Olander__
+
+
 
 På denne side er alt python, som I skal bruge i løbet af det første halve år på fysik samlet. Det er bygget op således, at vi først har en grundlæggende note til python, som går ind i de meget overordnet emner.
 
