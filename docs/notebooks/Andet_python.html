@@ -86,7 +86,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Python i MekRel og LinAlys
+   Introduktion
   </a>
  </li>
 </ul>
@@ -136,6 +136,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="MekRel/Matplotlib_pyplot.html">
      Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MekRel/Funktioner_og_Scipy_optimize-checkpoint.html">
+     Functioner, fits og usikkerheder i python
     </a>
    </li>
   </ul>
@@ -324,7 +329,7 @@
                 
   <div class="section" id="kontrolstrukturer-og-lokker">
 <h1>Kontrolstrukturer og Løkker<a class="headerlink" href="#kontrolstrukturer-og-lokker" title="Permalink to this headline">¶</a></h1>
-<p><em>Denne side bygger ovenpå den tidligere, og er ofte brugt i kode. I MekRel og LinAlys benytter vi dog primært moduler, som tager sig af den logik og de løkker, som man skal bruge. Derfor er det ikke strengt nødvendigt at læse den her side, selvom det er nogle meget brugbare emner.</em></p>
+<p><em>Denne side bygger ovenpå den tidligere, og omhandler hvordan man kan bygge kode op med brugen af kontrolstrukturer og løkker til eksempelvis at gentage kode. I MekRel og LinAlys benytter vi dog primært moduler, som tager sig af den logik og de løkker, som man skal bruge. Derfor er det ikke strengt nødvendigt at læse den her side, selvom det er nogle meget brugbare emner, der helt sikkert ved være med til at forbedre forståelsen for Python.</em></p>
 <div class="section" id="logik-i-python">
 <h2>Logik i Python<a class="headerlink" href="#logik-i-python" title="Permalink to this headline">¶</a></h2>
 <p>Når vi skriver kode, er vi ret ofte interesseret i, om et udtryk er sandt eller falsk for vide, hvordan vi skal eksekvere resten af koden. Til dette benytter vi boolean variable, som enten kan være <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code>. Enten kan vi selv definerer en variabel som værende sand ved at skrive <code class="docutils literal notranslate"><span class="pre">switch</span> <span class="pre">=</span> <span class="pre">True</span></code>, men oftere skal vi dog tjekke om noget er sandt.</p>
@@ -355,27 +360,27 @@
 </div>
 </div>
 </div>
-<p>I det andet tilfælde har vi redefineret i til <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">12</span></code> og udtrykket er altså ikke længere sandt.</p>
+<p>I det andet tilfælde har vi redefineret <code class="docutils literal notranslate"><span class="pre">i</span></code> til <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">12</span></code> og udtrykket er altså ikke længere sandt.</p>
 <p>Udover at benytte <code>==</code> kan vi benytte forskellige andre tegn til at danne udsagn, der kan være sande eller falske:</p>
 <ul class="simple">
 <li><p><code>&lt;</code> eller <code>&gt;</code> fortæller om en værdi er større eller mindre end en anden</p></li>
 <li><p><code>&lt;=</code> eller <code>&gt;=</code> er ligesom overstående men inkluderer også lig med</p></li>
 <li><p><code>!=</code> givet modsat tegn af <code>==</code>. Altså spørger om noget <em>er forskelligt fra</em></p></li>
 <li><p><code>not</code> ændrer sandhedsværdien af et udtryk til det omvendte, eksempelvis er værdien af <code>not True</code> netop <code>False</code> og dermed er <code>not 1 == 2</code> sandt idet 1 og 2 jo ikke er ens.</p></li>
-<li><p><code>in</code> kan bruges til at spørge om et element er i en liste. Eksempelvis vil <code>7 in tal</code> give True i vores eksempel ovenfor.</p></li>
+<li><p><code>in</code> kan bruges til at spørge om et element er i en liste. Eksempelvis vil <code>7 in tal</code> give <code class="docutils literal notranslate"><span class="pre">True</span></code>, hvis <code class="docutils literal notranslate"><span class="pre">tal</span></code> er en liste, som indeholder 7, som det gjorde på tidligere side.</p></li>
 </ul>
 </div>
 <div class="section" id="if-else-statements">
 <h2>If-else-statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h2>
 <p>Særligt gøre boolean logik sig nyttig, når vi skal eksekvere noget kode, hvis et bestemt udtryk er sandt og noget andet, hvis det ikke er. Her kan vi benytte if/else statements. Her ser syntaksen sådan her ud:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Statement</span><span class="p">:</span>
-    <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span>
+    <span class="o">~</span> <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span> <span class="o">~</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">gør</span> <span class="n">noget</span> <span class="n">andet</span>
+    <span class="o">~</span> <span class="n">gør</span> <span class="n">noget</span> <span class="n">andet</span> <span class="o">~</span>
 </pre></div>
 </div>
-<p>Hvad der sker, afhænger af sandhedsværdien af udtrykket “Statement” (altså om resultatet, der en en boolean, er <code>True</code> eller <code>False</code> ligesom i eksemplet med <code>i == 10</code> ovenfor). Hvis det logiske udsagn “Statement” er sandt, udføres første del af koden, ellers udføres den anden del. Man kan udelade <code>else</code>, og i dette tilfælde vil der kun ske noget såfremt “Statement” er sandt.
-Bemærk at indrykningen spiller en vigtig rolle i at afgrænse hvad der skal gøres i de enkele tilfælde.</p>
+<p>Hvad der sker, afhænger af sandhedsværdien af udtrykket <code class="docutils literal notranslate"><span class="pre">Statement</span></code>. Hvis det logiske udsagn <code class="docutils literal notranslate"><span class="pre">Statement</span></code> er sandt, udføres første del af koden, ellers udføres den anden del. Man kan udelade <code>else</code>, og i dette tilfælde vil der kun ske noget såfremt <code class="docutils literal notranslate"><span class="pre">Statement</span></code> er sandt.
+Bemærk at indrykningen spiller en vigtig rolle i at afgrænse, hvad der skal gøres i de enkele tilfælde.</p>
 <p>Her er et eksempel, hvor vi vil tage absolutværdien af et tal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -399,7 +404,8 @@ Bemærk at indrykningen spiller en vigtig rolle i at afgrænse hvad der skal gø
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Hvis a er negativt, så gør følgende:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo: Vi startede med et negativt tal, så if-betingelsen var opfyldt&quot;</span><span class="p">)</span> <span class="c1"># Vi printer, hvis vi går ind i denne del af koden.</span>
+     <span class="c1"># Vi printer, hvis vi går ind i denne del af koden.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo: Vi startede med et negativt tal, så if-betingelsen var opfyldt&quot;</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="o">-</span> <span class="n">a</span>  
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
@@ -412,7 +418,7 @@ Bemærk at indrykningen spiller en vigtig rolle i at afgrænse hvad der skal gø
 </div>
 </div>
 <p>Bemærk at <code>print(a)</code> ikke er indrykket og dermed ikke er en del af if-sætningen. Værdien af a udskrives derfor uanset fortegn.</p>
-<p>Hvis vi nu ønsker at dividere et tal med et andet, men returne den tomme variabel <code>None</code>, hvis vi bliver bedt om at dividere med 0 (og dermed undgår en fejlmeddelelse),  kan vi benytte vores if-else:</p>
+<p>Et andet eksempel kunne være, hvis vi ønsker at dividere et tal med et andet, men have den tomme variabel <code>None</code>, hvis vi bliver bedt om at dividere med 0 (og dermed undgår en fejlmeddelelse). Til dette kan vi benytte vores if-else:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tæller</span> <span class="o">=</span> <span class="mi">10</span>
@@ -435,21 +441,21 @@ Bemærk at indrykningen spiller en vigtig rolle i at afgrænse hvad der skal gø
 </div>
 <p>Hvis der er brug for flere rangordnede betingelser for at afgøre hvilken handling, koden skal udføre, kan man benytte <code>elif second_statement</code> (elif er kort for else-if). Så opbygger man syntaksen som</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Statement</span><span class="p">:</span>
-    <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span>
+    <span class="o">~</span> <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span> <span class="o">~</span>
 <span class="k">elif</span> <span class="n">Second_statement</span><span class="p">:</span>
-    <span class="n">gør</span> <span class="n">en</span> <span class="n">andet</span> <span class="n">ting</span>
+    <span class="o">~</span> <span class="n">gør</span> <span class="n">en</span> <span class="n">andet</span> <span class="n">ting</span> <span class="o">~</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">ellers</span> <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span>
+    <span class="o">~</span> <span class="n">ellers</span> <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span> <span class="o">~</span>
 </pre></div>
 </div>
 <p>Hvis man vil tjekke flere ting, kan man blot tilføje flere <code>elif</code> statements under hinanden.<br />
-I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker først “Statement”, og hvis denne er sand vil den <strong>kun</strong> køre den tilhørende del af koden uanset om “Second_statement” også er sand. Ellers vil den tjekke <code>elif</code>-statementerne i rækkefølge. Hvis ingen af de givne betingelser er opfyldt, vil den køre koden der følger efter <code>else</code>.</p>
+I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker først <code class="docutils literal notranslate"><span class="pre">Statement</span></code> og hvis denne er sand vil den <strong>kun</strong> køre den tilhørende del af koden uanset om <code class="docutils literal notranslate"><span class="pre">Second_statement</span></code> også er sand. Hvis <code class="docutils literal notranslate"><span class="pre">Statement</span></code> er falskt, vil den tjekke <code>elif</code>-statementerne i rækkefølge of eksekverer, den første som er sand. Hvis ingen af de givne betingelser er opfyldt, vil den køre koden der følger efter <code>else</code>.</p>
 </div>
 <div class="section" id="lokker-loops">
 <h2>Løkker/loops<a class="headerlink" href="#lokker-loops" title="Permalink to this headline">¶</a></h2>
-<p>Ofte bruger vi computeren til at gentage opgaver mange gange. Dette gør vi ved brug af løkker, som ofte kaldes loops. Der er to typer: en <code>for</code>-løkke og en <code>while</code>-løkke, i denne Notebook vil vi dog kun vise for-løkker, som benyttes som:</p>
+<p>Ofte bruger vi computeren til at gentage opgaver mange gange. Dette gør vi ved brug af løkker, som ofte kaldes loops. Der er to typer: en <code>for</code>-løkke og en <code>while</code>-løkke, i denne Notebook vil vi dog kun vise for-løkker, som bruges ved at sætte følgende struktur op:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variabel</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-    <span class="n">Gør</span> <span class="n">det</span> <span class="n">her</span>
+    <span class="o">~</span> <span class="n">gør</span> <span class="n">det</span> <span class="n">her</span> <span class="o">~</span>
 </pre></div>
 </div>
 <p>Løkken tildeler den variable værdier fra listen (i listens rækkefølge) og gør for denne værdi hvad det indrykkede stykke kodetekst specificerer. Det er normal praksis at kalde den variable i løkke-definitionen for <code>i</code> hvis der ikke er nogen særlig grund til at bruge et andet navn. Hvis vi eksempelvis vil beregne og udskrive kvadratet på 2, 3, 5 og 7, kan vi skrive det som:</p>
@@ -458,7 +464,7 @@ I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker førs
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tal</span><span class="p">:</span> <span class="c1"># Den variable hedder &#39;i&#39; og vil antage værdierne i listen &#39;tal&#39;.</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Print tallet i anden</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Print kvadratet på tallet `i`</span>
 </pre></div>
 </div>
 </div>
@@ -471,7 +477,7 @@ I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker førs
 </div>
 </div>
 </div>
-<p>Hvis vi er interreseret i at gøre noget et bestemt antal gange, kan vi benytte <code>range(antal)</code> til at generere en liste med tallene fra <code>0</code> og op til <code>antal - 1</code> (på grund af nulindekseringen så er der stadig ‘antal’ tal i listen). Lad os prøve at gange et tal med 10 og printe det 5 gange:</p>
+<p>Hvis vi er interreseret i at gøre noget et bestemt antal gange, kan vi benytte <code>range(antal)</code> til at generere en liste med tallene fra <code>0</code> og op til <code>antal - 1</code> (på grund af nulindekseringen så er der stadig <code class="docutils literal notranslate"><span class="pre">antal</span></code> tal i listen). Lad os prøve at gange et tal med 10 og printe det og så gentage dette 5 gange:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -558,7 +564,7 @@ Og summen er 180
     <div class="container">
       <p>
         
-          By Jonathan og Johann<br/>
+          By Niels Bohr Institutet<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

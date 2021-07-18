@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functioner, fits og usikkerheder i python &#8212; Python i LinAlys og MekRel</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python i LinAlys" href="../sympy/Notebook1.html" />
+    <link rel="prev" title="Matplotlib" href="Matplotlib_pyplot.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python i LinAlys og MekRel</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduktion
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Download_guide_anaconda/Download_anaconda_jupyter.html">
+   Installation af Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Basal_python.html">
+   Kom i gang med Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Andet_python.html">
+     Kontrolstrukturer og Løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Intro_til_pakker.html">
+   Intro til pakker
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Intro.html">
+   Python i MekRel
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Matplotlib_pyplot.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Functioner, fits og usikkerheder i python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../sympy/Notebook1.html">
+   Python i LinAlys
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook2.html">
+     SymPy i LinAlys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook3_ligninger.html">
+     Ligningsløsning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook3_plot.html">
+     Plotting i SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook4.html">
+     Differential- og integralregning for funktioner af en variabel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook_FlereVar.html">
+     Funktioner af flere variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook_LinAlg1.html">
+     Indledende Lineær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook_LinAlg_2.html">
+     Flere metoder i Linær Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sympy/Notebook_kompleks.html">
+     Komplekse tal i SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/MekRel/Funktioner_og_Scipy_optimize-checkpoint.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JohannSeverin/NBI_python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JohannSeverin/NBI_python/issues/new?title=Issue%20on%20page%20%2Fnotebooks/MekRel/Funktioner_og_Scipy_optimize-checkpoint.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/JohannSeverin/NBI_python/master?urlpath=tree/~/notebooks/MekRel/Funktioner_og_Scipy_optimize-checkpoint.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktioner">
+   Funktioner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fitting">
+   Fitting
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Funktioner" data-toc-modified-id="Funktioner-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Funktioner</a></span></li><li><span><a href="#Fitting" data-toc-modified-id="Fitting-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fitting</a></span></li></ul></div><div class="section" id="functioner-fits-og-usikkerheder-i-python">
+<h1>Functioner, fits og usikkerheder i python<a class="headerlink" href="#functioner-fits-og-usikkerheder-i-python" title="Permalink to this headline">¶</a></h1>
+<p>I denne note vil vi introducere jer til funktioner, hvordan man fitter en model til data og behandler usikkerheder i Python.</p>
+<div class="section" id="funktioner">
+<h2>Funktioner<a class="headerlink" href="#funktioner" title="Permalink to this headline">¶</a></h2>
+<p>Før vi kan fitte en funktion med Python skal vi kunne definere en funktion. En funktion er et meget bredt begreb i Python og man kan rigtig meget med dem, og når I kommer lidt længere i jeres udannelse er det hovedsageligt dem I skal bruge når I programmerer, men lige nu skal vi bare kunne bruge dem til at fitte.</p>
+<p>Man definerer en funktion ved at skrive ‘def’, skrive det funktionen skal gøre, også skrive ‘return’, hvor man skriver det funktionen skal levere. Et eksempel ses under.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funktion</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her har jeg defineret en funktion som jeg kalder funktion, den tager 2 argumenter, m og v, og returnerer <span class="math notranslate nohighlight">\( \frac{1}{2}  m v^2\)</span>. Den kan vi så prøve af for m = 80 og v = 5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">funktion</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funktioner kan også bruges til at gøre kode mere overskuelig og nemmere at debugge, her er der fx defineret en funktion som laver et plot. Den tager ingen værdier og retunere heller ikke noget, men er nem at debugge og man kan lade være med at kalde den når man har fået sit plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">v_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">E_data</span> <span class="o">=</span> <span class="n">funktion</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="n">v_data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_E_kin</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_data</span><span class="p">,</span><span class="n">E_data</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Energi&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fart [m/s]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Energi [J]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">plot_E_kin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Funktioner_og_Scipy_optimize-checkpoint_9_0.png" src="../../_images/Funktioner_og_Scipy_optimize-checkpoint_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="fitting">
+<h2>Fitting<a class="headerlink" href="#fitting" title="Permalink to this headline">¶</a></h2>
+<p>Vi skal nu bruge funktioner til at fitte en model til data. Her bruger vi optimize.curve_fit, denne kommer fra pakken SciPy og importeres således.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For at fitte en model skal man have noget data at fitte til, her bruger jeg den data der lå på jeres første Python aflevering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.19</span><span class="p">,</span><span class="mf">1.98</span><span class="p">,</span><span class="mf">2.05</span><span class="p">,</span><span class="mf">2.16</span><span class="p">,</span><span class="mf">2.16</span><span class="p">,</span><span class="mf">2.07</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">2.61</span><span class="p">,</span><span class="mf">2.6</span><span class="p">,</span><span class="mf">2.58</span><span class="p">,</span><span class="mf">2.81</span><span class="p">,</span><span class="mf">2.68</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.36</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.87</span><span class="p">,</span><span class="mf">2.97</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.53</span><span class="p">,</span><span class="mf">3.47</span><span class="p">,</span><span class="mf">3.83</span><span class="p">,</span><span class="mf">3.54</span><span class="p">,</span><span class="mf">3.6</span><span class="p">,</span><span class="mf">3.5</span><span class="p">],])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.19 1.98 2.05 2.16 2.16 2.07]
+ [0.3  2.61 2.6  2.58 2.81 2.68]
+ [0.36 3.   3.   3.   2.87 2.97]
+ [0.53 3.47 3.83 3.54 3.6  3.5 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For at fitte en model til data, skal man have ét datapunkt for hver varieret måling, her har vi 5 målinger per pendullængde, derfor skal vi altså tage gennemsnit af vores svingningstider.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1">#udvælger kolonnen med pendullængde</span>
+<span class="n">svingningstider</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="c1">#her udvælger vi de fire kolonner  med svingningstider</span>
+
+<span class="n">gns_svingning</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">svingningstider</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#tager gennemsnit af svingningstiderne, &quot;axis&quot; angiver om vi går vandret eller lodret i datasættet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gns_svingning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.19 0.3  0.36 0.53]
+[2.0875 2.65   2.9675 3.61  ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nu har vi to lister med data punkter der hænger sammen, nu kan vi begynde at undersøge hvilket fit vi skal bruge. Vi regner med at skulle bruge en lineær funktion, så vi skal have defineret det i vores kode. Vi kalder funktionen “linfunc”, og angiver så variabel og parametre i parentes. I return skriver vi hvad funktionen skal give som resultat når vi bruger den.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Når man fitter er det meget <strong>vigtigt</strong> at det første argument i ens funktion, her x, er det som man har data på og vil have python til at fitte efter, ellers fungerer fittet ikke. Dette er en fejl som ofte opstår, så hvis I får en fejl så tjek lige om i har det rigtige stående som det første i jeres parentes.</p>
+<p>Når man så har en funktion defineret rigtigt, kan man fitte vores funktion til dataen med kommandoen optimize_curvefit. Funktionen optimize.curve_fit skal bruge funktionen der ønskes at fitte efter, også de tilhørende x- og y-værdier, i dette tilfælde pendullængde og svingningstid. Funktionen giver to outputs, først giver den fitte-paramterene, det vil sige fittets bedste bud på hvad parametrene i fit-funktionen bør være. Dernæst giver den covariansen. Er der flere parametre angives covariansen som en matrix med flere værdier. Covariance matrixen kan bruges til at finde ussikerheder på fit parametre, men mere om det til sidst.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">linfunc</span><span class="p">,</span> <span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">)</span> <span class="c1">#printer parametrene</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span> <span class="c1">#printer covariansen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.4553719  1.29164669]
+[[ 0.08314673 -0.02868562]
+ [-0.02868562  0.01115413]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nu kan vi plotte vores data sammen med vores fit, og vurdere hvor god vores model er. Vi skal selvfølgelig også have plottet vores usikkerheder, og da vi arbejder med gennemsnit vil vi plotte usikkerheden ved hjælp af standardafvigelsen på vores data. Man kan bruge NumPy funktionen np.std() til at bestemme standardafvigelse.</p>
+<p>For at plotte vores fit laver vi et array af værdier i det interval vi gerne vil plotte med np.linspace funktionen. Vi bruger så disse værdier i vores lineære-funktion, hvor vi bruger de parametre vores fit bestemte med optimize.curve-fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">afvigelse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">svingningstider</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">svingningstider</span><span class="p">))</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1">#laver et array af 1000 jævnt fordelte tal mellem 0.1 og 0.6</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">linfunc</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">par</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">par</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#laver et array af vores lineære fit på det ovenstående array</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span> <span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">afvigelse</span> <span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;none&#39;</span> <span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Usikkerhed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Snorlængden [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sviningstid [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Svingningstid som funktion af snorlængde&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Funktioner_og_Scipy_optimize-checkpoint_22_0.png" src="../../_images/Funktioner_og_Scipy_optimize-checkpoint_22_0.png" />
+</div>
+</div>
+<p>Man kan også lave et fit, hvor der tages højde for usikkerheden på datapunkterne. Det gør man ved at angive et sigma når man bruger curve_fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par_with_error</span><span class="p">,</span> <span class="n">cov_new</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">linfunc</span><span class="p">,</span> <span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">afvigelse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par_with_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.71061446 1.23176413]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Paremeterne er ikke ændret så meget da fejlen på punkterne er meget ens, men hvis der havde været stor forskel på usikkerhederne ville det have en større effekt. Endeligt kan man så plotte punkter med usikkerheder og fit som tager højde for usikkerheden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_2</span> <span class="o">=</span> <span class="n">linfunc</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">par_with_error</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">par_with_error</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span><span class="p">,</span><span class="n">yerr</span><span class="o">=</span> <span class="n">afvigelse</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y_2</span> <span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Snorlængden [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sviningstid [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Svingningstid som funktion af snorlængde&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Funktioner_og_Scipy_optimize-checkpoint_26_0.png" src="../../_images/Funktioner_og_Scipy_optimize-checkpoint_26_0.png" />
+</div>
+</div>
+<p>For at finde ussikerheden på de fit parametre som er fundet her kan man bruge covariance matrixen. På dens diagonal er nemlig variancen for de fittede parametre. Når man har variancen kan man finde ussikerheden da kvadratroden af variancen er ussikerheden. I python kan det gøres med et for loop</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cov_new</span><span class="p">)):</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cov_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39; +/-&#39;</span> <span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.455371899695233  +/- 0.3624954078593303
+1.2916466946051461  +/- 0.120762382852016
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her er fit værdierne for a og b printet med ussikerheder fundet fra covariance matrixen.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/MekRel"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Matplotlib_pyplot.html" title="previous page">Matplotlib</a>
+    <a class='right-next' id="next-link" href="../sympy/Notebook1.html" title="next page">Python i LinAlys</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Niels Bohr Institutet<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

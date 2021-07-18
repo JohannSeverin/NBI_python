@@ -1,6 +1,6 @@
 <!-- #region -->
-# Python
-__Jonathan Melcher, Johann Bock Severin, Linea Stausbøll Hedemark, Børge Svane Nielsen, Sune Olander__
+# Introduktion
+___Jonathan Melcher, Johann Bock Severin, Linea Stausbøll Hedemark, Børge Svane Nielsen, Sune Olander___
 
 I fysik benytter vi Python som kodesprog. Denne side har burde indeholde alt Python, som bliver brugt på i kurserne MekRel og LinAlys i blok 1 og 2. 
 

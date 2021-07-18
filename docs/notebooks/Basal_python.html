@@ -86,7 +86,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Python i MekRel og LinAlys
+   Introduktion
   </a>
  </li>
 </ul>
@@ -136,6 +136,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="MekRel/Matplotlib_pyplot.html">
      Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MekRel/Funktioner_og_Scipy_optimize-checkpoint.html">
+     Functioner, fits og usikkerheder i python
     </a>
    </li>
   </ul>
@@ -338,12 +343,13 @@
                 
   <div class="section" id="kom-i-gang-med-python">
 <h1>Kom i gang med Python<a class="headerlink" href="#kom-i-gang-med-python" title="Permalink to this headline">¶</a></h1>
-<p>I løbet af de første halve år på jeres uddannelse i fysik, kommer I til at bruge python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da denne indeholder alt, hvad man umiddelbart skal bruge.</p>
-<p>I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Code celler er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske ift. jeres forsøg. Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en celle, og bevæge sig videre til den næste i rækken.</p>
-<p>Derudover er det vigtigt at understrege at i <strong>ikke</strong> skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og <strong>skal</strong> afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse <strong>må</strong> <em>godt</em> afleveres som Notebooks, men det hører i mere om senere.</p>
+<p>I løbet af de første halve år på jeres uddannelse i fysik, kommer I til at bruge python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da dette er en pakkeløsning, som burde indeholde alt til det første år halve år på fysik (og meget længere medmindre man har meget specifikke opgaver).</p>
+<p>I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske, hvis man nu laver et forsøg i laboratoriet. Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en kodecelle, og bevæge sig videre til den næste i rækken.</p>
+<p><span style="color:red"> Er det her det rigtige sted at have denne kommentar? Ellers skal det lige skrives så skal det lige specificeres at dette gælder i MekRel </span><br />
+Derudover er det vigtigt at understrege at i <strong>ikke</strong> skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og <strong>skal</strong> afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse <strong>må</strong> <em>godt</em> afleveres som Notebooks, men det hører i mere om senere.</p>
 <div class="section" id="hvordan-virker-python">
 <h2>Hvordan virker Python?<a class="headerlink" href="#hvordan-virker-python" title="Permalink to this headline">¶</a></h2>
-<p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Man koger derfor ens opgave ned i små dele, som kan bliver udført i træk. Alt hvad der står efter et <code>#</code> i koden bliver dog ikke læst, og dette skal forstås, som at det er en kommentar til den, der læser koden.</p>
+<p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Et computer program bliver altså en liste af computer operationer, som skal foretages i en bestemt rækkefølge. Hvis man vil markere noget, som comptueren ikke skal køre, kan det markeres med <code>#</code>, dette bruges ofte til kommentar til den, der læser koden.</p>
 <p>Når man arbejder i python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definerer en variabel. Dette kunne eksempelvis være <code> a = 5 </code>, så vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu blive betragtet som <code>5</code>.</p>
 <p>En god måde at se en værdi på, er ved at bede Python om at printe den, dette gøres ved at skrive <code>print(X)</code>, hvor X kan være et hvilket som helst variabelnavn.</p>
 <p>Eksempelvis kan vi definere variablen <code>hello</code> og printe den.</p>
@@ -360,7 +366,7 @@
 </div>
 </div>
 </div>
-<p>I en notebook er det faktisk ikke nødvendigt at printe den sidste linje, man kan blot skrive variabelnavnet, og så vil Jupyter selv printe det:</p>
+<p>I en notebook er det faktisk ikke nødvendigt at printe den <em>sidste</em> linje, man kan blot skrive variabelnavnet, og så vil Jupyter selv printe det:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span>
@@ -379,9 +385,9 @@
 <p>De mest almindelige variable typer er:</p>
 <ul class="simple">
 <li><p>Integers (heltal): her skriver vi blot et helt tal, som eksempelvis <code>a = 6</code></p></li>
-<li><p>Float (decimaltal): indgår der et decimalpunktum, ‘.’, får vi automatisk en float variabel, som eksempelvis <code> pi = 3.14</code>. Bemærk at <code>a = 6</code> og <code>a = 6.</code> derfor ikke er det samme, selvom værdien er det.</p></li>
-<li><p>String (tekststræng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code> hello = “Hello World”</code></p></li>
-<li><p>Boolean (sandt/falsk): Hvis vi skal angive en værdi som enten sand eller falsk, bruger vi en “boolean variable” og skriver <code>switch = True</code>. Falsk skal gives ved <code>False</code>, og bemærk igen at der er forskel på <code>Svar = True</code> og <code>Svar = “True”</code>, idet <code>Svar</code> i sidstnævnte tilfælde istedet bliver en string indeholdende ordet True, og ikke et logisk udtryk.</p></li>
+<li><p>Float (decimaltal): indgår der et decimalpunktum, ‘.’, får vi automatisk en float variabel, som eksempelvis <code>kroner_per_euro = 7.46</code>.</p></li>
+<li><p>String (tekststræng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code>hello = “Hello World”</code></p></li>
+<li><p>Boolean (sandt/falsk): Hvis vi skal angive en værdi som enten sandt eller falsk, bruger vi en “boolean variable” og kan skrive <code>switch = True</code>. Falsk skal gives ved <code>False</code>, og bemærk igen at der er forskel på <code>Svar = True</code> og <code>Svar = “True”</code>, idet <code>Svar</code> i sidstnævnte tilfælde istedet bliver en string indeholdende ordet True, og ikke et logisk udtryk.</p></li>
 </ul>
 </div>
 <div class="section" id="lister-af-variable">
@@ -401,8 +407,8 @@
 </div>
 </div>
 </div>
-<p>Vi ser altså, at når vi kalder <code>tal[1]</code> får vi det andet element ud, som i definitionen var givet ved 7. Dette er et resultat af nul-indeksering, og er noget, der ofte kan give fejl indtil man vænner sig til Python, så tjek det, hvis koden ikke virker eller giver uventede resultater.</p>
-<p>Vi kan tilføje et element til listen ved at benytte notationen <code>.append(element)</code>. Dette tilføjer elementet til den pågældende variabel i slutningen af listen. Eksempelvis, hvis vi ønsker at udvide vores tal-liste, kan vi skrive:</p>
+<p>Vi ser altså, at når vi kalder <code>tal[1]</code> får vi det andet element ud, som i definitionen var givet ved 7. Dette er et resultat af nul-indeksering. Man kan ofte få en fejl her, når man ikke er vant til Python, så tjek det, hvis koden ikke virker eller giver uventede resultater.</p>
+<p>Elementer kan tilføjes til listen ved at benytte koden <code>.append(element)</code> efter vores liste. Dette tilføjer elementet til den pågældende variabel i slutningen af listen. Eksempelvis, hvis vi ønsker at udvide vores tal-liste, kan vi skrive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -511,7 +517,7 @@
 <p>Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere.</p>
 <div class="section" id="aendring-af-variable">
 <h3>Ændring af variable<a class="headerlink" href="#aendring-af-variable" title="Permalink to this headline">¶</a></h3>
-<p>Der kan være mange årsager til, at man skal ændre værdien på en varibel, det kunne f. eks. være i en simulation, hvor positionen skal opdateres. Sætter vi variabel navnet lig med en ny værdi ændres dette blot:</p>
+<p>Der kan være mange årsager til, at man skal ændre værdien på en varibel, det kunne f. eks. være i en simulation, hvor positionen af et objekt skal opdateres efter et lille tidsskridt. Benytter vi samme variabelnavn i en ny definition ændrer vi blot værdien:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vari</span> <span class="o">=</span> <span class="mi">15</span>
@@ -528,12 +534,12 @@
 </div>
 </div>
 </div>
-<p>Når vi benytter et lighedstegn, så udregnes først værdien på højre side, inden værdien bliver gemt med variabelnavnet til venstre. Vi kan altså godt benytte en variabel til at redefinerer sig selv. Her benytter vi vari til at gøre vari 10 gange større.</p>
+<p>Når vi benytter et lighedstegn, så udregnes først værdien på højre side, inden værdien bliver gemt med variabelnavnet til venstre. Vi kan altså godt benytte en variabel til at redefinerer sig selv. Her benytter vi <code class="docutils literal notranslate"><span class="pre">vari</span></code> til at gøre <code class="docutils literal notranslate"><span class="pre">vari</span></code> 10 gange større.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vari</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vari</span><span class="p">)</span> <span class="c1"># Sat til 7</span>
-<span class="n">vari</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">vari</span> <span class="c1"># vari bruges til at udregne en ny værdi for sig selv</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vari</span><span class="p">)</span>      <span class="c1"># Sat til 7</span>
+<span class="n">vari</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">vari</span> <span class="c1"># `vari` bruges til at udregne en ny værdi for sig selv</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vari</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -607,7 +613,7 @@
     <div class="container">
       <p>
         
-          By Jonathan og Johann<br/>
+          By Niels Bohr Institutet<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

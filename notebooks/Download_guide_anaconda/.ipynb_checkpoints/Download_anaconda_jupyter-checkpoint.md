@@ -36,11 +36,3 @@ De vigtigste knapper at kende på værktøjsbjælken kan findes her:
 
 Når du nu har en Jupyter Notebook oppe at køre, så er du klar til at skrive Python. 
 
-
-```python
-
-```
-
-```python
-
-```
