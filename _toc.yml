@@ -15,6 +15,7 @@ chapters:
   sections:
   - file: notebooks/MekRel/Numpy
   - file: notebooks/MekRel/Matplotlib_pyplot
+  - file: notebooks/MekRel/Funktioner_og_Scipy_optimize-checkpoint
 - file: notebooks/sympy/Notebook1
   sections:
   - file: notebooks/sympy/Notebook2
@@ -25,4 +26,3 @@ chapters:
   - file: notebooks/sympy/Notebook_LinAlg1
   - file: notebooks/sympy/Notebook_LinAlg_2
   - file: notebooks/sympy/Notebook_kompleks
-
