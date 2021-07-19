@@ -2,12 +2,12 @@
 # coding: utf-8
 
 # # Kom i gang med Python
-# I løbet af de første halve år på jeres uddannelse i fysik, kommer I til at bruge python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da dette er en pakkeløsning, som burde indeholde alt til det første år halve år på fysik (og meget længere medmindre man har meget specifikke opgaver). 
+# I løbet af det første halve år på jeres uddannelse i fysik, kommer I til at bruge Python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive Python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da dette er en pakkeløsning, som burde indeholde alt til det første halve år på fysik (og meget længere medmindre man har specifikke opgaver). 
 # 
-# I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske, hvis man nu laver et forsøg i laboratoriet. Man kan med fordel bruge tastaturgenvejen `shift` + `enter` for at køre en kodecelle, og bevæge sig videre til den næste i rækken.
+# I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske, hvis man nu laver et forsøg i laboratoriet.
 # 
-# <span style="color:red"> Er det her det rigtige sted at have denne kommentar? Ellers skal det lige skrives så skal det lige specificeres at dette gælder i MekRel </span>  
-# Derudover er det vigtigt at understrege at i **ikke** skal bruge Notebooks som logbøger til labafleveringer. Logbøger eller rapporter skal ikke indeholde kode, kun resultatet af jeres kode (ex. plots, resultater), og kan med fordel skrives i Word, LaTeX el.lign. og **skal** afleveres i .pdf-format. Senere i kurset vil i blive stillet særlige opgaver i Python i form af såkaldt Pythonafleveringer, nogle af disse __må__ *godt* afleveres som Notebooks, men det hører i mere om senere.
+# **Tip:** Man kan med fordel bruge tastaturgenvejen `shift` + `enter` for at køre en kodecelle, og bevæge sig videre til den næste celle i rækken.
+# 
 
 # ## Hvordan virker Python?
 # 
@@ -46,7 +46,9 @@ hello
 # 
 # ### Lister af variable 
 # Vi kan sammensætte lister af flere værdier, eksempelvis en samling af tal. Dette gøres mest almindeligt ved at lave en liste.:
-# <code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud. __Bemærk at Python starter ved nul (nul-indeksering), så det første element er altså <code>tal[0]</code>.__
+# <code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud. 
+# 
+# **Tip:** Python starter ved nul (nul-indeksering), så det første element er altså <code>tal[0]</code>.
 
 # In[4]:
 
@@ -116,7 +118,7 @@ print(81 ** (1/2)) # Eller benytte at kvadratroden af x er x**(1/2) til at finde
 print(81 ** 1/2) # Bemærk at dette IKKE beregner kvadratroden af 81 ligesom ovenfor:forskellen er parentesen
 
 
-# Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere.
+# Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere i noterne om SymPy og NumPy.
 
 # ### Ændring af variable
 

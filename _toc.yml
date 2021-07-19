@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 options:
-  numbered: false
+  numbered: true
 chapters:
 - file: notebooks/Download_guide_anaconda/Download_anaconda_jupyter
 - file: notebooks/Basal_python
@@ -19,10 +19,13 @@ chapters:
 - file: notebooks/sympy/Notebook1
   sections:
   - file: notebooks/sympy/Notebook2
+  - file: notebooks/sympy/Notebook2_limits
   - file: notebooks/sympy/Notebook3_ligninger
   - file: notebooks/sympy/Notebook3_plot
   - file: notebooks/sympy/Notebook4
-  - file: notebooks/sympy/Notebook_FlereVar
+  - file: notebooks/sympy/Notebook_FlereVar_analyse
+  - file: notebooks/sympy/Notebook_FlereVar_plot
   - file: notebooks/sympy/Notebook_LinAlg1
+  - file: notebooks/sympy/Notebook_LinAlg1_5
   - file: notebooks/sympy/Notebook_LinAlg_2
   - file: notebooks/sympy/Notebook_kompleks

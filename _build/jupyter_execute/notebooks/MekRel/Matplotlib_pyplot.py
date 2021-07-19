@@ -24,14 +24,14 @@ xData = np.array([1,2,3,4])
 yData = np.array([1,1.8,3.3,3.7])
 
 
-# Når man laver et plot med Matplotlib bygger man det op trin vis. Først laves plottet ud af data med `plt.plot` der efter bygges axes navne og en legend på. Et eksempel ses her,
+# Når man laver et plot med Matplotlib bygger man det op trin vis. Først laves plottet ud af data med `plt.plot` der efter bygges akse navne og en legend på. Et eksempel ses her,
 
 # In[6]:
 
 
 import matplotlib.pyplot as plt
 
-plt.plot(xData,yData,'o', label = "Data") #Vi plotter xData mod yData som store prikker, og giver datasættet en titel
+plt.plot(xData, yData, 'o', label = "Data") #Vi plotter xData mod yData som store prikker, og giver datasættet en titel
 
 plt.xlabel('Længde [cm]', fontsize = 20) #Tilføjer etiketter på akserne og angiver skriftstørrelse
 plt.ylabel('Masse [g]', fontsize = 20)
@@ -44,6 +44,8 @@ plt.show() #viser figuren under den kørte celle
 
 
 # I behøver ikke nødvendigvis manuelt indstille skriftstørrelsen på akser og legend hver gang, men det kan nogle gange være nødvendigt at justere, afhængig af hvor meget figurerne skal fylde i jeres logbog. Regelen er at man altid skal kunne læse akse-titlerne uden at zoome ind eller hive forstørrelsesglas frem. Vær også opmærksom på, at når i bruger funktionen plt.savefig(), gemmes jeres figur i samme mappe som jeres Notebook ligger, med mindre i indstiller det anderledens.
+# 
+# Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under.
 
 # In[7]:
 
@@ -74,5 +76,5 @@ plt.show()
 # In[ ]:
 
 
-
+Det er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det i skal her.
 

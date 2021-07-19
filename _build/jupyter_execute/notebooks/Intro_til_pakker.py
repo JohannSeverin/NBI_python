@@ -17,7 +17,7 @@
 # 
 # Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollerer svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrerer jeres data fra og Scipy til at lave fits.
 # 
-# Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med, vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en god kilde til fejl i koden. 
+# Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med, vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en kilde til fejl. 
 # 
 
 # ## Import 
@@ -40,7 +40,11 @@ from scipy.optimize import curve_fit
 
 # ## Hvordan bruger man en pakke?
 # 
-# Når man så har hentet sin pakke ind, kan man kalde de funktioner, som der er i den. Hvis har man har gjort som `curve_fit` ovenover, kan man blot skrive `curve_fit(_input_)` i sin kode. Hvis man tilgengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: `[forkortelse for pakke].[funktion]([variable]` f. eks. `np.exp(2)` giver $e^2$. Herunder kan man se nogle få eksempler:
+# Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis har man har gjort som `curve_fit` ovenover, kan man blot skrive `curve_fit(_input_)` i sin kode. Hvis man tilgengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: `[forkortelse for pakke].[funktion]([variable]` f. eks. `np.exp(2)` giver $e^2$. 
+# 
+# Tænk på det som et bibliotek, der af navnet, af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion skal du altså først fortælle hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner fx brug vi udelukkende pyplot afdelingen af matplotlib biblioteker.
+# 
+# Herunder kan man se nogle få eksempler på funktionkald:
 
 # In[2]:
 
@@ -60,7 +64,7 @@ plt.plot(x, y);
 
 # Flere eksempler kan ses  herunder, hvor de mest brugte pakker: numpy, matplotlib og sympy er kort gennemgået. Dette er dog kun en oversigt, for at se en mere grundig gennemgang skal man finde noterne under enten "Python i Mekrel" eller "Python i LinAlys". 
 
-# # Numpy
+# ## Numpy
 # Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importerer numpy:
 
 # In[4]:
@@ -110,7 +114,7 @@ np.mean(array_af_tal)
 
 # En mere grundig gennemgang af numpy i MekRel sammenhænge se [side om numpy i mekrel](Mekrel/Numpy.ipydb).
 
-# # Matplotlib Pyplot
+# ## Matplotlib Pyplot
 
 # Matplotlib bruges til at plotte numeriske værdier fra eksempelvis laboratoriet. Vi importerer det ved:
 
@@ -136,7 +140,7 @@ plt.ylabel("y");
 
 # Matplotlib kan desuden bruges til rigtig mange forskellige plot typer, og det er et super vigtigt værktøj i laboratoriet. Se hvordan det ellers bruges på [siden om matplotlib i MekRel](MekRel/Matplotlib_pyplot.ipynb).
 
-# # SymPy
+# ## SymPy
 # 
 # Når vi skal foretage symbolske udregninger såsom at udregne grænser, foretage differentialregning eller løse ligninger benytter vi SymPy. 
 # 

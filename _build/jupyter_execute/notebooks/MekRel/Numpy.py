@@ -5,7 +5,7 @@
 # 
 # Numpy bruges til at lave nummeriske beregniner og vil være jeres primære værktøj i laboratoriet. Det skyldes at man kan bruge `numpy arrays`. Det er en data type som gør operationer på mange tal hurtigt og forhåbenlig intuativt når i har arbejdet lidt med det.
 # 
-# **OBS:** Hvis du gerne vil downloade og køre denne notebook skal du også bruge filen `Testdata.csv` som kan hentes her [link til host](https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker)
+# **Tip:** Hvis du gerne vil downloade og køre denne notebook skal du også bruge filen `Testdata.csv` som kan hentes her [link til host](https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker)
 # 
 
 # 
@@ -51,7 +51,7 @@ print(array4[-1]) #man kan også vælge den sidste værdi ved at tælle baglæns
 
 # Man kan også lave arrays i 2D, og trække værdier ud på samme måde,
 
-# In[6]:
+# In[3]:
 
 
 array5 = np.array([[1,2,3],[4,5,6],[7,8,9]])
@@ -59,26 +59,27 @@ print(array5) #viser hele arrayet
 
 print(array5[1,1]) #udskriver indeks (1,1)
 
-print(array5[:,0]) #udskriver første kolonne i matricen
+print(array5[:,0]) #udskriver første k12olonne i matricen
 
+print(np.sum(array5)) #bestemmer summen af alle tallene
 print(np.sum(array5,axis=0)) #bestemmer summen af kolonnerne
 
 
 # En af grundene til at vi bruger NumPy arrays er, at vi nemt kan bruge NumPy funktioner til at lave regneoperationer på arrays. Her følger et par eksempler,
 
-# In[7]:
+# In[5]:
 
 
 tal = np.arange(0,10) #heltal fra 0 til 9
 
 kvadrat = tal**2 + 1 #tager kvadratet plus 1 for alle tal i arrayet
 
-Sinus = np.sin(tal) #tager sinus til alle tal i arrayet
+Exp = np.exp(tal) #tager exp til alle tal i arrayet
 
 #printer array, og de to resultater
 print(tal)
 print(kvadrat)
-print(Sinus)
+print(Exp)
 
 
 # ## Funktioner til statistik
@@ -108,7 +109,8 @@ print("Gennemsnit: ",gennemsnit2, "\nSpredning: ", spredning2)
 # np.genfromtxt(fname, delimiter=None, skip_header=0, skip_footer=0) 
 # 
 # Hvor fname er fil navnet, delimiter er hvordan dataen er opdelt i filen (mere om det om lidt), skip_header er hvor mange linjer af toppen af filen der skal springes over og skip_footer er det samme bare fra bunden af. Dette er en forsimplet syntax den hele findes her hvis du gerne vil læse lidt mere [np.genfromtxt syntax](https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html). Den måde '=0' skal forståes er at hvis du ikke skriver skip_header='noget' så antager Python at du mener 0.
-# **Obs**: Det er vigtigt at data filen som hedder fname ligger i den samme mappe som koden. Så sørg for at gemme jeres Notebook og datafil i samme mappe.
+# 
+# **Tip**: Det er vigtigt at data filen som hedder fname ligger i den samme mappe som koden. Så sørg for at gemme jeres Notebook og datafil i samme mappe.
 # 
 # Her følger et eksempel, med datafilen "Testdata.csv" der er uploadet på Absalon.
 
@@ -121,7 +123,7 @@ data = np.genfromtxt('Testdata.csv', delimiter = ';', skip_header=2) #vores data
 print(data)
 
 
-# Inden man importerer datafilen er det vigtigt at kigge lidt på filen først. Det gør I ved at åbne jeres datafil i jeres foretrukne filredigeringsprogram. Hent den fil der hedder Testdata.csv som er uploadet sammen med denne Notebook, for at kunne kigge lidt på den og forstå importeringen. Hvis du åbner Testdata.csv, så kan du se at der er noget tekst allerøverst, derfor sætter vi skip_header=2, da der er to linjer af tekst vi ikke vil have importeret i vores kode.
+# Inden man importerer datafilen er det vigtigt at kigge lidt på filen først. Det gør I ved at åbne jeres datafil i jeres foretrukne filredigeringsprogram. Hent den fil der hedder Testdata.csv som ligger [her](https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker), for at kunne kigge lidt på den og forstå importeringen. Hvis du åbner Testdata.csv, så kan du se at der er noget tekst allerøverst, derfor sætter vi skip_header=2, da der er to linjer af tekst vi ikke vil have importeret i vores kode.
 # Videre ser vi at tallene er adskilt med semikolon. Det betyder at vi skal sætte delimiter = ';'. Udover det ser vi at vi får et todimensionelt array af data. Vi vil i dette tilfælde helst have kolonnerne hver for sig. En kolonne kan importeres således,
 
 # In[11]:
@@ -131,8 +133,14 @@ kolonne1 = data[:,0]
 print(kolonne1)
 
 
-# In[ ]:
+# Nu bør du kunne hente en data fra en fil og begynde at lave små data behandlinger som at tage gennemsnittet af alle kolonerne, under ses et eksempel på dette.
+
+# In[9]:
 
 
+data = np.genfromtxt('Testdata.csv', delimiter = ';', skip_header=2)
+print(data)
 
+Gns_Row = np.mean(data, axis = 0)
+print(Gns_Row)
 

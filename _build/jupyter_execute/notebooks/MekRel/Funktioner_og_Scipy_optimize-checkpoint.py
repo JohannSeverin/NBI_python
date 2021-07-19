@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Indholdsfortegnelse<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Funktioner" data-toc-modified-id="Funktioner-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Funktioner</a></span></li><li><span><a href="#Fitting" data-toc-modified-id="Fitting-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fitting</a></span></li></ul></div>
-
 # # Functioner, fits og usikkerheder i python
 # 
 
@@ -15,30 +12,30 @@
 # 
 # Man definerer en funktion ved at skrive 'def', skrive det funktionen skal gøre, også skrive 'return', hvor man skriver det funktionen skal levere. Et eksempel ses under.
 
-# In[1]:
-
-
-def funktion(m,v):
-    return 1/2 * m * v**2
-
-
-# Her har jeg defineret en funktion som jeg kalder funktion, den tager 2 argumenter, m og v, og returnerer $ \frac{1}{2}  m v^2$. Den kan vi så prøve af for m = 80 og v = 5
-
 # In[2]:
 
 
-print(funktion(80,5))
+def E_kin(m,v):
+    return 1/2 * m * v**2
+
+
+# Her har jeg defineret en funktion som jeg kalder E_kin, den tager 2 argumenter, m og v, og returnerer $ \frac{1}{2}  m v^2$. Den kan vi så prøve af for m = 80 og v = 5
+
+# In[3]:
+
+
+print(E_kin(80,5))
 
 
 # Funktioner kan også bruges til at gøre kode mere overskuelig og nemmere at debugge, her er der fx defineret en funktion som laver et plot. Den tager ingen værdier og retunere heller ikke noget, men er nem at debugge og man kan lade være med at kalde den når man har fået sit plot.
 
-# In[3]:
+# In[4]:
 
 
 import numpy as np
 
 v_data = np.linspace(0,100,1000)
-E_data = funktion(80,v_data)
+E_data = E_kin(80,v_data)
 
 def plot_E_kin():
     import matplotlib.pyplot as plt
@@ -56,7 +53,7 @@ plot_E_kin()
 
 # Vi skal nu bruge funktioner til at fitte en model til data. Her bruger vi optimize.curve_fit, denne kommer fra pakken SciPy og importeres således.
 
-# In[4]:
+# In[ ]:
 
 
 from scipy.optimize import curve_fit
@@ -64,7 +61,7 @@ from scipy.optimize import curve_fit
 
 # For at fitte en model skal man have noget data at fitte til, her bruger jeg den data der lå på jeres første Python aflevering.
 
-# In[5]:
+# In[ ]:
 
 
 data = np.array([
@@ -77,7 +74,7 @@ print(data)
 
 # For at fitte en model til data, skal man have ét datapunkt for hver varieret måling, her har vi 5 målinger per pendullængde, derfor skal vi altså tage gennemsnit af vores svingningstider.
 
-# In[6]:
+# In[ ]:
 
 
 L = data[: , 0] #udvælger kolonnen med pendullængde
@@ -91,7 +88,7 @@ print(gns_svingning)
 
 # Nu har vi to lister med data punkter der hænger sammen, nu kan vi begynde at undersøge hvilket fit vi skal bruge. Vi regner med at skulle bruge en lineær funktion, så vi skal have defineret det i vores kode. Vi kalder funktionen "linfunc", og angiver så variabel og parametre i parentes. I return skriver vi hvad funktionen skal give som resultat når vi bruger den.
 
-# In[7]:
+# In[ ]:
 
 
 def linfunc(x,a,b):
@@ -103,7 +100,7 @@ def linfunc(x,a,b):
 # 
 # Når man så har en funktion defineret rigtigt, kan man fitte vores funktion til dataen med kommandoen optimize_curvefit. Funktionen optimize.curve_fit skal bruge funktionen der ønskes at fitte efter, også de tilhørende x- og y-værdier, i dette tilfælde pendullængde og svingningstid. Funktionen giver to outputs, først giver den fitte-paramterene, det vil sige fittets bedste bud på hvad parametrene i fit-funktionen bør være. Dernæst giver den covariansen. Er der flere parametre angives covariansen som en matrix med flere værdier. Covariance matrixen kan bruges til at finde ussikerheder på fit parametre, men mere om det til sidst.
 
-# In[8]:
+# In[ ]:
 
 
 par, cov = curve_fit(linfunc, L , gns_svingning)
@@ -115,7 +112,7 @@ print(cov) #printer covariansen
 # 
 # For at plotte vores fit laver vi et array af værdier i det interval vi gerne vil plotte med np.linspace funktionen. Vi bruger så disse værdier i vores lineære-funktion, hvor vi bruger de parametre vores fit bestemte med optimize.curve-fit.
 
-# In[9]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
@@ -137,7 +134,7 @@ plt.show()
 
 # Man kan også lave et fit, hvor der tages højde for usikkerheden på datapunkterne. Det gør man ved at angive et sigma når man bruger curve_fit.
 
-# In[10]:
+# In[ ]:
 
 
 par_with_error, cov_new = curve_fit(linfunc, L , gns_svingning, sigma = afvigelse)
@@ -146,7 +143,7 @@ print(par_with_error)
 
 # Paremeterne er ikke ændret så meget da fejlen på punkterne er meget ens, men hvis der havde været stor forskel på usikkerhederne ville det have en større effekt. Endeligt kan man så plotte punkter med usikkerheder og fit som tager højde for usikkerheden.
 
-# In[11]:
+# In[ ]:
 
 
 Y_2 = linfunc(X,par_with_error[0],par_with_error[1])
@@ -162,7 +159,7 @@ plt.show()
 
 # For at finde ussikerheden på de fit parametre som er fundet her kan man bruge covariance matrixen. På dens diagonal er nemlig variancen for de fittede parametre. Når man har variancen kan man finde ussikerheden da kvadratroden af variancen er ussikerheden. I python kan det gøres med et for loop
 
-# In[12]:
+# In[ ]:
 
 
 for i in range(len(cov_new)):

@@ -4,7 +4,7 @@
 # **Foreslået ændringer**  
 #     I denne notebook skal der nok kun foretages småændringer, så den er konsistent med resten. Vi skal lige overveje, om det giver mening at have disse kapitler sammen, eller om det skal splittes yderligere. Jeg tænker primært på, at man skal kunne finde rundt i Notebooks, så vi skal nok have en bedre titel end indledende og avanceret, så man kan finde ud af, om eksempelvis en invers matrix er i den ene eller i den anden. 
 
-# # Indledende Lineær Algebra
+# # Vektorer og matricer
 
 # I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere de relevante moduler og aktiverer funktionen til visning af matematiske udtryk:
 

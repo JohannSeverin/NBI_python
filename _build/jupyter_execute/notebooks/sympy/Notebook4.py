@@ -300,9 +300,3 @@ expr.integrate((x, 0, pi))
 # Finder stamfunktion ved brug af integrate
 expr.integrate(x)                 
 
-
-# In[ ]:
-
-
-
-
