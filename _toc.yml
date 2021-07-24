@@ -11,7 +11,7 @@ chapters:
   sections:
   - file: notebooks/Andet_python
 - file: notebooks/Intro_til_pakker
-- file: notebooks/MekRel/Intro
+- file: notebooks/MekRel/Intro_til_MekRel
   sections:
   - file: notebooks/MekRel/Numpy
   - file: notebooks/MekRel/Matplotlib_pyplot
