@@ -3,26 +3,26 @@
 
 # # Intro til pakker
 # 
-# Python er et af de mest brugte programmering sprog i verden specielt i den akademiske verden. Derfor er der også en kæmpe mængde pakker, som kan løse alverdens problemer. Her i starten skal i stifte bekendskab med 4:
+# Python er et af de mest brugte programmeringsprog i verden, specielt i den akademiske verden. Derfor er der også en kæmpe mængde pakker, som kan løse alverdens problemer. Her i starten skal I stifte bekendskab med 4:
 #  * Sympy ([dokumentation](https://www.sympy.org/en/index.html))
 #  * Numpy ([dokumentation](https://numpy.org/doc/stable/))
 #  * Matplotlib ([dokumentation](https://matplotlib.org/stable/index.html))
 #  * Scipy ([dokumentation](https://docs.scipy.org/doc/scipy/reference/))
 # 
-# Det ligger næsten i navnet hvad de kan og hvad de skal bruges til:
+# Det ligger næsten i navnet hvad de kan, og hvad de skal bruges til:
 #  * Sympy (Symbolic Python) er til symbolsk matematik
 #  * Numpy (Numerical Python) er til numeriske beregninger
 #  * Matplotlib (Mathematical ploting library) er til at lave plots 
 #  * Scipy (Scientific Python) her skal vi kun bruge en funktion
 # 
-# Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollerer svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrerer jeres data fra og Scipy til at lave fits.
+# Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollere svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrere jeres data fra og Scipy til at lave fits.
 # 
 # Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med, vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en kilde til fejl. 
 # 
 
 # ## Import 
 # 
-# For at hente en af de 4 ovenstående pakker ind i et python benytter vi os af `import` nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med `as` kan vi desuden give dem et navn, så vores navn bliver en smule nemmere. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i `scipy.optimize` specificerer vi her, at vi kun vil hente én funktion derfra, `curve_fit`) 
+# For at hente en af de 4 ovenstående pakker ind i et python script benytter vi os af `import` nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med `as` kan vi desuden give dem et navn, så man slipper for at skrive hele navnet hver gang man bruger pakken. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i `scipy.optimize` specificerer vi her, at vi kun vil hente én funktion derfra, `curve_fit`) 
 # 
 
 # In[1]:
@@ -34,22 +34,22 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 
-# Selvom det er fristende, altid at hente alle pakkerne ind. Så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, hvis ikke den skal til at hente et stort bibliotek af funktioner, for at man bruger en funktion, men det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker udefra som skal bruges for at køre koden.  
+# Selvom det er fristende altid at hente alle pakkerne ind, så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, hvis ikke den skal til at hente et stort bibliotek af funktioner, for at man bruger en enkel funktion. Det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker og funktioner, som skal bruges for at køre ens kode.  
 
 # Nogle pakker bruger vi så ofte, at vi gerne forkorter deres navne, så vi slipper for at skrive det fulde navn mange gange i løbet af en enkel notebook. Det er her vi bruger `as` nøgleordet. Når I gør dette, så brug dog gerne den konventionelle forkortelse (altså den som vi har brugt i cellen overfor), så vil det nemlig være nemmere for jer selv, jeres medstuderende og jeres instruktorer at læse og forstå den kode, som I skriver.
 
 # ## Hvordan bruger man en pakke?
 # 
-# Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis har man har gjort som `curve_fit` ovenover, kan man blot skrive `curve_fit(_input_)` i sin kode. Hvis man tilgengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: `[forkortelse for pakke].[funktion]([variable]` f. eks. `np.exp(2)` giver $e^2$. 
+# Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis man har gjort som `curve_fit` ovenover, kan man blot skrive `curve_fit(_input_)` i sin kode. Hvis man til gengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: `[forkortelse for pakke].[funktion]([variable]` f. eks. `np.exp(2)` giver $e^2$. 
 # 
-# Tænk på det som et bibliotek, der af navnet, af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion skal du altså først fortælle hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner fx brug vi udelukkende pyplot afdelingen af matplotlib biblioteker.
+# Tænk på det som et bibliotek af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion, skal du altså først fortælle, hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner. Fx bruger vi udelukkende pyplot afdelingen af matplotlib biblioteket.
 # 
 # Herunder kan man se nogle få eksempler på funktionkald:
 
 # In[2]:
 
 
-# Både sympy og numpy har de kendte matematiske funktioner husk ikke at blande dem.
+# Både sympy og numpy har de kendte matematiske funktioner, husk ikke at blande dem.
 print(sp.cos(sp.pi)) 
 print(np.cos(np.pi))
 
@@ -65,7 +65,7 @@ plt.plot(x, y);
 # Flere eksempler kan ses  herunder, hvor de mest brugte pakker: numpy, matplotlib og sympy er kort gennemgået. Dette er dog kun en oversigt, for at se en mere grundig gennemgang skal man finde noterne under enten "Python i Mekrel" eller "Python i LinAlys". 
 
 # ## Numpy
-# Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importerer numpy:
+# Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importere numpy:
 
 # In[4]:
 
@@ -73,7 +73,7 @@ plt.plot(x, y);
 import numpy as np
 
 
-# Og vi kan nu tage et liste af nogle tal og konverterer til et numpy array:
+# Og vi kan nu tage en liste af nogle tal og konvertere til et numpy array:
 
 # In[5]:
 
@@ -82,7 +82,7 @@ array_af_tal = np.array([1, 4, 9, 16, 25])
 array_af_tal
 
 
-# Hvis vi nu benytter dette array i regne operation, foretages operationer på alle elementer af gangen:
+# Hvis vi nu benytter dette array i regneoperation, foretages operationer på alle elementer af gangen:
 
 # In[6]:
 
@@ -112,7 +112,7 @@ np.sqrt(array_af_tal)
 np.mean(array_af_tal)
 
 
-# En mere grundig gennemgang af numpy i MekRel sammenhænge se [side om numpy i mekrel](Mekrel/Numpy.ipydb).
+# For en mere grundig gennemgang af numpy i MekRel-sammenhænge, se [siden om numpy i MekRel](MekRel/Numpy.ipynb).
 
 # ## Matplotlib Pyplot
 
@@ -138,7 +138,7 @@ plt.xlabel("x")
 plt.ylabel("y");
 
 
-# Matplotlib kan desuden bruges til rigtig mange forskellige plot typer, og det er et super vigtigt værktøj i laboratoriet. Se hvordan det ellers bruges på [siden om matplotlib i MekRel](MekRel/Matplotlib_pyplot.ipynb).
+# Matplotlib kan desuden bruges til rigtig mange forskellige plottyper, og det er et super vigtigt værktøj i laboratoriet. Se hvordan det ellers bruges på [siden om matplotlib i MekRel](MekRel/Matplotlib_pyplot.ipynb).
 
 # ## SymPy
 # 
@@ -155,7 +155,8 @@ import sympy as sp                   # Importer biblioteket
 from sympy.abc import x, a, b, phi   # Og de symboler som vi vil bruge. Vi kan altid hente flere   
 
 
-# Når man nu benytter sympy kan blot kombinerer symbolerne til nye udtryk. Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med hinanden:
+# Når man nu benytter sympy kan blot kombinerer symbolerne til nye udtryk.
+#  Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med hinanden:
 
 # In[13]:
 
@@ -163,7 +164,7 @@ from sympy.abc import x, a, b, phi   # Og de symboler som vi vil bruge. Vi kan a
 a * b / x 
 
 
-# Eller vi kan sammen sætte dette i nye udtryk, som vi nu kan behandle sammen:
+# Eller vi kan sammensætte dette i nye udtryk, som vi nu kan behandle sammen:
 
 # In[14]:
 
@@ -195,7 +196,7 @@ display(sp.exp(f) ** 2 + sp.sqrt(g)** 2) # Udtryk med ekspoential funktioner og 
 # Der, hvor vi virkelig får glæde af SymPy er, når vi benytte det til differentiering, integration og til eksempelvis at finde grænser. Hvis vi nu har funktionen:   
 # $ f(x) = \frac{x^2 - 4}{x + 2} \cdot e^{-x}$  
 # 
-# Kan vi benytte sympy til at finde grænser for $x \longrightarrow 2$
+# kan vi benytte sympy til at finde grænser for $x \longrightarrow 2$
 
 # In[17]:
 
@@ -222,4 +223,4 @@ from sympy.abc import a, b
 sp.integrate(f, (x, a, b))
 
 
-# For en nøjere gennemgang af SymPy og de mange andre muligheder, som det tilbyder, referer vi til [noterne til python i LinAlys](sympy/Notebook1.ipyndb).
+# For en nøjere gennemgang af SymPy og de mange andre muligheder, som det tilbyder, referer vi til [noterne til python i LinAlys](sympy/Notebook1.ipynb).

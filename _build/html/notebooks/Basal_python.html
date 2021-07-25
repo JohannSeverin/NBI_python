@@ -119,7 +119,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="MekRel/Intro.html">
+  <a class="reference internal" href="MekRel/Intro_til_MekRel.html">
    4. Python i MekRel
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="MekRel/Funktioner_og_Scipy_optimize-checkpoint.html">
-     4.3. Functioner, fits og usikkerheder i python
+     4.3. Funktioner, fits og usikkerheder i Python
     </a>
    </li>
   </ul>
@@ -322,8 +322,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variabel-typer">
-     2.1.1. Variabel typer
+    <a class="reference internal nav-link" href="#variabeltyper">
+     2.1.1. Variabeltyper
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -358,14 +358,14 @@
                 
   <div class="section" id="kom-i-gang-med-python">
 <h1><span class="section-number">2. </span>Kom i gang med Python<a class="headerlink" href="#kom-i-gang-med-python" title="Permalink to this headline">¶</a></h1>
-<p>I løbet af det første halve år på jeres uddannelse i fysik, kommer I til at bruge Python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive Python på, men vi vil foreslå, at I benytter Jupyter Notebook i en installation af Anaconda, da dette er en pakkeløsning, som burde indeholde alt til det første halve år på fysik (og meget længere medmindre man har specifikke opgaver).</p>
-<p>I Notebooks skriver man sin kode i celler. I vil typsik bruge celler i Code eller Markdown format. Dette er en Markdown celle og indholdet formatteres som tekst når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan i evt. bruge til at skrive noter i, hvis der er noget om koden der er lidt kompliceret eller vigtigt at huske, hvis man nu laver et forsøg i laboratoriet.</p>
-<p><strong>Tip:</strong> Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en kodecelle, og bevæge sig videre til den næste celle i rækken.</p>
+<p>På fysik stifter i bekendtskab med Python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive Python på, men vi vil foreslå, at I benytter Jupyter Notebooks, som kan findes i en installation af Anaconda.</p>
+<p>I Notebooks skriver man sin kode i celler. Der bliver primært brugt to slags celler: “Code” eller “Markdown”. Denne celle er en Markdown celle og indholdet formateres som tekst, når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan bruges til at skrive noter i. Dette kunne være ens overvejelser i forbindelse med et forsøg i laboratoriet.</p>
+<p><strong>Tip:</strong> Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en celle, og bevæge sig videre til den næste celle i rækken.</p>
 <div class="section" id="hvordan-virker-python">
 <h2><span class="section-number">2.1. </span>Hvordan virker Python?<a class="headerlink" href="#hvordan-virker-python" title="Permalink to this headline">¶</a></h2>
-<p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Et computer program bliver altså en liste af computer operationer, som skal foretages i en bestemt rækkefølge. Hvis man vil markere noget, som comptueren ikke skal køre, kan det markeres med <code>#</code>, dette bruges ofte til kommentar til den, der læser koden.</p>
-<p>Når man arbejder i python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definerer en variabel. Dette kunne eksempelvis være <code> a = 5 </code>, så vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu blive betragtet som <code>5</code>.</p>
-<p>En god måde at se en værdi på, er ved at bede Python om at printe den, dette gøres ved at skrive <code>print(X)</code>, hvor X kan være et hvilket som helst variabelnavn.</p>
+<p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Et computerprogram bliver altså en liste af computer-operationer, som skal foretages i en bestemt rækkefølge. Hvis man vil markere noget, som comptueren ikke skal køre, kan det markeres med <code>#</code>. Dette bruges ofte til kommentar til den, der læser koden.</p>
+<p>Når man arbejder i Python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definere en variabel. Dette kunne eksempelvis være <code> a = 5 </code>. Da vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu blive betragtet som <code>5</code>.</p>
+<p>En god måde at se en værdi på, er ved at bede Python om at printe den. Dette gøres ved at skrive <code>print(X)</code>, hvor X kan være et hvilket som helst variabelnavn.</p>
 <p>Eksempelvis kan vi definere variablen <code>hello</code> og printe den.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -393,21 +393,21 @@
 </div>
 </div>
 </div>
-<div class="section" id="variabel-typer">
-<h3><span class="section-number">2.1.1. </span>Variabel typer<a class="headerlink" href="#variabel-typer" title="Permalink to this headline">¶</a></h3>
-<p>Udover tekststrenge, som vi så i overstående eksempel, findes flere forskellige typer variable, som man kan benytte sig af. I Python er det dog ikke nødvendigt at angive disse, da sproget selv finder ud af det fra kontekst.</p>
-<p>De mest almindelige variable typer er:</p>
+<div class="section" id="variabeltyper">
+<h3><span class="section-number">2.1.1. </span>Variabeltyper<a class="headerlink" href="#variabeltyper" title="Permalink to this headline">¶</a></h3>
+<p>Udover tekststrenge, som vi så i ovenstående eksempel, findes flere forskellige typer variable, som man kan benytte sig af. I Python er det dog ikke nødvendigt at angive disse, da computeren selv finder ud af det fra kontekst.</p>
+<p>De mest almindelige variabeltyper er:</p>
 <ul class="simple">
 <li><p>Integers (heltal): her skriver vi blot et helt tal, som eksempelvis <code>a = 6</code></p></li>
-<li><p>Float (decimaltal): indgår der et decimalpunktum, ‘.’, får vi automatisk en float variabel, som eksempelvis <code>kroner_per_euro = 7.46</code>.</p></li>
-<li><p>String (tekststræng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code>hello = “Hello World”</code></p></li>
-<li><p>Boolean (sandt/falsk): Hvis vi skal angive en værdi som enten sandt eller falsk, bruger vi en “boolean variable” og kan skrive <code>switch = True</code>. Falsk skal gives ved <code>False</code>, og bemærk igen at der er forskel på <code>Svar = True</code> og <code>Svar = “True”</code>, idet <code>Svar</code> i sidstnævnte tilfælde istedet bliver en string indeholdende ordet True, og ikke et logisk udtryk.</p></li>
+<li><p>Float (decimaltal): indgår der et decimalpunktum, ‘.’, får vi automatisk en float-variabel, som eksempelvis <code>kroner_per_euro = 7.46</code>.</p></li>
+<li><p>String (tekststreng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code>hello = “Hello World”</code></p></li>
+<li><p>Boolean (sandt/falsk): Hvis vi skal angive en værdi som enten sandt eller falsk, bruger vi en “boolean variable” og kan skrive <code>switch = True</code>. Falsk skal gives ved <code>False</code>, og bemærk igen at der er forskel på <code>Svar = True</code> og <code>Svar = “True”</code>, idet <code>Svar</code> i sidstnævnte tilfælde istedet bliver en string, som indeholder ordet True, og ikke et logisk udtryk.</p></li>
 </ul>
 </div>
 <div class="section" id="lister-af-variable">
 <h3><span class="section-number">2.1.2. </span>Lister af variable<a class="headerlink" href="#lister-af-variable" title="Permalink to this headline">¶</a></h3>
 <p>Vi kan sammensætte lister af flere værdier, eksempelvis en samling af tal. Dette gøres mest almindeligt ved at lave en liste.:
-<code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud.</p>
+<code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste, kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud.</p>
 <p><strong>Tip:</strong> Python starter ved nul (nul-indeksering), så det første element er altså <code>tal[0]</code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -437,12 +437,12 @@
 </div>
 </div>
 </div>
-<p>Og vi har nu tilføjet 6 til vores liste.</p>
+<p>og vi har nu tilføjet 6 til vores liste.</p>
 </div>
 </div>
 <div class="section" id="basale-regneoperationer">
 <h2><span class="section-number">2.2. </span>Basale regneoperationer<a class="headerlink" href="#basale-regneoperationer" title="Permalink to this headline">¶</a></h2>
-<p>Python indeholder som udgangspunkt de mest basale regne-operationer, som man kender fra sin lommeregner. Eksempelvis kan vi lægge til, trække fra, gange og divdere ved blot at skrive udtrykket op med ‘+’, ‘-‘, ‘*’ og ‘/’. På sædvanligvis  kan vi også benytte parenteser til at give rækkefølgen for operationerne. Nogle enkelte eksempler er givet nedenunder:</p>
+<p>Python indeholder som udgangspunkt de mest basale regneoperationer, som man kender fra sin lommeregner. Eksempelvis kan vi lægge til, trække fra, gange og dividere ved blot at skrive udtrykket op med ‘+’, ‘-‘, ‘*’ og ‘/’. På sædvanligvis  kan vi også benytte parenteser til at give rækkefølgen for operationerne. Nogle enkelte eksempler er givet nedenunder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi adderer blot to tal</span>
@@ -532,7 +532,7 @@
 <p>Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere i noterne om SymPy og NumPy.</p>
 <div class="section" id="aendring-af-variable">
 <h3><span class="section-number">2.2.1. </span>Ændring af variable<a class="headerlink" href="#aendring-af-variable" title="Permalink to this headline">¶</a></h3>
-<p>Der kan være mange årsager til, at man skal ændre værdien på en varibel, det kunne f. eks. være i en simulation, hvor positionen af et objekt skal opdateres efter et lille tidsskridt. Benytter vi samme variabelnavn i en ny definition ændrer vi blot værdien:</p>
+<p>Der kan være mange årsager til, at man skal ændre værdien på en varibel. Det kunne f. eks. være i en simulation, hvor positionen af et objekt skal opdateres efter et lille tidsskridt. Benytter vi samme variabelnavn i en ny definition ændrer vi blot værdien:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vari</span> <span class="o">=</span> <span class="mi">15</span>
@@ -549,7 +549,7 @@
 </div>
 </div>
 </div>
-<p>Når vi benytter et lighedstegn, så udregnes først værdien på højre side, inden værdien bliver gemt med variabelnavnet til venstre. Vi kan altså godt benytte en variabel til at redefinerer sig selv. Her benytter vi <code class="docutils literal notranslate"><span class="pre">vari</span></code> til at gøre <code class="docutils literal notranslate"><span class="pre">vari</span></code> 10 gange større.</p>
+<p>Når vi benytter et lighedstegn, så udregnes først værdien på højre side, inden værdien bliver gemt med variabelnavnet til venstre. Vi kan altså godt benytte en variabel til at redefinere sig selv. Her benytter vi <code class="docutils literal notranslate"><span class="pre">vari</span></code> til at gøre <code class="docutils literal notranslate"><span class="pre">vari</span></code> 10 gange større.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vari</span> <span class="o">=</span> <span class="mi">7</span>
@@ -566,7 +566,7 @@
 </div>
 </div>
 </div>
-<p>Der er dog også nogle indbyggede smutveje til at ændre variables værdier i faste trin. Hvis man gere vil lade en variabel vokse i skridt af <code>increment = 2.5</code>, kan man benytte smutvejs-notationen <code>+=</code> til at ændre variablen i skridt af <code>increment</code></p>
+<p>Der er dog også nogle indbyggede smutveje til at ændre variables værdier i faste trin. Hvis man gerne vil lade en variabel vokse i skridt af <code>increment = 2.5</code>, kan man benytte smutvejs-notationen <code>+=</code> til at ændre variablen i skridt af <code>increment</code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">increment</span> <span class="o">=</span> <span class="mf">2.5</span>

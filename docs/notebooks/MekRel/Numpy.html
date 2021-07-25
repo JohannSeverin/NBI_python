@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.2. Matplotlib" href="Matplotlib_pyplot.html" />
-    <link rel="prev" title="4. Python i MekRel" href="Intro.html" />
+    <link rel="prev" title="4. Python i MekRel" href="Intro_til_MekRel.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -119,7 +119,7 @@
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Intro_til_MekRel.html">
    4. Python i MekRel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Funktioner_og_Scipy_optimize-checkpoint.html">
-     4.3. Functioner, fits og usikkerheder i python
+     4.3. Funktioner, fits og usikkerheder i Python
     </a>
    </li>
   </ul>
@@ -344,11 +344,11 @@
                 
   <div class="section" id="numpy">
 <h1><span class="section-number">4.1. </span>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
-<p>Numpy bruges til at lave nummeriske beregniner og vil være jeres primære værktøj i laboratoriet. Det skyldes at man kan bruge <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code>. Det er en data type som gør operationer på mange tal hurtigt og forhåbenlig intuativt når i har arbejdet lidt med det.</p>
+<p>Numpy bruges til at lave numeriske beregninger og vil være jeres primære værktøj i laboratoriet. Det skyldes at man kan bruge <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code>. Det er en data type som gør operationer på mange tal hurtigt og forhåbenligt intuitivt når I har arbejdet lidt med det.</p>
 <p><strong>Tip:</strong> Hvis du gerne vil downloade og køre denne notebook skal du også bruge filen <code class="docutils literal notranslate"><span class="pre">Testdata.csv</span></code> som kan hentes her <a class="reference external" href="https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker">link til host</a></p>
 <div class="section" id="numpy-arrays">
 <h2><span class="section-number">4.1.1. </span>Numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>For at lave et numpy array kan man skrive forskelige ting her er nogle eksempler,</p>
+<p>For at lave et numpy array kan man skrive forskellige ting. Her er nogle eksempler,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># Husk at importere numpy ellers virker det ikke.</span>
@@ -360,7 +360,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#manuelt indtastede værdier</span>
 <span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1">#et array med tallene fra 0 til 3 (ekslusiv 3) i 0.5 skridtstørrelse</span>
-<span class="n">array3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#et array med tallene fra 0 ti 8 (inklusiv 8) i 5 skridt</span>
+<span class="n">array3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#et array med tallene fra 0 til 8 (inklusiv 8) i 5 skridt</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span> <span class="c1">#ønsker du at se noget af det du har defineret så &quot;print&quot; det således</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
@@ -376,7 +376,7 @@
 </div>
 </div>
 </div>
-<p>Læg mærke til at NumPy funktionen arange tæller efter skridtstørrelse, altså hvor stort mellemrum der skal være mellem hver værdi i intervallet man angiver, og linspace tæller efter hvor mange skridt der skal være i alt, og giver så en jævn fordeling af værdier i det interval man angiver.</p>
+<p>Læg mærke til at NumPy funktionen <code class="docutils literal notranslate"><span class="pre">arange</span></code> tæller efter skridtstørrelse, altså hvor stort mellemrum der skal være mellem hver værdi i intervallet man angiver, og <code class="docutils literal notranslate"><span class="pre">linspace</span></code> tæller efter, hvor mange skridt der skal være i alt, og giver så en jævn fordeling af værdier i det interval, man angiver.</p>
 <p>Vil man gerne trække tal ud af sine arrays, gøres det ved at skrive indekset på det man gerne vil have ud,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,7 +408,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">array5</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#udskriver indeks (1,1)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">array5</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#udskriver første k12olonne i matricen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array5</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#udskriver første kolonne i matricen</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">array5</span><span class="p">))</span> <span class="c1">#bestemmer summen af alle tallene</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">array5</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1">#bestemmer summen af kolonnerne</span>
@@ -456,7 +456,7 @@
 </div>
 <div class="section" id="funktioner-til-statistik">
 <h2><span class="section-number">4.1.2. </span>Funktioner til statistik<a class="headerlink" href="#funktioner-til-statistik" title="Permalink to this headline">¶</a></h2>
-<p>Når vi laver databehandling i lab, skal vi ofte bruge gennemsnit og spredning på vores data, og det kan vi gøre nemt med et par NumPy funktioner. Arbejder man med 2D-datasæt, f.eks. ved gentagne målinger for skiftende variable, hvor vi vil have gennemsnittet for hver opstilling, skal man være opmærksom på at indikere akse i datasættet. Aksen sættes enten til 0 eller 1, afhængig af om man vil tage gennemsnittet lodret gennem kolonner eller vandret gennem rækker.</p>
+<p>Når vi laver databehandling i lab, skal vi ofte bruge gennemsnit og spredning på vores data, og det kan vi gøre nemt med et par <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-funktioner. Arbejder man med 2D-datasæt, f.eks. ved gentagne målinger for skiftende variable, hvor vi vil have gennemsnittet for hver opstilling, skal man være opmærksom på at indikere akse i datasættet. Aksen sættes enten til 0 eller 1, afhængig af om man vil tage gennemsnittet lodret gennem kolonner eller vandret gennem rækker.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.2</span><span class="p">,</span><span class="mf">4.1</span><span class="p">,</span><span class="mf">3.7</span><span class="p">,</span><span class="mf">4.3</span><span class="p">,</span><span class="mf">3.3</span><span class="p">])</span> <span class="c1">#indtaster et datasæt</span>
@@ -491,10 +491,12 @@ Spredning:  [0.16329932 0.08164966 0.16329932]
 <h2><span class="section-number">4.1.3. </span>Importering af datafiler<a class="headerlink" href="#importering-af-datafiler" title="Permalink to this headline">¶</a></h2>
 <p>Når vi arbejder i lab har vi ofte et måleinstrument der tager målingerne, så det både er mere præcist og man kan tage flere målinger hurtigt.
 Men når man gør det får man store mængder data og det gider vi ikke sidde og taste ind manuelt. Derfor vil vi bruge Python til det i stedet. For at gøre dette bruger vi igen NumPy pakken. Vi skal bruge kommandoen np.genfromtxt, syntaxen af denne er;</p>
-<p>np.genfromtxt(fname, delimiter=None, skip_header=0, skip_footer=0)</p>
-<p>Hvor fname er fil navnet, delimiter er hvordan dataen er opdelt i filen (mere om det om lidt), skip_header er hvor mange linjer af toppen af filen der skal springes over og skip_footer er det samme bare fra bunden af. Dette er en forsimplet syntax den hele findes her hvis du gerne vil læse lidt mere <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html">np.genfromtxt syntax</a>. Den måde ‘=0’ skal forståes er at hvis du ikke skriver skip_header=’noget’ så antager Python at du mener 0.</p>
-<p><strong>Tip</strong>: Det er vigtigt at data filen som hedder fname ligger i den samme mappe som koden. Så sørg for at gemme jeres Notebook og datafil i samme mappe.</p>
-<p>Her følger et eksempel, med datafilen “Testdata.csv” der er uploadet på Absalon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">skip_footer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>hvor fname er filnavnet, delimiter er hvordan dataen er opdelt i filen (mere om det om lidt), skip_header er hvor mange linjer af toppen af filen der skal springes over og skip_footer er det samme bare fra bunden af. Dette er en forsimplet syntax. Den hele findes her hvis du gerne vil læse lidt mere <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html">np.genfromtxt syntax</a>. Den måde ‘=0’ skal forstås er at hvis du ikke skriver skip_header=’noget’ så antager Python at du mener 0.</p>
+<p><strong>Tip</strong>: Det er vigtigt at datafilen som hedder fname ligger i den samme mappe som koden. Så sørg for at gemme jeres Notebook og datafil i samme mappe.</p>
+<p>Her følger et eksempel, med datafilen “Testdata.csv” som kan hentes <a class="reference external" href="https://github.com/JohannSeverin/NBI_python/tree/main/notebooks/pakker">her</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;Testdata.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#vores data er adskilt med semi-kolon, og vi springer 2 linjer over</span>
@@ -527,7 +529,7 @@ Videre ser vi at tallene er adskilt med semikolon. Det betyder at vi skal sætte
 </div>
 </div>
 </div>
-<p>Nu bør du kunne hente en data fra en fil og begynde at lave små data behandlinger som at tage gennemsnittet af alle kolonerne, under ses et eksempel på dette.</p>
+<p>Nu bør du kunne hente data fra en fil og begynde at lave små data behandlinger som at tage gennemsnittet af alle kolonnerne, under ses et eksempel på dette.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;Testdata.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -575,7 +577,7 @@ Videre ser vi at tallene er adskilt med semikolon. Det betyder at vi skal sætte
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Intro.html" title="previous page"><span class="section-number">4. </span>Python i MekRel</a>
+    <a class='left-prev' id="prev-link" href="Intro_til_MekRel.html" title="previous page"><span class="section-number">4. </span>Python i MekRel</a>
     <a class='right-next' id="next-link" href="Matplotlib_pyplot.html" title="next page"><span class="section-number">4.2. </span>Matplotlib</a>
 
         </div>

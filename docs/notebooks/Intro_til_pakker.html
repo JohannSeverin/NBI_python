@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Python i MekRel" href="MekRel/Intro.html" />
+    <link rel="next" title="4. Python i MekRel" href="MekRel/Intro_til_MekRel.html" />
     <link rel="prev" title="2.3. Kontrolstrukturer og Løkker" href="Andet_python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -119,7 +119,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="MekRel/Intro.html">
+  <a class="reference internal" href="MekRel/Intro_til_MekRel.html">
    4. Python i MekRel
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="MekRel/Funktioner_og_Scipy_optimize-checkpoint.html">
-     4.3. Functioner, fits og usikkerheder i python
+     4.3. Funktioner, fits og usikkerheder i Python
     </a>
    </li>
   </ul>
@@ -354,25 +354,25 @@
                 
   <div class="section" id="intro-til-pakker">
 <h1><span class="section-number">3. </span>Intro til pakker<a class="headerlink" href="#intro-til-pakker" title="Permalink to this headline">¶</a></h1>
-<p>Python er et af de mest brugte programmering sprog i verden specielt i den akademiske verden. Derfor er der også en kæmpe mængde pakker, som kan løse alverdens problemer. Her i starten skal i stifte bekendskab med 4:</p>
+<p>Python er et af de mest brugte programmeringsprog i verden, specielt i den akademiske verden. Derfor er der også en kæmpe mængde pakker, som kan løse alverdens problemer. Her i starten skal I stifte bekendskab med 4:</p>
 <ul class="simple">
 <li><p>Sympy (<a class="reference external" href="https://www.sympy.org/en/index.html">dokumentation</a>)</p></li>
 <li><p>Numpy (<a class="reference external" href="https://numpy.org/doc/stable/">dokumentation</a>)</p></li>
 <li><p>Matplotlib (<a class="reference external" href="https://matplotlib.org/stable/index.html">dokumentation</a>)</p></li>
 <li><p>Scipy (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">dokumentation</a>)</p></li>
 </ul>
-<p>Det ligger næsten i navnet hvad de kan og hvad de skal bruges til:</p>
+<p>Det ligger næsten i navnet hvad de kan, og hvad de skal bruges til:</p>
 <ul class="simple">
 <li><p>Sympy (Symbolic Python) er til symbolsk matematik</p></li>
 <li><p>Numpy (Numerical Python) er til numeriske beregninger</p></li>
 <li><p>Matplotlib (Mathematical ploting library) er til at lave plots</p></li>
 <li><p>Scipy (Scientific Python) her skal vi kun bruge en funktion</p></li>
 </ul>
-<p>Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollerer svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrerer jeres data fra og Scipy til at lave fits.</p>
+<p>Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollere svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrere jeres data fra og Scipy til at lave fits.</p>
 <p>Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med, vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en kilde til fejl.</p>
 <div class="section" id="import">
 <h2><span class="section-number">3.1. </span>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
-<p>For at hente en af de 4 ovenstående pakker ind i et python benytter vi os af <code class="docutils literal notranslate"><span class="pre">import</span></code> nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med <code class="docutils literal notranslate"><span class="pre">as</span></code> kan vi desuden give dem et navn, så vores navn bliver en smule nemmere. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> specificerer vi her, at vi kun vil hente én funktion derfra, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</p>
+<p>For at hente en af de 4 ovenstående pakker ind i et python script benytter vi os af <code class="docutils literal notranslate"><span class="pre">import</span></code> nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med <code class="docutils literal notranslate"><span class="pre">as</span></code> kan vi desuden give dem et navn, så man slipper for at skrive hele navnet hver gang man bruger pakken. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> specificerer vi her, at vi kun vil hente én funktion derfra, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -383,17 +383,17 @@
 </div>
 </div>
 </div>
-<p>Selvom det er fristende, altid at hente alle pakkerne ind. Så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, hvis ikke den skal til at hente et stort bibliotek af funktioner, for at man bruger en funktion, men det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker udefra som skal bruges for at køre koden.</p>
+<p>Selvom det er fristende altid at hente alle pakkerne ind, så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, hvis ikke den skal til at hente et stort bibliotek af funktioner, for at man bruger en enkel funktion. Det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker og funktioner, som skal bruges for at køre ens kode.</p>
 <p>Nogle pakker bruger vi så ofte, at vi gerne forkorter deres navne, så vi slipper for at skrive det fulde navn mange gange i løbet af en enkel notebook. Det er her vi bruger <code class="docutils literal notranslate"><span class="pre">as</span></code> nøgleordet. Når I gør dette, så brug dog gerne den konventionelle forkortelse (altså den som vi har brugt i cellen overfor), så vil det nemlig være nemmere for jer selv, jeres medstuderende og jeres instruktorer at læse og forstå den kode, som I skriver.</p>
 </div>
 <div class="section" id="hvordan-bruger-man-en-pakke">
 <h2><span class="section-number">3.2. </span>Hvordan bruger man en pakke?<a class="headerlink" href="#hvordan-bruger-man-en-pakke" title="Permalink to this headline">¶</a></h2>
-<p>Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis har man har gjort som <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> ovenover, kan man blot skrive <code class="docutils literal notranslate"><span class="pre">curve_fit(_input_)</span></code> i sin kode. Hvis man tilgengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: <code class="docutils literal notranslate"><span class="pre">[forkortelse</span> <span class="pre">for</span> <span class="pre">pakke].[funktion]([variable]</span></code> f. eks. <code class="docutils literal notranslate"><span class="pre">np.exp(2)</span></code> giver <span class="math notranslate nohighlight">\(e^2\)</span>.</p>
-<p>Tænk på det som et bibliotek, der af navnet, af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion skal du altså først fortælle hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner fx brug vi udelukkende pyplot afdelingen af matplotlib biblioteker.</p>
+<p>Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis man har gjort som <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> ovenover, kan man blot skrive <code class="docutils literal notranslate"><span class="pre">curve_fit(_input_)</span></code> i sin kode. Hvis man til gengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: <code class="docutils literal notranslate"><span class="pre">[forkortelse</span> <span class="pre">for</span> <span class="pre">pakke].[funktion]([variable]</span></code> f. eks. <code class="docutils literal notranslate"><span class="pre">np.exp(2)</span></code> giver <span class="math notranslate nohighlight">\(e^2\)</span>.</p>
+<p>Tænk på det som et bibliotek af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion, skal du altså først fortælle, hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner. Fx bruger vi udelukkende pyplot afdelingen af matplotlib biblioteket.</p>
 <p>Herunder kan man se nogle få eksempler på funktionkald:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Både sympy og numpy har de kendte matematiske funktioner husk ikke at blande dem.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Både sympy og numpy har de kendte matematiske funktioner, husk ikke at blande dem.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div>
@@ -422,7 +422,7 @@
 </div>
 <div class="section" id="numpy">
 <h2><span class="section-number">3.3. </span>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
-<p>Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importerer numpy:</p>
+<p>Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importere numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -430,7 +430,7 @@
 </div>
 </div>
 </div>
-<p>Og vi kan nu tage et liste af nogle tal og konverterer til et numpy array:</p>
+<p>Og vi kan nu tage en liste af nogle tal og konvertere til et numpy array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_af_tal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
@@ -444,7 +444,7 @@
 </div>
 </div>
 </div>
-<p>Hvis vi nu benytter dette array i regne operation, foretages operationer på alle elementer af gangen:</p>
+<p>Hvis vi nu benytter dette array i regneoperation, foretages operationer på alle elementer af gangen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_af_tal</span> <span class="o">+</span> <span class="mi">5</span> 
@@ -495,7 +495,7 @@
 </div>
 </div>
 </div>
-<p>En mere grundig gennemgang af numpy i MekRel sammenhænge se <span class="xref myst">side om numpy i mekrel</span>.</p>
+<p>For en mere grundig gennemgang af numpy i MekRel-sammenhænge, se <a class="reference internal" href="MekRel/Numpy.html"><span class="doc std std-doc">siden om numpy i MekRel</span></a>.</p>
 </div>
 <div class="section" id="matplotlib-pyplot">
 <h2><span class="section-number">3.4. </span>Matplotlib Pyplot<a class="headerlink" href="#matplotlib-pyplot" title="Permalink to this headline">¶</a></h2>
@@ -524,7 +524,7 @@
 <img alt="../_images/Intro_til_pakker_25_0.png" src="../_images/Intro_til_pakker_25_0.png" />
 </div>
 </div>
-<p>Matplotlib kan desuden bruges til rigtig mange forskellige plot typer, og det er et super vigtigt værktøj i laboratoriet. Se hvordan det ellers bruges på <a class="reference internal" href="MekRel/Matplotlib_pyplot.html"><span class="doc std std-doc">siden om matplotlib i MekRel</span></a>.</p>
+<p>Matplotlib kan desuden bruges til rigtig mange forskellige plottyper, og det er et super vigtigt værktøj i laboratoriet. Se hvordan det ellers bruges på <a class="reference internal" href="MekRel/Matplotlib_pyplot.html"><span class="doc std std-doc">siden om matplotlib i MekRel</span></a>.</p>
 </div>
 <div class="section" id="sympy">
 <h2><span class="section-number">3.5. </span>SymPy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
@@ -539,7 +539,8 @@
 </div>
 </div>
 </div>
-<p>Når man nu benytter sympy kan blot kombinerer symbolerne til nye udtryk. Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med hinanden:</p>
+<p>Når man nu benytter sympy kan blot kombinerer symbolerne til nye udtryk.
+Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med hinanden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">/</span> <span class="n">x</span> 
@@ -551,7 +552,7 @@
 \[\displaystyle \frac{a b}{x}\]</div>
 </div>
 </div>
-<p>Eller vi kan sammen sætte dette i nye udtryk, som vi nu kan behandle sammen:</p>
+<p>Eller vi kan sammensætte dette i nye udtryk, som vi nu kan behandle sammen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
@@ -598,7 +599,7 @@
 </div>
 <p>Der, hvor vi virkelig får glæde af SymPy er, når vi benytte det til differentiering, integration og til eksempelvis at finde grænser. Hvis vi nu har funktionen:<br />
 <span class="math notranslate nohighlight">\( f(x) = \frac{x^2 - 4}{x + 2} \cdot e^{-x}\)</span></p>
-<p>Kan vi benytte sympy til at finde grænser for <span class="math notranslate nohighlight">\(x \longrightarrow 2\)</span></p>
+<p>kan vi benytte sympy til at finde grænser for <span class="math notranslate nohighlight">\(x \longrightarrow 2\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
@@ -637,7 +638,7 @@
 \[\displaystyle - \left(1 - a\right) e^{- a} + \left(1 - b\right) e^{- b}\]</div>
 </div>
 </div>
-<p>For en nøjere gennemgang af SymPy og de mange andre muligheder, som det tilbyder, referer vi til <span class="xref myst">noterne til python i LinAlys</span>.</p>
+<p>For en nøjere gennemgang af SymPy og de mange andre muligheder, som det tilbyder, referer vi til <a class="reference internal" href="sympy/Notebook1.html"><span class="doc std std-doc">noterne til python i LinAlys</span></a>.</p>
 </div>
 </div>
 
@@ -667,7 +668,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Andet_python.html" title="previous page"><span class="section-number">2.3. </span>Kontrolstrukturer og Løkker</a>
-    <a class='right-next' id="next-link" href="MekRel/Intro.html" title="next page"><span class="section-number">4. </span>Python i MekRel</a>
+    <a class='right-next' id="next-link" href="MekRel/Intro_til_MekRel.html" title="next page"><span class="section-number">4. </span>Python i MekRel</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.3. Functioner, fits og usikkerheder i python &#8212; Python i LinAlys og MekRel</title>
+    <title>4.3. Funktioner, fits og usikkerheder i Python &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -119,7 +119,7 @@
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Intro_til_MekRel.html">
    4. Python i MekRel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. Functioner, fits og usikkerheder i python
+     4.3. Funktioner, fits og usikkerheder i Python
     </a>
    </li>
   </ul>
@@ -337,13 +337,19 @@
         
               <div>
                 
-  <div class="section" id="functioner-fits-og-usikkerheder-i-python">
-<h1><span class="section-number">4.3. </span>Functioner, fits og usikkerheder i python<a class="headerlink" href="#functioner-fits-og-usikkerheder-i-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="funktioner-fits-og-usikkerheder-i-python">
+<h1><span class="section-number">4.3. </span>Funktioner, fits og usikkerheder i Python<a class="headerlink" href="#funktioner-fits-og-usikkerheder-i-python" title="Permalink to this headline">¶</a></h1>
 <p>I denne note vil vi introducere jer til funktioner, hvordan man fitter en model til data og behandler usikkerheder i Python.</p>
 <div class="section" id="funktioner">
 <h2><span class="section-number">4.3.1. </span>Funktioner<a class="headerlink" href="#funktioner" title="Permalink to this headline">¶</a></h2>
-<p>Før vi kan fitte en funktion med Python skal vi kunne definere en funktion. En funktion er et meget bredt begreb i Python og man kan rigtig meget med dem, og når I kommer lidt længere i jeres udannelse er det hovedsageligt dem I skal bruge når I programmerer, men lige nu skal vi bare kunne bruge dem til at fitte.</p>
-<p>Man definerer en funktion ved at skrive ‘def’, skrive det funktionen skal gøre, også skrive ‘return’, hvor man skriver det funktionen skal levere. Et eksempel ses under.</p>
+<p>Før vi kan fitte en funktion med Python skal vi kunne definere en funktion. En funktion er et meget bredt begreb i Python, og man kan rigtig meget med dem. Fordelen ved funktioner er, at man kan samle kode, som man bruger mange gange, så det kan gøre større projekter meget overskuelige. På nuværende tidspunkt er den primære brug af funktioner dog, at vi skal bruge dem til at fitte.</p>
+<p>Man definerer en funktion ved at skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FUNKTION_NAVN</span><span class="p">(</span><span class="n">INPUTS</span><span class="p">):</span>
+    <span class="n">__Udregninger__</span>
+    <span class="k">return</span> <span class="n">OUTPUT</span>
+</pre></div>
+</div>
+<p>Så en funktion bliver nu primært defineret ved input og outputtet af denn, hvor der så ligger en del udregninger imellem. Et eksempel kan ses nedenfor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">E_kin</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
@@ -365,7 +371,7 @@
 </div>
 </div>
 </div>
-<p>Funktioner kan også bruges til at gøre kode mere overskuelig og nemmere at debugge, her er der fx defineret en funktion som laver et plot. Den tager ingen værdier og retunere heller ikke noget, men er nem at debugge og man kan lade være med at kalde den når man har fået sit plot.</p>
+<p>Funktioner kan også bruges til at gøre kode mere overskuelig og nemmere at debugge. Her er der fx defineret en funktion som laver et plot. Den tager ingen værdier og retunerer heller ikke noget, men er nem at debugge og man kan lade være med at kalde den, når man har fået sit plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -386,11 +392,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Funktioner_og_Scipy_optimize-checkpoint_8_0.png" src="../../_images/Funktioner_og_Scipy_optimize-checkpoint_8_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="fitting">
 <h2><span class="section-number">4.3.2. </span>Fitting<a class="headerlink" href="#fitting" title="Permalink to this headline">¶</a></h2>
-<p>Vi skal nu bruge funktioner til at fitte en model til data. Her bruger vi optimize.curve_fit, denne kommer fra pakken SciPy og importeres således.</p>
+<p>Vi skal nu bruge funktioner til at fitte en model til data. Her bruger vi optimize.curve_fit. Denne kommer fra pakken SciPy og importeres således:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
@@ -398,7 +407,7 @@
 </div>
 </div>
 </div>
-<p>For at fitte en model skal man have noget data at fitte til, her bruger jeg den data der lå på jeres første Python aflevering.</p>
+<p>For at fitte en model skal man have noget data at fitte til. Her bruger jeg den data der lå på jeres første Python aflevering.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -419,7 +428,7 @@
 </div>
 </div>
 </div>
-<p>For at fitte en model til data, skal man have ét datapunkt for hver varieret måling, her har vi 5 målinger per pendullængde, derfor skal vi altså tage gennemsnit af vores svingningstider.</p>
+<p>For at fitte en model til data, skal man have ét datapunkt for hver varieret måling. Her har vi 5 målinger per pendullængde, derfor skal vi altså tage gennemsnit af vores svingningstider.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1">#udvælger kolonnen med pendullængde</span>
@@ -439,18 +448,18 @@
 </div>
 </div>
 </div>
-<p>Nu har vi to lister med data punkter der hænger sammen, nu kan vi begynde at undersøge hvilket fit vi skal bruge. Vi regner med at skulle bruge en lineær funktion, så vi skal have defineret det i vores kode. Vi kalder funktionen “linfunc”, og angiver så variabel og parametre i parentes. I return skriver vi hvad funktionen skal give som resultat når vi bruger den.</p>
+<p>Nu har vi to lister med datapunkter, der hænger sammen, og vi kan begynde at undersøge hvilket fit vi skal bruge. Vi regner med at skulle bruge en lineær funktion, så vi skal have defineret det i vores kode. Vi kalder funktionen “linfunc”, og angiver så variabel og parametre i parentes. I return skriver vi hvad funktionen skal give som resultat når vi bruger den.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">y</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Når man fitter er det meget <strong>vigtigt</strong> at det første argument i ens funktion, her x, er det som man har data på og vil have python til at fitte efter, ellers fungerer fittet ikke. Dette er en fejl som ofte opstår, så hvis I får en fejl så tjek lige om i har det rigtige stående som det første i jeres parentes.</p>
-<p>Når man så har en funktion defineret rigtigt, kan man fitte vores funktion til dataen med kommandoen optimize_curvefit. Funktionen optimize.curve_fit skal bruge funktionen der ønskes at fitte efter, også de tilhørende x- og y-værdier, i dette tilfælde pendullængde og svingningstid. Funktionen giver to outputs, først giver den fitte-paramterene, det vil sige fittets bedste bud på hvad parametrene i fit-funktionen bør være. Dernæst giver den covariansen. Er der flere parametre angives covariansen som en matrix med flere værdier. Covariance matrixen kan bruges til at finde ussikerheder på fit parametre, men mere om det til sidst.</p>
+<p>Når man fitter er det meget <strong>vigtigt</strong> at det første argument i ens funktion, her x, er det som man har data på og vil have Python til at fitte efter, ellers fungerer fittet ikke. Dette er en fejl som ofte opstår, så hvis I får en fejl så tjek lige om i har det rigtige stående som det første I jeres parentes.</p>
+<p>Når man så har en funktion defineret rigtigt, kan man fitte vores funktion til dataen med kommandoen <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code>. Funktionen <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> skal bruge funktionen, som vi ønsker at fitte, samt de tilhørende x- og y-værdier, som i dette tilfælde er pendullængde og svingningstid. Funktionen giver to outputs, først giver den fitte-parametrene, det vil sige fittets bedste bud på, hvad parametrene i fit-funktionen bør være. Dernæst giver den covariansen. Er der flere parametre angives covariansen som en matrix med flere værdier. Covariance-matrixen kan bruges til at finde ussikkerheder på fit parametre, men mere om det til sidst.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">linfunc</span><span class="p">,</span> <span class="n">L</span> <span class="p">,</span> <span class="n">gns_svingning</span><span class="p">)</span>
@@ -467,8 +476,8 @@
 </div>
 </div>
 </div>
-<p>Nu kan vi plotte vores data sammen med vores fit, og vurdere hvor god vores model er. Vi skal selvfølgelig også have plottet vores usikkerheder, og da vi arbejder med gennemsnit vil vi plotte usikkerheden ved hjælp af standardafvigelsen på vores data. Man kan bruge NumPy funktionen np.std() til at bestemme standardafvigelse.</p>
-<p>For at plotte vores fit laver vi et array af værdier i det interval vi gerne vil plotte med np.linspace funktionen. Vi bruger så disse værdier i vores lineære-funktion, hvor vi bruger de parametre vores fit bestemte med optimize.curve-fit.</p>
+<p>Nu kan vi plotte vores data sammen med vores fit og vurderer, hvor god vores model er. Vi skal selvfølgelig også have plottet vores usikkerheder, og da vi arbejder med gennemsnit vil vi plotte usikkerheden ved hjælp af standardafvigelsen på vores data. Man kan bruge NumPy funktionen np.std() til at bestemme standardafvigelse.</p>
+<p>For at plotte vores fit laver vi et array af værdier i det interval, som vi gerne vil plotte med np.linspace funktionen. Vi bruger så disse værdier i vores lineære funktion, hvor vi bruger de parametre vores fit bestemte med <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -507,7 +516,7 @@
 </div>
 </div>
 </div>
-<p>Paremeterne er ikke ændret så meget da fejlen på punkterne er meget ens, men hvis der havde været stor forskel på usikkerhederne ville det have en større effekt. Endeligt kan man så plotte punkter med usikkerheder og fit som tager højde for usikkerheden.</p>
+<p>Paremeterne er ikke ændret så meget da fejlen på punkterne er meget ens, men hvis der havde været stor forskel på usikkerhederne, ville det have en større effekt. Endeligt kan man så plotte punkter med usikkerheder og fit som tager højde for usikkerheden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_2</span> <span class="o">=</span> <span class="n">linfunc</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">par_with_error</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">par_with_error</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -526,7 +535,7 @@
 <img alt="../../_images/Funktioner_og_Scipy_optimize-checkpoint_25_0.png" src="../../_images/Funktioner_og_Scipy_optimize-checkpoint_25_0.png" />
 </div>
 </div>
-<p>For at finde ussikerheden på de fit parametre som er fundet her kan man bruge covariance matrixen. På dens diagonal er nemlig variancen for de fittede parametre. Når man har variancen kan man finde ussikerheden da kvadratroden af variancen er ussikerheden. I python kan det gøres med et for loop</p>
+<p>For at finde usikkerheden på de fittede parametre, kan man bruge covariance-matrixen. På dens diagonal er nemlig variansen for de fittede parametre. Når man har variansen kan man finde usikkerheden, da kvadratroden af variansen er ussikerheden. I Python kan det gøres med et for-loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cov_new</span><span class="p">)):</span>
@@ -543,7 +552,7 @@
 </div>
 </div>
 </div>
-<p>Her er fit værdierne for a og b printet med ussikerheder fundet fra covariance matrixen.</p>
+<p>Her er fit-værdierne for a og b printet med usikkerheder fundet fra covariance-matrixen.</p>
 </div>
 </div>
 

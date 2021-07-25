@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.3. Functioner, fits og usikkerheder i python" href="Funktioner_og_Scipy_optimize-checkpoint.html" />
+    <link rel="next" title="4.3. Funktioner, fits og usikkerheder i Python" href="Funktioner_og_Scipy_optimize-checkpoint.html" />
     <link rel="prev" title="4.1. Numpy" href="Numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -119,7 +119,7 @@
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Intro_til_MekRel.html">
    4. Python i MekRel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Funktioner_og_Scipy_optimize-checkpoint.html">
-     4.3. Functioner, fits og usikkerheder i python
+     4.3. Funktioner, fits og usikkerheder i Python
     </a>
    </li>
   </ul>
@@ -335,8 +335,8 @@
   <div class="section" id="matplotlib">
 <h1><span class="section-number">4.2. </span>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
 <p>Vi vil ofte i lab gerne formidle vores data i form af en figur. For at lave figurer bruger vi pakken Matplotlib.</p>
-<p>Matplotlib er et kæmpe bibliotek og kan rigtig rigtig meget. Det er faktisk så stort at du kun skal bruge en lille del af det <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Derfor skriver man <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>, det svarer lidt til kun at læsse bøgerne i fysik afdelingen af et bibliotek.</p>
-<p>Man skal også passe på når man laver plots med matplotlib. Det mixer dårligt med <code class="docutils literal notranslate"><span class="pre">Sympy</span></code> da matplotlib laver plots ud fra tal og ikke analytiske udtryk som er det Sympy giver. Hvis man skal lave et plot med Sympy så kig i noten om Sympy.</p>
+<p>Matplotlib er et kæmpe bibliotek og kan rigtig rigtig meget. Det er faktisk så stort at du kun skal bruge en lille del af det <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Derfor skriver man <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>, det svarer lidt til kun at læse bøgerne i fysikafdelingen af et bibliotek.</p>
+<p>Man skal også passe på, når man laver plots med matplotlib. Det mixer dårligt med <code class="docutils literal notranslate"><span class="pre">Sympy</span></code>, da matplotlib laver plots ud fra tal og ikke analytiske udtryk, som er det Sympy giver. Hvis man skal lave et plot med Sympy så kig i noten om Sympy.</p>
 <div class="section" id="plots">
 <h2><span class="section-number">4.2.1. </span>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
 <p>For at lave et plot skal vi først have data at arbejde med.</p>
@@ -349,7 +349,7 @@
 </div>
 </div>
 </div>
-<p>Når man laver et plot med Matplotlib bygger man det op trin vis. Først laves plottet ud af data med <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> der efter bygges akse navne og en legend på. Et eksempel ses her,</p>
+<p>Når man laver et plot med Matplotlib bygger man det op trinvis. Først laves plottet ud af data med <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>. Derefter bygges aksenavne og en legend på. Et eksempel ses her,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -370,7 +370,7 @@
 <div class="cell_output docutils container">
 <img alt="../../_images/Matplotlib_pyplot_4_0.svg" src="../../_images/Matplotlib_pyplot_4_0.svg" /></div>
 </div>
-<p>I behøver ikke nødvendigvis manuelt indstille skriftstørrelsen på akser og legend hver gang, men det kan nogle gange være nødvendigt at justere, afhængig af hvor meget figurerne skal fylde i jeres logbog. Regelen er at man altid skal kunne læse akse-titlerne uden at zoome ind eller hive forstørrelsesglas frem. Vær også opmærksom på, at når i bruger funktionen plt.savefig(), gemmes jeres figur i samme mappe som jeres Notebook ligger, med mindre i indstiller det anderledens.</p>
+<p>I behøver ikke nødvendigvis manuelt indstille skriftstørrelsen på akser og legend hver gang, men det kan nogle gange være nødvendigt at justere, afhængig af hvor meget figurerne skal fylde i jeres logbog. Regelen er at man altid skal kunne læse akse-titlerne uden at zoome ind eller hive forstørrelsesglas frem. Vær også opmærksom på, at når I bruger funktionen plt.savefig(), gemmes jeres figur i samme mappe som jeres Notebook ligger, medmindre I indstiller det anderledes.</p>
 <p>Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -401,13 +401,7 @@
 <div class="cell_output docutils container">
 <img alt="../../_images/Matplotlib_pyplot_6_0.svg" src="../../_images/Matplotlib_pyplot_6_0.svg" /></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Det</span> <span class="n">er</span> <span class="n">en</span> <span class="n">masse</span> <span class="n">forskelige</span> <span class="n">andre</span> <span class="n">ting</span> <span class="n">man</span> <span class="n">kan</span> <span class="n">med</span> <span class="n">at</span> <span class="n">plotte</span> <span class="n">men</span> <span class="n">dette</span> <span class="n">bør</span> <span class="n">være</span> <span class="n">nok</span> <span class="n">til</span> <span class="n">det</span> <span class="n">i</span> <span class="n">skal</span> <span class="n">her</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Det er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det I skal her.</p>
 </div>
 </div>
 
@@ -437,7 +431,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Numpy.html" title="previous page"><span class="section-number">4.1. </span>Numpy</a>
-    <a class='right-next' id="next-link" href="Funktioner_og_Scipy_optimize-checkpoint.html" title="next page"><span class="section-number">4.3. </span>Functioner, fits og usikkerheder i python</a>
+    <a class='right-next' id="next-link" href="Funktioner_og_Scipy_optimize-checkpoint.html" title="next page"><span class="section-number">4.3. </span>Funktioner, fits og usikkerheder i Python</a>
 
         </div>
         

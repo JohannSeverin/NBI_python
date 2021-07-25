@@ -3,13 +3,15 @@
 
 # # Kontrolstrukturer og Løkker
 # 
-# _Denne side bygger ovenpå den tidligere, og omhandler hvordan man kan bygge kode op med brugen af kontrolstrukturer og løkker til eksempelvis at gentage kode. I MekRel og LinAlys benytter vi dog primært moduler, som tager sig af den logik og de løkker, som man skal bruge. Derfor er det ikke strengt nødvendigt at læse den her side, selvom det er nogle meget brugbare emner, der helt sikkert ved være med til at forbedre forståelsen for Python._
+# _Denne side bygger ovenpå den tidligere, og omhandler hvordan man kan bygge kode op med brugen af kontrolstrukturer og løkker til eksempelvis at gentage kode. I MekRel og LinAlys benytter vi dog primært moduler, som tager sig af den logik og de løkker, som man skal bruge. Derfor er det ikke strengt nødvendigt at læse den her side, selvom det er nogle meget brugbare emner, der helt sikkert vil være med til at forbedre forståelsen for Python._
 
 # ## Logik i Python 
 
-# Når vi skriver kode, er vi ret ofte interesseret i, om et udtryk er sandt eller falsk for vide, hvordan vi skal eksekvere resten af koden. Til dette benytter vi boolean variable, som enten kan være ```True``` eller ```False```. Enten kan vi selv definerer en variabel som værende sand ved at skrive ```switch = True```, men oftere skal vi dog tjekke om noget er sandt. 
+# Når vi skriver kode, er vi ret ofte interesseret i, om et udtryk er sandt eller falsk for vide, hvordan vi skal eksekvere resten af koden. Til dette benytter vi boolean variable, som enten kan være ```True``` eller ```False```. Enten kan vi selv definere en variabel som værende sand ved at skrive ```switch = True```, men oftere skal vi dog tjekke om noget er sandt. 
 # 
-# Når man benytter to lighedstegn ```==``` tjekker Python om udtrykkende på hver side er lig hinanden. Eksempelvis kan vi se om vores defineret værdi er lig med 10: _Bemærk denne forskel et lighedstegn definerer og to sammenligner:_
+# Når man benytter to lighedstegn ```==``` tjekker Python om udtrykkene på hver side er lig hinanden. Eksempelvis kan vi se om vores defineret værdi er lig med 10:
+# 
+#  _Bemærk denne forskel et lighedstegn definerer og to sammenligner:_
 
 # In[15]:
 
@@ -36,7 +38,7 @@ i == 10 # Og sammenligner igen
 
 # ## If-else-statements
 
-# Særligt gøre boolean logik sig nyttig, når vi skal eksekvere noget kode, hvis et bestemt udtryk er sandt og noget andet, hvis det ikke er. Her kan vi benytte if/else statements. Her ser syntaksen sådan her ud: 
+# Særligt gør boolean logik sig nyttig, når vi skal eksekvere noget kode, hvis et bestemt udtryk er sandt og noget andet, hvis det ikke er. Her kan vi benytte if/else statements. Her ser syntaksen sådan her ud: 
 # ``` python
 # if Statement:
 #     ~ gør det her ~
@@ -44,7 +46,7 @@ i == 10 # Og sammenligner igen
 #     ~ gør noget andet ~
 # ```
 # Hvad der sker, afhænger af sandhedsværdien af udtrykket `Statement`. Hvis det logiske udsagn `Statement` er sandt, udføres første del af koden, ellers udføres den anden del. Man kan udelade <code>else</code>, og i dette tilfælde vil der kun ske noget såfremt `Statement` er sandt.
-# Bemærk at indrykningen spiller en vigtig rolle i at afgrænse, hvad der skal gøres i de enkele tilfælde.
+# Bemærk at indrykningen spiller en vigtig rolle i at afgrænse, hvad der skal gøres i de enkelte tilfælde.
 
 # Her er et eksempel, hvor vi vil tage absolutværdien af et tal:
 
@@ -99,27 +101,27 @@ print(resultat)
 #     ~ ellers gør det her ~
 # ```
 # Hvis man vil tjekke flere ting, kan man blot tilføje flere <code>elif</code> statements under hinanden.  
-# I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker først `Statement` og hvis denne er sand vil den __kun__ køre den tilhørende del af koden uanset om `Second_statement` også er sand. Hvis `Statement` er falskt, vil den tjekke <code>elif</code>-statementerne i rækkefølge of eksekverer, den første som er sand. Hvis ingen af de givne betingelser er opfyldt, vil den køre koden der følger efter <code>else</code>.
+# I dette tilfælde vil koden altid køre præcis én kodebid: Koden checker først `Statement` og hvis denne er sand vil den __kun__ køre den tilhørende del af koden uanset om `Second_statement` også er sand. Hvis `Statement` er falskt, vil den tjekke <code>elif</code>-statementerne i rækkefølge og eksekverer, den første som er sand. Hvis ingen af de givne betingelser er opfyldt, vil den køre koden der følger efter <code>else</code>.
 
 # ## Løkker/loops
 
-# Ofte bruger vi computeren til at gentage opgaver mange gange. Dette gør vi ved brug af løkker, som ofte kaldes loops. Der er to typer: en <code>for</code>-løkke og en <code>while</code>-løkke, i denne Notebook vil vi dog kun vise for-løkker, som bruges ved at sætte følgende struktur op:
+# Ofte bruger vi computeren til at gentage opgaver mange gange. Dette gør vi ved brug af løkker (ofte kaldt loops). Der er to typer: en <code>for</code>-løkke og en <code>while</code>-løkke. I denne Notebook vil vi dog kun vise for-løkker, som bruges ved at sætte følgende struktur op:
 # ```python
 # for variabel in liste:
 #     ~ gør det her ~
 # ```
-# Løkken tildeler den variable værdier fra listen (i listens rækkefølge) og gør for denne værdi hvad det indrykkede stykke kodetekst specificerer. Det er normal praksis at kalde den variable i løkke-definitionen for <code>i</code> hvis der ikke er nogen særlig grund til at bruge et andet navn. Hvis vi eksempelvis vil beregne og udskrive kvadratet på 2, 3, 5 og 7, kan vi skrive det som:
+# Løkken tildeler `variabel` værdier fra listen. Kodebiden, som er indrykket køres nu en gang for hvert element i listen, hvor `variabel` hver gang refererer til det næste element i listen. Det er normal praksis at kalde den variabel i løkke-definitionen for <code>i</code> hvis der ikke er nogen særlig grund til at bruge et andet navn. Hvis vi eksempelvis vil beregne og udskrive kvadratet på 2, 3, 5 og 7, kan vi skrive det som:
 
 # In[1]:
 
 
 tal = [2, 3, 5, 7]
 
-for i in tal: # Den variable hedder 'i' og vil antage værdierne i listen 'tal'.
+for i in tal:     # Variablen hedder 'i' og vil antage værdierne i listen 'tal'.
     print(i ** 2) # Print kvadratet på tallet `i`
 
 
-# Hvis vi er interreseret i at gøre noget et bestemt antal gange, kan vi benytte <code>range(antal)</code> til at generere en liste med tallene fra <code>0</code> og op til <code>antal - 1</code> (på grund af nulindekseringen så er der stadig `antal` tal i listen). Lad os prøve at gange et tal med 10 og printe det og så gentage dette 5 gange:
+# Hvis vi er interreseret i at gøre noget et bestemt antal gange, kan vi benytte <code>range(antal)</code> til at generere en liste med tallene fra <code>0</code> og op til <code>antal - 1</code> (på grund af nulindekseringen så er der stadig `antal` tal i listen). Lad os prøve at gange et tal med 10, printe det og så gentage dette 5 gange:
 
 # In[21]:
 
@@ -143,4 +145,4 @@ for i in range(0, 45, 5): # For at nå op til 40 skal 'range' have et helt tal m
 print(f"Og summen er {summen}")
 
 
-# Vi havde fået samme resultat, hvis vi i stedet for 45 havde skrevet 41, da range forsætter ind til i'et er større eller lig med vores <code>stop</code>.
+# Vi havde fået samme resultat, hvis vi i stedet for 45 havde skrevet 41, da range forsætter indtil i'et er større eller lig med vores <code>stop</code>.
