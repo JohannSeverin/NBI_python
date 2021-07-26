@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Ligningsløsning
-
-# __Foreslået ændringer__: 
-# Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.
-# 
-# Og så skal vi lige gentænke, hvordan vi præsenterer den numeriske løsning. Eventuelt kan vi bruge et andet eksempel. Men jeg synes stadig vi skal have det med, selv om Christian ikke er fan, så har vi alligevel brugt det ret meget i kurset. 
-
 # # Ligninger
 
 # Første trin for at løse ligninger er at få skrevet ligninger op i et sprog, Pyhton kan forstå. Det afgørende er her at indse at et lighedstegn kan have flere fundamentalt forskellige betydninger. Tidligere har vi tildelt variable bestemte værdier ved f.eks. at skrive <code>k = 4</code>, mens vi her vil bruge lighedstegnet til at beskrive et udsagn om sammenhængen mellem to udtryk. I SymPy-sprog er dette en _equality_ og syntaksen er (når vi har importeret SymPy som <code>sp</code> som vi plejer) givet ved <code>sp.Eq(venstre side, højre side)</code>. Pythagoras' læresætning kan f.eks. opskrives som:
@@ -17,8 +10,6 @@
 
 import sympy as sp
 from sympy.abc import a, b, c             # Vi definerer a, b og c som symbolske variable
-sp.init_printing()                        # Aktiver pretty-printing
-from IPython.display import display       # Hent vores printer til matematiske udtryk
 
 Pytha = sp.Eq(a ** 2 + b ** 2, c ** 2)    # Syntaks: sp.Eq(venstre side, højre side)
 display(Pytha)
@@ -30,8 +21,10 @@ display(Pytha)
 
 
 from sympy.abc import theta
+
 expr = a**2 + b**2 - 2*a*b*sp.cos(theta) # Vi laver nu blot den ene side af ligningen som et udtryk ("expression")
 display(expr)
+
 cos_relation = sp.Eq(c**2, expr)         # Og vi kan nu sammensætte det
 display(cos_relation)
 
@@ -65,7 +58,7 @@ display(solution)
 # In[5]:
 
 
-from sympy import oo, pi, I           # Vi importerer uendelig, pi og den imaginære konstant I 
+from sympy import oo           # Vi importerer uendelig
 pos_solution = sp.solveset(Pytha_indsat, b, sp.Interval(0, oo))
 display(pos_solution)
 
@@ -122,15 +115,25 @@ sp.solveset(cos_relation, theta)
 # ## Solve
 # <code>Solve()</code> er den ældre funktion, som på trods af at være mindre generel oftest giver os en brugbar løsning. Syntaksen for input til <code>Solve()</code> er den samme som for <code>Solveset()</code>
 
-# In[11]:
+# In[31]:
 
 
 sp.solve(cos_relation, theta)
 
 
-# men man kan dog ikke angive et domæne. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen $b$ ved hjælp af Pythagoras' sætning, vil opgaven i solve-sprog lyde:
+# _Vær opmærksom på formatet, da vi her får en liste kan vi loope over den og bruge `display` på løsninger_
 
-# In[12]:
+# In[32]:
+
+
+sols = sp.solve(cos_relation, theta)
+for løsning in sols:
+    display(løsning)
+
+
+# Yderligere, kan vi angive et domæne for løsningen. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen $b$ ved hjælp af Pythagoras' sætning, vil opgaven i solve-sprog lyde:
+
+# In[25]:
 
 
 display(Pytha_indsat)
@@ -141,7 +144,7 @@ display(sol_b)
 # Overordnet set er <code>solve</code> rigtig god til at give én løsning. Det kan altså ofte bruges i sammenhænge, hvor man vil tjekke et resultat, eller hvis man blot skal bruge en vilkårlig løsning og ikke den fuldstændige løsning.
 # Eksempel: Vi løser $\sin(\theta) = 1$:
 
-# In[13]:
+# In[26]:
 
 
 sp.solve(sp.Eq(sp.sin(theta), 1), theta)
@@ -151,60 +154,48 @@ sp.solve(sp.Eq(sp.sin(theta), 1), theta)
 # 
 # I modsætning hertil har <code>solveset</code> den fordel, at den giver et  matematisk stringent svar, og den vil altså returnere hele løsningen:
 
-# In[14]:
+# In[27]:
 
 
 sp.solveset(sp.Eq(sp.sin(theta), 1), theta)
 
 
-# # Numerisk løsning
+# ## Numerisk løsning
 # Nogle gange kan vi komme ud for en situation, hvor en opgave ikke har en brugbar eksakt, symbolsk løsning, eller at hverken <code>solve</code> eller <code>solveset</code> giver et svar, vi kan bruge. Vi kan så benytte <code>sp.nsolve</code> til numerisk løsning af ligninger. Vi bruger således SymPy (som er designet til at være et symbolsk værktøj) til et formål, der er på kanten af dets anvendelsesområde, og vi skal derfor bruge værktøjet med forsigtighed. Det er derfor en god idé i disse tilfælde at tegne grafer for at illustrere opgaven. Derved kan vi checke at svaret rent faktisk giver mening i forhold til opgaven, og det tillader os også at give et ret godt gæt på en løsning.
 # 
 # Derefter indskriver man den numeriske løsning som:  
-# <code>sp.nsolve(ligning, variabel, startgæt)</code> , og dette vil nu prøve at udregne en numerisk værdi for en løsning. 
+# ```python
+# sp.nsolve(ligning, variabel, startgæt)
+# ```
+# og dette vil nu prøve at udregne en numerisk værdi for en løsning. 
 
 # Hvis nu vi eksempelvis vil finde en løsning til $x\log(x) = \sin(x)$, starter vi med at lave et plot (se den anden Notebook til uge 3 for en mere grundig forklaring af syntaksen).
 
-# In[18]:
+# In[28]:
 
 
 from sympy.abc import x
 from sympy.plotting import plot
 
-figur = plot(x * sp.log(x), sp.sin(x), (x, 0, 2))
+figur = plot(x * sp.log(x + 1), sp.sin(x), (x, 0, 2))
 
 
-# Heraf ser vi altså, at et godt start gæt ville være omkring $x=1.7$. Dette vil vi nu bruge.
+# Heraf ser vi altså, at et godt start gæt ville være omkring $x=1.3$. Dette vil vi nu bruge.
 
-# In[19]:
+# In[29]:
 
 
-lign = sp.Eq(x * sp.log(x), sp.sin(x))
+lign = sp.Eq(x * sp.log(x + 1), sp.sin(x))
 display(lign)
-sp.nsolve(lign, x, 1.75)
+sp.nsolve(lign, x, 1.3)
 
 
-# Havde vi gættet anderledes eksempelvis $x = - 1$ havde vi også fået et andet resultat, da nsolve forsøger at finde en løsning uden at bekymre sig om hvorvidt løsningen er korrekt. Her er eksempel:
+# Sympy leder med `nsolve` blot efter en løsning. Vi kan altså ende med at få forskellige svar alt efter, hvad vores startgæt er. Gætter vi $x = 0.1$ får vi:
 
-# In[17]:
-
-
-sp.nsolve(lign, x, - 1)
+# In[30]:
 
 
-# som er et tal tæt på 0. De to grafer er rigtigt nok tæt på hinanden for meget små værdier af $x$, og på grafen kan det se ud som om at de to grafer krydser i $x = 0$. Da $x\log(x)$ slet ikke er defineret for $x=0$, beregner vi (som vi så det i notebook 2)  grænseværdien:
-
-# In[24]:
+sp.nsolve(lign, x, 0.1)
 
 
-display(sp.limit(x * sp.log(x), x, 0, '+'))   # Beregn og vis grænseværdien af udtrykket for x gående mod 0 oppefra ...
-
-
-# hvilket bekræfter at den med <code>nsolve</code> fundne løsning ikke er helt tosset, selvom den ikke er rigtig. 
-# Dette er et eksempel på SymPys begrænsninger til numeriske udregninger. 
-
-# In[ ]:
-
-
-
-
+# som er en numerisk værdi, som må betragtes som 0. Vi har altså her fundet den anden løsning. Det er derfor rigtig vigtigt at være opmærksom på, hvilken løsning vi kigger efter, og lave vores gæt efter dette.

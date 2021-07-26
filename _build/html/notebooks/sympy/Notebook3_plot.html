@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.6. Plotting i SymPy &#8212; Python i LinAlys og MekRel</title>
+    <title>5.4. Plotting i SymPy &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.8. Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
-    <link rel="prev" title="5.3. Ligningsløsning" href="Notebook3_ligninger.html" />
+    <link rel="next" title="5.6. Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
+    <link rel="prev" title="5.3. Ligninger" href="Notebook3_ligninger.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.6. Differential- og integralregning for funktioner af en variabel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.11. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.14. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.15. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.16. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.17. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.18. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -318,24 +318,24 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   5.6. Plotting i SymPy
+   5.4. Plotting i SymPy
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#parametre-for-plot">
-     5.6.1. Parametre for Plot
+     5.4.1. Parametre for Plot
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#figurer-som-lister">
-     5.6.2. Figurer som lister
+     5.4.2. Figurer som lister
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gaffelfunktioner">
-   5.7. Gaffelfunktioner
+   5.5. Gaffelfunktioner
   </a>
  </li>
 </ul>
@@ -350,19 +350,13 @@
               <div>
                 
   <div class="section" id="plotting-i-sympy">
-<h1><span class="section-number">5.6. </span>Plotting i SymPy<a class="headerlink" href="#plotting-i-sympy" title="Permalink to this headline">¶</a></h1>
-<p><strong>Foreslået ændringer:</strong><br />
-I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt.</p>
-<p>Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre.</p>
+<h1><span class="section-number">5.4. </span>Plotting i SymPy<a class="headerlink" href="#plotting-i-sympy" title="Permalink to this headline">¶</a></h1>
 <p>Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Den anbefalede standardblok for SymPy:</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>               <span class="c1"># Vi vælger at importere x som symbolsk variabel.</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>           <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                    <span class="c1"># Aktiver pretty-printing</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>   <span class="c1"># Hent vores printer til matematiske udtryk</span>
 
 <span class="c1"># Specifik import til plotteformål:</span>
 <span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
@@ -393,7 +387,8 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 <p>Hvis man ønsker at tegne grafen for et bestemt <span class="math notranslate nohighlight">\(x\)</span>-interval, skriver man <code>plot(udtryk, (variabel, start, slut))</code>. Eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -413,7 +408,7 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="section" id="parametre-for-plot">
-<h2><span class="section-number">5.6.1. </span>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.1. </span>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h2>
 <p>Udover at angive funktionen/udtrykket og afgrænsningen af den variable, kan man til <code>plot</code> angive en del andre oplysninger, som angives ved at tilføje <code>keyword = værdi</code> i slutningen af udtrykket. Nogle hyppigt anvendte keywords er:</p>
 <ul class="simple">
 <li><p><code>title</code> angiver titlen på figuren. Angiv værdien som en string, altså som “Ønsket titel”</p></li>
@@ -426,7 +421,11 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 <p>Med disse muligheder kan vi forbedre vores seneste figur:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harmoniske svingninger&quot;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> 
+     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harmoniske svingninger&quot;</span><span class="p">,</span> 
+     <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+     <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> 
+     <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -467,7 +466,7 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="section" id="figurer-som-lister">
-<h2><span class="section-number">5.6.2. </span>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.2. </span>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h2>
 <p>I overstående eksempler har vi benyttet indeksering (som vi kender det fra lister) til at ændre på forskellige parametre. En af fordelene ved dette er at vi kan udvide vores figur ved brug af <code>.append()</code> og <code>.extend()</code> til at bygge videre på en figur, hvis vi ønsker at samle flere plots i en figur. Som eksempel vil vi bruge <code>.append()</code> til at tilføje en ekstra kurve til overstående figur.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -497,7 +496,7 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="section" id="gaffelfunktioner">
-<h1><span class="section-number">5.7. </span>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.5. </span>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h1>
 <p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Syntaksen  er <code>sp.Piecewise((udtryk1, intervalbetingelse1), (udtryk2, intervalbetingelse2))</code>. Funktionen
 $<span class="math notranslate nohighlight">\(f(x) = \begin{cases} -1 \quad &amp;x &lt; 4 \\ x - 5 \quad &amp;x \geq 4\end{cases}\)</span>$
 angives derfor som</p>
@@ -573,8 +572,8 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page"><span class="section-number">5.3. </span>Ligningsløsning</a>
-    <a class='right-next' id="next-link" href="Notebook4.html" title="next page"><span class="section-number">5.8. </span>Differential- og integralregning for funktioner af en variabel</a>
+    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page"><span class="section-number">5.3. </span>Ligninger</a>
+    <a class='right-next' id="next-link" href="Notebook4.html" title="next page"><span class="section-number">5.6. </span>Differential- og integralregning for funktioner af en variabel</a>
 
         </div>
         

@@ -2,23 +2,15 @@
 # coding: utf-8
 
 # # Plotting i SymPy
-# 
-# **Foreslået ændringer:**  
-# I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt. 
-# 
-# Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre. 
 
 # Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:
 
-# In[1]:
+# In[2]:
 
 
 # Den anbefalede standardblok for SymPy:
 import sympy as sp                    # Importer sympy
 from sympy.abc import x               # Vi vælger at importere x som symbolsk variabel.
-from sympy import oo, pi, I           # Vi importerer uendelig, pi og den imaginære konstant I 
-sp.init_printing()                    # Aktiver pretty-printing
-from IPython.display import display   # Hent vores printer til matematiske udtryk
 
 # Specifik import til plotteformål:
 from sympy.plotting import plot
@@ -26,7 +18,7 @@ from sympy.plotting import plot
 
 # For at komme i gang vil vi gerne tegne grafen for en sinuskurve og definerer derfor først sinus som et udtryk:
 
-# In[2]:
+# In[3]:
 
 
 expr = sp.sin(x)
@@ -34,7 +26,7 @@ expr = sp.sin(x)
 
 # og tegner derefter ved at bruge funktionen <code>plot</code>.
 
-# In[3]:
+# In[4]:
 
 
 plot(expr);
@@ -44,15 +36,16 @@ plot(expr);
 # 
 # Hvis man ønsker at tegne grafen for et bestemt $x$-interval, skriver man <code>plot(udtryk, (variabel, start, slut))</code>. Eksempel:
 
-# In[4]:
+# In[7]:
 
 
-plot(expr, (x, 0, 2*pi));
+from sympy import pi
+plot(expr, (x, 0, 2 * pi));
 
 
 # Man behøver naturligvis ikke at definere udtrykket først som en variabel, men kan skrive funktionen eller udtrykket direkte ind i <code>plot</code>. Hvis man ønsker at lave flere grafer i samme figur, kan man skrive <code>plot(udtryk_1, udtryk_2, (variabel, start, slut))</code> som det fremgår her:
 
-# In[5]:
+# In[8]:
 
 
 plot(sp.sin(x), sp.cos(x), (x, 0, 2*pi));
@@ -70,10 +63,14 @@ plot(sp.sin(x), sp.cos(x), (x, 0, 2*pi));
 
 # Med disse muligheder kan vi forbedre vores seneste figur:
 
-# In[6]:
+# In[9]:
 
 
-plot(sp.cos(x), sp.sin(x), (x, 0, 2*pi), title = "Harmoniske svingninger", legend = True, xlabel = "x", ylabel = 'Amplitude');
+plot(sp.cos(x), sp.sin(x), (x, 0, 2*pi), 
+     title = "Harmoniske svingninger", 
+     legend = True, 
+     xlabel = "x", 
+     ylabel = 'Amplitude');
 
 
 # Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger:
@@ -162,10 +159,4 @@ figur = plot(g1, g2, (x, -5, 5), title = "Gaffelfunktion 2") # Vi ser kun en kur
 g = sp.Piecewise((2*abs(x), True), (x**2, abs(x) < 2))
 
 figur = plot(g, (x, -5, 5), title = "Gaffelfunktion (fejldefineret)")
-
-
-# In[ ]:
-
-
-
 

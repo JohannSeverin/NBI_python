@@ -1,18 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # SymPy i LinAlys
+# # Hvad er SymPy?
 
-# __Foreslået ændringer:__ 
-# I denne her Notebook er der ikke brug for de store ændringer til struktur. 
-# 
-# Desuden bør vi nok gennemgå, hvad der er syntaks, og hvad der er kaldesekvens. Dette gør jeg, når jeg retter dem til. 
-
-# ## Hvad er SymPy?
-
-# I denne notebook vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er et bibliotek i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde, som vi importerede  biblioteker i den sidste notebook. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen "sp" for biblioteket: <code>import sympy as sp</code>.  
-# SymPy har flere indbyggeret printe-værktøjer. Vi bruger funktionen <code>sp.init_printing()</code>, som gør det muligt at få udtryk vist i LaTeX-format (LaTeX er det førende system til at skrive matematiske tekster).
-# Den normale <code>print()</code> i Python printer output i "string"-format, mens funktionen <code>display()</code> fra <code>IPython.display</code> vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX.  
+# I denne sektion vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er en pakke i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen "sp" for pakken: <code>import sympy as sp</code>.  
+# SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at se symbolske udtryk som LaTeX. Vi skal dog være opmærksom på, at den normale <code>print()</code> i Python printer output i "string"-format, mens funktionen <code>display()</code> (som er indbygget i Jupyter) vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX. _Hvis vi skriver udtrykket til sidst i en celle, vil Jupyter automatisk bruge `display`_ 
 
 # In[1]:
 
@@ -40,14 +32,14 @@ a + b + phi # Vi kan lægge dem sammen
 
 # Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python-operationer såsom: <code>+</code>, <code>-</code>, <code>*</code>,<code>/</code> eller <code>**</code>. Derudover kan vi benytte en del andre regneoperationer ved at skrive <code>sp.</code> foran operationen. 
 # Her er samlet de typiske regneoperationer, som man kan finde i SymPy
-# - Kvadratrødder: <code>sp.sqrt(x)</code> (benyt sp.root(x, n) til at tage n'te rod af x)
+# - Kvadratrødder: <code>sp.sqrt(x)</code> (benyt `sp.root(x, n)` til at tage n'te rod af x)
 # - Trigonometriske funktioner: <code>sp.cos(x), sp.sin(x), sp.tan(x)</code>. (de inverse findes ved eksempelvis <code>acos(x)</code>)
 # - Exponentialfunktion <code>sp.exp(x)</code>
 # - Logaritmer: <code>sp.log(x)</code>. For at få 10-talslogaritmefunktionen skrives <code>log(x, 10)</code>
 # 
 # En mere omfattende [liste over regneoperationer kan findes her.](https://docs.sympy.org/latest/modules/functions/elementary.html)
 # 
-# Så eksempelvis, kan vi sammensætte et udtryk ved at benytte exponentialfunktionen <code>sp.exp</code> sammen med vores symboler:  
+# Så eksempelvis kan vi sammensætte et udtryk ved at benytte exponentialfunktionen <code>sp.exp</code> sammen med vores symboler:  
 
 # In[4]:
 
@@ -73,7 +65,7 @@ display(f)
 
 # ## Eksakt repræsentation af tal
 
-# Python opfatter <code>/</code> som en numerisk operation, og nå vi vil have eksakte tal-brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af <code>Rational(a, b)</code>
+# Python opfatter <code>/</code> som en numerisk operation, og når vi vil have eksakte tal-brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af <code>Rational(a, b)</code>
 
 # In[7]:
 
@@ -115,7 +107,7 @@ value = sp.sqrt(3) * pi / 2
 display(value)
 
 
-# Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o'er og ligner et uendelighedstegn hvis man har lidt fantasi).
+# Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o'er og ligner et uendelighedstegn, hvis man har lidt fantasi).
 
 # In[11]:
 
@@ -124,7 +116,7 @@ from sympy import oo # Importer værdien uendelig
 1 / oo               # 1 divideret med uendelig giver 0, i hvert tilfælde for fysikere :o)
 
 
-# På samme måde kan vi også importere den imaginære enhed $i = \sqrt{-1}$, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. _Hvis du ikke kender til de komplekse talk, så gå ikke i panik. De bliver introduceret i slutningen af blok 1_
+# På samme måde kan vi også importere den imaginære enhed $i = \sqrt{-1}$, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. _Hvis du ikke kender til de komplekse tal, så gå ikke i panik. De bliver introduceret i slutningen af blok 1_
 
 # In[12]:
 
@@ -207,4 +199,10 @@ display(f_3)
 
 f_3.evalf(3) # Lad os finde værdien som decimaltal med 3 cifre.
 # ... hvilket er praktisk f.eks. hvis vi skulle tegne resultatet ind i en illustration
+
+
+# In[ ]:
+
+
+
 

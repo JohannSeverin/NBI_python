@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.8. Differential- og integralregning for funktioner af en variabel &#8212; Python i LinAlys og MekRel</title>
+    <title>5.6. Differential- og integralregning for funktioner af en variabel &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.13. Funktioner af flere variable" href="Notebook_FlereVar_analyse.html" />
-    <link rel="prev" title="5.6. Plotting i SymPy" href="Notebook3_plot.html" />
+    <link rel="next" title="5.11. Funktioner af flere variable" href="Notebook_FlereVar_analyse.html" />
+    <link rel="prev" title="5.4. Plotting i SymPy" href="Notebook3_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.6. Differential- og integralregning for funktioner af en variabel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.11. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.14. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.15. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.16. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.17. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.18. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -318,34 +318,34 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   5.8. Differential- og integralregning for funktioner af en variabel
+   5.6. Differential- og integralregning for funktioner af en variabel
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reduktion">
-   5.9. Reduktion
+   5.7. Reduktion
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differentiation">
-   5.10. Differentiation
+   5.8. Differentiation
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#taylorudvikling">
-     5.10.1. Taylorudvikling
+     5.8.1. Taylorudvikling
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#integration">
-   5.11. Integration
+   5.9. Integration
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternativ-syntaks">
-   5.12. Alternativ Syntaks
+   5.10. Alternativ Syntaks
   </a>
  </li>
 </ul>
@@ -364,7 +364,7 @@ Der er ret mange småting, som vi igen her med god grund kan indrage.
 Christian er dog ret utilfreds med afsnittet med gaffel funktioner og vores differentiering af <span class="math notranslate nohighlight">\(\frac{(x+2)(x-2)}{x+2} = x-2\quad,\)</span>
 Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre motivationen mere tydelig, da det for en fysikstuderende faktisk kan være ligegyldig (i langt de flest situationer), og at det kun er når man betragter nogle usædvanlige situationer i matematikken, at SymPy ikke nødvendigvis opfører sig som den skal.</p>
 <div class="section" id="differential-og-integralregning-for-funktioner-af-en-variabel">
-<h1><span class="section-number">5.8. </span>Differential- og integralregning for funktioner af en variabel<a class="headerlink" href="#differential-og-integralregning-for-funktioner-af-en-variabel" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.6. </span>Differential- og integralregning for funktioner af en variabel<a class="headerlink" href="#differential-og-integralregning-for-funktioner-af-en-variabel" title="Permalink to this headline">¶</a></h1>
 <p>Vi vil i denne notebook gennemgå hvordan vi benytter SymPy til at differentiere og integrere funktioner af en variabel, samt hvordan vi bestemmer Taylorpolynomier.</p>
 <p>For simpelhedens skyld vil vi i hele notebooken benytte <span class="math notranslate nohighlight">\(x\)</span> som den uafhængige variabel, mens <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(\omega\)</span> er konstanter. Vi starter med at importere SymPy og definere de variable</p>
 <div class="cell docutils container">
@@ -380,7 +380,7 @@ Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre 
 </div>
 </div>
 <div class="section" id="reduktion">
-<h1><span class="section-number">5.9. </span>Reduktion<a class="headerlink" href="#reduktion" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.7. </span>Reduktion<a class="headerlink" href="#reduktion" title="Permalink to this headline">¶</a></h1>
 <p>SymPy viser differentierede eller integrerede funktioner på en måde, der nogle gange i højere grad afspejler den bagvedliggende algoritme end almindelig notationspraksis. Inden vi går i gang med at differentiere og integrere vil vi derfor først stifte bekendtskab med SymPys reduktions-værktøj.</p>
 <p>En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code>.</p>
 <p>Eksempel: Reducér <span class="math notranslate nohighlight">\(2\cos^2(x) + \sin^2(x)\)</span></p>
@@ -458,7 +458,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="section" id="differentiation">
-<h1><span class="section-number">5.10. </span>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.8. </span>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h1>
 <p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier i notebooken for uge 2. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code></p>
 <p>Hvis vi eksempelvis ønsker at differentiere <span class="math notranslate nohighlight">\(\displaystyle b x^{a}\)</span> med hensyn til <span class="math notranslate nohighlight">\(x\)</span>, kan vi altså gøre følgende:</p>
 <div class="cell docutils container">
@@ -539,7 +539,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 <p>Vi ser at det første udtryk er korrekt, men at SymPy uden forbehold reducerer udtrykket uden hensyntagen til at <span class="math notranslate nohighlight">\(h(x)\)</span> slet ikke er defineret for <span class="math notranslate nohighlight">\(x=-2\)</span>. Man skal altså selv være særlig opmærksom på punkter, hvor en givet funktion ikke er defineret eller ikke er differentiabel!</p>
 <div class="section" id="taylorudvikling">
-<h2><span class="section-number">5.10.1. </span>Taylorudvikling<a class="headerlink" href="#taylorudvikling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.1. </span>Taylorudvikling<a class="headerlink" href="#taylorudvikling" title="Permalink to this headline">¶</a></h2>
 <p>Vi kan benytte SymPy til at lave en Taylorudvikling for en given funktion omkring et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Dette gøres med <code>sp.series()</code>, der skal have argumenterne <code>sp.series(funktionsudtryk, variabelnavn, x_0, orden)</code>  .<br />
 Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0=0\)</span> til 5. orden ved at skrive:</p>
 <div class="cell docutils container">
@@ -619,7 +619,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="section" id="integration">
-<h1><span class="section-number">5.11. </span>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.9. </span>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h1>
 <p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved <code>sp.integrate(udtryk, variabel)</code>, mens bestemte integraler beregnes med <code>sp.integrate(udtryk, (variabel, fra, til))</code>. Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.</p>
 <p>Vær opmærksom på, at SymPys integrationsresultater udelader den vilkårlige additive integrationskonstant.</p>
 <p>Eksempel: Find stamfunktionen til <span class="math notranslate nohighlight">\(x^4\)</span>:</p>
@@ -676,7 +676,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="section" id="alternativ-syntaks">
-<h1><span class="section-number">5.12. </span>Alternativ Syntaks<a class="headerlink" href="#alternativ-syntaks" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.10. </span>Alternativ Syntaks<a class="headerlink" href="#alternativ-syntaks" title="Permalink to this headline">¶</a></h1>
 <p>I løbet af denne Notebook har vi benyttet os af en forholdsvis stringent metode at skrive funktioner op på, som altid indeholder <code>sp.funktion()</code>. Mange af disse metoder er dog også allerede indbygget i de enkelte udtryks syntaks. Vi kan f.eks. i stedet for at skrive <code>sp.simplify(expr)</code> skrive <code>expr.simplify()</code>. Dette er en lille smutvej, men det giver nogle gange god mening at bruge. Herunder er vist nogle korte eksempler:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,8 +764,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook3_plot.html" title="previous page"><span class="section-number">5.6. </span>Plotting i SymPy</a>
-    <a class='right-next' id="next-link" href="Notebook_FlereVar_analyse.html" title="next page"><span class="section-number">5.13. </span>Funktioner af flere variable</a>
+    <a class='left-prev' id="prev-link" href="Notebook3_plot.html" title="previous page"><span class="section-number">5.4. </span>Plotting i SymPy</a>
+    <a class='right-next' id="next-link" href="Notebook_FlereVar_analyse.html" title="next page"><span class="section-number">5.11. </span>Funktioner af flere variable</a>
 
         </div>
         

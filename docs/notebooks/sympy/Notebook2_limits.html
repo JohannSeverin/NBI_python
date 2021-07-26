@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3. Ligningsløsning" href="Notebook3_ligninger.html" />
-    <link rel="prev" title="5.1. SymPy i LinAlys" href="Notebook2.html" />
+    <link rel="next" title="5.3. Ligninger" href="Notebook3_ligninger.html" />
+    <link rel="prev" title="5.1. Hvad er SymPy?" href="Notebook2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.6. Differential- og integralregning for funktioner af en variabel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.11. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.14. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.15. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.16. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.17. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.18. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -319,18 +319,16 @@
         
               <div>
                 
-  <p><strong>To do:</strong>
-Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
-<div class="section" id="graenser">
+  <div class="section" id="graenser">
 <h1><span class="section-number">5.2. </span>Grænser<a class="headerlink" href="#graenser" title="Permalink to this headline">¶</a></h1>
-<p>En anden anvendelse af symbolske udtryk er beregning af grænseværdier. Fokus i kurset er på beregning af grænseværdier med papir og blyant, men det er godt at kunne checke sine resultater eller lave mere avancerede beregninger med SymPy. Dette gøres relativt nemt ved at benytte <code>sp.limit</code>-funktionen. Syntaksen er
+<p>En anden anvendelse af symbolske udtryk er beregning af grænseværdier. Fokus i kurset er på beregning af grænseværdier med papir og blyant, men det er godt at kunne checke sine resultater eller lave mere avancerede beregninger med SymPy. Dette gøres relativt nemt ved at benytte <code>sp.limit</code>-funktionen. Kaldesekvensen for funktionen er
 <code>sp.limit(udtryk, variabel, grænse for variabel, retning)</code>. Efterlades retningen blank, beregnes grænseværdien oppefra / fra højre, og man får <em>ingen advarsel</em> selvom grænseværdierne fra henholdsvis højre og venstre er forskellige.</p>
 <p>Hvis vi nu eksempelvis vil beregne <span class="math notranslate nohighlight">\(\lim_{x\to 0} e^{-x}\)</span> skriver vi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>            <span class="c1"># Hent sympy </span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>       <span class="c1"># Vi vil bruge `x`</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span>          <span class="c1"># Så kan vi tage grænserne i uendelig</span>
 </pre></div>
 </div>
 </div>
@@ -344,8 +342,10 @@ Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_limits_3_0.png" src="../../_images/Notebook2_limits_3_0.png" />
-<img alt="../../_images/Notebook2_limits_3_1.png" src="../../_images/Notebook2_limits_3_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
 </div>
 </div>
 <p>hvilket ikke er den store overraskelse, eftersom <span class="math notranslate nohighlight">\(e^{-x}\)</span> er defineret i <span class="math notranslate nohighlight">\(x=0\)</span>, er kontinuert, og <span class="math notranslate nohighlight">\(e^0=1\)</span>.</p>
@@ -357,7 +357,8 @@ Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_limits_5_0.png" src="../../_images/Notebook2_limits_5_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
 </div>
 </div>
 <p>Vær særligt opmærksom på situationer, hvor grænseværdien kunne være forskellig oppefra og nedefra, hvilket oftest forkommer for udtryk på brøkform i det/de <span class="math notranslate nohighlight">\(x\)</span>-værdier, hvor nævneren antager værdien nul. Betragt f.eks. <span class="math notranslate nohighlight">\(\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\)</span> når <span class="math notranslate nohighlight">\(x \to 0\)</span>:</p>
@@ -377,8 +378,10 @@ Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_limits_7_0.png" src="../../_images/Notebook2_limits_7_0.png" />
-<img alt="../../_images/Notebook2_limits_7_1.png" src="../../_images/Notebook2_limits_7_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -\infty\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -389,7 +392,8 @@ Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_limits_8_0.png" src="../../_images/Notebook2_limits_8_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \infty\]</div>
 </div>
 </div>
 </div>
@@ -419,8 +423,8 @@ Få skrevet til seperat notebook. Den er tidligere stået sammen med andre</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook2.html" title="previous page"><span class="section-number">5.1. </span>SymPy i LinAlys</a>
-    <a class='right-next' id="next-link" href="Notebook3_ligninger.html" title="next page"><span class="section-number">5.3. </span>Ligningsløsning</a>
+    <a class='left-prev' id="prev-link" href="Notebook2.html" title="previous page"><span class="section-number">5.1. </span>Hvad er SymPy?</a>
+    <a class='right-next' id="next-link" href="Notebook3_ligninger.html" title="next page"><span class="section-number">5.3. </span>Ligninger</a>
 
         </div>
         

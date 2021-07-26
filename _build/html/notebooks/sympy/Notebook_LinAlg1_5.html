@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.18. Matrix reduktion, ligningsløsning og inverse matricer &#8212; Python i LinAlys og MekRel</title>
+    <title>5.16. Matrix reduktion, ligningsløsning og inverse matricer &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.19. Flere metoder i Linær Algebra" href="Notebook_LinAlg_2.html" />
-    <link rel="prev" title="5.17. Vektorer og matricer" href="Notebook_LinAlg1.html" />
+    <link rel="next" title="5.17. Flere metoder i Linær Algebra" href="Notebook_LinAlg_2.html" />
+    <link rel="prev" title="5.15. Vektorer og matricer" href="Notebook_LinAlg1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.6. Differential- og integralregning for funktioner af en variabel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.11. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.14. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.15. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.16. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.17. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.18. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -318,27 +318,27 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrix-reduktion">
-   5.18.1. Matrix-reduktion
+   5.16.1. Matrix-reduktion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ligningssystemer-med-een-losning">
-   5.18.2. Ligningssystemer med een løsning
+   5.16.2. Ligningssystemer med een løsning
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#omvendte-inverse-matricer">
-   5.18.3. Omvendte/inverse matricer
+   5.16.3. Omvendte/inverse matricer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrixrang">
-   5.18.4. Matrixrang
+   5.16.4. Matrixrang
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ligningssystemer-med-flere-losninger-frie-parametre">
-   5.18.5. Ligningssystemer med flere løsninger: frie parametre
+   5.16.5. Ligningssystemer med flere løsninger: frie parametre
   </a>
  </li>
 </ul>
@@ -353,9 +353,9 @@
               <div>
                 
   <div class="section" id="matrix-reduktion-ligningslosning-og-inverse-matricer">
-<h1><span class="section-number">5.18. </span>Matrix reduktion, ligningsløsning og inverse matricer<a class="headerlink" href="#matrix-reduktion-ligningslosning-og-inverse-matricer" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.16. </span>Matrix reduktion, ligningsløsning og inverse matricer<a class="headerlink" href="#matrix-reduktion-ligningslosning-og-inverse-matricer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="matrix-reduktion">
-<h2><span class="section-number">5.18.1. </span>Matrix-reduktion<a class="headerlink" href="#matrix-reduktion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.16.1. </span>Matrix-reduktion<a class="headerlink" href="#matrix-reduktion" title="Permalink to this headline">¶</a></h2>
 <p>Python/SymPy indeholder en række indbyggede metoder til at reducere matricer. Særligt brugbart i LinALys er funktionen, der bringer en matrix på reduceret række-echelonform. For en matrix <span class="math notranslate nohighlight">\(A\)</span> kan vi finde den ækvivalente matrix på reduceret række-echelonform ved <code>.rref()</code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -373,7 +373,7 @@
 <p>Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>.</p>
 </div>
 <div class="section" id="ligningssystemer-med-een-losning">
-<h2><span class="section-number">5.18.2. </span>Ligningssystemer med een løsning<a class="headerlink" href="#ligningssystemer-med-een-losning" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.16.2. </span>Ligningssystemer med een løsning<a class="headerlink" href="#ligningssystemer-med-een-losning" title="Permalink to this headline">¶</a></h2>
 <p>Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælpe af matrixregning. Vi kan f.eks. omskrive:</p>
 <p>\begin{align*}
 x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 136
@@ -420,7 +420,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 \end{equation*}</p>
 </div>
 <div class="section" id="omvendte-inverse-matricer">
-<h2><span class="section-number">5.18.3. </span>Omvendte/inverse matricer<a class="headerlink" href="#omvendte-inverse-matricer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.16.3. </span>Omvendte/inverse matricer<a class="headerlink" href="#omvendte-inverse-matricer" title="Permalink to this headline">¶</a></h2>
 <p>Som beskrevet i Messer afsnit 5.2 kan matricer inverteres. Dette gøres meget simpelt for en matrix <span class="math notranslate nohighlight">\(A\)</span> med syntaksen <code>A.inv()</code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,7 +451,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="section" id="matrixrang">
-<h2><span class="section-number">5.18.4. </span>Matrixrang<a class="headerlink" href="#matrixrang" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.16.4. </span>Matrixrang<a class="headerlink" href="#matrixrang" title="Permalink to this headline">¶</a></h2>
 <p>Bemærk at hverken man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis  ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.</p>
 <p>Årsagen hertil er at koefficientmatricen ikke har fuld rang. Rangen for en matrix <span class="math notranslate nohighlight">\(A\)</span> kan findes ved <code>A.rank()</code>, og angiver antallet af ledende et-taller i den matrix, der fremkommer ved at føre <span class="math notranslate nohighlight">\(A\)</span> på reduceret række-echelonform.</p>
 <p>Af denne grund, og i overensstemmelse med Messer sætning 5.12, er det derfor ingen overraskelse at se at <span class="math notranslate nohighlight">\(A\)</span> fra overfor, der repræsenterer 3 lineært uafgængige ligninger med 3 ubekendte, har rang 3:</p>
@@ -467,7 +467,7 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="section" id="ligningssystemer-med-flere-losninger-frie-parametre">
-<h2><span class="section-number">5.18.5. </span>Ligningssystemer med flere løsninger: frie parametre<a class="headerlink" href="#ligningssystemer-med-flere-losninger-frie-parametre" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.16.5. </span>Ligningssystemer med flere løsninger: frie parametre<a class="headerlink" href="#ligningssystemer-med-flere-losninger-frie-parametre" title="Permalink to this headline">¶</a></h2>
 <p>Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal fri variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix <span class="math notranslate nohighlight">\(A\)</span> er mindre end antallet af variable i ligningssystemet.
 I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ikke virke.</p>
 <p>Eksempel: Vi vil gerne finde den fuldstændige løsning til
@@ -532,8 +532,8 @@ I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ik
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1.html" title="previous page"><span class="section-number">5.17. </span>Vektorer og matricer</a>
-    <a class='right-next' id="next-link" href="Notebook_LinAlg_2.html" title="next page"><span class="section-number">5.19. </span>Flere metoder i Linær Algebra</a>
+    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1.html" title="previous page"><span class="section-number">5.15. </span>Vektorer og matricer</a>
+    <a class='right-next' id="next-link" href="Notebook_LinAlg_2.html" title="next page"><span class="section-number">5.17. </span>Flere metoder i Linær Algebra</a>
 
         </div>
         

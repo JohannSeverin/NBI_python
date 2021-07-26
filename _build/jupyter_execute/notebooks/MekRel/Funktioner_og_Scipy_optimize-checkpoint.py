@@ -138,12 +138,14 @@ plt.legend()
 plt.show()
 
 
-# Man kan også lave et fit, hvor der tages højde for usikkerheden på datapunkterne. Det gør man ved at angive et sigma når man bruger curve_fit.
+# Man kan også lave et fit, hvor der tages højde for usikkerheden på datapunkterne. Det gør man ved at angive et sigma når man bruger curve_fit. 
+# 
+# **Tip:** Husk at bruge `absolute_sigma = True` ellers for i problemer med jeres ussikerheder.
 
 # In[12]:
 
 
-par_with_error, cov_new = curve_fit(linfunc, L , gns_svingning, sigma = afvigelse)
+par_with_error, cov_new = curve_fit(linfunc, L , gns_svingning, sigma = afvigelse, absolute_sigma = True)
 print(par_with_error)
 
 
