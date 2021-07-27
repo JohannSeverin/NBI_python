@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.12. Flere metoder i Linær Algebra &#8212; Python i LinAlys og MekRel</title>
+    <title>5.10. Flere metoder i Linær Algebra &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.13. Komplekse tal i SymPy" href="Notebook_kompleks.html" />
-    <link rel="prev" title="5.11. Matrix reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
+    <link rel="next" title="5.11. Komplekse tal i SymPy" href="Notebook_kompleks.html" />
+    <link rel="prev" title="5.9. Matrix reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -182,32 +182,32 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.6. Funktioner af flere variable
+     5.6. Analyse for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.9. Graftegning for funktioner af flere variable
+     5.7. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.10. Vektorer og matricer
+     5.8. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.11. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.12. Flere metoder i Linær Algebra
+     5.10. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.13. Komplekse tal i SymPy
+     5.11. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -318,42 +318,42 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#transponering-adjungering-og-konjugering">
-   5.12.1. Transponering, adjungering og konjugering
+   5.10.1. Transponering, adjungering og konjugering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nulrum-og-sojlerum">
-   5.12.2. Nulrum og søjlerum
+   5.10.2. Nulrum og søjlerum
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gram-schmidt-ortogonalisering">
-   5.12.3. Gram-Schmidt-ortogonalisering
+   5.10.3. Gram-Schmidt-ortogonalisering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#determinant">
-   5.12.4. Determinant
+   5.10.4. Determinant
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sporet-trace">
-   5.12.5. Sporet / Trace
+   5.10.5. Sporet / Trace
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#krydsprodukt-vektorprodukt-cross-product">
-   5.12.6. Krydsprodukt, vektorprodukt / Cross product
+   5.10.6. Krydsprodukt, vektorprodukt / Cross product
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#egenvaerdier-og-vektorer">
-   5.12.7. Egenværdier og -vektorer
+   5.10.7. Egenværdier og -vektorer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diagonalisering">
-   5.12.8. Diagonalisering
+   5.10.8. Diagonalisering
   </a>
  </li>
 </ul>
@@ -370,7 +370,7 @@
   <p><strong>Foreslået ændringer</strong><br />
 Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilpasse den til at overholde de nye konventioner, som vi sætter for os selv. Dvs tænke over import og lign.. Ellers burde den være good to go</p>
 <div class="section" id="flere-metoder-i-linaer-algebra">
-<h1><span class="section-number">5.12. </span>Flere metoder i Linær Algebra<a class="headerlink" href="#flere-metoder-i-linaer-algebra" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.10. </span>Flere metoder i Linær Algebra<a class="headerlink" href="#flere-metoder-i-linaer-algebra" title="Permalink to this headline">¶</a></h1>
 <p>Målet for denne notebook er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra. Vi arbejder videre hvor den første notebook om lineær algebra slap, så fra starten antager vi at læseren kan lave matrix- og vektormanipulationer.</p>
 <p>Langt de fleste funktioner i denne notebook virker på samme måde som matrixinversion, som for en matrix <span class="math notranslate nohighlight">\(A\)</span> findes ved <code>A.inv()</code>.</p>
 <p>Først importerer vi de rette pakker:</p>
@@ -388,7 +388,7 @@ Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilp
 </div>
 </div>
 <div class="section" id="transponering-adjungering-og-konjugering">
-<h2><span class="section-number">5.12.1. </span>Transponering, adjungering og konjugering<a class="headerlink" href="#transponering-adjungering-og-konjugering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.1. </span>Transponering, adjungering og konjugering<a class="headerlink" href="#transponering-adjungering-og-konjugering" title="Permalink to this headline">¶</a></h2>
 <p>Hvis vi har givet en matrix, kan vi nemt beregne den transponerede matrix med at ombytte rækker og kolonner:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,7 +441,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="section" id="nulrum-og-sojlerum">
-<h2><span class="section-number">5.12.2. </span>Nulrum og søjlerum<a class="headerlink" href="#nulrum-og-sojlerum" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.2. </span>Nulrum og søjlerum<a class="headerlink" href="#nulrum-og-sojlerum" title="Permalink to this headline">¶</a></h2>
 <p>For en matrix <span class="math notranslate nohighlight">\(M\)</span> kan vi finde dennes nulrum og søjlerum ved at bruge hhv. <code>M.nullspace()</code> og <code>M.columnspace()</code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -481,7 +481,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="section" id="gram-schmidt-ortogonalisering">
-<h2><span class="section-number">5.12.3. </span>Gram-Schmidt-ortogonalisering<a class="headerlink" href="#gram-schmidt-ortogonalisering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.3. </span>Gram-Schmidt-ortogonalisering<a class="headerlink" href="#gram-schmidt-ortogonalisering" title="Permalink to this headline">¶</a></h2>
 <p>Er vi givet flere vektorer i rummet som ikke er lineært afhængigt af hinanden, kan vi danne et ortogonalt (og evt. ortonomalt, hvis vi normaliserer vektorerne) sæt af vektorer ved at bruge Gram-Schmidt-ortogonalisering.</p>
 <p>Dette kan være en ret omgangsrig procedure, som man i LinALys kun vil blive bedt om at udføre i relativt simple tilfælde. Men selv i disse simple tilfælde er der masser af muligheder for at lave regnefejl, og det kan derfor være rart hurtigt at kunne checke beregningerne, især for når der er tale om mere end 2-3 vektorer. Til dette importerer man <code>GramSchmidt</code> fra <code>sympy.matrices</code> og benytter den på en liste <span class="math notranslate nohighlight">\(L\)</span> af vektorer: <code>GramScmidt(L)</code>. Som udgangspunkt normaliserer SymPy ikke de ortogonaliserede vektorer, men hvis vi giver funktionen et ekstra argument <code>GramSchmidt(L, True)</code>, fortages normaliseringen som en del af beregningen.</p>
 <p>Som eksempel genregner vi her eksemplet fra side 162 i Messer med SymPy:</p>
@@ -527,7 +527,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 <p>ved anvendelse af kvadratrods- og brøkregneregler.</p>
 </div>
 <div class="section" id="determinant">
-<h2><span class="section-number">5.12.4. </span>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.4. </span>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
 <p>Determinanten beregnes ved at tilføje <code>.det()</code> til matricens navn:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -562,7 +562,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 <p>i overensstemmelse med, hvordan vi selv ville regne den.</p>
 </div>
 <div class="section" id="sporet-trace">
-<h2><span class="section-number">5.12.5. </span>Sporet / Trace<a class="headerlink" href="#sporet-trace" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.5. </span>Sporet / Trace<a class="headerlink" href="#sporet-trace" title="Permalink to this headline">¶</a></h2>
 <p>Sporet udregnes ved at tilføje <code>.trace()</code> til den ønskede matrix, hvilket giver summen af diagonalindgangene:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,7 +579,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="section" id="krydsprodukt-vektorprodukt-cross-product">
-<h2><span class="section-number">5.12.6. </span>Krydsprodukt, vektorprodukt / Cross product<a class="headerlink" href="#krydsprodukt-vektorprodukt-cross-product" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.6. </span>Krydsprodukt, vektorprodukt / Cross product<a class="headerlink" href="#krydsprodukt-vektorprodukt-cross-product" title="Permalink to this headline">¶</a></h2>
 <p>For to vektorer i tre dimensioner kan vi benytte beregne krydsproduktet mellem <code>v</code> og <code>w</code> med <code>v.cross(w)</code> (i analogi med syntaksen for det indre produkt):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +599,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="section" id="egenvaerdier-og-vektorer">
-<h2><span class="section-number">5.12.7. </span>Egenværdier og -vektorer<a class="headerlink" href="#egenvaerdier-og-vektorer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.7. </span>Egenværdier og -vektorer<a class="headerlink" href="#egenvaerdier-og-vektorer" title="Permalink to this headline">¶</a></h2>
 <p>For en matrix findes egenværdier og -vektorer med <code>A.eigenvals()</code> og <code>A.eigenvects()</code>.</p>
 <p><code>A.eigenvals()</code> giver os blot alle egenværdierne til en bestemt matrice i sorteret rækkefølge:</p>
 <div class="cell docutils container">
@@ -671,7 +671,7 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 <p>I matematikkurser har matricerne gerne pæne (ofte heltallige) egenværdier, mens man i praksis sjældent oplever matricer med så velopdragne egenværdier. Dertil kommer, at store matricer kan gøre det meget hårdt for computeren at regne det hele symbolsk. Derfor vil man (når man eksempelvis beregner egenværdier i kvantemekanik) i stedet bruge NumPy, da der her er nogle ret hurtige implementeringer til at give gode numeriske løsninger. Heldigvis ligner metoderne meget hinanden, og hvis man skulle komme ud for at skulle løse et problem, der er for krævende med sumbolske beregninger, kan man finde NumPys LinAlg værktøjer <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">i den relevante dokumentation</a>.</p>
 </div>
 <div class="section" id="diagonalisering">
-<h2><span class="section-number">5.12.8. </span>Diagonalisering<a class="headerlink" href="#diagonalisering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.10.8. </span>Diagonalisering<a class="headerlink" href="#diagonalisering" title="Permalink to this headline">¶</a></h2>
 <p>En afgørende pointe i kurset er at undersøge hvornår der kan findes en base hvor vores matrix <span class="math notranslate nohighlight">\(A\)</span> er på diagonalform, altså hvornår der findes en matrix <span class="math notranslate nohighlight">\(P\)</span>, der opfylder: <span class="math notranslate nohighlight">\(D = P^{-1}AP\)</span>, hvor <span class="math notranslate nohighlight">\(D\)</span> er en diagonalmatrix. For at finde denne kan vi benytte <code>A.diagonalize()</code>. Vi regner videre med matricen <code>A</code> defineret ovenfor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,8 +756,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1_5.html" title="previous page"><span class="section-number">5.11. </span>Matrix reduktion, ligningsløsning og inverse matricer</a>
-    <a class='right-next' id="next-link" href="Notebook_kompleks.html" title="next page"><span class="section-number">5.13. </span>Komplekse tal i SymPy</a>
+    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1_5.html" title="previous page"><span class="section-number">5.9. </span>Matrix reduktion, ligningsløsning og inverse matricer</a>
+    <a class='right-next' id="next-link" href="Notebook_kompleks.html" title="next page"><span class="section-number">5.11. </span>Komplekse tal i SymPy</a>
 
         </div>
         
