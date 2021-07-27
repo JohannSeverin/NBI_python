@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **Foreslået ændringer:** 
-# Der er ret mange småting, som vi igen her med god grund kan indrage.
-# Christian er dog ret utilfreds med afsnittet med gaffel funktioner og vores differentiering af $\frac{(x+2)(x-2)}{x+2} = x-2\quad,$
-# Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre motivationen mere tydelig, da det for en fysikstuderende faktisk kan være ligegyldig (i langt de flest situationer), og at det kun er når man betragter nogle usædvanlige situationer i matematikken, at SymPy ikke nødvendigvis opfører sig som den skal. 
-
-# # Differential- og integralregning for funktioner af en variabel
+# # Differential- og integralregning (en variabel)
 
 # Vi vil i denne notebook gennemgå hvordan vi benytter SymPy til at differentiere og integrere funktioner af en variabel, samt hvordan vi bestemmer Taylorpolynomier.
 # 
@@ -16,17 +11,15 @@
 
 
 import sympy as sp                         # Importer sympy
-from sympy.abc import a, b, A, omega, x    # Vi definerer vores symbolske variabel og konstanter
-from sympy import oo, pi, I                # Vi importerer uendelig, pi og den imaginære konstant I 
-sp.init_printing()                         # Aktiver pretty-printing
-from IPython.display import display        # Hent vores printer til matematiske udtryk
+from sympy.abc import a, b, A, omega, x    # Vi definerer symboler, som vi kommer til at bruge
+from sympy import oo, pi                   # Vi importerer uendelig og pi
 
 
-# # Reduktion
+# ## Reduktion
 
 # SymPy viser differentierede eller integrerede funktioner på en måde, der nogle gange i højere grad afspejler den bagvedliggende algoritme end almindelig notationspraksis. Inden vi går i gang med at differentiere og integrere vil vi derfor først stifte bekendtskab med SymPys reduktions-værktøj.
 # 
-# En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code>.
+# En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code> eller `udtryk.simplify()` 
 # 
 # Eksempel: Reducér $2\cos^2(x) + \sin^2(x)$
 
@@ -44,11 +37,11 @@ display(f_reduced)
 
 # Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet $\cos^2(x) + sin^2(x) = 1$.
 # 
-# Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket naturligvis ikke altid stemmer med vores egne præferencer. 
+# Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket ikke altid stemmer med vores egne præferencer. 
 # 
-# Eksempel:
+# Et eksempel på dette kunne være følgende udtryk:
 
-# In[3]:
+# In[26]:
 
 
 udtryk1 = (x+a+b)**3 - (x+a-b)**3
@@ -67,7 +60,15 @@ display(sp.expand(udtryk1))
 
 # Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:
 # 
-# Vi skal reducere udtrykket $(\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2$ i en pointopgave uden hjælpemidler, og genkender i et lyst øjeblik den såkaldte tredje kvadratsætning $(c+d)\cdot(c-d) = c^2-d^2$. Hvis vi sætter $c=\frac{1}{2}x+3a+3b$ og $d=\frac{1}{2}x+a+b$ får vi $(c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)$. Det er nydeligt, men vi vil gerne tjekke med Python:
+# I en pointopgave uden hjælpemidler, skal vi reducere udtrykket $(\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2$. 
+# 
+# Vi genkender i et lyst øjeblik den såkaldte tredje kvadratsætning $(c+d)\cdot(c-d) = c^2-d^2$. 
+# 
+# Hvis vi sætter $c=\frac{1}{2}x+3a+3b$ og $d=\frac{1}{2}x+a+b$. Kan vi benytte følgende omskrivning:  
+# 
+# $(c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)$  
+# 
+# Det er nydeligt, men vi vil gerne tjekke med Python:
 
 # In[5]:
 
@@ -86,8 +87,8 @@ udtryk3 = (x/2+3*a+3*b)**2 - (x/2+a+b)**2 - (x+4*a+4*b)*(2*a+2*b)
 display(sp.simplify(udtryk3))
 
 
-# # Differentiation
-# Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier i notebooken for uge 2. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>
+# ## Differentiation
+# Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier [sektionen om grænseværdier](Notebook2_limits.ipynb). Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.
 # 
 # Hvis vi eksempelvis ønsker at differentiere $\displaystyle b x^{a}$ med hensyn til $x$, kan vi altså gøre følgende:
 
@@ -213,8 +214,16 @@ figur.show()
 
 # Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet $x_0 = 1$.
 
-# # Integration
-# Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved <code>sp.integrate(udtryk, variabel)</code>, mens bestemte integraler beregnes med <code>sp.integrate(udtryk, (variabel, fra, til))</code>. Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.
+# ## Integration
+# Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved 
+# ```python
+# sp.integrate(udtryk, variabel)
+# ```
+# mens bestemte integraler beregnes med 
+# ```python
+# sp.integrate(udtryk, (variabel, fra, til))
+# ```
+# Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.
 # 
 # Vær opmærksom på, at SymPys integrationsresultater udelader den vilkårlige additive integrationskonstant.
 # 
@@ -257,7 +266,7 @@ expr = x ** 3 - 1
 sp.integrate(expr, (x, a, b))
 
 
-# # Alternativ Syntaks
+# ## Alternativ Syntaks
 
 # I løbet af denne Notebook har vi benyttet os af en forholdsvis stringent metode at skrive funktioner op på, som altid indeholder <code>sp.funktion()</code>. Mange af disse metoder er dog også allerede indbygget i de enkelte udtryks syntaks. Vi kan f.eks. i stedet for at skrive <code>sp.simplify(expr)</code> skrive <code>expr.simplify()</code>. Dette er en lille smutvej, men det giver nogle gange god mening at bruge. Herunder er vist nogle korte eksempler:
 

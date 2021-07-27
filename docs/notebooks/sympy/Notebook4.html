@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.6. Differential- og integralregning for funktioner af en variabel &#8212; Python i LinAlys og MekRel</title>
+    <title>5.5. Differential- og integralregning (en variabel) &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.11. Funktioner af flere variable" href="Notebook_FlereVar_analyse.html" />
+    <link rel="next" title="5.6. Funktioner af flere variable" href="Notebook_FlereVar_analyse.html" />
     <link rel="prev" title="5.4. Plotting i SymPy" href="Notebook3_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -177,37 +177,37 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.6. Differential- og integralregning for funktioner af en variabel
+     5.5. Differential- og integralregning (en variabel)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.11. Funktioner af flere variable
+     5.6. Funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.14. Graftegning for funktioner af flere variable
+     5.9. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.15. Vektorer og matricer
+     5.10. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.16. Matrix reduktion, ligningsløsning og inverse matricer
+     5.11. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.17. Flere metoder i Linær Algebra
+     5.12. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.18. Komplekse tal i SymPy
+     5.13. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -316,36 +316,29 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   5.6. Differential- og integralregning for funktioner af en variabel
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reduktion">
-   5.7. Reduktion
+   5.5.1. Reduktion
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#differentiation">
-   5.8. Differentiation
+   5.5.2. Differentiation
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taylorudvikling">
-     5.8.1. Taylorudvikling
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taylorudvikling">
+   5.5.3. Taylorudvikling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#integration">
-   5.9. Integration
+   5.5.4. Integration
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternativ-syntaks">
-   5.10. Alternativ Syntaks
+   5.5.5. Alternativ Syntaks
   </a>
  </li>
 </ul>
@@ -359,30 +352,23 @@
         
               <div>
                 
-  <p><strong>Foreslået ændringer:</strong>
-Der er ret mange småting, som vi igen her med god grund kan indrage.
-Christian er dog ret utilfreds med afsnittet med gaffel funktioner og vores differentiering af <span class="math notranslate nohighlight">\(\frac{(x+2)(x-2)}{x+2} = x-2\quad,\)</span>
-Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre motivationen mere tydelig, da det for en fysikstuderende faktisk kan være ligegyldig (i langt de flest situationer), og at det kun er når man betragter nogle usædvanlige situationer i matematikken, at SymPy ikke nødvendigvis opfører sig som den skal.</p>
-<div class="section" id="differential-og-integralregning-for-funktioner-af-en-variabel">
-<h1><span class="section-number">5.6. </span>Differential- og integralregning for funktioner af en variabel<a class="headerlink" href="#differential-og-integralregning-for-funktioner-af-en-variabel" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="differential-og-integralregning-en-variabel">
+<h1><span class="section-number">5.5. </span>Differential- og integralregning (en variabel)<a class="headerlink" href="#differential-og-integralregning-en-variabel" title="Permalink to this headline">¶</a></h1>
 <p>Vi vil i denne notebook gennemgå hvordan vi benytter SymPy til at differentiere og integrere funktioner af en variabel, samt hvordan vi bestemmer Taylorpolynomier.</p>
 <p>For simpelhedens skyld vil vi i hele notebooken benytte <span class="math notranslate nohighlight">\(x\)</span> som den uafhængige variabel, mens <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(\omega\)</span> er konstanter. Vi starter med at importere SymPy og definere de variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                         <span class="c1"># Importer sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">x</span>    <span class="c1"># Vi definerer vores symbolske variabel og konstanter</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>                <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                         <span class="c1"># Aktiver pretty-printing</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>        <span class="c1"># Hent vores printer til matematiske udtryk</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">x</span>    <span class="c1"># Vi definerer symboler, som vi kommer til at bruge</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span>                   <span class="c1"># Vi importerer uendelig og pi</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="reduktion">
-<h1><span class="section-number">5.7. </span>Reduktion<a class="headerlink" href="#reduktion" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">5.5.1. </span>Reduktion<a class="headerlink" href="#reduktion" title="Permalink to this headline">¶</a></h2>
 <p>SymPy viser differentierede eller integrerede funktioner på en måde, der nogle gange i højere grad afspejler den bagvedliggende algoritme end almindelig notationspraksis. Inden vi går i gang med at differentiere og integrere vil vi derfor først stifte bekendtskab med SymPys reduktions-værktøj.</p>
-<p>En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code>.</p>
+<p>En reduktion foretages i SymPy ved at bruge <code>sp.simplify(udtryk)</code> eller <code class="docutils literal notranslate"><span class="pre">udtryk.simplify()</span></code></p>
 <p>Eksempel: Reducér <span class="math notranslate nohighlight">\(2\cos^2(x) + \sin^2(x)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -397,13 +383,15 @@ Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_6_0.png" src="../../_images/Notebook4_6_0.png" />
-<img alt="../../_images/Notebook4_6_1.png" src="../../_images/Notebook4_6_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sin^{2}{\left(x \right)} + 2 \cos^{2}{\left(x \right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \cos^{2}{\left(x \right)} + 1\]</div>
 </div>
 </div>
 <p>Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet <span class="math notranslate nohighlight">\(\cos^2(x) + sin^2(x) = 1\)</span>.</p>
-<p>Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket naturligvis ikke altid stemmer med vores egne præferencer.</p>
-<p>Eksempel:</p>
+<p>Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket ikke altid stemmer med vores egne præferencer.</p>
+<p>Et eksempel på dette kunne være følgende udtryk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">udtryk1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
@@ -413,8 +401,10 @@ Jeg er uenig i hans kommentarer, men vi kan godt bruge lidt energi på at gøre 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_8_0.png" src="../../_images/Notebook4_8_0.png" />
-<img alt="../../_images/Notebook4_8_1.png" src="../../_images/Notebook4_8_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \left(a - b + x\right)^{3} + \left(a + b + x\right)^{3}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \left(a - b + x\right)^{3} + \left(a + b + x\right)^{3}\]</div>
 </div>
 </div>
 <p>SymPy foretrækker således denne form frem for den udgave, hvor parenteserne er ganget ud.
@@ -426,11 +416,16 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_10_0.png" src="../../_images/Notebook4_10_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 6 a^{2} b + 12 a b x + 2 b^{3} + 6 b x^{2}\]</div>
 </div>
 </div>
 <p>Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:</p>
-<p>Vi skal reducere udtrykket <span class="math notranslate nohighlight">\((\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2\)</span> i en pointopgave uden hjælpemidler, og genkender i et lyst øjeblik den såkaldte tredje kvadratsætning <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = c^2-d^2\)</span>. Hvis vi sætter <span class="math notranslate nohighlight">\(c=\frac{1}{2}x+3a+3b\)</span> og <span class="math notranslate nohighlight">\(d=\frac{1}{2}x+a+b\)</span> får vi <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)\)</span>. Det er nydeligt, men vi vil gerne tjekke med Python:</p>
+<p>I en pointopgave uden hjælpemidler, skal vi reducere udtrykket <span class="math notranslate nohighlight">\((\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2\)</span>.</p>
+<p>Vi genkender i et lyst øjeblik den såkaldte tredje kvadratsætning <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = c^2-d^2\)</span>.</p>
+<p>Hvis vi sætter <span class="math notranslate nohighlight">\(c=\frac{1}{2}x+3a+3b\)</span> og <span class="math notranslate nohighlight">\(d=\frac{1}{2}x+a+b\)</span>. Kan vi benytte følgende omskrivning:</p>
+<p><span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)\)</span></p>
+<p>Det er nydeligt, men vi vil gerne tjekke med Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">udtryk2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
@@ -440,8 +435,10 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_12_0.png" src="../../_images/Notebook4_12_0.png" />
-<img alt="../../_images/Notebook4_12_1.png" src="../../_images/Notebook4_12_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \left(a + b + \frac{x}{2}\right)^{2} + \left(3 a + 3 b + \frac{x}{2}\right)^{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 8 a^{2} + 16 a b + 2 a x + 8 b^{2} + 2 b x\]</div>
 </div>
 </div>
 <p>Dette er også et nydeligt udtryk, og uden at vi kender sammenhængen kan vi ikke afgøre hvilket et, der er det pæneste rent notationsmæssigt. Men hvis vi vil tjekke at de to udtryk er ens (f.eks. for at være sikker på at vi har regnet rigtigt), kunne vi nu gange <span class="math notranslate nohighlight">\((x+4a+4b)\cdot(2a+2b)\)</span> ud og sammenligne led, men vi kan også blot beregne forskellen:</p>
@@ -453,13 +450,14 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_14_0.png" src="../../_images/Notebook4_14_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="differentiation">
-<h1><span class="section-number">5.8. </span>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h1>
-<p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier i notebooken for uge 2. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code></p>
+<h2><span class="section-number">5.5.2. </span>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h2>
+<p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier <a class="reference internal" href="Notebook2_limits.html"><span class="doc std std-doc">sektionen om grænseværdier</span></a>. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.</p>
 <p>Hvis vi eksempelvis ønsker at differentiere <span class="math notranslate nohighlight">\(\displaystyle b x^{a}\)</span> med hensyn til <span class="math notranslate nohighlight">\(x\)</span>, kan vi altså gøre følgende:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,8 +470,10 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_16_0.png" src="../../_images/Notebook4_16_0.png" />
-<img alt="../../_images/Notebook4_16_1.png" src="../../_images/Notebook4_16_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle b x^{a}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a b x^{a}}{x}\]</div>
 </div>
 </div>
 <p>Som kan simplificeres med <code>sp.simplify()</code>:</p>
@@ -484,7 +484,8 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_18_0.png" src="../../_images/Notebook4_18_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a b x^{a - 1}\]</div>
 </div>
 </div>
 <p>Ønsker vi at differentiere en funktion flere gange, angiver vi blot antallet af gange, vi vil differentiere funktionen, som ekstra argument: <code>sp.diff(udtryk, variabel, antalgange)</code>.</p>
@@ -498,7 +499,8 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_20_0.png" src="../../_images/Notebook4_20_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - A \omega^{5} \sin{\left(\omega x \right)}\]</div>
 </div>
 </div>
 <p>Bemærk at SymPy godt kan snydes. Vi betragter f.eks. den stykvist lineære funktion fra notebooken i uge 3, og differentierer:</p>
@@ -520,7 +522,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 \[\begin{split}\displaystyle \begin{cases} -1 &amp; \text{for}\: x &lt; 4 \\x - 5 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\begin{split}\displaystyle \begin{cases} 0 &amp; \text{for}\: x &lt; 4 \\1 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
-<img alt="../../_images/Notebook4_22_2.png" src="../../_images/Notebook4_22_2.png" />
+<img alt="../../_images/Notebook4_21_2.png" src="../../_images/Notebook4_21_2.png" />
 </div>
 </div>
 <p>Vi ser at SymPy håndterer differentiationen rimeligt godt, men at <span class="math notranslate nohighlight">\(g'(4)\)</span> angives til 1 selvom <span class="math notranslate nohighlight">\(g\)</span> ikke er differentiabel her. Den “lodrette del af grafen” ved <span class="math notranslate nohighlight">\(x=4\)</span> burde også vække vores mistanke.</p>
@@ -533,13 +535,16 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_24_0.png" src="../../_images/Notebook4_24_0.png" />
-<img alt="../../_images/Notebook4_24_1.png" src="../../_images/Notebook4_24_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 x}{x + 2} - \frac{x^{2} - 4}{\left(x + 2\right)^{2}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
 </div>
 </div>
 <p>Vi ser at det første udtryk er korrekt, men at SymPy uden forbehold reducerer udtrykket uden hensyntagen til at <span class="math notranslate nohighlight">\(h(x)\)</span> slet ikke er defineret for <span class="math notranslate nohighlight">\(x=-2\)</span>. Man skal altså selv være særlig opmærksom på punkter, hvor en givet funktion ikke er defineret eller ikke er differentiabel!</p>
+</div>
 <div class="section" id="taylorudvikling">
-<h2><span class="section-number">5.8.1. </span>Taylorudvikling<a class="headerlink" href="#taylorudvikling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5.3. </span>Taylorudvikling<a class="headerlink" href="#taylorudvikling" title="Permalink to this headline">¶</a></h2>
 <p>Vi kan benytte SymPy til at lave en Taylorudvikling for en given funktion omkring et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Dette gøres med <code>sp.series()</code>, der skal have argumenterne <code>sp.series(funktionsudtryk, variabelnavn, x_0, orden)</code>  .<br />
 Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0=0\)</span> til 5. orden ved at skrive:</p>
 <div class="cell docutils container">
@@ -551,7 +556,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_27_0.png" src="../../_images/Notebook4_27_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 + 3 x + \frac{9 x^{2}}{2} + \frac{9 x^{3}}{2} + \frac{27 x^{4}}{8} + O\left(x^{5}\right)\]</div>
 </div>
 </div>
 <p>Et andet eksempel hvor leddene ikke præsenteres i samme logiske orden er udviklingen til 4. orden af funktionen <span class="math notranslate nohighlight">\(f(x) = \frac{3}{1-3x}\)</span> omkring <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
@@ -564,7 +570,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_29_0.png" src="../../_images/Notebook4_29_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{15}{4} - \frac{27 \left(x - 1\right)^{2}}{8} + \frac{81 \left(x - 1\right)^{3}}{16} + \frac{9 x}{4} + O\left(\left(x - 1\right)^{4}; x\rightarrow 1\right)\]</div>
 </div>
 </div>
 <p>Hvis vi skal regne videre med dette udtryk uden restleddet eller tegne grafer, kan vi fjerne restleddet ved at skrive <code>expr.removeO()</code>:</p>
@@ -576,7 +583,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_31_0.png" src="../../_images/Notebook4_31_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{9 x}{4} + \frac{81 \left(x - 1\right)^{3}}{16} - \frac{27 \left(x - 1\right)^{2}}{8} - \frac{15}{4}\]</div>
 </div>
 </div>
 <p>Nu kan vi tegne grafen for Taylorapproximationen til <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
@@ -590,7 +598,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_33_0.png" src="../../_images/Notebook4_33_0.png" />
+<img alt="../../_images/Notebook4_32_0.png" src="../../_images/Notebook4_32_0.png" />
 </div>
 </div>
 <p>Vi tilføjer nu vores originale funktion for at sammenligne:</p>
@@ -612,15 +620,22 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_35_0.png" src="../../_images/Notebook4_35_0.png" />
+<img alt="../../_images/Notebook4_34_0.png" src="../../_images/Notebook4_34_0.png" />
 </div>
 </div>
 <p>Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
 </div>
-</div>
 <div class="section" id="integration">
-<h1><span class="section-number">5.9. </span>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h1>
-<p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved <code>sp.integrate(udtryk, variabel)</code>, mens bestemte integraler beregnes med <code>sp.integrate(udtryk, (variabel, fra, til))</code>. Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.</p>
+<h2><span class="section-number">5.5.4. </span>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">udtryk</span><span class="p">,</span> <span class="n">variabel</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>mens bestemte integraler beregnes med</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">udtryk</span><span class="p">,</span> <span class="p">(</span><span class="n">variabel</span><span class="p">,</span> <span class="n">fra</span><span class="p">,</span> <span class="n">til</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Bemærk at der skal en parentes omkring den variable og grænserne på samme måde som når man angiver et interval ved graftegning.</p>
 <p>Vær opmærksom på, at SymPys integrationsresultater udelader den vilkårlige additive integrationskonstant.</p>
 <p>Eksempel: Find stamfunktionen til <span class="math notranslate nohighlight">\(x^4\)</span>:</p>
 <div class="cell docutils container">
@@ -632,7 +647,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_38_0.png" src="../../_images/Notebook4_38_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{x^{5}}{5}\]</div>
 </div>
 </div>
 <p>På samme måde findes det bestemte integral <span class="math notranslate nohighlight">\(\int_0^{6\pi}(\sin(x))^2dx = \int_0^{6\pi}\sin^2(x)dx\)</span>:</p>
@@ -644,7 +660,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_40_0.png" src="../../_images/Notebook4_40_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3 \pi\]</div>
 </div>
 </div>
 <p>Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i grænserne for sit bestemte integral.</p>
@@ -657,7 +674,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_42_0.png" src="../../_images/Notebook4_42_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{\pi}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,12 +689,13 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_43_0.png" src="../../_images/Notebook4_43_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{a^{4}}{4} + a + \frac{b^{4}}{4} - b\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="alternativ-syntaks">
-<h1><span class="section-number">5.10. </span>Alternativ Syntaks<a class="headerlink" href="#alternativ-syntaks" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">5.5.5. </span>Alternativ Syntaks<a class="headerlink" href="#alternativ-syntaks" title="Permalink to this headline">¶</a></h2>
 <p>I løbet af denne Notebook har vi benyttet os af en forholdsvis stringent metode at skrive funktioner op på, som altid indeholder <code>sp.funktion()</code>. Mange af disse metoder er dog også allerede indbygget i de enkelte udtryks syntaks. Vi kan f.eks. i stedet for at skrive <code>sp.simplify(expr)</code> skrive <code>expr.simplify()</code>. Dette er en lille smutvej, men det giver nogle gange god mening at bruge. Herunder er vist nogle korte eksempler:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,7 +707,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_46_0.png" src="../../_images/Notebook4_46_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \cos{\left(x \right)}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -698,7 +718,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_47_0.png" src="../../_images/Notebook4_47_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \cos{\left(x \right)}\]</div>
 </div>
 </div>
 <p>Ligeledes kan vi benytte simplify og integration på denne måde:</p>
@@ -712,7 +733,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_49_0.png" src="../../_images/Notebook4_49_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 \sin^{2}{\left(x \right)}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -723,7 +745,8 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_50_0.png" src="../../_images/Notebook4_50_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \pi\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -734,7 +757,9 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook4_51_0.png" src="../../_images/Notebook4_51_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 x - \sin{\left(2 x \right)}\]</div>
+</div>
 </div>
 </div>
 </div>
@@ -765,7 +790,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Notebook3_plot.html" title="previous page"><span class="section-number">5.4. </span>Plotting i SymPy</a>
-    <a class='right-next' id="next-link" href="Notebook_FlereVar_analyse.html" title="next page"><span class="section-number">5.11. </span>Funktioner af flere variable</a>
+    <a class='right-next' id="next-link" href="Notebook_FlereVar_analyse.html" title="next page"><span class="section-number">5.6. </span>Funktioner af flere variable</a>
 
         </div>
         
