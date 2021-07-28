@@ -351,18 +351,6 @@
   <a class="reference internal nav-link" href="#visualisering-i-det-komplekse-plan">
    5.11.4. Visualisering i det komplekse plan
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualisering-i-sympy">
-     5.11.4.1. Visualisering i SymPy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualisering-i-numpy">
-     5.11.4.2. Visualisering i NumPy
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -375,9 +363,7 @@
         
               <div>
                 
-  <p><strong>Foreslået ændringer:</strong><br />
-Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse tal på, til at benytte numpys mulighed for at have komplekse arrays.</p>
-<div class="section" id="komplekse-tal-i-sympy">
+  <div class="section" id="komplekse-tal-i-sympy">
 <h1><span class="section-number">5.11. </span>Komplekse tal i SymPy<a class="headerlink" href="#komplekse-tal-i-sympy" title="Permalink to this headline">¶</a></h1>
 <p>I LinALys lærer du at regne med komplekse tal. SymPy kan være en hjælp f.eks. til at visualisere alle løsninger til komplekse ligninger, men er i kurset primært et værktøj som du kan bruge til at checke de beregninger, der indgår i pointopgaverne og den afsluttende eksamen. Især hvis du har erfaring med at du laver mange regnefejl i omfattende beregninger, kan det være godt at checke beregningerne trin for trin i SymPy.</p>
 <p>Vi starter med at importere den imaginære enhed ved hjælp af <code>from sympy import I</code>, <span class="math notranslate nohighlight">\(I\)</span> er SymPys standardsyntaks for det imaginære tal <span class="math notranslate nohighlight">\(i\)</span>.</p>
@@ -395,7 +381,7 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">I</span>
-<span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">z</span>
 </pre></div>
 </div>
 </div>
@@ -409,7 +395,7 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">I</span>
-<span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="n">w</span>
 </pre></div>
 </div>
 </div>
@@ -423,7 +409,7 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">I</span>
 <span class="n">w</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">I</span>
-<span class="n">display</span><span class="p">(</span><span class="n">z</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">+</span> <span class="n">w</span>
 </pre></div>
 </div>
 </div>
@@ -434,7 +420,7 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">w</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">-</span> <span class="n">w</span>
 </pre></div>
 </div>
 </div>
@@ -445,7 +431,7 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">*</span> <span class="n">w</span>
 </pre></div>
 </div>
 </div>
@@ -468,8 +454,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">w</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">w</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">w</span><span class="p">,</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -516,19 +502,20 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 \[\displaystyle -11 - 2 i\]</div>
 </div>
 </div>
-<p>SymPy ved hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
+<p>SymPy ved, hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
 </div>
 <div class="section" id="notationsformer-og-skift-mellem-disse">
 <h2><span class="section-number">5.11.2. </span>Notationsformer og skift mellem disse<a class="headerlink" href="#notationsformer-og-skift-mellem-disse" title="Permalink to this headline">¶</a></h2>
+<p>Når vi arbejder med komplekse tal, benytter vi enten kartetiske koordinater eller modulus/argument. I SymPy er der en del metoder, til at konverterer den ene til den anden, som vi vil gennemgå i dette afsnit.</p>
 <div class="section" id="kartesiske-koordinater-real-og-imaginaerdel">
 <h3><span class="section-number">5.11.2.1. </span>Kartesiske koordinater, real og imaginærdel.<a class="headerlink" href="#kartesiske-koordinater-real-og-imaginaerdel" title="Permalink to this headline">¶</a></h3>
-<p>Funktionerne <code><a class="reference external" href="http://sp.re">sp.re</a>()</code> og <code><a class="reference external" href="http://sp.im">sp.im</a>()</code> giver real- og imaginærdelen af et komplekst tal. Det er naturligvis trivielt hvis vi starter med et imaginært tal af formen <span class="math notranslate nohighlight">\(x + iy\)</span>:</p>
+<p>Funktionerne <code class="docutils literal notranslate"><span class="pre">sp.re()</span></code> og <code class="docutils literal notranslate"><span class="pre">sp.im()</span></code> giver real- og imaginærdelen af et komplekst tal. Det er naturligvis trivielt hvis vi starter med et imaginært tal af formen <span class="math notranslate nohighlight">\(x + iy\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">I</span>
-<span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">z</span><span class="p">),</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -545,9 +532,9 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">I</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">,</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">w</span><span class="p">),</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -566,8 +553,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <p>Vi kan desuden nemt beregne modulus og argument. Modulus for et komplekst tal er det samme som tallets absolutte værdi (TL s. 126) og findes med <code>sp.Abs()</code>. Bemærk at man bruger et stort A for at adskille kommandoen fra Pythons abs-funktion. For symbolske udtryk vil SymPy dog automatisk bruge sp.Abs() selv hvis vi bruger et lille a. Så for de to tal defineret ovenfor får vi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">z</span><span class="p">),</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -581,8 +568,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <p>Argumentet findes ved <code>sp.arg()</code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">z</span><span class="p">),</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -611,9 +598,9 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <p>Vi vil ret ofte benytte os af kompleks konjugering, hvor vi skifter fortegn på imaginærdelen (eller spejler i den reelle akse). Dette kan vi gøre ved brug af <code>sp.conjugate()</code>, som virker på imaginære tal uanset notationsform. Bemærk at funktionen hedder det samme som den tilsvarende funktion for matricer, som vi kender fra Lineær Algebra, men som har en anden syntax:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>  <span class="c1"># Konjugering af komplekst tal</span>
-<span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>    <span class="c1"># Konjugering af matrix ... men da z kan opfattes som en 1 x 1 matrix, er resultatet det samme</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">z</span><span class="p">),</span>  <span class="c1"># Konjugering af komplekst tal</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>    <span class="c1"># Konjugering af matrix ... men da z kan opfattes som en 1 x 1 matrix, er resultatet det samme</span>
 </pre></div>
 </div>
 </div>
@@ -628,8 +615,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">,</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +631,12 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 <div class="section" id="rodder-og-ligninger">
 <h2><span class="section-number">5.11.3. </span>Rødder og ligninger<a class="headerlink" href="#rodder-og-ligninger" title="Permalink to this headline">¶</a></h2>
-<p>En central egenskab ved de komplekse tal er, at et polynomium af n’te grad altid har netop n rødder (med multiplicitet). Vi skal ofte finde rødder i polynomier og løsninger til ligninger, og her indgår der ofte kvadratrødder og andre rødder af komplekse tal. Se TK 3.4.2 s. 141, hvor det fremgår at der altid er netop <span class="math notranslate nohighlight">\(n\)</span> n’te rødder. Når vi vil finde den n’te rod af et komplekst tal, benytter vi <code>sp.root</code>. Syntaksen er således, at <span class="math notranslate nohighlight">\(\sqrt[n]{z}\)</span> skrives som <code>sp.root(z, n, hvilken_rod)</code>, hvor <code>hvilken_rod</code> er et tal mellem <span class="math notranslate nohighlight">\(0\)</span> til <span class="math notranslate nohighlight">\(n-1\)</span> (husk at Python tæller fra 0) og fortæller SymPy, hvilken af de <span class="math notranslate nohighlight">\(n\)</span> rødder, den skal udregne.</p>
+<p>En central egenskab ved de komplekse tal er, at et polynomium af n’te grad altid har netop n rødder (med multiplicitet). Vi skal ofte finde rødder i polynomier og løsninger til ligninger, og her indgår der ofte kvadratrødder og andre rødder af komplekse tal. Se TK 3.4.2 s. 141, hvor det fremgår at der altid er netop <span class="math notranslate nohighlight">\(n\)</span> n’te rødder. Når vi vil finde den n’te rod af et komplekst tal, benytter vi <code>sp.root</code>. Syntaksen er således, at <span class="math notranslate nohighlight">\(\sqrt[n]{z}\)</span> skrives som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">root</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">hvilken_rod</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>hvor <code>hvilken_rod</code> er et tal mellem <span class="math notranslate nohighlight">\(0\)</span> til <span class="math notranslate nohighlight">\(n-1\)</span> (husk at Python tæller fra 0) og fortæller
+SymPy, hvilken af de <span class="math notranslate nohighlight">\(n\)</span> rødder, den skal udregne.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">I</span>
@@ -689,14 +681,19 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1 - I, -1 + I, 1 - I, 1 + I]
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1 - i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1 + i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 - i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 + i\]</div>
 </div>
 </div>
 <p>Eller vi kan beregne rødderne en efter en ved hjælp af en for-løkke:</p>
@@ -727,38 +724,51 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <span class="n">p</span> <span class="o">=</span>  <span class="n">z</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">z</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="o">-</span><span class="mi">4</span>
 
 <span class="c1"># Løs med sp.solve ved hjælp af udtrykket for p, der automatisk sættes lig nul</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
-
-<span class="c1"># ... eller med en mindre elegant syntaks, hvor ligningen eksplicit er angivet til z3 - z^2 + 4z = 4</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">z</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2*I, 2*I]
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 i\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#... eller med en mindre elegant syntaks, hvor ligningen eksplicit er angivet til z3 - z^2 + 4z = 4</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">z</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">z</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2*I, 2*I]
-</pre></div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 i\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="visualisering-i-det-komplekse-plan">
 <h2><span class="section-number">5.11.4. </span>Visualisering i det komplekse plan<a class="headerlink" href="#visualisering-i-det-komplekse-plan" title="Permalink to this headline">¶</a></h2>
-<p>Der er ikke et decideret tegneværktøj til komplekse tal i SymPy. Vi kan dog nå langt ved at lave udregningerne i SymPy og så tegne real- og imaginærdelene af tallet ved hjælp af <em>Matplotlib</em>.</p>
-<p>Som eksempel vil vi prøve at visualisere hvad der sker, når vi tager et komplekst tal opløftet til en stigende potens.</p>
+<p>Der er ikke et decideret tegneværktøj til komplekse tal i SymPy. Vi tager derfor de to værktøj, som I har set i MekRel frem. <em>NumPy</em> og <em>Matplotlib</em>, da dette langt hen af vejen vil give de mest elegante løsninger. Når vi gør dette vil vi fra numpy importerer <code class="docutils literal notranslate"><span class="pre">array</span></code>, og så vil vi bruge <code class="docutils literal notranslate"><span class="pre">plot</span></code> fra Matplotlib. Se eventuelt <a class="reference internal" href="../MekRel/Intro_til_MekRel.html"><span class="doc std std-doc">noterne fra Python i Mekrel</span></a>.</p>
+<p>Når vi først har en liste af komplekse tal i SymPy, kan vi benytte <code class="docutils literal notranslate"><span class="pre">array</span></code> sammen med nøgleordet <code class="docutils literal notranslate"><span class="pre">dtype</span> <span class="pre">=</span> <span class="pre">complex</span></code> til at danne et numerisk og komplekst numpy array.</p>
+<p>Når vi først har en liste, kan vi nu lave lister over real-delene og de komplekse dele med hhv. <code class="docutils literal notranslate"><span class="pre">.real</span></code> og <code class="docutils literal notranslate"><span class="pre">.imag</span></code>, og så bruge <code class="docutils literal notranslate"><span class="pre">plot</span></code> fra matplotlib til at vise dette.</p>
+<p>Vi laver her et eksempel, hvor vi vil visualiserer et komplekst tal opløftet i en stigende potens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Vi tager et eksempel med (1 + i/2)^n for n = 0, ..., 11</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi tager et eksempel med (1 + i/2)^n for n = 0, ..., 11</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">I</span><span class="o">/</span><span class="mi">2</span>
 
 <span class="c1"># Tom liste</span>
 <span class="n">zs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span> <span class="c1"># Vi kører nu igennem tolv gange (altså fra 0 til 11) og tilføjer potensen til en liste</span>
-    <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">z</span> <span class="o">**</span> <span class="n">i</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span> <span class="c1"># Vi kører nu igennem tolv gange (altså fra 0 til 11) og tilføjer potensen til en liste</span>
+    <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">z</span> <span class="o">**</span> <span class="n">n</span><span class="p">))</span>
     
 <span class="n">display</span><span class="p">(</span><span class="n">zs</span><span class="p">)</span>
 </pre></div>
@@ -781,86 +791,51 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 </div>
-<p>Vi viser her to mulige måder at visualisere disse tal på. Den første bruger SymPy, mens vi i den anden bruger NumPy til at lave en lidt nemmere numerisk løsning</p>
-<div class="section" id="visualisering-i-sympy">
-<h3><span class="section-number">5.11.4.1. </span>Visualisering i SymPy<a class="headerlink" href="#visualisering-i-sympy" title="Permalink to this headline">¶</a></h3>
-<p>Først danner vi realdelene <span class="math notranslate nohighlight">\(x\)</span> og imaginærdelene <span class="math notranslate nohighlight">\(y\)</span>, så tegner vi, og til sidst tilføjer vi linjer svarende til de reelle og imaginære akser.</p>
+<p>Vi kan nu lave <code class="docutils literal notranslate"><span class="pre">zs</span></code> til et numerisk array ved brug af numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">ys</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="n">z_numerisk</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">zs</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nu kan vi plotte <code class="docutils literal notranslate"><span class="pre">z_numerisk.real</span></code> af x-aksen og <code class="docutils literal notranslate"><span class="pre">z_numerisk.imag</span></code> af y-aksen. Vi importerer <em>Matplotlib</em> til dette formål og kalder <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>. Vi fortæller desuden at vi vil have “x” som markeringer og have en rød farve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">for</span> <span class="n">tal</span> <span class="ow">in</span> <span class="n">zs</span><span class="p">:</span>
-    <span class="n">xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">tal</span><span class="p">))</span>
-    <span class="n">ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">tal</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="s2">&quot;bx&quot;</span><span class="p">);</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z_numerisk</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">z_numerisk</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_57_0.png" src="../../_images/Notebook_kompleks_57_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f75ce012970&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/Notebook_kompleks_58_1.png" src="../../_images/Notebook_kompleks_58_1.png" />
 </div>
 </div>
-<p>Vi ser at værdierne starter i <span class="math notranslate nohighlight">\(z^0 = 1\)</span> og spiralerer udaf idet <span class="math notranslate nohighlight">\(|z|&gt;1\)</span> og modulus af <span class="math notranslate nohighlight">\(z^n\)</span> derfor vokser for stigende n. Argumentet vokser med en fast værdi hver gang <span class="math notranslate nohighlight">\(n\)</span> vokser med 1.</p>
-</div>
-<div class="section" id="visualisering-i-numpy">
-<h3><span class="section-number">5.11.4.2. </span>Visualisering i NumPy<a class="headerlink" href="#visualisering-i-numpy" title="Permalink to this headline">¶</a></h3>
-<p>Benytter vi i stedet NumPy, kan vi komme lidt lettere om ved det, og da SymPy alligevel konverterer til numeriske værdier inden graftegning, taber vi ikke det store.</p>
+<p>Ønsker man at lave plottet med viste akser kan man gøre følgende, som rykker den venstre og nederste akse i midten og skjuler de to andre:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Samme plot som overstående</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z_numerisk</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">z_numerisk</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 
-<span class="c1"># Vi laver et numpy array, hvor vi specificerer datatypen til et numerisk-komplekst tal</span>
-<span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">zs</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">);</span>
+<span class="c1"># Ryk venstre akse til midten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span> 
 
-<span class="c1"># Så kan vi plotte det med at tage de reelle og imaginære værdier ud af arrayet direkt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zs</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">zs</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s2">&quot;kx&quot;</span><span class="p">);</span>
+<span class="c1"># Skjul den højre</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="c1"># ... og linjer, der kan gøre det ud for akser</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
+<span class="c1"># Gentag for nederste og toppen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_59_0.png" src="../../_images/Notebook_kompleks_59_0.png" />
-</div>
-</div>
-<p>Vi kan også bruge metoden til at vise rødderne i et polynomium.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">z</span>
-
-<span class="n">zs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">zs</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -1 - I, -1 + I]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Her tegner vi ved hjælp af funktionen <code>scatter</code>, der giver mange grafiske muligheder for grafer bestående af enkelte “prikker”, altså ikke-forbundne talpar.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">zs</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">zs</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">zs</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-
-<span class="c1"># ... og linjer, der kan gøre det ud for akser. Længden er valgt således at inddelingerne på &quot;akserne&quot; er omtrent det samme.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_63_0.png" src="../../_images/Notebook_kompleks_63_0.png" />
-</div>
+<img alt="../../_images/Notebook_kompleks_60_0.png" src="../../_images/Notebook_kompleks_60_0.png" />
 </div>
 </div>
 </div>
