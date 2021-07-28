@@ -16,7 +16,7 @@
 # For at lave et plot skal vi først have data at arbejde med.
 # 
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -26,7 +26,7 @@ yData = np.array([1,1.8,3.3,3.7])
 
 # Når man laver et plot med Matplotlib bygger man det op trinvis. Først laves plottet ud af data med `plt.plot`. Derefter bygges aksenavne og en legend på. Et eksempel ses her,
 
-# In[6]:
+# In[2]:
 
 
 import matplotlib.pyplot as plt
@@ -45,9 +45,10 @@ plt.show() #viser figuren under den kørte celle
 
 # I behøver ikke nødvendigvis manuelt indstille skriftstørrelsen på akser og legend hver gang, men det kan nogle gange være nødvendigt at justere, afhængig af hvor meget figurerne skal fylde i jeres logbog. Regelen er at man altid skal kunne læse akse-titlerne uden at zoome ind eller hive forstørrelsesglas frem. Vær også opmærksom på, at når I bruger funktionen plt.savefig(), gemmes jeres figur i samme mappe som jeres Notebook ligger, medmindre I indstiller det anderledes.
 # 
-# Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under.
+# Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under. 
+# Der er også blevet sat errorbars på data. Det gøres ved at plotte med `plt.errorbar` i stedet for `plt.plot`.
 
-# In[7]:
+# In[9]:
 
 
 #flere eksempler på at plotte
@@ -56,8 +57,10 @@ xVærdi = np.linspace(0,2*np.pi,100) #laver et array af værdierne fra 0 til pi,
 
 #bruger NumPy funktioner til at plotte sinus og cosinus til vores x værdier, og indikerer at punkter skal være en 
 #prikket linje
-plt.plot(xVærdi, np.sin(xVærdi), ':', label = "f(x) = sin(x)") 
-plt.plot(xVærdi, np.cos(xVærdi), ':', label = "f(x) = cos(x)")
+
+yerr = np.random.uniform(0.01,0.1,(100,1))
+plt.errorbar(xVærdi, np.sin(xVærdi), yerr, fmt = ':', label = "f(x) = sin(x)")
+plt.errorbar(xVærdi, np.cos(xVærdi), yerr, fmt = ':', label = "f(x) = cos(x)")
 
 plt.xlabel('x') #sætter titler på akserne
 plt.ylabel('f(x)')
@@ -73,4 +76,6 @@ plt.legend()
 plt.show()
 
 
-# Det er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det I skal her.
+# Dette er sådan vi forventer at jeres plots ser ud nå i aflevere dem i laboratoriet.
+# 
+# Der er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det I skal her.

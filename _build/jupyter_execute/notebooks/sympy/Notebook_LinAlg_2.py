@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **Foreslået ændringer**  
-# Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilpasse den til at overholde de nye konventioner, som vi sætter for os selv. Dvs tænke over import og lign.. Ellers burde den være good to go
-
 # # Flere metoder i Linær Algebra
-# Målet for denne notebook er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra. Vi arbejder videre hvor den første notebook om lineær algebra slap, så fra starten antager vi at læseren kan lave matrix- og vektormanipulationer. 
+# Målet for denne sektion er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra. Vi arbejder videre hvor den første notebook om lineær algebra slap, så fra starten antager vi at læseren kan lave matrix- og vektormanipulationer. 
 # 
 # Langt de fleste funktioner i denne notebook virker på samme måde som matrixinversion, som for en matrix $A$ findes ved <code>A.inv()</code>.
 # 
@@ -15,13 +12,10 @@
 
 
 import sympy as sp              # Importer sympy 
-sp.init_printing()              # Flot print
+from sympy import Matrix        # Vi kommer til at lave mange matricer
 
-from sympy import pi, oo, I     # Symboler, som det er smart at have klar
-from sympy import Matrix        # Vi kommer til at lave mange matricer i denne notebook
 
-from IPython.display import display
-
+# __Tip:__ Mange metoder i SymPy returnerer en liste over forskellige løsninger. Da disse ikke automatisk bliver vist som matematik, har vi mange steder sat en `*` foran metoden inde i `display`. I stedet for at skrive `display(*liste)` kan man i sin egen Notebook benytte sig af `sp.init_printing()` i starten af notebooken. Dette giver SymPy muligheden for at vælge, hvordan lister skal printes. Vi har desværre ikke kunne bruge det, da vi har ville konverterer vores Notebooks til at kunne blive læst i dette format. 
 
 # ## Transponering, adjungering og konjugering
 # Hvis vi har givet en matrix, kan vi nemt beregne den transponerede matrix med at ombytte rækker og kolonner:
@@ -47,6 +41,8 @@ A.T    # Bemærk, at der ikke skal parenteser bag T
 # In[4]:
 
 
+from sympy import I, pi # Imaginære tal og pi skal hentes
+
 A = Matrix([[1, 3+I], [2-I, sp.exp(I*pi/3)]])
 display(A)
 A.conjugate()
@@ -69,7 +65,7 @@ A.H     # Som med .T indeholder syntaksen ikke ()
 
 M = Matrix([[1, 1, 2], [2, 1, 3], [3, 1, 4]])
 display(M)
-display(M.nullspace())
+display(*M.nullspace())
 
 
 # Hvilket giver en liste (her med eet element) af vektorer som er basis for matricens nulrum. Altså vektorer som opfylder ligningen $M\boldsymbol{x} = \boldsymbol{0}$. Dette gælder derfor også for linearkombinationer af vektorerne i nulrummet.
@@ -79,7 +75,7 @@ display(M.nullspace())
 # In[7]:
 
 
-display(M.columnspace())
+display(*M.columnspace())
 
 
 # Herved får vi en liste af vektorer, som udspænder søjlerummet, og som består af de søjler fra $M$, der indeholder ledende indgange når $M$ er bragt på række-echelonform. Dette verificerer vi ved at betragte $M$s ækvivalente matrix på reduceret række-echelonform:
@@ -87,7 +83,7 @@ display(M.columnspace())
 # In[8]:
 
 
-M.rref()
+display(*M.rref())
 
 
 # ## Gram-Schmidt-ortogonalisering
@@ -105,26 +101,26 @@ from sympy.matrices import GramSchmidt
 
 # Definer en liste med matrix indgange, som nu er vektorer
 L = [Matrix([1, 2, 2]), Matrix([0, 1, 0]), Matrix([0, 0, 1])]
-display(L)
+display(*L)
 
 
 # In[10]:
 
 
 # Vi benytter nu GramScmidt
-GramSchmidt(L)
+display(*GramSchmidt(L))
 
 
 # In[11]:
 
 
 # Eller hvis vi vil inkluderer en normalisering gør vi følgende:
-GramSchmidt(L, True)
+display(*GramSchmidt(L, True))
 
 
 # hvilket kan ses at passe med Messers 
 # 
-# $$\left\{ \left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right), \left(\frac{-2}{\sqrt{45}}, \frac{5}{\sqrt{45}}, \frac{-4}{\sqrt{45}}\right),\left(\frac{-2}{\sqrt{5}}, 0, \frac{1}{\sqrt{5}}\right)\right\}$$
+# $\left\{ \left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right), \left(\frac{-2}{\sqrt{45}}, \frac{5}{\sqrt{45}}, \frac{-4}{\sqrt{45}}\right),\left(\frac{-2}{\sqrt{5}}, 0, \frac{1}{\sqrt{5}}\right)\right\}$
 # 
 # ved anvendelse af kvadratrods- og brøkregneregler.
 
@@ -212,7 +208,7 @@ display(B)
 A.eigenvals()
 
 
-# Funktionen <code>.eigenvects</code> virker på samme måde og giver både egenværdier og -vektorerne:
+# Funktionen <code>.eigenvects</code> virker på samme måde og giver både egenværdier og -vektorerne. Hvis man bruger `sp.init_printing()`, kan man kalde dette direkte ved blot at skrive `A.eigenvects()`. 
 
 # In[20]:
 
@@ -220,12 +216,21 @@ A.eigenvals()
 A.eigenvects()
 
 
+# Her bliver vi desværre nødt til at lave en omvej for at gøre dette til matematik. _Konkret så benytter vi `sp.latex()` til at konverter det hele til latex og så kan vi printe latex-koden ved `display(Math())`._  
+
+# In[21]:
+
+
+from IPython.display import Math
+display(Math(sp.latex(A.eigenvects())))
+
+
 # Her er resultatet altså givet som en liste med (egenværdi, multiplictet, egenvektorer). Vi kan igen prøve eksemplet med det trivielle eksempel for at vise, hvad der sker, når en egenværdi har flere tilhørende egenvektorer:
 
-# In[27]:
+# In[22]:
 
 
-B.eigenvects()
+display(Math(sp.latex(B.eigenvects())))
 
 
 # I matematikkurser har matricerne gerne pæne (ofte heltallige) egenværdier, mens man i praksis sjældent oplever matricer med så velopdragne egenværdier. Dertil kommer, at store matricer kan gøre det meget hårdt for computeren at regne det hele symbolsk. Derfor vil man (når man eksempelvis beregner egenværdier i kvantemekanik) i stedet bruge NumPy, da der her er nogle ret hurtige implementeringer til at give gode numeriske løsninger. Heldigvis ligner metoderne meget hinanden, og hvis man skulle komme ud for at skulle løse et problem, der er for krævende med sumbolske beregninger, kan man finde NumPys LinAlg værktøjer [i den relevante dokumentation](https://numpy.org/doc/stable/reference/routines.linalg.html).
@@ -233,21 +238,21 @@ B.eigenvects()
 # ## Diagonalisering
 # En afgørende pointe i kurset er at undersøge hvornår der kan findes en base hvor vores matrix $A$ er på diagonalform, altså hvornår der findes en matrix $P$, der opfylder: $D = P^{-1}AP$, hvor $D$ er en diagonalmatrix. For at finde denne kan vi benytte <code>A.diagonalize()</code>. Vi regner videre med matricen <code>A</code> defineret ovenfor:
 
-# In[22]:
+# In[23]:
 
 
 display(A)
 
 
-# In[23]:
+# In[24]:
 
 
-A.diagonalize()
+display(*A.diagonalize())
 
 
 # Outputtet for denne funktion er matricerne $P$ og $D$. Vi genkender at matricen $D$ netop indeholder egenværdierne langs diagonalen og at $P$ består at (multipla af) egenvektorerne. Vi kan få de pågældende matricer ud så vi kan regne videre med dem på følgende måde:
 
-# In[24]:
+# In[25]:
 
 
 (P, D) = A.diagonalize()
@@ -256,7 +261,7 @@ display(P, D)
 
 # Og vi demonstrerer endelig at matricerne sammensættes som forventet. Først $D = P^{-1}AP$:
 
-# In[25]:
+# In[26]:
 
 
 P.inv() * A * P
@@ -264,7 +269,7 @@ P.inv() * A * P
 
 # Eller omvendt $A = P D P^{-1}$
 
-# In[26]:
+# In[27]:
 
 
 P * D * P.inv()

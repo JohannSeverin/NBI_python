@@ -384,8 +384,6 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span><span class="p">,</span> <span class="n">pi</span>
 </pre></div>
 </div>
@@ -402,7 +400,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_6_0.png" src="../../_images/Notebook_kompleks_6_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3 + 4 i\]</div>
 </div>
 </div>
 <p>Eller vi kan lave et mere generelt udtryk, hvor vi istedet benytter symboler:</p>
@@ -415,7 +414,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_8_0.png" src="../../_images/Notebook_kompleks_8_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a + i b\]</div>
 </div>
 </div>
 <p>Når vi først har defineret vores udtryk, så kan vi regne med dem på samme måde som med alle andre (reelle) tal. Regneoperationerne <code>+</code>, <code>-</code>, <code>*</code> og <code>/</code> fungerer som de skal.</p>
@@ -428,7 +428,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_10_0.png" src="../../_images/Notebook_kompleks_10_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 - i\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -438,7 +439,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_11_0.png" src="../../_images/Notebook_kompleks_11_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 + 5 i\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -448,7 +450,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_12_0.png" src="../../_images/Notebook_kompleks_12_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 3 i \left(1 + 2 i\right)\]</div>
 </div>
 </div>
 <p>Ved multiplikation og division er det nogle gange en god idé at bede SymPy om at reducere udtrykket. Især, hvis man gerne vil have det på en <span class="math notranslate nohighlight">\(x + yi\)</span> form:</p>
@@ -459,7 +462,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_14_0.png" src="../../_images/Notebook_kompleks_14_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 6 - 3 i\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -470,8 +474,10 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_15_0.png" src="../../_images/Notebook_kompleks_15_0.png" />
-<img alt="../../_images/Notebook_kompleks_15_1.png" src="../../_images/Notebook_kompleks_15_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{i \left(1 + 2 i\right)}{3}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{2}{3} + \frac{i}{3}\]</div>
 </div>
 </div>
 <p>Man kan desuden beregne potenser af et kompleks tal på sædvandligvis ved at bruge <code>**</code>:</p>
@@ -482,7 +488,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_17_0.png" src="../../_images/Notebook_kompleks_17_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(1 + 2 i\right)^{3}\]</div>
 </div>
 </div>
 <p>I dette tilfælde er der ikke meget hjælp at hente i <code>simplify</code>:</p>
@@ -493,7 +500,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_19_0.png" src="../../_images/Notebook_kompleks_19_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(1 + 2 i\right)^{3}\]</div>
 </div>
 </div>
 <p>Vi kan til gengæld bede SymPy om at gange parentesen ud med <code>sp.expand</code>:</p>
@@ -504,7 +512,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_21_0.png" src="../../_images/Notebook_kompleks_21_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -11 - 2 i\]</div>
 </div>
 </div>
 <p>SymPy ved hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
@@ -524,9 +533,12 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_25_0.png" src="../../_images/Notebook_kompleks_25_0.png" />
-<img alt="../../_images/Notebook_kompleks_25_1.png" src="../../_images/Notebook_kompleks_25_1.png" />
-<img alt="../../_images/Notebook_kompleks_25_2.png" src="../../_images/Notebook_kompleks_25_2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10 - 7 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -7\]</div>
 </div>
 </div>
 <p>Men det er mere oplysende, hvis vores komplekse tal har en anden form, for eksempel <span class="math notranslate nohighlight">\(4 e^{i \pi / 3}\)</span>:</p>
@@ -540,9 +552,12 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_27_0.png" src="../../_images/Notebook_kompleks_27_0.png" />
-<img alt="../../_images/Notebook_kompleks_27_1.png" src="../../_images/Notebook_kompleks_27_1.png" />
-<img alt="../../_images/Notebook_kompleks_27_2.png" src="../../_images/Notebook_kompleks_27_2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 e^{\frac{i \pi}{3}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \sqrt{3}\]</div>
 </div>
 </div>
 </div>
@@ -557,8 +572,10 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_30_0.png" src="../../_images/Notebook_kompleks_30_0.png" />
-<img alt="../../_images/Notebook_kompleks_30_1.png" src="../../_images/Notebook_kompleks_30_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt{149}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4\]</div>
 </div>
 </div>
 <p>Argumentet findes ved <code>sp.arg()</code> :</p>
@@ -570,8 +587,10 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_32_0.png" src="../../_images/Notebook_kompleks_32_0.png" />
-<img alt="../../_images/Notebook_kompleks_32_1.png" src="../../_images/Notebook_kompleks_32_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \operatorname{atan}{\left(\frac{7}{10} \right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\pi}{3}\]</div>
 </div>
 </div>
 <p>Hvorefter vi som nævnt tidligere kan bruge <code>.evalf()</code>, hvis vi vil have et bud på værdien af <span class="math notranslate nohighlight">\(-\arctan (7/10)\)</span> med fire decimaler</p>
@@ -582,7 +601,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_34_0.png" src="../../_images/Notebook_kompleks_34_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -0.6107\]</div>
 </div>
 </div>
 </div>
@@ -598,9 +618,12 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_37_0.png" src="../../_images/Notebook_kompleks_37_0.png" />
-<img alt="../../_images/Notebook_kompleks_37_1.png" src="../../_images/Notebook_kompleks_37_1.png" />
-<img alt="../../_images/Notebook_kompleks_37_2.png" src="../../_images/Notebook_kompleks_37_2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10 - 7 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10 + 7 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10 + 7 i\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -611,8 +634,10 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_38_0.png" src="../../_images/Notebook_kompleks_38_0.png" />
-<img alt="../../_images/Notebook_kompleks_38_1.png" src="../../_images/Notebook_kompleks_38_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 e^{\frac{i \pi}{3}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4 e^{- \frac{i \pi}{3}}\]</div>
 </div>
 </div>
 </div>
@@ -628,7 +653,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_41_0.png" src="../../_images/Notebook_kompleks_41_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -3 + 3 i\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -638,7 +664,8 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_42_0.png" src="../../_images/Notebook_kompleks_42_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt[4]{-3 + 3 i}\]</div>
 </div>
 </div>
 <p>Dette er utvivlsomt korrekt, men når man ønsker et mere anvendeligt svar, kan man f.eks. tvinge SymPy til at udregne real-delen og imaginærdelen som vi gjorde ovenfor:</p>
@@ -651,8 +678,10 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_44_0.png" src="../../_images/Notebook_kompleks_44_0.png" />
-<img alt="../../_images/Notebook_kompleks_44_1.png" src="../../_images/Notebook_kompleks_44_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt[8]{2} \sqrt[4]{3} \cos{\left(\frac{3 \pi}{16} \right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sqrt[8]{2} \sqrt[4]{3} \sin{\left(\frac{3 \pi}{16} \right)}\]</div>
 </div>
 </div>
 <p>Vi vil nu se på rødderne i et simplere tilfælde, nemlig <span class="math notranslate nohighlight">\(\sqrt[4]{-4}\)</span>.</p>
@@ -665,7 +694,9 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_46_0.png" src="../../_images/Notebook_kompleks_46_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1 - I, -1 + I, 1 - I, 1 + I]
+</pre></div>
+</div>
 </div>
 </div>
 <p>Eller vi kan beregne rødderne en efter en ved hjælp af en for-løkke:</p>
@@ -678,10 +709,14 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_48_0.png" src="../../_images/Notebook_kompleks_48_0.png" />
-<img alt="../../_images/Notebook_kompleks_48_1.png" src="../../_images/Notebook_kompleks_48_1.png" />
-<img alt="../../_images/Notebook_kompleks_48_2.png" src="../../_images/Notebook_kompleks_48_2.png" />
-<img alt="../../_images/Notebook_kompleks_48_3.png" src="../../_images/Notebook_kompleks_48_3.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 + i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1 + i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1 - i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 - i\]</div>
 </div>
 </div>
 <p>Vi kan finde rødder til polynomier ved hjælp af <code>sp.solve()</code>. Vi minder om at hvis vi kun giver <code>sp.solve()</code> et udtryk (og altså ikke en ligning, f.eks. dannet ved hjælp af <code>sp.Eq</code>), så finder funktionen løsninger til den ligning, der fremkommer når udtrykket sættes lig 0:</p>
@@ -700,8 +735,12 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_50_0.png" src="../../_images/Notebook_kompleks_50_0.png" />
-<img alt="../../_images/Notebook_kompleks_50_1.png" src="../../_images/Notebook_kompleks_50_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2*I, 2*I]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2*I, 2*I]
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -726,7 +765,20 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_54_0.png" src="../../_images/Notebook_kompleks_54_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
+ 1 + I/2,
+ 3/4 + I,
+ 1/4 + 11*I/8,
+ -7/16 + 3*I/2,
+ -19/16 + 41*I/32,
+ -117/64 + 11*I/16,
+ -139/64 - 29*I/128,
+ -527/256 - 21*I/16,
+ -359/256 - 1199*I/512,
+ -237/1024 - 779*I/256,
+ 1321/1024 - 6469*I/2048]
+</pre></div>
+</div>
 </div>
 </div>
 <p>Vi viser her to mulige måder at visualisere disse tal på. Den første bruger SymPy, mens vi i den anden bruger NumPy til at lave en lidt nemmere numerisk løsning</p>
@@ -789,7 +841,9 @@ Her skal der ryddes lidt op, og så skal vi ændre måden vi plotter komplekse t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_kompleks_61_0.png" src="../../_images/Notebook_kompleks_61_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -1 - I, -1 + I]
+</pre></div>
+</div>
 </div>
 </div>
 <p>Her tegner vi ved hjælp af funktionen <code>scatter</code>, der giver mange grafiske muligheder for grafer bestående af enkelte “prikker”, altså ikke-forbundne talpar.</p>

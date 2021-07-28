@@ -368,10 +368,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Matplotlib_pyplot_4_0.svg" src="../../_images/Matplotlib_pyplot_4_0.svg" /></div>
+<img alt="../../_images/Matplotlib_pyplot_4_0.png" src="../../_images/Matplotlib_pyplot_4_0.png" />
+</div>
 </div>
 <p>I behøver ikke nødvendigvis manuelt indstille skriftstørrelsen på akser og legend hver gang, men det kan nogle gange være nødvendigt at justere, afhængig af hvor meget figurerne skal fylde i jeres logbog. Regelen er at man altid skal kunne læse akse-titlerne uden at zoome ind eller hive forstørrelsesglas frem. Vær også opmærksom på, at når I bruger funktionen plt.savefig(), gemmes jeres figur i samme mappe som jeres Notebook ligger, medmindre I indstiller det anderledes.</p>
-<p>Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under.</p>
+<p>Det kan også være smart at ændre hvad der er på akserne, et eksempel med radianer ses under.
+Der er også blevet sat errorbars på data. Det gøres ved at plotte med <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code> i stedet for <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#flere eksempler på at plotte</span>
@@ -380,8 +382,10 @@
 
 <span class="c1">#bruger NumPy funktioner til at plotte sinus og cosinus til vores x værdier, og indikerer at punkter skal være en </span>
 <span class="c1">#prikket linje</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">),</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;f(x) = sin(x)&quot;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">),</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;f(x) = cos(x)&quot;</span><span class="p">)</span>
+
+<span class="n">yerr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">),</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;f(x) = sin(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xVærdi</span><span class="p">),</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;f(x) = cos(x)&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1">#sætter titler på akserne</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
@@ -399,9 +403,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Matplotlib_pyplot_6_0.svg" src="../../_images/Matplotlib_pyplot_6_0.svg" /></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-9-d5d355b23b32&gt;:9: MatplotlibDeprecationWarning: Support for passing a (n, 1)-shaped error array to errorbar() is deprecated since Matplotlib 3.1 and will be removed in 3.3; pass a 1D array instead.
+  plt.errorbar(xVærdi, np.sin(xVærdi), yerr, fmt = &#39;:&#39;, label = &quot;f(x) = sin(x)&quot;)
+&lt;ipython-input-9-d5d355b23b32&gt;:10: MatplotlibDeprecationWarning: Support for passing a (n, 1)-shaped error array to errorbar() is deprecated since Matplotlib 3.1 and will be removed in 3.3; pass a 1D array instead.
+  plt.errorbar(xVærdi, np.cos(xVærdi), yerr, fmt = &#39;:&#39;, label = &quot;f(x) = cos(x)&quot;)
+</pre></div>
 </div>
-<p>Det er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det I skal her.</p>
+<img alt="../../_images/Matplotlib_pyplot_6_1.png" src="../../_images/Matplotlib_pyplot_6_1.png" />
+</div>
+</div>
+<p>Dette er sådan vi forventer at jeres plots ser ud nå i aflevere dem i laboratoriet.</p>
+<p>Der er en masse forskelige andre ting man kan med at plotte men dette bør være nok til det I skal her.</p>
 </div>
 </div>
 

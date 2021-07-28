@@ -25,7 +25,7 @@
 # For at hente en af de 4 ovenstående pakker ind i et python script benytter vi os af `import` nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med `as` kan vi desuden give dem et navn, så man slipper for at skrive hele navnet hver gang man bruger pakken. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i `scipy.optimize` specificerer vi her, at vi kun vil hente én funktion derfra, `curve_fit`) 
 # 
 
-# In[1]:
+# In[2]:
 
 
 import sympy as sp
@@ -54,12 +54,13 @@ print(sp.cos(sp.pi))
 print(np.cos(np.pi))
 
 
-# In[20]:
+# In[5]:
 
 
-x = np.linspace(0, 2 * np.pi, 1000)
+x = np.linspace(0, 2 * np.pi, 1001) # denne laver en liste af tal. 1001 tal lang mellem 0 og 2 pi
+print(x)
 y = np.cos(x)
-plt.plot(x, y);
+plt.plot(x, y); # Plotter cosinus mellem 0 og 2 pi.
 
 
 # Flere eksempler kan ses  herunder, hvor de mest brugte pakker: numpy, matplotlib og sympy er kort gennemgået. Dette er dog kun en oversigt, for at se en mere grundig gennemgang skal man finde noterne under enten "Python i Mekrel" eller "Python i LinAlys". 

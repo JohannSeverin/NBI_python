@@ -11,12 +11,10 @@
 # 
 # Vi starter med at importere den imaginære enhed ved hjælp af <code>from sympy import I</code>, $I$ er SymPys standardsyntaks for det imaginære tal $i$.
 
-# In[2]:
+# In[1]:
 
 
 import sympy as sp
-from IPython.display import display
-sp.init_printing()
 from sympy import I, pi
 
 
@@ -24,7 +22,7 @@ from sympy import I, pi
 
 # Når vi benytter <code>I</code>, får vi automatisk et komplekst tal, og SymPy behandler det som sådan ganske automatisk. Vi kan altså skrive $z = 3 + 4i$ som <code>z = 3 + 4 * I</code>:
 
-# In[3]:
+# In[2]:
 
 
 z = 3 + 4 * I
@@ -33,7 +31,7 @@ display(z)
 
 # Eller vi kan lave et mere generelt udtryk, hvor vi istedet benytter symboler:
 
-# In[4]:
+# In[3]:
 
 
 from sympy.abc import a, b
@@ -43,7 +41,7 @@ display(w)
 
 # Når vi først har defineret vores udtryk, så kan vi regne med dem på samme måde som med alle andre (reelle) tal. Regneoperationerne <code>+</code>, <code>-</code>, <code>*</code> og <code>/</code> fungerer som de skal.
 
-# In[5]:
+# In[4]:
 
 
 z = 1 + 2 * I
@@ -51,13 +49,13 @@ w = - 3 * I
 display(z + w)
 
 
-# In[6]:
+# In[5]:
 
 
 display(z - w)
 
 
-# In[7]:
+# In[6]:
 
 
 display(z * w)
@@ -65,13 +63,13 @@ display(z * w)
 
 # Ved multiplikation og division er det nogle gange en god idé at bede SymPy om at reducere udtrykket. Især, hvis man gerne vil have det på en $x + yi$ form:
 
-# In[8]:
+# In[7]:
 
 
 sp.simplify(z * w)
 
 
-# In[9]:
+# In[8]:
 
 
 display(z / w)
@@ -80,7 +78,7 @@ display(sp.simplify(z / w))
 
 # Man kan desuden beregne potenser af et kompleks tal på sædvandligvis ved at bruge <code>**</code>:
 
-# In[10]:
+# In[9]:
 
 
 z ** 3
@@ -88,7 +86,7 @@ z ** 3
 
 # I dette tilfælde er der ikke meget hjælp at hente i <code>simplify</code>:
 
-# In[11]:
+# In[10]:
 
 
 sp.simplify(z ** 3)
@@ -96,7 +94,7 @@ sp.simplify(z ** 3)
 
 # Vi kan til gengæld bede SymPy om at gange parentesen ud med <code>sp.expand</code>:
 
-# In[12]:
+# In[11]:
 
 
 sp.expand(z ** 3)
@@ -110,7 +108,7 @@ sp.expand(z ** 3)
 # 
 # Funktionerne <code>sp.re()</code> og <code>sp.im()</code> giver real- og imaginærdelen af et komplekst tal. Det er naturligvis trivielt hvis vi starter med et imaginært tal af formen $x + iy$:
 
-# In[13]:
+# In[12]:
 
 
 z = 10 - 7 * I
@@ -121,7 +119,7 @@ display(sp.im(z))
 
 # Men det er mere oplysende, hvis vores komplekse tal har en anden form, for eksempel $4 e^{i \pi / 3}$:
 
-# In[14]:
+# In[13]:
 
 
 w = 4 * sp.exp(I * pi / 3)
@@ -134,7 +132,7 @@ display(sp.im(w))
 
 # Vi kan desuden nemt beregne modulus og argument. Modulus for et komplekst tal er det samme som tallets absolutte værdi (TL s. 126) og findes med <code>sp.Abs()</code>. Bemærk at man bruger et stort A for at adskille kommandoen fra Pythons abs-funktion. For symbolske udtryk vil SymPy dog automatisk bruge sp.Abs() selv hvis vi bruger et lille a. Så for de to tal defineret ovenfor får vi:
 
-# In[15]:
+# In[14]:
 
 
 display(sp.Abs(z))
@@ -143,7 +141,7 @@ display(sp.Abs(w))
 
 # Argumentet findes ved <code>sp.arg()</code> :
 
-# In[16]:
+# In[15]:
 
 
 display(sp.arg(z))
@@ -152,7 +150,7 @@ display(sp.arg(w))
 
 # Hvorefter vi som nævnt tidligere kan bruge <code>.evalf()</code>, hvis vi vil have et bud på værdien af $-\arctan (7/10)$ med fire decimaler
 
-# In[17]:
+# In[16]:
 
 
 sp.arg(z).evalf(4)
@@ -162,7 +160,7 @@ sp.arg(z).evalf(4)
 
 # Vi vil ret ofte benytte os af kompleks konjugering, hvor vi skifter fortegn på imaginærdelen (eller spejler i den reelle akse). Dette kan vi gøre ved brug af <code>sp.conjugate()</code>, som virker på imaginære tal uanset notationsform. Bemærk at funktionen hedder det samme som den tilsvarende funktion for matricer, som vi kender fra Lineær Algebra, men som har en anden syntax:
 
-# In[18]:
+# In[17]:
 
 
 display(z)
@@ -170,7 +168,7 @@ display(sp.conjugate(z))  # Konjugering af komplekst tal
 display(z.conjugate())    # Konjugering af matrix ... men da z kan opfattes som en 1 x 1 matrix, er resultatet det samme
 
 
-# In[19]:
+# In[18]:
 
 
 display(w)
@@ -181,14 +179,14 @@ display(sp.conjugate(w))
 
 # En central egenskab ved de komplekse tal er, at et polynomium af n'te grad altid har netop n rødder (med multiplicitet). Vi skal ofte finde rødder i polynomier og løsninger til ligninger, og her indgår der ofte kvadratrødder og andre rødder af komplekse tal. Se TK 3.4.2 s. 141, hvor det fremgår at der altid er netop $n$ n'te rødder. Når vi vil finde den n'te rod af et komplekst tal, benytter vi <code>sp.root</code>. Syntaksen er således, at $\sqrt[n]{z}$ skrives som <code>sp.root(z, n, hvilken_rod)</code>, hvor <code>hvilken_rod</code> er et tal mellem $0$ til $n-1$ (husk at Python tæller fra 0) og fortæller SymPy, hvilken af de $n$ rødder, den skal udregne.
 
-# In[20]:
+# In[19]:
 
 
 z = - 3 + 3 * I
 display(z)
 
 
-# In[21]:
+# In[20]:
 
 
 sp.root(z, 4, 0)
@@ -196,7 +194,7 @@ sp.root(z, 4, 0)
 
 # Dette er utvivlsomt korrekt, men når man ønsker et mere anvendeligt svar, kan man f.eks. tvinge SymPy til at udregne real-delen og imaginærdelen som vi gjorde ovenfor:
 
-# In[22]:
+# In[21]:
 
 
 r1 = sp.root(z, 4, 0)
@@ -208,7 +206,7 @@ display(sp.im(r1))
 # 
 # Hvis vi ønsker at finde alle rødderne på en gang og få dem præsenteret i en liste, kan vi enten skrive det op som en ligning:
 
-# In[23]:
+# In[22]:
 
 
 from sympy.abc import x
@@ -217,7 +215,7 @@ sp.solve(sp.Eq(x**4, -4), x)
 
 # Eller vi kan beregne rødderne en efter en ved hjælp af en for-løkke:
 
-# In[24]:
+# In[23]:
 
 
 for i in range(4):
@@ -227,7 +225,7 @@ for i in range(4):
 
 # Vi kan finde rødder til polynomier ved hjælp af <code>sp.solve()</code>. Vi minder om at hvis vi kun giver <code>sp.solve()</code> et udtryk (og altså ikke en ligning, f.eks. dannet ved hjælp af <code>sp.Eq</code>), så finder funktionen løsninger til den ligning, der fremkommer når udtrykket sættes lig 0:
 
-# In[25]:
+# In[24]:
 
 
 from sympy.abc import z 
@@ -247,7 +245,7 @@ display(sp.solve(sp.Eq(z**3-z**2+4*z, 4), z))
 
 # Som eksempel vil vi prøve at visualisere hvad der sker, når vi tager et komplekst tal opløftet til en stigende potens. 
 
-# In[32]:
+# In[25]:
 
 
 import matplotlib.pyplot as plt
@@ -268,7 +266,7 @@ display(zs)
 # ### Visualisering i SymPy
 # Først danner vi realdelene $x$ og imaginærdelene $y$, så tegner vi, og til sidst tilføjer vi linjer svarende til de reelle og imaginære akser. 
 
-# In[47]:
+# In[26]:
 
 
 xs = []
@@ -289,7 +287,7 @@ plt.vlines(0, -3, 3, ls = "--", color = "black");
 # ### Visualisering i NumPy
 # Benytter vi i stedet NumPy, kan vi komme lidt lettere om ved det, og da SymPy alligevel konverterer til numeriske værdier inden graftegning, taber vi ikke det store. 
 
-# In[35]:
+# In[27]:
 
 
 import numpy as np
@@ -307,7 +305,7 @@ plt.vlines(0, -3, 3, ls = "--", color = "black");
 
 # Vi kan også bruge metoden til at vise rødderne i et polynomium.
 
-# In[51]:
+# In[28]:
 
 
 from sympy.abc import z
@@ -318,7 +316,7 @@ display(zs)
 
 # Her tegner vi ved hjælp af funktionen <code>scatter</code>, der giver mange grafiske muligheder for grafer bestående af enkelte "prikker", altså ikke-forbundne talpar.
 
-# In[52]:
+# In[29]:
 
 
 zs = np.array(zs, dtype = complex)
