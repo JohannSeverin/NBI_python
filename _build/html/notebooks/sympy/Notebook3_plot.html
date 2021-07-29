@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.6. Plotting i SymPy &#8212; Python i LinAlys og MekRel</title>
+    <title>5.4. Plotting i SymPy &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.8. Differential- og integralregning for funktioner af en variabel" href="Notebook4.html" />
-    <link rel="prev" title="5.3. Ligningsløsning" href="Notebook3_ligninger.html" />
+    <link rel="next" title="5.5. Differential- og integralregning (en variabel)" href="Notebook4.html" />
+    <link rel="prev" title="5.3. Ligninger" href="Notebook3_ligninger.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook2.html">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.5. Differential- og integralregning (en variabel)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.6. Analyse for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.7. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.8. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.10. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.11. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -316,26 +316,19 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   5.6. Plotting i SymPy
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametre-for-plot">
+   5.4.1. Parametre for Plot
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parametre-for-plot">
-     5.6.1. Parametre for Plot
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#figurer-som-lister">
-     5.6.2. Figurer som lister
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figurer-som-lister">
+   5.4.2. Figurer som lister
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gaffelfunktioner">
-   5.7. Gaffelfunktioner
+   5.4.3. Gaffelfunktioner
   </a>
  </li>
 </ul>
@@ -350,19 +343,13 @@
               <div>
                 
   <div class="section" id="plotting-i-sympy">
-<h1><span class="section-number">5.6. </span>Plotting i SymPy<a class="headerlink" href="#plotting-i-sympy" title="Permalink to this headline">¶</a></h1>
-<p><strong>Foreslået ændringer:</strong><br />
-I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt.</p>
-<p>Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre.</p>
+<h1><span class="section-number">5.4. </span>Plotting i SymPy<a class="headerlink" href="#plotting-i-sympy" title="Permalink to this headline">¶</a></h1>
 <p>Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen <code>plot</code>, som vi importerer fra <code>sympy.plotting</code> her:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Den anbefalede standardblok for SymPy:</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>               <span class="c1"># Vi vælger at importere x som symbolsk variabel.</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>           <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                    <span class="c1"># Aktiver pretty-printing</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>   <span class="c1"># Hent vores printer til matematiske udtryk</span>
 
 <span class="c1"># Specifik import til plotteformål:</span>
 <span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
@@ -389,11 +376,12 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 <img alt="../../_images/Notebook3_plot_6_0.png" src="../../_images/Notebook3_plot_6_0.png" />
 </div>
 </div>
-<p>Bemærk semikolonet, der beder Python om ikke at skrive outputtet, som her ville være en kode i stil med <code>sympy.plotting.plot.Plot at 0x136af246608</code>, som ikke er så relevant i denne kontekst.</p>
+<p><strong>Tip:</strong> Bemærk semikolonet, der beder Python om ikke at skrive outputtet, som her ville være en kode i stil med <code>sympy.plotting.plot.Plot at 0x136af246608</code>, som ikke er så relevant i denne kontekst.</p>
 <p>Hvis man ønsker at tegne grafen for et bestemt <span class="math notranslate nohighlight">\(x\)</span>-interval, skriver man <code>plot(udtryk, (variabel, start, slut))</code>. Eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -413,7 +401,7 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="section" id="parametre-for-plot">
-<h2><span class="section-number">5.6.1. </span>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.1. </span>Parametre for Plot<a class="headerlink" href="#parametre-for-plot" title="Permalink to this headline">¶</a></h2>
 <p>Udover at angive funktionen/udtrykket og afgrænsningen af den variable, kan man til <code>plot</code> angive en del andre oplysninger, som angives ved at tilføje <code>keyword = værdi</code> i slutningen af udtrykket. Nogle hyppigt anvendte keywords er:</p>
 <ul class="simple">
 <li><p><code>title</code> angiver titlen på figuren. Angiv værdien som en string, altså som “Ønsket titel”</p></li>
@@ -423,10 +411,15 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 <li><p><code>xlabel</code> og <code>ylabel</code> sætter navne på hhv. <span class="math notranslate nohighlight">\(x-\)</span> og <span class="math notranslate nohighlight">\(y-\)</span>akse. Angiv som string.</p></li>
 </ul>
 <p>Andre keywords kan findes i <a class="reference external" href="https://docs.sympy.org/latest/modules/plotting.html">dokumentationen her</a></p>
+<p><strong>Tip:</strong> Når vi angiver tekststrenge på et plot, kan vi skrive <code class="docutils literal notranslate"><span class="pre">r&quot;$MATEMATIK$&quot;</span></code> for at skrive udtryk ved hjælp af Latex. <code class="docutils literal notranslate"><span class="pre">r</span></code> betyder, at tekststrengen skal læses rå, så man ikke eksempelvis laver et linje skift, når man skriver <code class="docutils literal notranslate"><span class="pre">\n</span></code>, som python ellers ville gøre.</p>
 <p>Med disse muligheder kan vi forbedre vores seneste figur:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harmoniske svingninger&quot;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> 
+     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harmoniske svingninger&quot;</span><span class="p">,</span> 
+     <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+     <span class="n">xlabel</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span> 
+     <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -434,40 +427,68 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 <img alt="../../_images/Notebook3_plot_13_0.png" src="../../_images/Notebook3_plot_13_0.png" />
 </div>
 </div>
-<p>Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger:</p>
+<p><strong>Tip:</strong> Bemærk her, at vi kan foretage linjeskift efter <code class="docutils literal notranslate"><span class="pre">,</span></code> i et funktionskald for at gøre koden mere overskuelig.</p>
+<p>Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger. Vi benytter her <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">=</span> <span class="pre">False</span></code> til ikke at vise vores plot, mens vi stadig redigerer det. Når vi er klar til at vise plottet, skriver vi <code class="docutils literal notranslate"><span class="pre">figur.show()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi tegner en graf og navngiver resultatet som et objekt ved navn &quot;figur&quot;</span>
-<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_15_0.png" src="../../_images/Notebook3_plot_15_0.png" />
 </div>
+<p>Når vi vil ændre indstillingerne for en eksisterende graf, gøre dette ved at skrive:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figurnavn</span><span class="o">.</span><span class="n">keyword</span> <span class="o">=</span> <span class="n">ny_værdi</span>
+</pre></div>
 </div>
-<p>Når vi vil ændre indstillingerne for en eksisterende graf, er syntaksen <code>figurnavn.keyword = ny_værdi</code></p>
+<p>Dermed kan vi nu sætte labels, titler og tilføje en legend ved ligesom overstående at skrive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">figur</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Forskellige harmoniske svingninger&quot;</span>
-<span class="n">figur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>  <span class="c1"># Der er flere kurver i figuren, og hver af dem har en farve. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overordnet til hele figure:</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">title</span>  <span class="o">=</span> <span class="s2">&quot;Forskellige harmoniske svingninger&quot;</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">xlabel</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$x$&quot;</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">ylabel</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$A(x)$&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Og for at ændre de enkelte plot, betragter vi det som en liste. Så for at ændre det i’te plot (husk nulindeksering), skriver vi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figurnavn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">keyword</span> <span class="o">=</span> <span class="n">ny_værdi</span>
+</pre></div>
+</div>
+<p>Vi kan altså ændre på de to plots seperat ved at gøre følgende:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>  <span class="c1"># Der er flere kurver i figuren, og hver af dem har en farve. </span>
                              <span class="c1"># Kurverne har nummer 0, 1, 2, ... i den rækkefølge, de blev tegnet, så cosinus-kurven er 0</span>
-<span class="n">figur</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  
                              <span class="c1"># ... og sinus er nummer 1. Her bruges RGB-farvekode. Farven er brun!</span>
-                             
-<span class="c1"># Efter at have ændret indstillingerne, beder vi Python om at opdatere figuren:</span>
-<span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">figur</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">label</span>      <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\frac</span><span class="si">{3}{2}</span><span class="s2"> \sin(2 x)$&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Efter at have ændret indstillingerne, beder vi Python om at vise figuren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_17_0.png" src="../../_images/Notebook3_plot_17_0.png" />
+<img alt="../../_images/Notebook3_plot_23_0.png" src="../../_images/Notebook3_plot_23_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="figurer-som-lister">
-<h2><span class="section-number">5.6.2. </span>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.2. </span>Figurer som lister<a class="headerlink" href="#figurer-som-lister" title="Permalink to this headline">¶</a></h2>
 <p>I overstående eksempler har vi benyttet indeksering (som vi kender det fra lister) til at ændre på forskellige parametre. En af fordelene ved dette er at vi kan udvide vores figur ved brug af <code>.append()</code> og <code>.extend()</code> til at bygge videre på en figur, hvis vi ønsker at samle flere plots i en figur. Som eksempel vil vi bruge <code>.append()</code> til at tilføje en ekstra kurve til overstående figur.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -478,7 +499,7 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_20_0.png" src="../../_images/Notebook3_plot_20_0.png" />
+<img alt="../../_images/Notebook3_plot_26_0.png" src="../../_images/Notebook3_plot_26_0.png" />
 </div>
 </div>
 <p>Denne kurve har nu fået objektnavnet <code>figur2[0]</code> fordi det er den første kurve i figuren, og vi kan nu tilføje den til <code>figur</code> ovenfor ved hjælp af <code>append</code>:</p>
@@ -490,17 +511,23 @@ I denne notebook har Christian en del kommentarer til forskellige formuleringer.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_22_0.png" src="../../_images/Notebook3_plot_22_0.png" />
+<img alt="../../_images/Notebook3_plot_28_0.png" src="../../_images/Notebook3_plot_28_0.png" />
 </div>
 </div>
-<p>Hvis man vil kombinere figurer, som alle har flere kurver, kan man bruge <code>.extend()</code> til at tilføje alle plots fra en figur til den anden. Hvis <code>figur2</code> således havde haft 2 kurver, ville vi kunne tilføje begge  til <code>figur</code> ved at skrive <code>figur.extend(figur2)</code>.</p>
+<p>Hvis man vil kombinere figurer, som alle har flere kurver, kan man bruge <code>.extend()</code> til at tilføje alle plots fra en figur til den anden. Hvis <code>figur2</code> således havde haft 2 kurver, ville vi kunne tilføje begge  til <code>figur</code> ved at skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">figur2</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="gaffelfunktioner">
-<h1><span class="section-number">5.7. </span>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h1>
-<p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Syntaksen  er <code>sp.Piecewise((udtryk1, intervalbetingelse1), (udtryk2, intervalbetingelse2))</code>. Funktionen
-$<span class="math notranslate nohighlight">\(f(x) = \begin{cases} -1 \quad &amp;x &lt; 4 \\ x - 5 \quad &amp;x \geq 4\end{cases}\)</span>$
-angives derfor som</p>
+<h2><span class="section-number">5.4.3. </span>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h2>
+<p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Kaldesekvenser er:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">udtryk1</span><span class="p">,</span> <span class="n">intervalbetingelse1</span><span class="p">),</span> <span class="p">(</span><span class="n">udtryk2</span><span class="p">,</span> <span class="n">intervalbetingelse2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Funktionen:</p>
+<p><span class="math notranslate nohighlight">\(f(x) = \begin{cases} -1 \quad &amp;x &lt; 4 \\ x - 5 \quad &amp;x \geq 4\end{cases}\)</span></p>
+<p>angives derfor som</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">))</span>
@@ -510,29 +537,38 @@ angives derfor som</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_25_0.png" src="../../_images/Notebook3_plot_25_0.png" />
+<img alt="../../_images/Notebook3_plot_31_0.png" src="../../_images/Notebook3_plot_31_0.png" />
 </div>
 </div>
-<p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde hvis man skal tegne en gaffelfunktion, hvor samme udtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Hvis forklaringen ikke er tydelig, håber vi at et eksempel kan hjælpe: Betragt funtionen
-$<span class="math notranslate nohighlight">\(g_1(x) = \begin{cases} -2x \quad &amp;x &lt; -2 \\ x^2 \quad &amp;-2\leq x\leq 2\\ 2x \quad &amp;2 &lt; x\quad \end{cases}\)</span><span class="math notranslate nohighlight">\(
-som kan skrives kortere som 
-\)</span><span class="math notranslate nohighlight">\(g_2(x) = \begin{cases} x^2 \quad &amp;|x|\leq 2\\ 2|x| \quad &amp;\mbox{ellers}\end{cases}\)</span>$
-På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:</p>
+<p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde, hvis man skal tegne en gaffelfunktion, hvor samme udtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Et eksempel på dette kunne være at betragte gaffelfunktionen:</p>
+<p><span class="math notranslate nohighlight">\(g_1(x) = \begin{cases} -2x \quad &amp;x &lt; -2 \\ x^2 \quad &amp;-2\leq x\leq 2\\ 2x \quad &amp;2 &lt; x\quad \end{cases}\)</span></p>
+<p>som kan skrives kortere som:</p>
+<p><span class="math notranslate nohighlight">\(g_2(x) = \begin{cases} x^2 \quad &amp;|x|\leq 2\\ 2|x| \quad &amp;\mbox{ellers}\end{cases}\)</span></p>
+<p>På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">&lt;-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">g2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">True</span><span class="p">))</span>   <span class="c1"># Bemærk at vi for andet udtryk med vilje</span>
-<span class="c1"># ikke skriver nogen betingelse for x, men blot &#39;True&#39;, som altid er opfyldt, idet vi ønsker at bruge det</span>
-<span class="c1"># andet udtryk når betingelsen for første udtryk (abs(x)&lt;=2) ikke er opfyldt.</span>
-
-<span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion 2&quot;</span><span class="p">)</span> <span class="c1"># Vi ser kun en kurve, da udtrykkene er ens.</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">True</span><span class="p">))</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bemærk at vi for andet udtryk med vilje ikke skriver nogen betingelse for x, men blot ‘True’, som altid er opfyldt, idet vi ønsker at bruge det andet udtryk når betingelsen for første udtryk <code class="docutils literal notranslate"><span class="pre">(abs(x)&lt;=2)</span></code> ikke er opfyldt.</p>
+<p>Plotter vi nu de to figurer (her sepereret med en konstant for at kunne se dem begge får vi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion 2&quot;</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">figur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+<span class="n">figur</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">line_color</span> <span class="o">=</span> <span class="s2">&quot;orange&quot;</span>
+<span class="n">figur</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_27_0.png" src="../../_images/Notebook3_plot_27_0.png" />
+<img alt="../../_images/Notebook3_plot_35_0.png" src="../../_images/Notebook3_plot_35_0.png" />
 </div>
 </div>
+<p>Dette giver altså samme resultat.</p>
 <p>Angives udtrykkene derimod i omvendt rækkefølge, kommer udtrykket <span class="math notranslate nohighlight">\(x^2\)</span> aldrig i brug, da betingelsen <code>True</code> altid er opfyldt, og det er blot <code>abs(x)</code>, dvs. <span class="math notranslate nohighlight">\(|x|\)</span>, der tegnes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +579,8 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_plot_29_0.png" src="../../_images/Notebook3_plot_29_0.png" />
+<img alt="../../_images/Notebook3_plot_38_0.png" src="../../_images/Notebook3_plot_38_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -573,8 +610,8 @@ På samme måde kan denne funktion defineres i Python på 2 ækvivalente måder:
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page"><span class="section-number">5.3. </span>Ligningsløsning</a>
-    <a class='right-next' id="next-link" href="Notebook4.html" title="next page"><span class="section-number">5.8. </span>Differential- og integralregning for funktioner af en variabel</a>
+    <a class='left-prev' id="prev-link" href="Notebook3_ligninger.html" title="previous page"><span class="section-number">5.3. </span>Ligninger</a>
+    <a class='right-next' id="next-link" href="Notebook4.html" title="next page"><span class="section-number">5.5. </span>Differential- og integralregning (en variabel)</a>
 
         </div>
         

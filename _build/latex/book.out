@@ -17,23 +17,21 @@
 \BOOKMARK [1][-]{section.4.2}{Matplotlib}{chapter.4}% 17
 \BOOKMARK [1][-]{section.4.3}{Funktioner,\040fits\040og\040usikkerheder\040i\040Python}{chapter.4}% 18
 \BOOKMARK [0][-]{chapter.5}{Python\040i\040LinAlys}{}% 19
-\BOOKMARK [1][-]{section.5.1}{SymPy\040i\040LinAlys}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.1}{Hvad\040er\040SymPy?}{chapter.5}% 20
 \BOOKMARK [1][-]{section.5.2}{Grænser}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.3}{Ligningsløsning}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.4}{Ligninger}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.5}{Numerisk løsning}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.6}{Plotting\040i\040SymPy}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.7}{Gaffelfunktioner}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.8}{Differential-\040og\040integralregning\040for\040funktioner\040af\040en\040variabel}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.9}{Reduktion}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.10}{Differentiation}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.11}{Integration}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.12}{Alternativ\040Syntaks}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.13}{Funktioner\040af\040flere\040variable}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.14}{Differentiation\040af\040funktioner\040af\040flere\040variable}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.15}{Graftegning\040for\040funktioner\040af\040flere\040variable}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.16}{Graftegning\040for\040funktioner\040af\040flere\040variable}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.17}{Vektorer\040og\040matricer}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.18}{Matrix reduktion, ligningsløsning og inverse matricer}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.19}{Flere metoder i Linær Algebra}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.20}{Komplekse\040tal\040i\040SymPy}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{Ligninger}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.4}{Plotting\040i\040SymPy}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.5}{Gaffelfunktioner}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.6}{Differential-\040og\040integralregning\040for\040funktioner\040af\040en\040variabel}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.7}{Reduktion}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.8}{Differentiation}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.9}{Integration}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.10}{Alternativ\040Syntaks}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.11}{Funktioner\040af\040flere\040variable}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.12}{Differentiation\040af\040funktioner\040af\040flere\040variable}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.13}{Graftegning\040for\040funktioner\040af\040flere\040variable}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.14}{Graftegning\040for\040funktioner\040af\040flere\040variable}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.15}{Vektorer\040og\040matricer}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.16}{Matrix reduktion, ligningsløsning og inverse matricer}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.17}{Flere metoder i Linær Algebra}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.18}{Komplekse\040tal\040i\040SymPy}{chapter.5}% 37

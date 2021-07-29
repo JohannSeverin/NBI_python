@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.1. SymPy i LinAlys &#8212; Python i LinAlys og MekRel</title>
+    <title>5.1. Hvad er SymPy? &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -157,7 +157,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.1. SymPy i LinAlys
+     5.1. Hvad er SymPy?
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,47 +167,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_ligninger.html">
-     5.3. Ligningsløsning
+     5.3. Ligninger
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook3_plot.html">
-     5.6. Plotting i SymPy
+     5.4. Plotting i SymPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook4.html">
-     5.8. Differential- og integralregning for funktioner af en variabel
+     5.5. Differential- og integralregning (en variabel)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_analyse.html">
-     5.13. Funktioner af flere variable
+     5.6. Analyse for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_FlereVar_plot.html">
-     5.16. Graftegning for funktioner af flere variable
+     5.7. Graftegning for funktioner af flere variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1.html">
-     5.17. Vektorer og matricer
+     5.8. Vektorer og matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.18. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg_2.html">
-     5.19. Flere metoder i Linær Algebra
+     5.10. Flere metoder i Linær Algebra
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.20. Komplekse tal i SymPy
+     5.11. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -317,23 +317,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hvad-er-sympy">
-   5.1.1. Hvad er SymPy?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#symboler-og-tal">
-   5.1.2. Symboler og tal
+   5.1.1. Symboler og tal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eksakt-repraesentation-af-tal">
-   5.1.3. Eksakt repræsentation af tal
+   5.1.2. Eksakt repræsentation af tal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluer-udtryk">
-   5.1.4. Evaluer udtryk
+   5.1.3. Evaluer udtryk
   </a>
  </li>
 </ul>
@@ -347,16 +342,10 @@
         
               <div>
                 
-  <div class="section" id="sympy-i-linalys">
-<h1><span class="section-number">5.1. </span>SymPy i LinAlys<a class="headerlink" href="#sympy-i-linalys" title="Permalink to this headline">¶</a></h1>
-<p><strong>Foreslået ændringer:</strong>
-I denne her Notebook er der ikke brug for de store ændringer til struktur.</p>
-<p>Desuden bør vi nok gennemgå, hvad der er syntaks, og hvad der er kaldesekvens. Dette gør jeg, når jeg retter dem til.</p>
-<div class="section" id="hvad-er-sympy">
-<h2><span class="section-number">5.1.1. </span>Hvad er SymPy?<a class="headerlink" href="#hvad-er-sympy" title="Permalink to this headline">¶</a></h2>
-<p>I denne notebook vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er et bibliotek i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde, som vi importerede  biblioteker i den sidste notebook. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for biblioteket: <code>import sympy as sp</code>.<br />
-SymPy har flere indbyggeret printe-værktøjer. Vi bruger funktionen <code>sp.init_printing()</code>, som gør det muligt at få udtryk vist i LaTeX-format (LaTeX er det førende system til at skrive matematiske tekster).
-Den normale <code>print()</code> i Python printer output i “string”-format, mens funktionen <code>display()</code> fra <code>IPython.display</code> vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX.</p>
+  <div class="section" id="hvad-er-sympy">
+<h1><span class="section-number">5.1. </span>Hvad er SymPy?<a class="headerlink" href="#hvad-er-sympy" title="Permalink to this headline">¶</a></h1>
+<p>I denne sektion vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er en pakke i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for pakken: <code>import sympy as sp</code>.<br />
+SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at se symbolske udtryk som LaTeX. Vi skal dog være opmærksom på, at den normale <code>print()</code> i Python printer output i “string”-format, mens funktionen <code>display()</code> (som er indbygget i Jupyter) vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX. <em>Hvis vi skriver udtrykket til sidst i en celle, vil Jupyter automatisk bruge <code class="docutils literal notranslate"><span class="pre">display</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer SymPy</span>
@@ -364,9 +353,8 @@ Den normale <code>print()</code> i Python printer output i “string”-format, 
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="symboler-og-tal">
-<h2><span class="section-number">5.1.2. </span>Symboler og tal<a class="headerlink" href="#symboler-og-tal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>Symboler og tal<a class="headerlink" href="#symboler-og-tal" title="Permalink to this headline">¶</a></h2>
 <p>På samme måde som vi kan have variable i Python som <em>strings</em>, logiske booleans eller talværdier, så tilføjer SymPy muligheden for symbolske variable, f.eks. svarende til hvad vi normalt kalder en ubekendt i ligningsløsning eller den (uafhængige) variabel i en funktion. Vi ønsker således at have muligheden for angive en variabel som <span class="math notranslate nohighlight">\(x\)</span> i <span class="math notranslate nohighlight">\(f(x) = x^2+3x-2\)</span> og opfatte den som et abstrakt objekt i modsætning til at tildele <span class="math notranslate nohighlight">\(x\)</span> en værdi. Den nemmeste måde at definere symboler på er at importere dem fra underbiblioteket <code>sympy.abc</code>, som indeholder de fleste symboler, som vi til dagligt bruger. Vi kan altså definere f.eks. <span class="math notranslate nohighlight">\(x, a, b\)</span> og <span class="math notranslate nohighlight">\(\phi\)</span> som symboler ved at skrive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -383,19 +371,20 @@ Den normale <code>print()</code> i Python printer output i “string”-format, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_9_0.png" src="../../_images/Notebook2_9_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a + b + \phi\]</div>
 </div>
 </div>
 <p>Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python-operationer såsom: <code>+</code>, <code>-</code>, <code>*</code>,<code>/</code> eller <code>**</code>. Derudover kan vi benytte en del andre regneoperationer ved at skrive <code>sp.</code> foran operationen.
 Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 <ul class="simple">
-<li><p>Kvadratrødder: <code>sp.sqrt(x)</code> (benyt sp.root(x, n) til at tage n’te rod af x)</p></li>
+<li><p>Kvadratrødder: <code>sp.sqrt(x)</code> (benyt <code class="docutils literal notranslate"><span class="pre">sp.root(x,</span> <span class="pre">n)</span></code> til at tage n’te rod af x)</p></li>
 <li><p>Trigonometriske funktioner: <code>sp.cos(x), sp.sin(x), sp.tan(x)</code>. (de inverse findes ved eksempelvis <code>acos(x)</code>)</p></li>
 <li><p>Exponentialfunktion <code>sp.exp(x)</code></p></li>
 <li><p>Logaritmer: <code>sp.log(x)</code>. For at få 10-talslogaritmefunktionen skrives <code>log(x, 10)</code></p></li>
 </ul>
 <p>En mere omfattende <a class="reference external" href="https://docs.sympy.org/latest/modules/functions/elementary.html">liste over regneoperationer kan findes her.</a></p>
-<p>Så eksempelvis, kan vi sammensætte et udtryk ved at benytte exponentialfunktionen <code>sp.exp</code> sammen med vores symboler:</p>
+<p>Så eksempelvis kan vi sammensætte et udtryk ved at benytte exponentialfunktionen <code>sp.exp</code> sammen med vores symboler:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
@@ -403,7 +392,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_11_0.png" src="../../_images/Notebook2_11_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a e^{\phi + 2 x}\]</div>
 </div>
 </div>
 <p>Vi kan også danne nye symbolske variable ud fra eksisterende variable. Vi kan f.eks. definere en funktion <span class="math notranslate nohighlight">\(f\)</span> baseret på tal og eksisterende symbolske variable:</p>
@@ -422,13 +412,14 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_15_0.png" src="../../_images/Notebook2_15_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a e^{\phi + 2 x}\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="eksakt-repraesentation-af-tal">
-<h2><span class="section-number">5.1.3. </span>Eksakt repræsentation af tal<a class="headerlink" href="#eksakt-repraesentation-af-tal" title="Permalink to this headline">¶</a></h2>
-<p>Python opfatter <code>/</code> som en numerisk operation, og nå vi vil have eksakte tal-brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af <code>Rational(a, b)</code></p>
+<h2><span class="section-number">5.1.2. </span>Eksakt repræsentation af tal<a class="headerlink" href="#eksakt-repraesentation-af-tal" title="Permalink to this headline">¶</a></h2>
+<p>Python opfatter <code>/</code> som en numerisk operation, og når vi vil have eksakte tal-brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af <code>Rational(a, b)</code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brøk</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -437,7 +428,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_18_0.png" src="../../_images/Notebook2_18_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{3}\]</div>
 </div>
 </div>
 <p>En brøk bestående bestående af symboler lider ikke under samme problem, så der kan vi bare bruge almindelig division.</p>
@@ -449,7 +441,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_20_0.png" src="../../_images/Notebook2_20_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{b}\]</div>
 </div>
 </div>
 <p>Vi kan regne med brøkerne ved hjælp af de almindelige regnearter:</p>
@@ -466,8 +459,10 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_22_0.png" src="../../_images/Notebook2_22_0.png" />
-<img alt="../../_images/Notebook2_22_1.png" src="../../_images/Notebook2_22_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{1}{15}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{3 b} - \frac{2}{5}\]</div>
 </div>
 </div>
 <p>Vi får ofte brug for eksakte værdier af <span class="math notranslate nohighlight">\(\pi\)</span> og evt. andre særlige tal. En eksakt værdi af <span class="math notranslate nohighlight">\(\pi\)</span> får vi ved at skrive <code>from sympy import pi</code>. Når vi sammensætter symbolske variable og <span class="math notranslate nohighlight">\(\pi\)</span> med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for <code>sp.Rational(tæller, nævner)</code>, da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede tal (<em>floats</em>):</p>
@@ -480,10 +475,11 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_24_0.png" src="../../_images/Notebook2_24_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{3} \pi}{2}\]</div>
 </div>
 </div>
-<p>Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o’er og ligner et uendelighedstegn hvis man har lidt fantasi).</p>
+<p>Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, <code>oo</code> (der skrives som to små o’er og ligner et uendelighedstegn, hvis man har lidt fantasi).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span> <span class="c1"># Importer værdien uendelig</span>
@@ -492,10 +488,11 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_26_0.png" src="../../_images/Notebook2_26_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
 </div>
 </div>
-<p>På samme måde kan vi også importere den imaginære enhed <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. <em>Hvis du ikke kender til de komplekse talk, så gå ikke i panik. De bliver introduceret i slutningen af blok 1</em></p>
+<p>På samme måde kan vi også importere den imaginære enhed <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>, som i SymPy er angivet ved et stort <code>I</code>. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet <code>j</code> og kan f.eks. skrive <code>2 + 3j</code>. <em>Hvis du ikke kender til de komplekse tal, så gå ikke i panik. De bliver introduceret i slutningen af blok 1</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span> <span class="c1"># Importer I</span>
@@ -506,14 +503,16 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_28_0.png" src="../../_images/Notebook2_28_0.png" />
-<img alt="../../_images/Notebook2_28_1.png" src="../../_images/Notebook2_28_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3 + 3 i\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1 - 2 i\]</div>
 </div>
 </div>
 <p>Vi vil vende tilbage til imaginære tal i SymPy i en senere notebook.</p>
 </div>
 <div class="section" id="evaluer-udtryk">
-<h2><span class="section-number">5.1.4. </span>Evaluer udtryk<a class="headerlink" href="#evaluer-udtryk" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.3. </span>Evaluer udtryk<a class="headerlink" href="#evaluer-udtryk" title="Permalink to this headline">¶</a></h2>
 <p>Forestil dig at vi har et symbolsk udtryk, der indeholder den variable <span class="math notranslate nohighlight">\(a\)</span>, og vi ønsker at indsætte værdien <span class="math notranslate nohighlight">\(a = 2\)</span>. Til dette vil vi nu indføre de to metoder <code>.subs()</code> og <code>.evalf()</code>. For et udtryk <span class="math notranslate nohighlight">\(f\)</span>, som eksempelvis kunne være <code>f = a ** 2 + b</code>, kan vi indsætte <span class="math notranslate nohighlight">\(a = 2\)</span> ved at skrive <code>f.subs(a, 2)</code>.</p>
 <p><strong>Symbolsk substituering</strong>:</p>
 <p>Vi kunne for eksempel for et udtryk <span class="math notranslate nohighlight">\(cos(x \cdot \pi / 4)\)</span> ønske at finde værdien for forskellige værdier af x:</p>
@@ -529,8 +528,10 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_33_0.png" src="../../_images/Notebook2_33_0.png" />
-<img alt="../../_images/Notebook2_33_1.png" src="../../_images/Notebook2_33_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \cos{\left(\frac{\pi x}{4} \right)}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{2}}{2}\]</div>
 </div>
 </div>
 <p>Vi kan også indsætte et udtryk ind i et andet:</p>
@@ -548,9 +549,12 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_35_0.png" src="../../_images/Notebook2_35_0.png" />
-<img alt="../../_images/Notebook2_35_1.png" src="../../_images/Notebook2_35_1.png" />
-<img alt="../../_images/Notebook2_35_2.png" src="../../_images/Notebook2_35_2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a b x + x\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle b^{2} + c^{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a b \left(b^{2} + c^{2}\right) + b^{2} + c^{2}\]</div>
 </div>
 </div>
 <p>Her har vi altså defineret to udtryk og erstattet alle forekomster af x i det første udtryk med <span class="math notranslate nohighlight">\(g = a^2 + b^2\)</span>. Vi kunne have opået det samme (nemmere, men mindre generelt) ved at skrive:</p>
@@ -564,7 +568,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_37_0.png" src="../../_images/Notebook2_37_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a b \left(b^{2} + c^{2}\right) + b^{2} + c^{2}\]</div>
 </div>
 </div>
 <p><strong>Numerisk evaluering:</strong></p>
@@ -576,7 +581,8 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_40_0.png" src="../../_images/Notebook2_40_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3.141592654\]</div>
 </div>
 </div>
 <p>Vi kan benytte de to metoder i kombination, hvis vi eksempelvis vil finde værdien af et udtryk og så approksimere det.</p>
@@ -595,9 +601,12 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook2_42_0.png" src="../../_images/Notebook2_42_0.png" />
-<img alt="../../_images/Notebook2_42_1.png" src="../../_images/Notebook2_42_1.png" />
-<img alt="../../_images/Notebook2_42_2.png" src="../../_images/Notebook2_42_2.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle e^{\frac{x}{5}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle e^{\frac{3}{5}}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1.82\]</div>
 </div>
 </div>
 </div>

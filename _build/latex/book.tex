@@ -75,7 +75,7 @@
         
 
 \title{Python i LinAlys og MekRel}
-\date{Jul 25, 2021}
+\date{Jul 26, 2021}
 \release{}
 \author{Niels Bohr Institutet}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -1259,8 +1259,10 @@ For at plotte vores fit laver vi et array af værdier i det interval, som vi ger
 
 Man kan også lave et fit, hvor der tages højde for usikkerheden på datapunkterne. Det gør man ved at angive et sigma når man bruger curve\_fit.
 
+\sphinxstylestrong{Tip:} Husk at bruge \sphinxcode{\sphinxupquote{absolute\_sigma = True}} ellers for i problemer med jeres ussikerheder.
+
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{par\PYGZus{}with\PYGZus{}error}\PYG{p}{,} \PYG{n}{cov\PYGZus{}new} \PYG{o}{=} \PYG{n}{curve\PYGZus{}fit}\PYG{p}{(}\PYG{n}{linfunc}\PYG{p}{,} \PYG{n}{L} \PYG{p}{,} \PYG{n}{gns\PYGZus{}svingning}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{afvigelse}\PYG{p}{)}
+\PYG{n}{par\PYGZus{}with\PYGZus{}error}\PYG{p}{,} \PYG{n}{cov\PYGZus{}new} \PYG{o}{=} \PYG{n}{curve\PYGZus{}fit}\PYG{p}{(}\PYG{n}{linfunc}\PYG{p}{,} \PYG{n}{L} \PYG{p}{,} \PYG{n}{gns\PYGZus{}svingning}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{afvigelse}\PYG{p}{,} \PYG{n}{absolute\PYGZus{}sigma} \PYG{o}{=} \PYG{k+kc}{True}\PYG{p}{)}
 \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{par\PYGZus{}with\PYGZus{}error}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -1300,28 +1302,17 @@ For at finde usikkerheden på de fittede parametre, kan man bruge covariance\sph
 
 Her er fit\sphinxhyphen{}værdierne for a og b printet med usikkerheder fundet fra covariance\sphinxhyphen{}matrixen.
 
-\sphinxstylestrong{Foreslået ændringer}Dette er mere af en intro nu
-
 
 \chapter{Python i LinAlys}
 \label{\detokenize{notebooks/sympy/Notebook1:python-i-linalys}}\label{\detokenize{notebooks/sympy/Notebook1::doc}}
-LinALys\sphinxhyphen{}kurset indeholder to spor (analyse og lineær algebra) og har fokus på “blyantsregning” og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I år har vi valgt at bruge Python\sphinxhyphen{}modulet SymPy som CAS\sphinxhyphen{}værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel\sphinxhyphen{}kurset). Dette dokument er det første af en række notebooks, der introducerer de nødvendige koncepter.
+LinALys\sphinxhyphen{}kurset indeholder to spor (analyse og lineær algebra) og har fokus på “blyantsregning” og forståelse af den bagvedliggende teori. Ind imellem får vi brug for et værktøj til at tegne funktioner og foretage både numeriske og symbolske beregninger for at illustrere en problemstilling og/eller støtte eller kontrollere beregningerne i hånden. I dette kursus har vi valgt at bruge Python\sphinxhyphen{}modulet SymPy som CAS\sphinxhyphen{}værktøj (Computer Algebra System). Python og SymPy er ikke nødvendigvis det optimale værktøj til alle de opgaver, vi løser med Python i kurset, men vi har valgt Python fordi det er standardprogrammeringssproget på fysikstudiets førstedel, så de kræfter, du kommer til at bruge på Python, får du forhåbentlig gavn af andre steder (f.eks. i MekRel\sphinxhyphen{}kurset). På denne side har vi samlet en række af forskellige noter, som forhåbentlig kan introducerer alt det Sympy, som I kan få brug for i LinAlys kurset.
 
 Det er vigtigt at være opmærksom på, at modsat CAS\sphinxhyphen{}værktøjer som Maple, TI\_Nspire og WordMat, så er Python ikke lavet specifikt til symbolske udregninger, men er et generelt anvendeligt programmeringssprog. Man skal derfor vænne sig til både Pythons syntaks og programmering som helhed for at få det maksimale ud af SymPy. Når det til gengæld er klaret, er det muligt at benytte SymPy i en lang række sammenhænge, og f.eks. nemt skifte mellem numeriske og symbolske anvendelser. Dette vil vi vende tilbage til, når vi har forudsætningerne på plads.
 
 
-\section{SymPy i LinAlys}
-\label{\detokenize{notebooks/sympy/Notebook2:sympy-i-linalys}}\label{\detokenize{notebooks/sympy/Notebook2::doc}}
-\sphinxstylestrong{Foreslået ændringer:}
-I denne her Notebook er der ikke brug for de store ændringer til struktur.
-
-Desuden bør vi nok gennemgå, hvad der er syntaks, og hvad der er kaldesekvens. Dette gør jeg, når jeg retter dem til.
-
-
-\subsection{Hvad er SymPy?}
-\label{\detokenize{notebooks/sympy/Notebook2:hvad-er-sympy}}
-I denne notebook vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er et bibliotek i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde, som vi importerede  biblioteker i den sidste notebook. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for biblioteket: import sympy as sp.SymPy har flere indbyggeret printe\sphinxhyphen{}værktøjer. Vi bruger funktionen sp.init\_printing(), som gør det muligt at få udtryk vist i LaTeX\sphinxhyphen{}format (LaTeX er det førende system til at skrive matematiske tekster).
-Den normale print() i Python printer output i “string”\sphinxhyphen{}format, mens funktionen display() fra IPython.display vil være vores foretrukne valg til at vise SymPy\sphinxhyphen{}udtryk som LaTeX.
+\section{Hvad er SymPy?}
+\label{\detokenize{notebooks/sympy/Notebook2:hvad-er-sympy}}\label{\detokenize{notebooks/sympy/Notebook2::doc}}
+I denne sektion vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er en pakke i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for pakken: import sympy as sp.SymPy har flere indbyggeret printe\sphinxhyphen{}værktøjer, der gør det muligt at se symbolske udtryk som LaTeX. Vi skal dog være opmærksom på, at den normale print() i Python printer output i “string”\sphinxhyphen{}format, mens funktionen display() (som er indbygget i Jupyter) vil være vores foretrukne valg til at vise SymPy\sphinxhyphen{}udtryk som LaTeX. \sphinxstyleemphasis{Hvis vi skriver udtrykket til sidst i en celle, vil Jupyter automatisk bruge \sphinxcode{\sphinxupquote{display}}}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp}                    \PYG{c+c1}{\PYGZsh{} Importer SymPy}
@@ -1341,14 +1332,14 @@ Nu kan vi benytte disse variable i beregninger:
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{a} \PYG{o}{+} \PYG{n}{b} \PYG{o}{+} \PYG{n}{phi} \PYG{c+c1}{\PYGZsh{} Vi kan lægge dem sammen}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_9_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a + b + \phi\end{split}
+\end{equation*}
 Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python\sphinxhyphen{}operationer såsom: +, \sphinxhyphen{}, *,/ eller **. Derudover kan vi benytte en del andre regneoperationer ved at skrive sp. foran operationen.
 Her er samlet de typiske regneoperationer, som man kan finde i SymPy
 \begin{itemize}
 \item {} 
-Kvadratrødder: sp.sqrt(x) (benyt sp.root(x, n) til at tage n’te rod af x)
+Kvadratrødder: sp.sqrt(x) (benyt \sphinxcode{\sphinxupquote{sp.root(x, n)}} til at tage n’te rod af x)
 
 \item {} 
 Trigonometriske funktioner: sp.cos(x), sp.sin(x), sp.tan(x). (de inverse findes ved eksempelvis acos(x))
@@ -1363,14 +1354,14 @@ Logaritmer: sp.log(x). For at få 10\sphinxhyphen{}talslogaritmefunktionen skriv
 
 En mere omfattende \sphinxhref{https://docs.sympy.org/latest/modules/functions/elementary.html}{liste over regneoperationer kan findes her.}
 
-Så eksempelvis, kan vi sammensætte et udtryk ved at benytte exponentialfunktionen sp.exp sammen med vores symboler:
+Så eksempelvis kan vi sammensætte et udtryk ved at benytte exponentialfunktionen sp.exp sammen med vores symboler:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{a} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{phi}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_11_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a e^{\phi + 2 x}\end{split}
+\end{equation*}
 Vi kan også danne nye symbolske variable ud fra eksisterende variable. Vi kan f.eks. definere en funktion \(f\) baseret på tal og eksisterende symbolske variable:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1382,30 +1373,30 @@ Bemærk at vi ikke behøver at definere \(f\) som symbolsk variabel. Python/SymP
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_15_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a e^{\phi + 2 x}\end{split}
+\end{equation*}
 
 \subsection{Eksakt repræsentation af tal}
 \label{\detokenize{notebooks/sympy/Notebook2:eksakt-repraesentation-af-tal}}
-Python opfatter / som en numerisk operation, og nå vi vil have eksakte tal\sphinxhyphen{}brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af Rational(a, b)
+Python opfatter / som en numerisk operation, og når vi vil have eksakte tal\sphinxhyphen{}brøker, må vi eksplicit bede SymPy om at opfatte dem som sådan ved hjælp af Rational(a, b)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{brøk} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Rational}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{brøk}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_18_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \frac{1}{3}\end{split}
+\end{equation*}
 En brøk bestående bestående af symboler lider ikke under samme problem, så der kan vi bare bruge almindelig division.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{c} \PYG{o}{=} \PYG{n}{a}\PYG{o}{/}\PYG{n}{b}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_20_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \frac{a}{b}\end{split}
+\end{equation*}
 Vi kan regne med brøkerne ved hjælp af de almindelige regnearter:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1417,11 +1408,11 @@ Vi kan regne med brøkerne ved hjælp af de almindelige regnearter:
 \PYG{n}{q} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Rational}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{p}\PYG{o}{*}\PYG{n}{a}\PYG{o}{/}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{q}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_22_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_22_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle - \frac{1}{15}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle \frac{a}{3 b} - \frac{2}{5}\end{split}
+\end{equation*}
 Vi får ofte brug for eksakte værdier af \(\pi\) og evt. andre særlige tal. En eksakt værdi af \(\pi\) får vi ved at skrive from sympy import pi. Når vi sammensætter symbolske variable og \(\pi\) med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for sp.Rational(tæller, nævner), da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede tal (\sphinxstyleemphasis{floats}):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1429,19 +1420,19 @@ Vi får ofte brug for eksakte værdier af \(\pi\) og evt. andre særlige tal. En
 \PYG{n}{value} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{*} \PYG{n}{pi} \PYG{o}{/} \PYG{l+m+mi}{2}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_24_0}.png}
-
-Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, oo (der skrives som to små o’er og ligner et uendelighedstegn hvis man har lidt fantasi).
+\begin{equation*}
+\begin{split}\displaystyle \frac{\sqrt{3} \pi}{2}\end{split}
+\end{equation*}
+Desuden kan vi hente nogle andre brugbare symboler fra SymPy, som eksempelvis uendelig, oo (der skrives som to små o’er og ligner et uendelighedstegn, hvis man har lidt fantasi).
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo} \PYG{c+c1}{\PYGZsh{} Importer værdien uendelig}
 \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{oo}               \PYG{c+c1}{\PYGZsh{} 1 divideret med uendelig giver 0, i hvert tilfælde for fysikere :o)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_26_0}.png}
-
-På samme måde kan vi også importere den imaginære enhed \(i = \sqrt{-1}\), som i SymPy er angivet ved et stort I. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet j og kan f.eks. skrive 2 + 3j. \sphinxstyleemphasis{Hvis du ikke kender til de komplekse talk, så gå ikke i panik. De bliver introduceret i slutningen af blok 1}
+\begin{equation*}
+\begin{split}\displaystyle 0\end{split}
+\end{equation*}
+På samme måde kan vi også importere den imaginære enhed \(i = \sqrt{-1}\), som i SymPy er angivet ved et stort I. Hvis man hellere vil lave numeriske beregninger med komplekse tal, benytter man i stedet j og kan f.eks. skrive 2 + 3j. \sphinxstyleemphasis{Hvis du ikke kender til de komplekse tal, så gå ikke i panik. De bliver introduceret i slutningen af blok 1}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{I} \PYG{c+c1}{\PYGZsh{} Importer I}
@@ -1449,11 +1440,11 @@ På samme måde kan vi også importere den imaginære enhed \(i = \sqrt{-1}\), s
 \PYG{n}{q} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{I}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{q}\PYG{p}{)}       \PYG{c+c1}{\PYGZsh{} Vi viser dem med display()}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_28_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_28_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle 3 + 3 i\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle 1 - 2 i\end{split}
+\end{equation*}
 Vi vil vende tilbage til imaginære tal i SymPy i en senere notebook.
 
 
@@ -1473,11 +1464,11 @@ Vi kunne for eksempel for et udtryk \(cos(x \cdot \pi / 4)\) ønske at finde væ
 \PYG{c+c1}{\PYGZsh{} Vi kan nu finde værdien, hvis x var 2 ved at skrive:}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{f}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_33_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_33_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \cos{\left(\frac{\pi x}{4} \right)}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle \frac{\sqrt{2}}{2}\end{split}
+\end{equation*}
 Vi kan også indsætte et udtryk ind i et andet:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1490,13 +1481,13 @@ Vi kan også indsætte et udtryk ind i et andet:
 
 \PYG{n}{f}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{g}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_35_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_35_1}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_35_2}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a b x + x\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle b^{2} + c^{2}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle a b \left(b^{2} + c^{2}\right) + b^{2} + c^{2}\end{split}
+\end{equation*}
 Her har vi altså defineret to udtryk og erstattet alle forekomster af x i det første udtryk med \(g = a^2 + b^2\). Vi kunne have opået det samme (nemmere, men mindre generelt) ved at skrive:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1505,9 +1496,9 @@ Her har vi altså defineret to udtryk og erstattet alle forekomster af x i det f
 
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_37_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a b \left(b^{2} + c^{2}\right) + b^{2} + c^{2}\end{split}
+\end{equation*}
 \sphinxstylestrong{Numerisk evaluering:}
 
 Når vi har et matematisk udtryk, er det en fordel også at kunne finde en numerisk approksimation. Til at gøre dette benytter vi metoden .evalf(cifre), som giver en approksimation med det angivne antal cifre. Det simpleste eksempel er, hvis vi ønsker at finde det første 10 cifre af pi:
@@ -1515,9 +1506,9 @@ Når vi har et matematisk udtryk, er det en fordel også at kunne finde en numer
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{pi}\PYG{o}{.}\PYG{n}{evalf}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} evalf(10), giver os de første 10 cifre}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_40_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle 3.141592654\end{split}
+\end{equation*}
 Vi kan benytte de to metoder i kombination, hvis vi eksempelvis vil finde værdien af et udtryk og så approksimere det.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1531,28 +1522,25 @@ Vi kan benytte de to metoder i kombination, hvis vi eksempelvis vil finde værdi
 \PYG{n}{f\PYGZus{}3}\PYG{o}{.}\PYG{n}{evalf}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Lad os finde værdien som decimaltal med 3 cifre.}
 \PYG{c+c1}{\PYGZsh{} ... hvilket er praktisk f.eks. hvis vi skulle tegne resultatet ind i en illustration}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_42_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_42_1}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_42_2}.png}
-
-\sphinxstylestrong{To do:}
-Få skrevet til seperat notebook. Den er tidligere stået sammen med andre
-
+\begin{equation*}
+\begin{split}\displaystyle e^{\frac{x}{5}}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle e^{\frac{3}{5}}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle 1.82\end{split}
+\end{equation*}
 
 \section{Grænser}
 \label{\detokenize{notebooks/sympy/Notebook2_limits:graenser}}\label{\detokenize{notebooks/sympy/Notebook2_limits::doc}}
-En anden anvendelse af symbolske udtryk er beregning af grænseværdier. Fokus i kurset er på beregning af grænseværdier med papir og blyant, men det er godt at kunne checke sine resultater eller lave mere avancerede beregninger med SymPy. Dette gøres relativt nemt ved at benytte sp.limit\sphinxhyphen{}funktionen. Syntaksen er
+En anden anvendelse af symbolske udtryk er beregning af grænseværdier. Fokus i kurset er på beregning af grænseværdier med papir og blyant, men det er godt at kunne checke sine resultater eller lave mere avancerede beregninger med SymPy. Dette gøres relativt nemt ved at benytte sp.limit\sphinxhyphen{}funktionen. Kaldesekvensen for funktionen er
 sp.limit(udtryk, variabel, grænse for variabel, retning). Efterlades retningen blank, beregnes grænseværdien oppefra / fra højre, og man får \sphinxstyleemphasis{ingen advarsel} selvom grænseværdierne fra henholdsvis højre og venstre er forskellige.
 
 Hvis vi nu eksempelvis vil beregne \(\lim_{x\to 0} e^{-x}\) skriver vi:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp}
-\PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{x}
-\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo}
+\PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp}            \PYG{c+c1}{\PYGZsh{} Hent sympy }
+\PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{x}       \PYG{c+c1}{\PYGZsh{} Vi vil bruge `x`}
+\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo}          \PYG{c+c1}{\PYGZsh{} Så kan vi tage grænserne i uendelig}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1560,11 +1548,11 @@ Hvis vi nu eksempelvis vil beregne \(\lim_{x\to 0} e^{-x}\) skriver vi:
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Beregn og vis grænseværdien af udtrykket for x gående mod 0 oppefra ...}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} ... og nedenfra}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_3_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_3_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle 1\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle 1\end{split}
+\end{equation*}
 hvilket ikke er den store overraskelse, eftersom \(e^{-x}\) er defineret i \(x=0\), er kontinuert, og \(e^0=1\).
 
 Vi kan også beregne grænseværdier for \(x\to\infty\):
@@ -1572,9 +1560,9 @@ Vi kan også beregne grænseværdier for \(x\to\infty\):
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{oo}\PYG{p}{)}    \PYG{c+c1}{\PYGZsh{} grænsen af udtrykket for x gående mod uendelig. Vi angiver ingen retning.}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_5_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle 0\end{split}
+\end{equation*}
 Vær særligt opmærksom på situationer, hvor grænseværdien kunne være forskellig oppefra og nedefra, hvilket oftest forkommer for udtryk på brøkform i det/de \(x\)\sphinxhyphen{}værdier, hvor nævneren antager værdien nul. Betragt f.eks. \(\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\) når \(x \to 0\):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1589,57 +1577,49 @@ Vær særligt opmærksom på situationer, hvor grænseværdien kunne være forsk
 \PYG{c+c1}{\PYGZsh{} Tag grænsen af udtrykket, når x går mod 0 først oppefra / fra højre }
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{poly\PYGZus{}div}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_7_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_7_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \frac{x^{4} + x^{2} + 1}{3 x^{3} - 19 x^{2} - x}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle -\infty\end{split}
+\end{equation*}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} ... og dernæst nedefra / fra venstre:}
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{poly\PYGZus{}div}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook2_limits_8_0}.png}
-
-
-\section{Ligningsløsning}
-\label{\detokenize{notebooks/sympy/Notebook3_ligninger:ligningslosning}}\label{\detokenize{notebooks/sympy/Notebook3_ligninger::doc}}
-\sphinxstylestrong{Foreslået ændringer}:
-Sprogligt kan stykkerne med solve/solveset måske lige strammes lidt op.
-
-Og så skal vi lige gentænke, hvordan vi præsenterer den numeriske løsning. Eventuelt kan vi bruge et andet eksempel. Men jeg synes stadig vi skal have det med, selv om Christian ikke er fan, så har vi alligevel brugt det ret meget i kurset.
-
+\begin{equation*}
+\begin{split}\displaystyle \infty\end{split}
+\end{equation*}
 
 \section{Ligninger}
-\label{\detokenize{notebooks/sympy/Notebook3_ligninger:ligninger}}
+\label{\detokenize{notebooks/sympy/Notebook3_ligninger:ligninger}}\label{\detokenize{notebooks/sympy/Notebook3_ligninger::doc}}
 Første trin for at løse ligninger er at få skrevet ligninger op i et sprog, Pyhton kan forstå. Det afgørende er her at indse at et lighedstegn kan have flere fundamentalt forskellige betydninger. Tidligere har vi tildelt variable bestemte værdier ved f.eks. at skrive k = 4, mens vi her vil bruge lighedstegnet til at beskrive et udsagn om sammenhængen mellem to udtryk. I SymPy\sphinxhyphen{}sprog er dette en \sphinxstyleemphasis{equality} og syntaksen er (når vi har importeret SymPy som sp som vi plejer) givet ved sp.Eq(venstre side, højre side). Pythagoras’ læresætning kan f.eks. opskrives som:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp}
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}             \PYG{c+c1}{\PYGZsh{} Vi definerer a, b og c som symbolske variable}
-\PYG{n}{sp}\PYG{o}{.}\PYG{n}{init\PYGZus{}printing}\PYG{p}{(}\PYG{p}{)}                        \PYG{c+c1}{\PYGZsh{} Aktiver pretty\PYGZhy{}printing}
-\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{display}       \PYG{c+c1}{\PYGZsh{} Hent vores printer til matematiske udtryk}
 
 \PYG{n}{Pytha} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{a} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{b} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{)}    \PYG{c+c1}{\PYGZsh{} Syntaks: sp.Eq(venstre side, højre side)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{Pytha}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_4_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a^{2} + b^{2} = c^{2}\end{split}
+\end{equation*}
 Man kan ligeledes danne ligninger ved at sammensætte allerede definerede udtryk, her eksemplificeret ved cosinusrelationen:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{theta}
+
 \PYG{n}{expr} \PYG{o}{=} \PYG{n}{a}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{b}\PYG{o}{*}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{theta}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Vi laver nu blot den ene side af ligningen som et udtryk (\PYGZdq{}expression\PYGZdq{})}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{)}
+
 \PYG{n}{cos\PYGZus{}relation} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{c}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{expr}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} Og vi kan nu sammensætte det}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{cos\PYGZus{}relation}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_6_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_6_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle c^{2} = a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\end{split}
+\end{equation*}
 Nu når vi har lighederne på plads, er det blevet tid til at lade SymPy regne for os. SymPy giver os to forskellige værktøjer til at løse ligninger, og det er lidt forskelligt, hvad de hver især er gode til.
 
 
@@ -1654,39 +1634,39 @@ Lad os prøve at løse en af overstående ligninger. Lad os tage helt standard P
 \PYG{n}{Pytha\PYGZus{}indsat} \PYG{o}{=} \PYG{n}{Pytha}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{p}{[}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{c}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{Pytha\PYGZus{}indsat}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_9_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_9_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle a^{2} + b^{2} = c^{2}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle b^{2} + 9 = 25\end{split}
+\end{equation*}
 Vi benytter nu solveset() til at løse denne. For en ligning virker denne funktion ved, at man angiver ligningen og den variabel, som man ønsker at løse for:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{solution} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{Pytha\PYGZus{}indsat}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_11_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{-4, 4\right\}\end{split}
+\end{equation*}
 Vi har altså nu fundet løsningerne til ligningen. I tilfældet med Pythagoras’ sætning leder vi efter en sidelængde, så vores løsning skal være et positivt tal. Vi kan indskrænke løsningsdomænet ved at give solveset et “domain”\sphinxhyphen{}keyword. Dette skal være et såkaldt \sphinxstyleemphasis{SymPy\sphinxhyphen{}set}, som er en lidt indviklet størrelse, men i langt de fleste tilfælde kan man slippe afsted med at bede om reelle tal ved at skrive sp.Reals eller ved at give et interval med sp.Interval(\sphinxstyleemphasis{fra}, \sphinxstyleemphasis{til}), hvor man kan bruge oo for uendelig (forudsat at oo er blevet importeret). For mere avancerede løsningsdomæner henvises til dokumentationen \sphinxhref{https://docs.sympy.org/latest/modules/sets.html}{her}. I dette tilfælde angiver vi et interval:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo}\PYG{p}{,} \PYG{n}{pi}\PYG{p}{,} \PYG{n}{I}           \PYG{c+c1}{\PYGZsh{} Vi importerer uendelig, pi og den imaginære konstant I }
+\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo}           \PYG{c+c1}{\PYGZsh{} Vi importerer uendelig}
 \PYG{n}{pos\PYGZus{}solution} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{Pytha\PYGZus{}indsat}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Interval}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{oo}\PYG{p}{)}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{pos\PYGZus{}solution}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_13_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{4\right\}\end{split}
+\end{equation*}
 solveset virker også hvis vi istedet for en ligning angiver et udtryk (altså uden lighedstegn). Da sætter SymPy udtrykket lig med 0 og løser den derved fremkomne ligning (i dette eksempel \(b^2-16 = 0\)):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{pos\PYGZus{}solution} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{b}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{16}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Interval}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{oo}\PYG{p}{)}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{pos\PYGZus{}solution}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_15_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{4\right\}\end{split}
+\end{equation*}
 Vi vil bruge den samme syntaks her, hvor vi vil finde rødder i et fjerdegrads polynomium.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1695,18 +1675,18 @@ Vi vil bruge den samme syntaks her, hvor vi vil finde rødder i et fjerdegrads p
 \PYG{n}{solutions} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}Da vi har angivet et udtryk, sætter SymPy udtrykket lig med 0 og løser.}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{solutions}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_17_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{-1, 1, - i, i\right\}\end{split}
+\end{equation*}
 Er vi kun interesserede i reelle løsninger, kan vi indskrænke domænet til de reelle tal:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{solutions\PYGZus{}real} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Reals}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{solutions\PYGZus{}real}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_19_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{-1, 1\right\}\end{split}
+\end{equation*}
 Solveset virker også, hvis vi ikke har en numerisk værdi for alle symboler, men ønsker den generelle løsning. Hvis vi f.eks. vil finde \(b\) i cosinusrelationen som defineret tidligere, kan vi skrive følgende:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1714,19 +1694,19 @@ Solveset virker også, hvis vi ikke har en numerisk værdi for alle symboler, me
 \PYG{n}{sol\PYGZus{}b} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{cos\PYGZus{}relation}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{sol\PYGZus{}b}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_21_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_21_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle c^{2} = a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle \left\{a \cos{\left(\theta \right)} - \sqrt{a^{2} \cos^{2}{\left(\theta \right)} - a^{2} + c^{2}}, a \cos{\left(\theta \right)} + \sqrt{a^{2} \cos^{2}{\left(\theta \right)} - a^{2} + c^{2}}\right\}\end{split}
+\end{equation*}
 Solveset() giver os løsninger skrevet op i mængdenotation for at give os de generelle fuldstændige løsninger. Selvom dette kan være meget fint i nogle tilfælde, ender vi dog i andre tilfælde med en generel og ganske ubrugelig løsning. Dette sker eksempelvis, hvis vi prøver at løse for \(\theta\) direkte:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{cos\PYGZus{}relation}\PYG{p}{,} \PYG{n}{theta}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_23_0}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle \left\{\theta \mid \theta \in \mathbb{C} \wedge - a^{2} + 2 a b \cos{\left(\theta \right)} - b^{2} + c^{2} = 0 \right\}\end{split}
+\end{equation*}
 Hvilket jo er rigtig nok (sammenlign med selve cosinusrelationen!), men ikke fortæller os så meget, vi ikke vidste i forvejen. Det leder os videre til den anden metode til ligningsløsning:
 
 
@@ -1738,20 +1718,35 @@ Solve() er den ældre funktion, som på trods af at være mindre generel oftest 
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{cos\PYGZus{}relation}\PYG{p}{,} \PYG{n}{theta}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_25_0}.png}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZhy{}acos((a**2 + b**2 \PYGZhy{} c**2)/(2*a*b)) + 2*pi,
+ acos((a**2 + b**2 \PYGZhy{} c**2)/(2*a*b))]
+\end{sphinxVerbatim}
 
-men man kan dog ikke angive et domæne. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen \(b\) ved hjælp af Pythagoras’ sætning, vil opgaven i solve\sphinxhyphen{}sprog lyde:
+\sphinxstyleemphasis{Vær opmærksom på formatet, da vi her får en liste kan vi loope over den og bruge \sphinxcode{\sphinxupquote{display}} på løsninger}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sols} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{cos\PYGZus{}relation}\PYG{p}{,} \PYG{n}{theta}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{løsning} \PYG{o+ow}{in} \PYG{n}{sols}\PYG{p}{:}
+    \PYG{n}{display}\PYG{p}{(}\PYG{n}{løsning}\PYG{p}{)}
+\end{sphinxVerbatim}
+\begin{equation*}
+\begin{split}\displaystyle - \operatorname{acos}{\left(\frac{a^{2} + b^{2} - c^{2}}{2 a b} \right)} + 2 \pi\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle \operatorname{acos}{\left(\frac{a^{2} + b^{2} - c^{2}}{2 a b} \right)}\end{split}
+\end{equation*}
+Yderligere, kan vi angive et domæne for løsningen. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen \(b\) ved hjælp af Pythagoras’ sætning, vil opgaven i solve\sphinxhyphen{}sprog lyde:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{Pytha\PYGZus{}indsat}\PYG{p}{)}
 \PYG{n}{sol\PYGZus{}b} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{p}{[}\PYG{n}{Pytha\PYGZus{}indsat}\PYG{p}{,} \PYG{n}{b} \PYG{o}{\PYGZgt{}}\PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{sol\PYGZus{}b}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_27_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_27_1}.png}
-
+\begin{equation*}
+\begin{split}\displaystyle b^{2} + 9 = 25\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle b = 4\end{split}
+\end{equation*}
 Overordnet set er solve rigtig god til at give én løsning. Det kan altså ofte bruges i sammenhænge, hvor man vil tjekke et resultat, eller hvis man blot skal bruge en vilkårlig løsning og ikke den fuldstændige løsning.
 Eksempel: Vi løser \(\sin(\theta) = 1\):
 
@@ -1759,7 +1754,9 @@ Eksempel: Vi løser \(\sin(\theta) = 1\):
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{theta}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{theta}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_29_0}.png}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[pi/2]
+\end{sphinxVerbatim}
 
 Her får vi altså en løsning, og det vil ofte være den løsning, vi leder efter. Men da \(\sin(x)\) er periodisk, ved vi, at der er flere løsninger. Så svaret er ikke fuldkomment.
 
@@ -1768,15 +1765,21 @@ I modsætning hertil har solveset den fordel, at den giver et  matematisk string
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solveset}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{theta}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{theta}\PYG{p}{)}
 \end{sphinxVerbatim}
+\begin{equation*}
+\begin{split}\displaystyle \left\{2 n \pi + \frac{\pi}{2}\; |\; n \in \mathbb{Z}\right\}\end{split}
+\end{equation*}
 
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_31_0}.png}
-
-
-\section{Numerisk løsning}
+\subsection{Numerisk løsning}
 \label{\detokenize{notebooks/sympy/Notebook3_ligninger:numerisk-losning}}
 Nogle gange kan vi komme ud for en situation, hvor en opgave ikke har en brugbar eksakt, symbolsk løsning, eller at hverken solve eller solveset giver et svar, vi kan bruge. Vi kan så benytte sp.nsolve til numerisk løsning af ligninger. Vi bruger således SymPy (som er designet til at være et symbolsk værktøj) til et formål, der er på kanten af dets anvendelsesområde, og vi skal derfor bruge værktøjet med forsigtighed. Det er derfor en god idé i disse tilfælde at tegne grafer for at illustrere opgaven. Derved kan vi checke at svaret rent faktisk giver mening i forhold til opgaven, og det tillader os også at give et ret godt gæt på en løsning.
 
-Derefter indskriver man den numeriske løsning som:sp.nsolve(ligning, variabel, startgæt) , og dette vil nu prøve at udregne en numerisk værdi for en løsning.
+Derefter indskriver man den numeriske løsning som:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sp}\PYG{o}{.}\PYG{n}{nsolve}\PYG{p}{(}\PYG{n}{ligning}\PYG{p}{,} \PYG{n}{variabel}\PYG{p}{,} \PYG{n}{startgæt}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+og dette vil nu prøve at udregne en numerisk værdi for en løsning.
 
 Hvis nu vi eksempelvis vil finde en løsning til \(x\log(x) = \sin(x)\), starter vi med at lave et plot (se den anden Notebook til uge 3 for en mere grundig forklaring af syntaksen).
 
@@ -1784,58 +1787,42 @@ Hvis nu vi eksempelvis vil finde en løsning til \(x\log(x) = \sin(x)\), starter
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{x}
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{plotting} \PYG{k+kn}{import} \PYG{n}{plot}
 
-\PYG{n}{figur} \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{figur} \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{Notebook3_ligninger_34_0}.png}
 
-Heraf ser vi altså, at et godt start gæt ville være omkring \(x=1.7\). Dette vil vi nu bruge.
+Heraf ser vi altså, at et godt start gæt ville være omkring \(x=1.3\). Dette vil vi nu bruge.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{lign} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{lign} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)}
 \PYG{n}{display}\PYG{p}{(}\PYG{n}{lign}\PYG{p}{)}
-\PYG{n}{sp}\PYG{o}{.}\PYG{n}{nsolve}\PYG{p}{(}\PYG{n}{lign}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mf}{1.75}\PYG{p}{)}
+\PYG{n}{sp}\PYG{o}{.}\PYG{n}{nsolve}\PYG{p}{(}\PYG{n}{lign}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mf}{1.3}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_36_0}.png}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_36_1}.png}
-
-Havde vi gættet anderledes eksempelvis \(x = - 1\) havde vi også fået et andet resultat, da nsolve forsøger at finde en løsning uden at bekymre sig om hvorvidt løsningen er korrekt. Her er eksempel:
+\begin{equation*}
+\begin{split}\displaystyle x \log{\left(x + 1 \right)} = \sin{\left(x \right)}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\displaystyle 1.1852999437201\end{split}
+\end{equation*}
+Sympy leder med \sphinxcode{\sphinxupquote{nsolve}} blot efter en løsning. Vi kan altså ende med at få forskellige svar alt efter, hvad vores startgæt er. Gætter vi \(x = 0.1\) får vi:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{sp}\PYG{o}{.}\PYG{n}{nsolve}\PYG{p}{(}\PYG{n}{lign}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{sp}\PYG{o}{.}\PYG{n}{nsolve}\PYG{p}{(}\PYG{n}{lign}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{)}
 \end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_38_0}.png}
-
-som er et tal tæt på 0. De to grafer er rigtigt nok tæt på hinanden for meget små værdier af \(x\), og på grafen kan det se ud som om at de to grafer krydser i \(x = 0\). Da \(x\log(x)\) slet ikke er defineret for \(x=0\), beregner vi (som vi så det i notebook 2)  grænseværdien:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{display}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{limit}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Beregn og vis grænseværdien af udtrykket for x gående mod 0 oppefra ...}
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{Notebook3_ligninger_40_0}.png}
-
-hvilket bekræfter at den med nsolve fundne løsning ikke er helt tosset, selvom den ikke er rigtig.
-Dette er et eksempel på SymPys begrænsninger til numeriske udregninger.
+\begin{equation*}
+\begin{split}\displaystyle 1.64437672593563 \cdot 10^{-51}\end{split}
+\end{equation*}
+som er en numerisk værdi, som må betragtes som 0. Vi har altså her fundet den anden løsning. Det er derfor rigtig vigtigt at være opmærksom på, hvilken løsning vi kigger efter, og lave vores gæt efter dette.
 
 
 \section{Plotting i SymPy}
 \label{\detokenize{notebooks/sympy/Notebook3_plot:plotting-i-sympy}}\label{\detokenize{notebooks/sympy/Notebook3_plot::doc}}
-\sphinxstylestrong{Foreslået ændringer:}I denne notebook har Christian en del kommentarer til forskellige formuleringer. Dem synes jeg godt, at vi kan indrage. Eksempelvis kan vi kalde funktioner med et keyword på hver linje, hvilket gør det en del mere overskueligt.
-
-Der er ikke nogle større ændringer til indhold, men blot en masse småting, som vi nemt kan ændre.
-
 Vi kan tegne grafer for funktioner og udtryk ved hjælp af SymPy. Det mest grundlæggende værktøj er funktionen plot, som vi importerer fra sympy.plotting her:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} Den anbefalede standardblok for SymPy:}
 \PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp}                    \PYG{c+c1}{\PYGZsh{} Importer sympy}
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{abc} \PYG{k+kn}{import} \PYG{n}{x}               \PYG{c+c1}{\PYGZsh{} Vi vælger at importere x som symbolsk variabel.}
-\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{oo}\PYG{p}{,} \PYG{n}{pi}\PYG{p}{,} \PYG{n}{I}           \PYG{c+c1}{\PYGZsh{} Vi importerer uendelig, pi og den imaginære konstant I }
-\PYG{n}{sp}\PYG{o}{.}\PYG{n}{init\PYGZus{}printing}\PYG{p}{(}\PYG{p}{)}                    \PYG{c+c1}{\PYGZsh{} Aktiver pretty\PYGZhy{}printing}
-\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{display}   \PYG{c+c1}{\PYGZsh{} Hent vores printer til matematiske udtryk}
 
 \PYG{c+c1}{\PYGZsh{} Specifik import til plotteformål:}
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{plotting} \PYG{k+kn}{import} \PYG{n}{plot}
@@ -1860,7 +1847,8 @@ Bemærk semikolonet, der beder Python om ikke at skrive outputtet, som her ville
 Hvis man ønsker at tegne grafen for et bestemt \(x\)\sphinxhyphen{}interval, skriver man plot(udtryk, (variabel, start, slut)). Eksempel:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{plot}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kn}{from} \PYG{n+nn}{sympy} \PYG{k+kn}{import} \PYG{n}{pi}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{pi}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{Notebook3_plot_8_0}.png}
@@ -1900,7 +1888,11 @@ Andre keywords kan findes i \sphinxhref{https://docs.sympy.org/latest/modules/pl
 Med disse muligheder kan vi forbedre vores seneste figur:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{plot}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{)}\PYG{p}{,} \PYG{n}{title} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Harmoniske svingninger}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{legend} \PYG{o}{=} \PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{xlabel} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{x}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ylabel} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Amplitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{)}\PYG{p}{,} 
+     \PYG{n}{title} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Harmoniske svingninger}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} 
+     \PYG{n}{legend} \PYG{o}{=} \PYG{k+kc}{True}\PYG{p}{,} 
+     \PYG{n}{xlabel} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{x}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} 
+     \PYG{n}{ylabel} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Amplitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{Notebook3_plot_13_0}.png}
