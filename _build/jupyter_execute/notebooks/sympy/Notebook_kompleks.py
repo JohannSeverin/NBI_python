@@ -289,7 +289,7 @@ import matplotlib.pyplot as plt
 plt.plot(z_numerisk.real, z_numerisk.imag, "x", color = "red")
 
 
-# Ønsker man at lave plottet med viste akser kan man gøre følgende, som rykker den venstre og nederste akse i midten og skjuler de to andre:
+# Ønsker man at lave plottet med "de klassiske akser", der krydser hinanden i (0,0), kan man gøre følgende:
 
 # In[29]:
 
