@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Matrix reduktion, ligningsløsning og inverse matricer
+# # Matrix-reduktion, ligningsløsning og inverse matricer
 
-# En af de store fordele ved linær algebra er, at vi nemt kan løse linære ligningssystemer. Til dette kan vi gøre brug af lidt forskellige værktøjer i SymPy, som vil blive gennemgået i denne sektion. 
+# En af de store fordele ved lineær algebra er, at vi nemt kan løse lineære ligningssystemer. Til dette kan vi gøre brug af lidt forskellige værktøjer i SymPy, som vil blive gennemgået i denne sektion. 
 
 # In[1]:
 
@@ -23,7 +23,7 @@ display(A)
 A.rref()
 
 
-# Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>. _Man kan få printet tingene fint, hvis man i starten af Notebooken kalder `sp.init_printing()`, men det giver lidt bøvl med vores format, og vi har derfor udeladt. Alternativt kan man blot indeksere løsningen:_
+# Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>. _Man kan få printet tingene fint, hvis man i starten af Notebooken kalder `sp.init_printing()`, men det giver lidt bøvl med vores noteformat, og vi har derfor udeladt dette. Alternativt kan man blot indeksere løsningen:_
 
 # In[3]:
 
@@ -34,7 +34,7 @@ display(A.rref()[0],
 
 # ## Ligningssystemer med een løsning
 
-# Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælpe af matrixregning. Vi kan f.eks. omskrive:
+# Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælp af matrixregning. Vi kan f.eks. omskrive:
 
 # $\begin{aligned} x_1 + 3 x_3 &= 20 \\ 4x_2 + 6 x_3 &= 74 \\ 3 x_1 + 6x_2 + 11 x_3 &= 136 \end{aligned}$
 
@@ -72,10 +72,19 @@ A * sol
 # 
 # $\displaystyle \left[\begin{matrix}1 & 0 & 3\\0 & 4 & 6\\3 & 6 & 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}d\\e\\f\end{matrix}\right]$
 
+# In[7]:
+
+
+from sympy.abc import d, e, f
+b = Matrix([d, e, f])
+
+A.LUsolve(b)
+
+
 # ## Omvendte/inverse matricer
 # Som beskrevet i Messer afsnit 5.2 kan matricer inverteres. Dette gøres meget simpelt for en matrix $A$ med syntaksen <code>A.inv()</code>:
 
-# In[6]:
+# In[8]:
 
 
 A.inv()
@@ -89,27 +98,27 @@ A.inv()
 #     
 # hvilket i Python-syntax gøres ved
 
-# In[7]:
+# In[9]:
 
 
 A.inv() * b
 
 
 # ## Matrixrang 
-# Bemærk at hverken man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis  ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.
+# Bemærk at man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.
 # 
 # Årsagen hertil er at koefficientmatricen ikke har fuld rang. Rangen for en matrix $A$ kan findes ved <code>A.rank()</code>, og angiver antallet af ledende et-taller i den matrix, der fremkommer ved at føre $A$ på reduceret række-echelonform.
 # 
 # Af denne grund, og i overensstemmelse med Messer sætning 5.12, er det derfor ingen overraskelse at se at $A$ fra overfor, der repræsenterer 3 lineært uafgængige ligninger med 3 ubekendte, har rang 3:
 
-# In[8]:
+# In[10]:
 
 
 A.rank()
 
 
 # ## Ligningssystemer med flere løsninger: frie parametre
-# Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal fri variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix $A$ er mindre end antallet af variable i ligningssystemet.
+# Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal frie variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix $A$ er mindre end antallet af variable i ligningssystemet.
 # I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ikke virke.
 # 
 # Eksempel: Vi vil gerne finde den fuldstændige løsning til:  
@@ -118,7 +127,7 @@ A.rank()
 # 
 # En mulighed er at føre $A$ på reduceret række-echelonform:
 
-# In[9]:
+# In[11]:
 
 
 A = Matrix([[1, 0, 3, 1], [0, 4, 6, 1], [-1, 4, 3, 0]])
@@ -133,7 +142,7 @@ A.rref()[0]
 #     
 # Men vi kan også benytte metoden <code>.gauss_jordan_solve()</code> som efterligner denne metode, blot med en lidt anden typografi:
 
-# In[10]:
+# In[12]:
 
 
 b = Matrix([0, 0, 0])

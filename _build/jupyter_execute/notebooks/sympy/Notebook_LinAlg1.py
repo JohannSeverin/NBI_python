@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **Foreslået ændringer**  
-#     I denne notebook skal der nok kun foretages småændringer, så den er konsistent med resten. Vi skal lige overveje, om det giver mening at have disse kapitler sammen, eller om det skal splittes yderligere. Jeg tænker primært på, at man skal kunne finde rundt i Notebooks, så vi skal nok have en bedre titel end indledende og avanceret, så man kan finde ud af, om eksempelvis en invers matrix er i den ene eller i den anden. 
-
 # # Vektorer og matricer
 
-# I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importerer SymPy.
+# I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere SymPy.
 
 # In[1]:
 
@@ -26,7 +23,7 @@ import sympy as sp                    # Importer sympy
 # 
 # Eksempel:
 
-# In[19]:
+# In[2]:
 
 
 from sympy import Matrix
@@ -38,7 +35,7 @@ vektor1
 
 # Det ligger os selvfølgelig også frit for at kombinere tal og variable:
 
-# In[20]:
+# In[3]:
 
 
 vektor2 = Matrix([a, sp.Rational(3, 4), b ** 2 / 2])   # Husk at bruge sp.Rational() til at definere brøker
@@ -65,7 +62,7 @@ a * vektor2       # a er importeret som et symbol, så vi kan bruge det som en s
 # 
 # Et indre produkt mellem to vektorer <code>vektor1</code> og <code>vektor2</code> beregnes med <code>vektor1.dot(vektor2)</code>:
 
-# In[21]:
+# In[6]:
 
 
 vektor1.dot(vektor2)
@@ -86,7 +83,7 @@ display(A)
 
 # Det er naturligvis en forudsætning, at alle rækkerne har lige mange elementer. 
 # 
-# Som for vektorer, kan vi benytte symboler i matricer:
+# Som for vektorer kan vi benytte symboler i matricer:
 
 # In[8]:
 
@@ -119,7 +116,7 @@ A * B
 
 # Ligesom med arrays i numpy, kan vi også trække rækker/kolonner ud af matricer. Hvis vi vil have det øverste element til venstre i ovenstående matrix, kan vi gøre det ved:
 
-# In[22]:
+# In[12]:
 
 
 C = A * B
@@ -128,7 +125,7 @@ C[0, 0]
 
 # Eller vi kan tage den tredje søjle ved:
 
-# In[24]:
+# In[13]:
 
 
 C[:, 2]
@@ -199,4 +196,4 @@ rum_rot = diag(plan_rot, 1)
 rum_rot
 
 
-# Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. [Disse metoder kan findes i dokumentationen her](https://docs.sympy.org/latest/modules/matrices/matrices.html) med vil sjældent være nødvendige i LinALys-kurset.
+# Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. [Disse metoder kan findes i dokumentationen her](https://docs.sympy.org/latest/modules/matrices/matrices.html) men vil ikke være nødvendige i LinALys-kurset.

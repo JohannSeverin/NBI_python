@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.11. Komplekse tal i SymPy &#8212; Python i LinAlys og MekRel</title>
+    <title>5.12. Komplekse tal i SymPy &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="5.10. Flere metoder i Linær Algebra" href="Notebook_LinAlg_2.html" />
+    <link rel="prev" title="5.11. Egenværdier og -vektorer" href="Notebook_Linalg_2-5_Eigen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -196,7 +196,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -204,9 +204,14 @@
      5.10. Flere metoder i Linær Algebra
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -317,39 +322,39 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#almindelige-regneoperationer-med-komplekse-tal">
-   5.11.1. Almindelige regneoperationer med komplekse tal
+   5.12.1. Almindelige regneoperationer med komplekse tal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notationsformer-og-skift-mellem-disse">
-   5.11.2. Notationsformer og skift mellem disse
+   5.12.2. Notationsformer og skift mellem disse
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kartesiske-koordinater-real-og-imaginaerdel">
-     5.11.2.1. Kartesiske koordinater, real og imaginærdel.
+     5.12.2.1. Kartesiske koordinater, real og imaginærdel.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#modulus-og-argument">
-     5.11.2.2. Modulus og argument
+     5.12.2.2. Modulus og argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kompleks-konjugering">
-     5.11.2.3. Kompleks konjugering
+     5.12.2.3. Kompleks konjugering
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rodder-og-ligninger">
-   5.11.3. Rødder og ligninger
+   5.12.3. Rødder og ligninger
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualisering-i-det-komplekse-plan">
-   5.11.4. Visualisering i det komplekse plan
+   5.12.4. Visualisering i det komplekse plan
   </a>
  </li>
 </ul>
@@ -364,9 +369,9 @@
               <div>
                 
   <div class="section" id="komplekse-tal-i-sympy">
-<h1><span class="section-number">5.11. </span>Komplekse tal i SymPy<a class="headerlink" href="#komplekse-tal-i-sympy" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.12. </span>Komplekse tal i SymPy<a class="headerlink" href="#komplekse-tal-i-sympy" title="Permalink to this headline">¶</a></h1>
 <p>I LinALys lærer du at regne med komplekse tal. SymPy kan være en hjælp f.eks. til at visualisere alle løsninger til komplekse ligninger, men er i kurset primært et værktøj som du kan bruge til at checke de beregninger, der indgår i pointopgaverne og den afsluttende eksamen. Især hvis du har erfaring med at du laver mange regnefejl i omfattende beregninger, kan det være godt at checke beregningerne trin for trin i SymPy.</p>
-<p>Vi starter med at importere den imaginære enhed ved hjælp af <code>from sympy import I</code>, <span class="math notranslate nohighlight">\(I\)</span> er SymPys standardsyntaks for det imaginære tal <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Vi starter med at importere den imaginære enhed ved hjælp af <code>from sympy import I</code>, <span class="math notranslate nohighlight">\(I\)</span> er SymPys standardbetegnelse for det imaginære tal <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -376,7 +381,7 @@
 </div>
 </div>
 <div class="section" id="almindelige-regneoperationer-med-komplekse-tal">
-<h2><span class="section-number">5.11.1. </span>Almindelige regneoperationer med komplekse tal<a class="headerlink" href="#almindelige-regneoperationer-med-komplekse-tal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.1. </span>Almindelige regneoperationer med komplekse tal<a class="headerlink" href="#almindelige-regneoperationer-med-komplekse-tal" title="Permalink to this headline">¶</a></h2>
 <p>Når vi benytter <code>I</code>, får vi automatisk et komplekst tal, og SymPy behandler det som sådan ganske automatisk. Vi kan altså skrive <span class="math notranslate nohighlight">\(z = 3 + 4i\)</span> som <code>z = 3 + 4 * I</code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -502,13 +507,13 @@
 \[\displaystyle -11 - 2 i\]</div>
 </div>
 </div>
-<p>SymPy ved, hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
+<p>SymPy ved, hvordan den skal håndtere komplekse tal i mange sammenhænge, hvor fortolkningen er entydig. Man kan altså blot bruge komplekse tal i <code>sp.exp()</code>, <code>sp.cos()</code> eller lignende.</p>
 </div>
 <div class="section" id="notationsformer-og-skift-mellem-disse">
-<h2><span class="section-number">5.11.2. </span>Notationsformer og skift mellem disse<a class="headerlink" href="#notationsformer-og-skift-mellem-disse" title="Permalink to this headline">¶</a></h2>
-<p>Når vi arbejder med komplekse tal, benytter vi enten kartetiske koordinater eller modulus/argument. I SymPy er der en del metoder, til at konverterer den ene til den anden, som vi vil gennemgå i dette afsnit.</p>
+<h2><span class="section-number">5.12.2. </span>Notationsformer og skift mellem disse<a class="headerlink" href="#notationsformer-og-skift-mellem-disse" title="Permalink to this headline">¶</a></h2>
+<p>Når vi arbejder med komplekse tal, benytter vi enten kartetiske koordinater eller modulus/argument. I SymPy er der en del metoder til at konverterer den ene eller anden vej, som vi vil gennemgå i dette afsnit.</p>
 <div class="section" id="kartesiske-koordinater-real-og-imaginaerdel">
-<h3><span class="section-number">5.11.2.1. </span>Kartesiske koordinater, real og imaginærdel.<a class="headerlink" href="#kartesiske-koordinater-real-og-imaginaerdel" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.1. </span>Kartesiske koordinater, real og imaginærdel.<a class="headerlink" href="#kartesiske-koordinater-real-og-imaginaerdel" title="Permalink to this headline">¶</a></h3>
 <p>Funktionerne <code class="docutils literal notranslate"><span class="pre">sp.re()</span></code> og <code class="docutils literal notranslate"><span class="pre">sp.im()</span></code> giver real- og imaginærdelen af et komplekst tal. Det er naturligvis trivielt hvis vi starter med et imaginært tal af formen <span class="math notranslate nohighlight">\(x + iy\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,7 +554,7 @@
 </div>
 </div>
 <div class="section" id="modulus-og-argument">
-<h3><span class="section-number">5.11.2.2. </span>Modulus og argument<a class="headerlink" href="#modulus-og-argument" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.2. </span>Modulus og argument<a class="headerlink" href="#modulus-og-argument" title="Permalink to this headline">¶</a></h3>
 <p>Vi kan desuden nemt beregne modulus og argument. Modulus for et komplekst tal er det samme som tallets absolutte værdi (TL s. 126) og findes med <code>sp.Abs()</code>. Bemærk at man bruger et stort A for at adskille kommandoen fra Pythons abs-funktion. For symbolske udtryk vil SymPy dog automatisk bruge sp.Abs() selv hvis vi bruger et lille a. Så for de to tal defineret ovenfor får vi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,7 +585,7 @@
 \[\displaystyle \frac{\pi}{3}\]</div>
 </div>
 </div>
-<p>Hvorefter vi som nævnt tidligere kan bruge <code>.evalf()</code>, hvis vi vil have et bud på værdien af <span class="math notranslate nohighlight">\(-\arctan (7/10)\)</span> med fire decimaler</p>
+<p>Hvorefter vi som nævnt tidligere kan bruge <code>.evalf()</code>, hvis vi f.eks. vil have et bud på værdien af <span class="math notranslate nohighlight">\(-\arctan (7/10)\)</span> med fire decimaler</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -594,8 +599,8 @@
 </div>
 </div>
 <div class="section" id="kompleks-konjugering">
-<h3><span class="section-number">5.11.2.3. </span>Kompleks konjugering<a class="headerlink" href="#kompleks-konjugering" title="Permalink to this headline">¶</a></h3>
-<p>Vi vil ret ofte benytte os af kompleks konjugering, hvor vi skifter fortegn på imaginærdelen (eller spejler i den reelle akse). Dette kan vi gøre ved brug af <code>sp.conjugate()</code>, som virker på imaginære tal uanset notationsform. Bemærk at funktionen hedder det samme som den tilsvarende funktion for matricer, som vi kender fra Lineær Algebra, men som har en anden syntax:</p>
+<h3><span class="section-number">5.12.2.3. </span>Kompleks konjugering<a class="headerlink" href="#kompleks-konjugering" title="Permalink to this headline">¶</a></h3>
+<p>Vi vil ret ofte benytte os af kompleks konjugering, hvor vi skifter fortegn på imaginærdelen (svarende til at vi spejler i den reelle akse). Dette kan vi gøre ved brug af <code>sp.conjugate()</code>, som virker på imaginære tal uanset notationsform. Bemærk at funktionen hedder det samme som den tilsvarende funktion for matricer, som vi kender fra Lineær Algebra, men som har en anden kaldesekvens:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>
@@ -630,7 +635,7 @@
 </div>
 </div>
 <div class="section" id="rodder-og-ligninger">
-<h2><span class="section-number">5.11.3. </span>Rødder og ligninger<a class="headerlink" href="#rodder-og-ligninger" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.3. </span>Rødder og ligninger<a class="headerlink" href="#rodder-og-ligninger" title="Permalink to this headline">¶</a></h2>
 <p>En central egenskab ved de komplekse tal er, at et polynomium af n’te grad altid har netop n rødder (med multiplicitet). Vi skal ofte finde rødder i polynomier og løsninger til ligninger, og her indgår der ofte kvadratrødder og andre rødder af komplekse tal. Se TK 3.4.2 s. 141, hvor det fremgår at der altid er netop <span class="math notranslate nohighlight">\(n\)</span> n’te rødder. Når vi vil finde den n’te rod af et komplekst tal, benytter vi <code>sp.root</code>. Syntaksen er således, at <span class="math notranslate nohighlight">\(\sqrt[n]{z}\)</span> skrives som</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">root</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">hvilken_rod</span><span class="p">)</span>
 </pre></div>
@@ -755,11 +760,11 @@ SymPy, hvilken af de <span class="math notranslate nohighlight">\(n\)</span> rø
 </div>
 </div>
 <div class="section" id="visualisering-i-det-komplekse-plan">
-<h2><span class="section-number">5.11.4. </span>Visualisering i det komplekse plan<a class="headerlink" href="#visualisering-i-det-komplekse-plan" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.4. </span>Visualisering i det komplekse plan<a class="headerlink" href="#visualisering-i-det-komplekse-plan" title="Permalink to this headline">¶</a></h2>
 <p>Der er ikke et decideret tegneværktøj til komplekse tal i SymPy. Vi tager derfor de to værktøj, som I har set i MekRel frem. <em>NumPy</em> og <em>Matplotlib</em>, da dette langt hen af vejen vil give de mest elegante løsninger. Når vi gør dette vil vi fra numpy importerer <code class="docutils literal notranslate"><span class="pre">array</span></code>, og så vil vi bruge <code class="docutils literal notranslate"><span class="pre">plot</span></code> fra Matplotlib. Se eventuelt <a class="reference internal" href="../MekRel/Intro_til_MekRel.html"><span class="doc std std-doc">noterne fra Python i Mekrel</span></a>.</p>
-<p>Når vi først har en liste af komplekse tal i SymPy, kan vi benytte <code class="docutils literal notranslate"><span class="pre">array</span></code> sammen med nøgleordet <code class="docutils literal notranslate"><span class="pre">dtype</span> <span class="pre">=</span> <span class="pre">complex</span></code> til at danne et numerisk og komplekst numpy array.</p>
-<p>Når vi først har en liste, kan vi nu lave lister over real-delene og de komplekse dele med hhv. <code class="docutils literal notranslate"><span class="pre">.real</span></code> og <code class="docutils literal notranslate"><span class="pre">.imag</span></code>, og så bruge <code class="docutils literal notranslate"><span class="pre">plot</span></code> fra matplotlib til at vise dette.</p>
-<p>Vi laver her et eksempel, hvor vi vil visualiserer et komplekst tal opløftet i en stigende potens.</p>
+<p>Når vi først har en liste af komplekse tal i SymPy, kan vi benytte <code class="docutils literal notranslate"><span class="pre">array</span></code> sammen med nøgleordet <code class="docutils literal notranslate"><span class="pre">dtype</span> <span class="pre">=</span> <span class="pre">complex</span></code> til at danne et numerisk numpy-array med komplekse tal.</p>
+<p>Når vi først har en liste, kan vi lave lister over real-delene og de komplekse dele med hhv. <code class="docutils literal notranslate"><span class="pre">.real</span></code> og <code class="docutils literal notranslate"><span class="pre">.imag</span></code>, og så bruge <code class="docutils literal notranslate"><span class="pre">plot</span></code> fra matplotlib til at vise dette.</p>
+<p>Vi viser her et eksempel, hvor vi visualiserer et komplekst tal opløftet i en stigende potens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi tager et eksempel med (1 + i/2)^n for n = 0, ..., 11</span>
@@ -866,7 +871,7 @@ SymPy, hvilken af de <span class="math notranslate nohighlight">\(n\)</span> rø
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_LinAlg_2.html" title="previous page"><span class="section-number">5.10. </span>Flere metoder i Linær Algebra</a>
+    <a class='left-prev' id="prev-link" href="Notebook_Linalg_2-5_Eigen.html" title="previous page"><span class="section-number">5.11. </span>Egenværdier og -vektorer</a>
 
         </div>
         

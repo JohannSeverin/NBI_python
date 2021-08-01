@@ -28,4 +28,5 @@ chapters:
   - file: notebooks/sympy/Notebook_LinAlg1
   - file: notebooks/sympy/Notebook_LinAlg1_5
   - file: notebooks/sympy/Notebook_LinAlg_2
+  - file: notebooks/sympy/Notebook_Linalg_2-5_Eigen
   - file: notebooks/sympy/Notebook_kompleks

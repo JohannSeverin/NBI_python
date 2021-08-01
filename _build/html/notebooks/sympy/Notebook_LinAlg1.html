@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.9. Matrix reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
+    <link rel="next" title="5.9. Matrix-reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
     <link rel="prev" title="5.7. Graftegning for funktioner af flere variable" href="Notebook_FlereVar_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -342,11 +347,9 @@
         
               <div>
                 
-  <p><strong>Foreslået ændringer</strong><br />
-I denne notebook skal der nok kun foretages småændringer, så den er konsistent med resten. Vi skal lige overveje, om det giver mening at have disse kapitler sammen, eller om det skal splittes yderligere. Jeg tænker primært på, at man skal kunne finde rundt i Notebooks, så vi skal nok have en bedre titel end indledende og avanceret, så man kan finde ud af, om eksempelvis en invers matrix er i den ene eller i den anden.</p>
-<div class="section" id="vektorer-og-matricer">
+  <div class="section" id="vektorer-og-matricer">
 <h1><span class="section-number">5.8. </span>Vektorer og matricer<a class="headerlink" href="#vektorer-og-matricer" title="Permalink to this headline">¶</a></h1>
-<p>I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importerer SymPy.</p>
+<p>I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
@@ -444,7 +447,7 @@ I denne notebook skal der nok kun foretages småændringer, så den er konsisten
 </div>
 </div>
 <p>Det er naturligvis en forudsætning, at alle rækkerne har lige mange elementer.</p>
-<p>Som for vektorer, kan vi benytte symboler i matricer:</p>
+<p>Som for vektorer kan vi benytte symboler i matricer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]])</span>
@@ -608,7 +611,7 @@ I denne notebook skal der nok kun foretages småændringer, så den er konsisten
 \[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\theta \right)} &amp; - \sin{\left(\theta \right)} &amp; 0\\\sin{\left(\theta \right)} &amp; \cos{\left(\theta \right)} &amp; 0\\0 &amp; 0 &amp; 1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-<p>Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. <a class="reference external" href="https://docs.sympy.org/latest/modules/matrices/matrices.html">Disse metoder kan findes i dokumentationen her</a> med vil sjældent være nødvendige i LinALys-kurset.</p>
+<p>Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. <a class="reference external" href="https://docs.sympy.org/latest/modules/matrices/matrices.html">Disse metoder kan findes i dokumentationen her</a> men vil ikke være nødvendige i LinALys-kurset.</p>
 </div>
 </div>
 
@@ -638,7 +641,7 @@ I denne notebook skal der nok kun foretages småændringer, så den er konsisten
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Notebook_FlereVar_plot.html" title="previous page"><span class="section-number">5.7. </span>Graftegning for funktioner af flere variable</a>
-    <a class='right-next' id="next-link" href="Notebook_LinAlg1_5.html" title="next page"><span class="section-number">5.9. </span>Matrix reduktion, ligningsløsning og inverse matricer</a>
+    <a class='right-next' id="next-link" href="Notebook_LinAlg1_5.html" title="next page"><span class="section-number">5.9. </span>Matrix-reduktion, ligningsløsning og inverse matricer</a>
 
         </div>
         

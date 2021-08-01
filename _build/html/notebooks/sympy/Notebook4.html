@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -389,7 +394,7 @@
 \[\displaystyle \cos^{2}{\left(x \right)} + 1\]</div>
 </div>
 </div>
-<p>Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet <span class="math notranslate nohighlight">\(\cos^2(x) + sin^2(x) = 1\)</span>.</p>
+<p>Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet <span class="math notranslate nohighlight">\(\cos^2(x) + \sin^2(x) = 1\)</span>.</p>
 <p>Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket ikke altid stemmer med vores egne præferencer.</p>
 <p>Et eksempel på dette kunne være følgende udtryk:</p>
 <div class="cell docutils container">
@@ -421,7 +426,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 </div>
 <p>Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:</p>
-<p>I en pointopgave uden hjælpemidler, skal vi reducere udtrykket <span class="math notranslate nohighlight">\((\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2\)</span>.</p>
+<p>I en pointopgave uden hjælpemidler skal vi reducere udtrykket <span class="math notranslate nohighlight">\((\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2\)</span>.</p>
 <p>Vi genkender i et lyst øjeblik den såkaldte tredje kvadratsætning <span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = c^2-d^2\)</span>.</p>
 <p>Hvis vi sætter <span class="math notranslate nohighlight">\(c=\frac{1}{2}x+3a+3b\)</span> og <span class="math notranslate nohighlight">\(d=\frac{1}{2}x+a+b\)</span>. Kan vi benytte følgende omskrivning:</p>
 <p><span class="math notranslate nohighlight">\((c+d)\cdot(c-d) = (x+4a+4b)\cdot(2a+2b)\)</span></p>
@@ -457,7 +462,7 @@ Hvis man ønsker et udtryk af en særlig form, findes der relaterede funktioner 
 </div>
 <div class="section" id="differentiation">
 <h2><span class="section-number">5.5.2. </span>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h2>
-<p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier <a class="reference internal" href="Notebook2_limits.html"><span class="doc std std-doc">sektionen om grænseværdier</span></a>. Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.</p>
+<p>Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier (se [afsnittet om grænseværdier])(Notebook2_limits.ipynb). Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.</p>
 <p>Hvis vi eksempelvis ønsker at differentiere <span class="math notranslate nohighlight">\(\displaystyle b x^{a}\)</span> med hensyn til <span class="math notranslate nohighlight">\(x\)</span>, kan vi altså gøre følgende:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,7 +597,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>   <span class="c1"># Importer plot-funktionen</span>
 
-<span class="c1"># Vi genererer nu vores graf som en figur med passende titel og limits</span>
+<span class="c1"># Vi genererer nu vores graf som en figur med passende titel og aksegrænser</span>
 <span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">taylor_expr</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Taylorapproksimation&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Taylor 4. orden&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -627,7 +632,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 </div>
 <div class="section" id="integration">
 <h2><span class="section-number">5.5.4. </span>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
-<p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved</p>
+<p>Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">udtryk</span><span class="p">,</span> <span class="n">variabel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -651,7 +656,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 \[\displaystyle \frac{x^{5}}{5}\]</div>
 </div>
 </div>
-<p>På samme måde findes det bestemte integral <span class="math notranslate nohighlight">\(\int_0^{6\pi}(\sin(x))^2dx = \int_0^{6\pi}\sin^2(x)dx\)</span>:</p>
+<p>På samme måde findes det bestemte integral <span class="math notranslate nohighlight">\(\int_0^{6\pi}(\sin(x))^2dx\)</span> som også kan skrives som <span class="math notranslate nohighlight">\(\int_0^{6\pi}\sin^2(x)dx\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>                 <span class="c1"># Definer udtryk</span>
@@ -664,7 +669,7 @@ Vi kan eksempevis udvikle <span class="math notranslate nohighlight">\(e^{3x}\)<
 \[\displaystyle 3 \pi\]</div>
 </div>
 </div>
-<p>Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i grænserne for sit bestemte integral.</p>
+<p>Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i det bestemte integrals grænser.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi kan eventuelt udregne integralet for en gaussisk funktion</span>

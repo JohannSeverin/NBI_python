@@ -35,7 +35,7 @@ f_reduced = sp.simplify(f)
 display(f_reduced)
 
 
-# Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet $\cos^2(x) + sin^2(x) = 1$.
+# Bemærk først at SymPy viser ledene i det oprindelige udtryk i omvendt rækkefølge i forhold til hvordan vi skrev dem i definitionen. I reduktionstrinnet herefter anvender SymPy den trigonometriske identititet $\cos^2(x) + \sin^2(x) = 1$.
 # 
 # Hvad der udgør et optimalt reduceret udtryk afgøres af SymPys algoritmer, hvilket ikke altid stemmer med vores egne præferencer. 
 # 
@@ -60,7 +60,7 @@ display(sp.expand(udtryk1))
 
 # Hvis man blot skal tjekke et resultat uden at være interesseret i logikken bag omskrivningerne, kan det være praktisk at bruge det trick, som vi introducerer i eksemplet her:
 # 
-# I en pointopgave uden hjælpemidler, skal vi reducere udtrykket $(\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2$. 
+# I en pointopgave uden hjælpemidler skal vi reducere udtrykket $(\frac{1}{2}x+3a+3b)^2 - (\frac{1}{2}x+a+b)^2$. 
 # 
 # Vi genkender i et lyst øjeblik den såkaldte tredje kvadratsætning $(c+d)\cdot(c-d) = c^2-d^2$. 
 # 
@@ -88,7 +88,7 @@ display(sp.simplify(udtryk3))
 
 
 # ## Differentiation
-# Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier [sektionen om grænseværdier](Notebook2_limits.ipynb). Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.
+# Syntaksen for differentiation ligner meget det, vi så, da vi beregnede grænseværdier (se [afsnittet om grænseværdier])(Notebook2_limits.ipynb). Vi benytter her funktionen <code>sp.diff()</code> og angiver udtryk og hvilken variabel, vi vil differentere efter: <code>sp.diff(udtryk, variabel)</code>.
 # 
 # Hvis vi eksempelvis ønsker at differentiere $\displaystyle b x^{a}$ med hensyn til $x$, kan vi altså gøre følgende:
 
@@ -124,7 +124,7 @@ display(diff_f5)
 
 # Bemærk at SymPy godt kan snydes. Vi betragter f.eks. den stykvist lineære funktion fra notebooken i uge 3, og differentierer:
 
-# In[10]:
+# In[3]:
 
 
 g = sp.Piecewise((-1, x < 4), (x-5, x >= 4))
@@ -188,7 +188,7 @@ display(taylor_expr)                     # Vis
 
 from sympy.plotting import plot   # Importer plot-funktionen
 
-# Vi genererer nu vores graf som en figur med passende titel og limits
+# Vi genererer nu vores graf som en figur med passende titel og aksegrænser
 figur = plot(taylor_expr, (x, 0, 2), legend = True, title = "Taylorapproksimation", label = "Taylor 4. orden");
 
 
@@ -215,7 +215,7 @@ figur.show()
 # Som ventet er Taylorapproximationen god i nærheden af udviklingspunktet $x_0 = 1$.
 
 # ## Integration
-# Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved 
+# Fremgangsmåden for integration og differentiation minder utrolig meget om hinanden med den oplagte undtagelse, at man både kan beregne bestemte og ubestemte integraler (altså hhv. med og uden grænser). Vi bruger funktionen <code>sp.integrate</code>. Et ubestemt integral findes ved 
 # ```python
 # sp.integrate(udtryk, variabel)
 # ```
@@ -237,7 +237,7 @@ stamfunktion_expr = sp.integrate(expr, x)   # Integrer udtrykket med hensyn til 
 display(stamfunktion_expr)                  # vis
 
 
-# På samme måde findes det bestemte integral $\int_0^{6\pi}(\sin(x))^2dx = \int_0^{6\pi}\sin^2(x)dx$:
+# På samme måde findes det bestemte integral $\int_0^{6\pi}(\sin(x))^2dx$ som også kan skrives som $\int_0^{6\pi}\sin^2(x)dx$:
 
 # In[18]:
 
@@ -246,7 +246,7 @@ expr = sp.sin(x) ** 2                 # Definer udtryk
 sp.integrate(expr, (x, 0, 6 * pi))    # Integrer udtrykket med hensyn til x fra 0 til 6 pi
 
 
-# Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i grænserne for sit bestemte integral. 
+# Oftest kan det også være nyttigt at bruge enten algebraiske symboler eller eventuelt at integrere til uendelig. Her indskriver man bare dette i det bestemte integrals grænser. 
 
 # In[19]:
 
@@ -256,7 +256,7 @@ expr = sp.exp(- x ** 2)
 sp.integrate(expr, (x, -oo, oo))
 
 
-# In[20]:
+# In[4]:
 
 
 # Eller vi kan integrere en polynomium fra a til b
