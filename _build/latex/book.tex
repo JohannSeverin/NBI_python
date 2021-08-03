@@ -2559,9 +2559,9 @@ Og hvis vi nu vil beregne værdien for \((x, y) = (0, 1)\), kan vi benytte .subs
 
 \section{Graftegning for funktioner af flere variable}
 \label{\detokenize{notebooks/sympy/Notebook_FlereVar_plot:graftegning-for-funktioner-af-flere-variable}}\label{\detokenize{notebooks/sympy/Notebook_FlereVar_plot::doc}}
-Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.
+Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable, kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.
 
-\sphinxstyleemphasis{Plotting i flere dimensioner kan hurtigt blive en omstændig proces. Vi regner derfor ikke med, at I skal kunne komme op med disse kodestumper selv, men snarere at I kan tilpasse dem til den opgave, I står overfor.}
+\sphinxstyleemphasis{Plotting i flere dimensioner kan hurtigt blive en omstændelig proces. Vi regner derfor ikke med, at I skal kunne komme op med disse kodestumper selv, men snarere at I kan tilpasse dem til den opgave, I står overfor.}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{sympy} \PYG{k}{as} \PYG{n+nn}{sp} 
@@ -2571,7 +2571,7 @@ Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværer
 
 \subsection{Graftegning i 3D}
 \label{\detokenize{notebooks/sympy/Notebook_FlereVar_plot:graftegning-i-3d}}
-For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D\sphinxhyphen{}tilfældet, men i stedet for at importere plot fra sympy.plotting, importerer vi nu i stedet plot3d. Herefter kan vi skrive plot3d(expr, (x, y)) eller f.eks. plot3d(expr, (x, \sphinxhyphen{}2, 2), (y, \sphinxhyphen{}2, 2)) hvis vi vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figures, så vi benytter her \%matplotlib notebook som gør vores figurer interaktiv. Hvis man eksempelvis vil plotte \(xy^2\) i området omkring origo, kan man gøre følgende:
+For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D\sphinxhyphen{}tilfældet, men i stedet for at importere plot fra sympy.plotting, importerer vi nu i stedet plot3d. Herefter kan vi skrive plot3d(expr, (x, y)) eller f.eks. plot3d(expr, (x, \sphinxhyphen{}2, 2), (y, \sphinxhyphen{}2, 2)) hvis vi manuelt vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figurer, så vi benytter her \%matplotlib notebook som gør vores figurer interaktive. Hvis man eksempelvis vil plotte \(xy^2\) i området omkring origo, kan man gøre følgende:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{plotting} \PYG{k+kn}{import} \PYG{n}{plot3d}             \PYG{c+c1}{\PYGZsh{} importer plot3d}
@@ -2598,7 +2598,7 @@ Konturplot findes ved at lave en 2D\sphinxhyphen{}afbildning af værdien af den 
 
 \(f(x,y) = 2x^2+ 4x - y^2 + 4y\)
 
-Vi kan altså lave et konturplot ved at kigge på funktionens variation med \(x\) mens vi eksempelvis sætter \(y = 1\):
+Vi kan lave et konturplot ved at kigge på funktionens variation når \(x\) varierer mens vi eksempelvis sætter \(y = 1\):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{from} \PYG{n+nn}{sympy}\PYG{n+nn}{.}\PYG{n+nn}{plotting} \PYG{k+kn}{import} \PYG{n}{plot}
@@ -2624,7 +2624,7 @@ For at få en fornemmelse af grafen for f, er et enkelt sådan snit ikke nok, s�
 \PYG{n}{PlotGrid}\PYG{p}{(}\PYG{n}{antal\PYGZus{}rækker}\PYG{p}{,} \PYG{n}{antal\PYGZus{}kolonner}\PYG{p}{,} \PYG{n}{plot1}\PYG{p}{,} \PYG{n}{plot2} \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-Vi kan altså nu lave flere plots og så sætte dem sammen. Hvis vi nu vil lave seks plots hvor \(y = -1,...,4\) kan vi lave de enkelte grafen i en løkke og sætte dem sammen til sidst:
+Vi kan altså nu lave flere plots og så sætte dem sammen. Hvis vi nu vil lave seks plots hvor \(y = -1,...,4\) kan vi lave de enkelte grafer ved hjælp af en løkke og sætte dem sammen til sidst:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{y\PYGZus{}værdier} \PYG{o}{=} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} Definer liste}
@@ -2646,15 +2646,15 @@ Vi har nu en liste af figurer, som er gemt i \sphinxcode{\sphinxupquote{figurer}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}sympy.plotting.plot.Plot at 0x187ef639a88\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187ee430488\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187ee33bf88\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187edbcc288\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187f007f2c8\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187f0f09f88\PYGZgt{}]
+[\PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54ca2d00\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54ca2070\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54ca2fa0\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54cc6250\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54cc6460\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54cc63a0\PYGZgt{}]
 \end{sphinxVerbatim}
 
-Men hvis vi nu inporterer \sphinxcode{\sphinxupquote{PlotGrid}} og indsætter figurerne med \sphinxcode{\sphinxupquote{*figurer}}, så får vi en en samling af figurerne.
+Men hvis vi nu importerer \sphinxcode{\sphinxupquote{PlotGrid}} og indsætter figurerne med \sphinxcode{\sphinxupquote{*figurer}}, så får vi en en samling af figurerne.
 
 \sphinxstylestrong{Tip:} \sphinxcode{\sphinxupquote{*}} foran en liste, betyder at man “udpakker” listen. Derfor vil \sphinxcode{\sphinxupquote{*{[}1, 2, 3{]}}} svarer til at skrive \sphinxcode{\sphinxupquote{1, 2, 3}}. Dette bruges primært til at kalde funktioner, som kan tage et arbitært antal input.
 
@@ -2671,7 +2671,7 @@ Men hvis vi nu inporterer \sphinxcode{\sphinxupquote{PlotGrid}} og indsætter fi
 \PYGZlt{}IPython.core.display.HTML object\PYGZgt{}
 \end{sphinxVerbatim}
 
-Det er værd at lægge mærke til at vi eskplicit sætter akseafgrænsningen til at være ens for alle 6 grafer. Ellers vil Python skalere dem fra figur til figur efter de enkelte grafers placering, hvilket vil gøre det svært at sammenligne de seks plots.
+Det er værd at lægge mærke til at vi eksplicit har sat akseafgrænsningen til at være ens for alle 6 grafer. Ellers vil Python skalere dem fra figur til figur efter de enkelte grafers placering, hvilket vil gøre det svært at sammenligne de seks grafer.
 
 Vi kan nu gentage overstående, men skifte x\sphinxhyphen{}værdier:
 
@@ -2701,7 +2701,7 @@ Vi kan nu gentage overstående, men skifte x\sphinxhyphen{}værdier:
 
 \subsection{Niveaukurver}
 \label{\detokenize{notebooks/sympy/Notebook_FlereVar_plot:niveaukurver}}
-Mens konturer er snit mellem grafen for en funktion og “opretstående planer”, er niveaukurver snit med vandrette planer \(z=c\) (se TK 1.2.2). Vi vil altså tegne løsninger til \(f(x,y) = c\) i \(xy\)\sphinxhyphen{}planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen plot\_contour (bemærk at plot\_contour her bliver brugt til at tegne niveaukurver og \sphinxstyleemphasis{ikke} konturplot) som importeres fra sympy.plotting.plot.
+Mens konturer er snit mellem grafen for en funktion og “opretstående planer”, er niveaukurver snit med vandrette planer \(z=c\) (se TK 1.2.2). Vi vil altså tegne løsninger til \(f(x,y) = c\) i \(xy\)\sphinxhyphen{}planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen plot\_contour (bemærk at plot\_contour her tegner niveaukurver og \sphinxstyleemphasis{ikke} konturplot som navnet ellers kunne antyde) som importeres fra sympy.plotting.plot.
 
 Funktionen følger samme syntaks som 3dplot, og giver os et bud på, hvordan niveaukurverne ligger. Desværre har vi ret begrænsede muligheder for selv at vælge indstillinger for denne funktion.
 
@@ -2723,7 +2723,7 @@ Her undersøger vi (ligesom i TK 1.10) funktionen:
 \PYGZlt{}IPython.core.display.HTML object\PYGZgt{}
 \end{sphinxVerbatim}
 
-Linjerne i plottet markere altså de sammenhængende \((x,y)\)\sphinxhyphen{}værdier, hvor \(f\) antager en bestemt værdi. Da funktionen her er meget ny i SymPy\sphinxhyphen{}biblioteket og ikke helt færdigudviklet, er det desværre ikke muligt at bestemme hvilken værdier, linjerne skal tegnes ved.
+Linjerne i plottet markere altså de sammenhørende \((x,y)\)\sphinxhyphen{}værdier, hvor \(f\) antager en bestemt værdi. Vi kan se at grafen for funktionen er en aflang bakke (eller fordybning), der er symmetrisk omkring x\sphinxhyphen{}aksen. Funktionen plot\_contour er ret ny i SymPy\sphinxhyphen{}biblioteket og er ikke helt færdigudviklet, og det er desværre ikke muligt manuelt at bestemme hvilken værdier, linjerne skal tegnes ved.
 
 Vi har også muligheder for selv at gøre arbejdet ved at benytte sympy til at tegne såkaldte implicitte udtryk, altså eksempelvis alle punkter i \(xy\)\sphinxhyphen{}planen, der opfylder, at \(f(x,y) = c\) for et givet c. Dette illustreres herunder for den interesserede læser.
 
@@ -2747,20 +2747,19 @@ Vi benytter plot\_implicit fra sympy.plotting til at finde niveaukurven for \(c 
 \PYGZlt{}IPython.core.display.HTML object\PYGZgt{}
 \end{sphinxVerbatim}
 
-Hvis vi vil tegne niveaukurve for værdier, vi selv kan bestemme, kan vi på samme måde som ved konturplottene lave en løkke, hvor vi går igennem de ønskede værdier:
+Hvis vi vil tegne flere niveaukurver i samme koordinatsystem og selv vil bestemme hvilke værdier, der skal tegnes kurver for, kan vi på samme måde som ved konturplottene ovenfor lave en løkke, hvor vi går igennem de ønskede værdier:
 
-OBS OBS: JEG FORSTÅR IKKE HVAD DER FOREGÅR HER:
-\sphinxstylestrong{Tip:} Her benytter vi os af \sphinxcode{\sphinxupquote{enumerate()}}. Når looper over \sphinxcode{\sphinxupquote{i val in enumerate(liste)}}, så bliver \sphinxcode{\sphinxupquote{i}} til indekset for \sphinxcode{\sphinxupquote{val}} i listen. Desuden benytter vi \sphinxcode{\sphinxupquote{line\_color = f"C\{i\}"}}, hvilket fortæller plotting\sphinxhyphen{}værktøjet at den skal tage den i’te farve i biblioteket.
+\sphinxstylestrong{Tip}: Når vi skriver \sphinxcode{\sphinxupquote{line\_color = f"C\{i\}"}}, så vælger SymPy at plotte med den i’te farve i matplotlibs bibliotek. Vi kan derfor loope over \sphinxcode{\sphinxupquote{range(len(c\_værdier))}} i nedenstående, således at  \sphinxcode{\sphinxupquote{i}} angiver en bestemt niveaukurve, og så kan vi få værdien for c ved \sphinxcode{\sphinxupquote{c\_værdier{[}i{]}}}.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{c\PYGZus{}værdier} \PYG{o}{=} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
 \PYG{n}{figurer}   \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
 
 \PYG{c+c1}{\PYGZsh{} Vi sætter et loop op over vores værdier for c}
-\PYG{k}{for} \PYG{n}{i}\PYG{p}{,} \PYG{n}{c\PYGZus{}val} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{c\PYGZus{}værdier}\PYG{p}{)}\PYG{p}{:}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{c\PYGZus{}værdier}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
     
     \PYG{c+c1}{\PYGZsh{} Lav et nyt implicit plot for hver værdi af c:}
-    \PYG{n}{ny\PYGZus{}figur} \PYG{o}{=} \PYG{n}{plot\PYGZus{}implicit}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{c\PYGZus{}val}\PYG{p}{)}\PYG{p}{,} 
+    \PYG{n}{ny\PYGZus{}figur} \PYG{o}{=} \PYG{n}{plot\PYGZus{}implicit}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{c\PYGZus{}værdier}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} 
                              \PYG{n}{line\PYGZus{}color} \PYG{o}{=} \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{C}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{i}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
                              \PYG{n}{show}       \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{)}
     
@@ -2771,11 +2770,11 @@ OBS OBS: JEG FORSTÅR IKKE HVAD DER FOREGÅR HER:
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}sympy.plotting.plot.Plot at 0x187effbe808\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187effbe448\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187f1cb1608\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187f1cb1a48\PYGZgt{},
- \PYGZlt{}sympy.plotting.plot.Plot at 0x187f22ad548\PYGZgt{}]
+[\PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54835d30\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54aa9790\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54aa98b0\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e54833190\PYGZgt{},
+ \PYGZlt{}sympy.plotting.plot.Plot at 0x7f9e547c8850\PYGZgt{}]
 \end{sphinxVerbatim}
 
 For nu at sætte det sammen, laver vi nu en figur med den første af de plots, som vi har lavet, og så looper vi over resten af listen og indsætter de figurer:

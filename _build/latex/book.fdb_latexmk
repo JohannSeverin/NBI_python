@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex book.idx"] 1627225685 "book.idx" "book.ind" "book" 1628005435
-  "book.idx" 1628005433 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex book.idx"] 1627225685 "book.idx" "book.ind" "book" 1628006551
+  "book.idx" 1628006548 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
-  "book.ind"
   "book.ilg"
-["pdflatex"] 1628005432 "book.tex" "book.pdf" "book" 1628005435
+  "book.ind"
+["pdflatex"] 1628006547 "book.tex" "book.pdf" "book" 1628006551
   "/etc/texmf/web2c/texmf.cnf" 1627224754 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -267,22 +267,22 @@
   "Notebook4_34_0.png" 1627812681 16181 69499bc79f9e3d1d884fdcb03c859cf0 ""
   "Notebook_kompleks_58_1.png" 1627812682 3738 42505164bfc1e19281db2f8c58b890ba ""
   "Notebook_kompleks_60_0.png" 1627812682 4142 4f5b5ebcaf68c9eb815da2578831f2f1 ""
-  "book.aux" 1628005435 24800 b928c5bbae0ec4c416dc25f1b232c3e1 "pdflatex"
+  "book.aux" 1628006550 24800 b928c5bbae0ec4c416dc25f1b232c3e1 "pdflatex"
   "book.ind" 1627225685 0 d41d8cd98f00b204e9800998ecf8427e "makeindex book.idx"
-  "book.out" 1628005435 2203 a2a79e9aab94745329c1ef7b0ff295b5 "pdflatex"
-  "book.tex" 1628005432 275740 ddbb49257c4f50e809c36a4ddb2cca0b ""
-  "book.toc" 1628005435 7623 05423939eb83b106de42dd0621344247 "pdflatex"
+  "book.out" 1628006550 2203 a2a79e9aab94745329c1ef7b0ff295b5 "pdflatex"
+  "book.tex" 1628006544 275969 fc440a3e2193c3cb85adb0483c8901f4 ""
+  "book.toc" 1628006550 7623 05423939eb83b106de42dd0621344247 "pdflatex"
   "footnotehyper-sphinx.sty" 1597428826 8888 1bbd7bdeae8c8bed1d10d551bddb1cc9 ""
   "jupyterBook.cls" 1626596555 1222 69a0f15145f4060ebcfbf0527d3a613a ""
   "sphinx.sty" 1597428826 82155 76e1169ffc917b7b0448ff4c656bfb06 ""
-  "sphinxhighlight.sty" 1628005431 8137 38a433148fcb7611515a989ff1750dd5 ""
+  "sphinxhighlight.sty" 1628006542 8137 38a433148fcb7611515a989ff1750dd5 ""
   "sphinxmanual.cls" 1597428826 4236 124cd90deb92742b5d3922bfc2cd70c0 ""
-  "sphinxmessages.sty" 1628005432 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1628006544 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxmulticell.sty" 1597428826 14606 0b6edc2b1a83546ed92026d1f6a311b5 ""
   (generated)
-  "book.idx"
   "book.aux"
-  "book.toc"
-  "book.out"
   "book.log"
   "book.pdf"
+  "book.toc"
+  "book.out"
+  "book.idx"
