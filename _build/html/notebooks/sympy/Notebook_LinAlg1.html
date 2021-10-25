@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.9. Matrix reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
+    <link rel="next" title="5.9. Matrix-reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
     <link rel="prev" title="5.7. Graftegning for funktioner af flere variable" href="Notebook_FlereVar_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -317,50 +322,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   5.8.1. Vektorer og matricer
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vektorer-definition-og-regneoperationer">
-     5.8.1.1. Vektorer - definition og regneoperationer
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matricer-definition-og-regneoperationer">
-     5.8.1.2. Matricer - definition og regneoperationer
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nogle-indbyggede-matricer-identitets-nul-et-og-diagonalmatricer">
-     5.8.1.3. Nogle indbyggede matricer: Identitets-, nul-, et- og diagonalmatricer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrix-reduktion">
-   5.8.2. Matrix-reduktion
+  <a class="reference internal nav-link" href="#vektorer-definition-og-regneoperationer">
+   5.8.1. Vektorer - definition og regneoperationer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ligningssystemer-med-een-losning">
-   5.8.3. Ligningssystemer med een løsning
+  <a class="reference internal nav-link" href="#matricer-definition-og-regneoperationer">
+   5.8.2. Matricer - definition og regneoperationer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#omvendte-inverse-matricer">
-   5.8.4. Omvendte/inverse matricer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrixrang">
-   5.8.5. Matrixrang
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ligningssystemer-med-flere-losninger-frie-parametre">
-   5.8.6. Ligningssystemer med flere løsninger: frie parametre
+  <a class="reference internal nav-link" href="#indbyggede-matricer">
+   5.8.3. Indbyggede matricer
   </a>
  </li>
 </ul>
@@ -374,29 +347,22 @@
         
               <div>
                 
-  <p><strong>Foreslået ændringer</strong><br />
-I denne notebook skal der nok kun foretages småændringer, så den er konsistent med resten. Vi skal lige overveje, om det giver mening at have disse kapitler sammen, eller om det skal splittes yderligere. Jeg tænker primært på, at man skal kunne finde rundt i Notebooks, så vi skal nok have en bedre titel end indledende og avanceret, så man kan finde ud af, om eksempelvis en invers matrix er i den ene eller i den anden.</p>
-<div class="section" id="vektorer-og-matricer">
+  <div class="section" id="vektorer-og-matricer">
 <h1><span class="section-number">5.8. </span>Vektorer og matricer<a class="headerlink" href="#vektorer-og-matricer" title="Permalink to this headline">¶</a></h1>
-<p>I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere de relevante moduler og aktiverer funktionen til visning af matematiske udtryk:</p>
+<p>I denne notebook vil vi have fokus på hvordan man definerer, manipulerer og foretager forskellige udregninger med matricer og vektorer. Som altid starter vi med at importere SymPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>           <span class="c1"># Vi importerer uendelig, pi og den imaginære konstant I </span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>                    <span class="c1"># Aktiver pretty-printing</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>   <span class="c1"># Hent vores printer til matematiske udtryk</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><span class="section-number">5.8.1. </span>Vektorer og matricer<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Det grundlæggende er at definere matricer og vektorer på den nemmeste måde. Dette gøres ved at benytte den funktion, der hedder <code>Matrix()</code> fra SymPy. Da man oftest skal bruge denne mange gange, kan det være praktisk at importere den særskilt ved at skrive <code>from sympy import Matrix</code>, men det er lige så fint at skrive <code>sp.Matrix()</code>.</p>
 <div class="section" id="vektorer-definition-og-regneoperationer">
-<h3><span class="section-number">5.8.1.1. </span>Vektorer - definition og regneoperationer<a class="headerlink" href="#vektorer-definition-og-regneoperationer" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">5.8.1. </span>Vektorer - definition og regneoperationer<a class="headerlink" href="#vektorer-definition-og-regneoperationer" title="Permalink to this headline">¶</a></h2>
 <p>Vektorer defineres ved at give en liste til Matrix funktionen. Vi kan altså skrive <code>Matrix([1, 1, 0])</code> for at få vektoren:
-$<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}1\\1\\0\end{matrix}\right]\)</span>$</p>
-<p>Vi kan angive de enkelte indgange som tal eller bruge symbolske variable som vi i forvejen har importeret fra <em>sympy.abc</em> ligesom vi tidligere har gjort med <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}1\\1\\0\end{matrix}\right]\)</span></p>
+<p>Vi kan angive de enkelte indgange som tal eller bruge symbolske variable som vi i forvejen har importeret fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code> ligesom vi tidligere har gjort med <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -404,24 +370,26 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
 
 <span class="n">vektor1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">vektor1</span><span class="p">)</span>
+<span class="n">vektor1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_7_0.png" src="../../_images/Notebook_LinAlg1_7_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a\\b\\c\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Det ligger os selvfølgelig også frit for at kombinere tal og variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vektor2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])</span>   <span class="c1"># Husk at bruge sp.Rational() til at definere brøker</span>
-<span class="n">display</span><span class="p">(</span><span class="n">vektor2</span><span class="p">)</span>
+<span class="n">vektor2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_9_0.png" src="../../_images/Notebook_LinAlg1_9_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a\\\frac{3}{4}\\\frac{b^{2}}{2}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>De to vektorer <code>vektor</code> og <code>vektor2</code> kan nu kombineres på sædvanlig vis ved addition, subtraktion og skalarmultiplikation:</p>
@@ -432,7 +400,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_11_0.png" src="../../_images/Notebook_LinAlg1_11_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}2 a\\b + \frac{3}{4}\\\frac{b^{2}}{2} + c\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -442,10 +411,11 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_12_0.png" src="../../_images/Notebook_LinAlg1_12_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a^{2}\\\frac{3 a}{4}\\\frac{a b^{2}}{2}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-<p>Hvis vi til gengæld forsøger at multiplicere de to vektorer får vi en fejl, da <code>*</code> mellem to Matrix-elementer er matrix-multiplikation, som ikke er defineret for to 3 x 1 matricer. Vi vender tilbage til matrixmultiplikation nedenfor, mens krydsprodukter (også kendt som vektor-produkter) må vente til den næste notebook om lineær algebra.</p>
+<p>Hvis vi til gengæld forsøger at multiplicere de to vektorer får vi en fejl, da <code>*</code> mellem to Matrix-elementer er matrix-multiplikation, som ikke er defineret for to 3 x 1 matricer. Vi vender tilbage til matrixmultiplikation nedenfor, mens krydsprodukter kan findes i <a class="reference internal" href="Notebook_LinAlg_2.html"><span class="doc std std-doc">sektionen om flere metoder i linæer algebra</span></a>.</p>
 <p>Et produkt, der derimod <em>er</em> defineret for vektorer, er det fra gymnasiet velkendte skalarprodukt eller prikprodukt <span class="math notranslate nohighlight">\(\mathbf{v_1} \cdot \mathbf{v_2}\)</span> som er et eksempel på et indre produkt (i Messers notation <span class="math notranslate nohighlight">\(\langle \mathbf{v_1}, \mathbf{v_2}\rangle\)</span>).</p>
 <p>Et indre produkt mellem to vektorer <code>vektor1</code> og <code>vektor2</code> beregnes med <code>vektor1.dot(vektor2)</code>:</p>
 <div class="cell docutils container">
@@ -455,14 +425,15 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_14_0.png" src="../../_images/Notebook_LinAlg1_14_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a^{2} + \frac{b^{2} c}{2} + \frac{3 b}{4}\]</div>
 </div>
 </div>
 <p>Som forventet får vi summen af produkterne af vektorens indgange, dog i en anden rækkefølge end vi normalt ville vælge ved udregning i hånden.</p>
 </div>
 <div class="section" id="matricer-definition-og-regneoperationer">
-<h3><span class="section-number">5.8.1.2. </span>Matricer - definition og regneoperationer<a class="headerlink" href="#matricer-definition-og-regneoperationer" title="Permalink to this headline">¶</a></h3>
-<p>Matricer defineres på samme måde, som vi har gjort det med vektorer, altså ved at benytte <code>Matrix()</code>-funktionen. Når vi laver en matrix, så skal vi dog give en liste af rækker, der hver især selv er lister. Formatet er det samme, som man bruger til at lave arrays i numpy. Hvis man eksempelvis blot vil lave en tabel med indgange fra 1 til 9, skal man angive det som:</p>
+<h2><span class="section-number">5.8.2. </span>Matricer - definition og regneoperationer<a class="headerlink" href="#matricer-definition-og-regneoperationer" title="Permalink to this headline">¶</a></h2>
+<p>Matricer defineres på samme måde, som vi har gjort det med vektorer, altså ved at benytte <code>Matrix()</code> - funktionen. Når vi laver en matrix, så skal vi dog give en liste af rækker, der hver især selv er lister. Formatet er det samme, som man bruger til at lave arrays i numpy. Hvis man eksempelvis blot vil lave en tabel med indgange fra 1 til 9, skal man angive det som:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
@@ -471,11 +442,12 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_18_0.png" src="../../_images/Notebook_LinAlg1_18_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 2 &amp; 3\\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Det er naturligvis en forudsætning, at alle rækkerne har lige mange elementer.</p>
-<p>Som for vektorer, kan vi benytte symboler i matricer:</p>
+<p>Som for vektorer kan vi benytte symboler i matricer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]])</span>
@@ -484,7 +456,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_20_0.png" src="../../_images/Notebook_LinAlg1_20_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a &amp; b &amp; c\\b &amp; c &amp; b\\c &amp; b &amp; a\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Også addition og skalarmultiplikation fungerer som for vektorer:</p>
@@ -495,7 +468,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_22_0.png" src="../../_images/Notebook_LinAlg1_22_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}3 a + 1 &amp; 3 b + 2 &amp; 3 c + 3\\3 b + 4 &amp; 3 c + 5 &amp; 3 b + 6\\3 c + 7 &amp; 3 b + 8 &amp; 3 a + 9\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -505,7 +479,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_23_0.png" src="../../_images/Notebook_LinAlg1_23_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}42 a &amp; 42 b &amp; 42 c\\42 b &amp; 42 c &amp; 42 b\\42 c &amp; 42 b &amp; 42 a\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Matricer kan også multipliceres med hinanden (se Messer afsnit 5.1) så længe de har passende dimensioner. Man kan opfatte indgangen på plads (i,j) i produktet AB som prikproduktet af den i’te række i A med den j’te søjle i B, og for at dette kan lade sig gøre, skal antallet af søjler i A være det samme som antallet af rækker i B. Vi kan også skrive betingelsen som at hvis A er en matrix af dimension <span class="math notranslate nohighlight">\(m \times n\)</span>, skal B have dimension <span class="math notranslate nohighlight">\(n \times p\)</span>). I dette tilfælde kan vi gange dem sammen ved at benytte <code>*</code>:</p>
@@ -516,12 +491,38 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_25_0.png" src="../../_images/Notebook_LinAlg1_25_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a + 2 b + 3 c &amp; 4 b + 2 c &amp; 3 a + 2 b + c\\4 a + 5 b + 6 c &amp; 10 b + 5 c &amp; 6 a + 5 b + 4 c\\7 a + 8 b + 9 c &amp; 16 b + 8 c &amp; 9 a + 8 b + 7 c\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Ligesom med arrays i numpy, kan vi også trække rækker/kolonner ud af matricer. Hvis vi vil have det øverste element til venstre i ovenstående matrix, kan vi gøre det ved:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a + 2 b + 3 c\]</div>
+</div>
+</div>
+<p>Eller vi kan tage den tredje søjle ved:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}3 a + 2 b + c\\6 a + 5 b + 4 c\\9 a + 8 b + 7 c\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
-<div class="section" id="nogle-indbyggede-matricer-identitets-nul-et-og-diagonalmatricer">
-<h3><span class="section-number">5.8.1.3. </span>Nogle indbyggede matricer: Identitets-, nul-, et- og diagonalmatricer<a class="headerlink" href="#nogle-indbyggede-matricer-identitets-nul-et-og-diagonalmatricer" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="indbyggede-matricer">
+<h2><span class="section-number">5.8.3. </span>Indbyggede matricer<a class="headerlink" href="#indbyggede-matricer" title="Permalink to this headline">¶</a></h2>
 <p>Til at definere en række meget almindeligt forekommende matricer er der indbygget smutveje.</p>
 <p>Disse matricer skal importeres fra <code>sympy.matrices</code>.</p>
 <p><strong>Identitetsmatricer:</strong> findes ved funktionen <code>eye(dimension)</code>. Navnet skyldes at “eye” udtales omtrent som “I”, der ofte anvendes som symbol for identitetsmatricen, men allerede er reserveret til den imaginære enhed for komplekse tal. Da identitetsmatricen pr. definition er kvadratisk, angiver man blot dimensionen <span class="math notranslate nohighlight">\(n\)</span> og får en <span class="math notranslate nohighlight">\(n\times n\)</span> matrix med <span class="math notranslate nohighlight">\(1\)</span> i diagonalen og <span class="math notranslate nohighlight">\(0\)</span> alle andre steder:</p>
@@ -535,7 +536,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_27_0.png" src="../../_images/Notebook_LinAlg1_27_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p><strong>0- og 1-matricer:</strong> Funktionerne <code>zeros(dimension)</code> og <code>ones(dimension)</code> giver en matrix af den ønskede størrelse fyldt med hhv. 0 eller 1-taller. Her kan <code>dimension</code> være to tal <code>n, m</code> eller et enkelt tal <code>n</code>, hvilket resulterer i en <span class="math notranslate nohighlight">\(n \times n\)</span> matrix:</p>
@@ -549,7 +551,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_29_0.png" src="../../_images/Notebook_LinAlg1_29_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -560,7 +563,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_30_0.png" src="../../_images/Notebook_LinAlg1_30_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}4 &amp; 4 &amp; 4 &amp; 4\\4 &amp; 4 &amp; 4 &amp; 4\\4 &amp; 4 &amp; 4 &amp; 4\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p><strong>Diagonalmatricer:</strong> laves med funktionen <code>diag(liste)</code>. Denne funktion giver man som input blot en liste med de ønskede diagonalelementer. Alle andre indgange er <span class="math notranslate nohighlight">\(0\)</span>:</p>
@@ -574,7 +578,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_32_0.png" src="../../_images/Notebook_LinAlg1_32_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 2 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 3 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 4\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Man kan også indsætte matricer langs diagonalen i større maricer, således at man får en blok-diagonal-matrix. Man kan f.eks. indsætte en matrix, der beskriver en rotation i planen, i en større matrix, der beskriver samme rotation i <span class="math notranslate nohighlight">\((x,y)\)</span>-planen indlejret i et tredimensionalt rum:</p>
@@ -589,7 +594,8 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_34_0.png" src="../../_images/Notebook_LinAlg1_34_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\theta \right)} &amp; - \sin{\left(\theta \right)}\\\sin{\left(\theta \right)} &amp; \cos{\left(\theta \right)}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -601,162 +607,11 @@ $<span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_35_0.png" src="../../_images/Notebook_LinAlg1_35_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\theta \right)} &amp; - \sin{\left(\theta \right)} &amp; 0\\\sin{\left(\theta \right)} &amp; \cos{\left(\theta \right)} &amp; 0\\0 &amp; 0 &amp; 1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-<p>Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. <a class="reference external" href="https://docs.sympy.org/latest/modules/matrices/matrices.html">Disse metoder kan findes i dokumentationen her</a> med vil sjældent være nødvendige i LinALys-kurset.</p>
-</div>
-</div>
-<div class="section" id="matrix-reduktion">
-<h2><span class="section-number">5.8.2. </span>Matrix-reduktion<a class="headerlink" href="#matrix-reduktion" title="Permalink to this headline">¶</a></h2>
-<p>Python/SymPy indeholder en række indbyggede metoder til at reducere matricer. Særligt brugbart i LinALys er funktionen, der bringer en matrix på reduceret række-echelonform. For en matrix <span class="math notranslate nohighlight">\(A\)</span> kan vi finde den ækvivalente matrix på reduceret række-echelonform ved <code>.rref()</code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">]])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_38_0.png" src="../../_images/Notebook_LinAlg1_38_0.png" />
-<img alt="../../_images/Notebook_LinAlg1_38_1.png" src="../../_images/Notebook_LinAlg1_38_1.png" />
-</div>
-</div>
-<p>Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>.</p>
-</div>
-<div class="section" id="ligningssystemer-med-een-losning">
-<h2><span class="section-number">5.8.3. </span>Ligningssystemer med een løsning<a class="headerlink" href="#ligningssystemer-med-een-losning" title="Permalink to this headline">¶</a></h2>
-<p>Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælpe af matrixregning. Vi kan f.eks. omskrive:</p>
-<p>\begin{align*}
-x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 136
-\end{align*}</p>
-<p>til:</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}20\74\136\end{matrix}\right]
-\end{equation*}</p>
-<p>Når vi har et ligningssystem på denne form, og der findes en entydig løsning, kan vi uden videre beregne løsningen med SymPy. Vi benytter blot <code>LUsolve</code>-metoden på en matrix, og giver den højre side af vores ligningssystem som inputparameter:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Definerer her matrix A og vektor b</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">136</span><span class="p">])</span>
-
-<span class="c1">#Løsningen findes nu blot ved:</span>
-<span class="n">sol</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">LUsolve</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_46_0.png" src="../../_images/Notebook_LinAlg1_46_0.png" />
-</div>
-</div>
-<p>Skulle vi være mistroiske overfor moderne datamater, kan vi nu verificere at</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}5 \11\5\end{matrix}\right]
-\end{equation*}</p>
-<p>virkelig er en løsning ved at multiplicere matricen <span class="math notranslate nohighlight">\(A\)</span> med løsningsvektoren:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">sol</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_48_0.png" src="../../_images/Notebook_LinAlg1_48_0.png" />
-</div>
-</div>
-<p>Vi kan lave tilsvarende operationer med symbolske variable. Lad <span class="math notranslate nohighlight">\(A\)</span> være matricen angivet ovenfor, men i stedet ønsker vi nu at finde en generel løsning til</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}d\e\f\end{matrix}\right]
-\end{equation*}</p>
-</div>
-<div class="section" id="omvendte-inverse-matricer">
-<h2><span class="section-number">5.8.4. </span>Omvendte/inverse matricer<a class="headerlink" href="#omvendte-inverse-matricer" title="Permalink to this headline">¶</a></h2>
-<p>Som beskrevet i Messer afsnit 5.2 kan matricer inverteres. Dette gøres meget simpelt for en matrix <span class="math notranslate nohighlight">\(A\)</span> med syntaksen <code>A.inv()</code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_51_0.png" src="../../_images/Notebook_LinAlg1_51_0.png" />
-</div>
-</div>
-<p>Såfremt den omvendte/inverse matrix for <span class="math notranslate nohighlight">\(A\)</span> eksisterer, kan vi derfor også løse det ovenstående ligningssystem som</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] =
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right]^{-1}
-\displaystyle \left[\begin{matrix}d\e\f\end{matrix}\right]
-\end{equation*}</p>
-<p>hvilket i Python-syntax gøres ved</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_53_0.png" src="../../_images/Notebook_LinAlg1_53_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="matrixrang">
-<h2><span class="section-number">5.8.5. </span>Matrixrang<a class="headerlink" href="#matrixrang" title="Permalink to this headline">¶</a></h2>
-<p>Bemærk at hverken man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis  ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.</p>
-<p>Årsagen hertil er at koefficientmatricen ikke har fuld rang. Rangen for en matrix <span class="math notranslate nohighlight">\(A\)</span> kan findes ved <code>A.rank()</code>, og angiver antallet af ledende et-taller i den matrix, der fremkommer ved at føre <span class="math notranslate nohighlight">\(A\)</span> på reduceret række-echelonform.</p>
-<p>Af denne grund, og i overensstemmelse med Messer sætning 5.12, er det derfor ingen overraskelse at se at <span class="math notranslate nohighlight">\(A\)</span> fra overfor, der repræsenterer 3 lineært uafgængige ligninger med 3 ubekendte, har rang 3:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_55_0.png" src="../../_images/Notebook_LinAlg1_55_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="ligningssystemer-med-flere-losninger-frie-parametre">
-<h2><span class="section-number">5.8.6. </span>Ligningssystemer med flere løsninger: frie parametre<a class="headerlink" href="#ligningssystemer-med-flere-losninger-frie-parametre" title="Permalink to this headline">¶</a></h2>
-<p>Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal fri variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix <span class="math notranslate nohighlight">\(A\)</span> er mindre end antallet af variable i ligningssystemet.
-I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ikke virke.</p>
-<p>Eksempel: Vi vil gerne finde den fuldstændige løsning til
-\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3 &amp; 1\0 &amp; 4 &amp; 6 &amp; 1-1 &amp; 4 &amp; 3 &amp; 0\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}0\0\0\end{matrix}\right]
-\end{equation*}</p>
-<p>En mulighed er at føre <span class="math notranslate nohighlight">\(A\)</span> på reduceret række-echelonform:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_57_0.png" src="../../_images/Notebook_LinAlg1_57_0.png" />
-</div>
-</div>
-<p>Vi sætter <span class="math notranslate nohighlight">\(x_3 = r\)</span> og <span class="math notranslate nohighlight">\(x_4 = s\)</span> da der ikke er ledende indgange i 3. og 4. kolonne. Herefter opskriver vi løsningen som
-\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\x_4\end{matrix}\right] =
-\displaystyle \left[\begin{matrix}-3-\frac32\1\0\end{matrix}\right]\cdot r +
-\displaystyle \left[\begin{matrix}-1-\frac14\0\1\end{matrix}\right]\cdot s, \hspace{1cm}r,s\in {\rm I!R}
-\end{equation*}</p>
-<p>Men vi kan også benytte metoden <code>.gauss_jordan_solve()</code> som efterligner denne metode, blot med en lidt anden typografi:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">A</span><span class="o">.</span><span class="n">gauss_jordan_solve</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_59_0.png" src="../../_images/Notebook_LinAlg1_59_0.png" />
-</div>
-</div>
+<p>Det er desuden muligt at sætte matricer sammen og definere matricer hvor hver indgang er resulatet af en beregning eller logisk test. <a class="reference external" href="https://docs.sympy.org/latest/modules/matrices/matrices.html">Disse metoder kan findes i dokumentationen her</a> men vil ikke være nødvendige i LinALys-kurset.</p>
 </div>
 </div>
 
@@ -786,7 +641,7 @@ I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ik
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Notebook_FlereVar_plot.html" title="previous page"><span class="section-number">5.7. </span>Graftegning for funktioner af flere variable</a>
-    <a class='right-next' id="next-link" href="Notebook_LinAlg1_5.html" title="next page"><span class="section-number">5.9. </span>Matrix reduktion, ligningsløsning og inverse matricer</a>
+    <a class='right-next' id="next-link" href="Notebook_LinAlg1_5.html" title="next page"><span class="section-number">5.9. </span>Matrix-reduktion, ligningsløsning og inverse matricer</a>
 
         </div>
         

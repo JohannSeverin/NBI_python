@@ -3,7 +3,7 @@
 
 # # Analyse for funktioner af flere variable
 
-# Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Til at starte med sørger vi for, også at importerer variablen `y` fram `sympy.abc`, men vi kunne også tilføje flere symboler her, hvorefter tingene på denne side kan udvides til 3D eller videre.
+# Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Til at starte med sørger vi for også at importerer variablen `y` fra `sympy.abc`, men vi kunne også tilføje flere variable og gennemføre tilsvarende beregninger for funktioner af 3 eller flere variable.
 
 # In[1]:
 
@@ -68,14 +68,14 @@ grad = sp.derive_by_array(expr, [x, y])
 grad
 
 
-# Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra [sektionen om linær algebra](Notebook_LinAlg1.ipynb).
+# Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra [afsnittet om linær algebra](Notebook_LinAlg1.ipynb).
 # 
 # Lad os nu eksempelvis beregne den retningsafledede for ovenstående funktion i retningen $\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$ i punktet med $(x, y) = (1, 2)$. Vi beregner nu jvf. TK sætning 2.57:
 
 # In[5]:
 
 
-grad_vec = sp.Matrix(grad)       # Kovnerterer til vektor/matrix-format
+grad_vec = sp.Matrix(grad)    # Konverterer til vektor/matrix-format
 grad_vec                      # Vi viser det lige
 
 
@@ -107,11 +107,11 @@ resultat
 
 
 # ## Hessematricen
-# Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en $n\times n$-matrix, der indeholder alle andenordens afledede for en funktion af $n$ variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variables omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).
+# Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en $n\times n$-matrix, der indeholder alle andenordens afledede for en funktion af $n$ variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variable omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).
 # 
 # Man kunne beregne Hessematricen ved at beregne de dobbelt afledede som beskrevet ovenfor, men det er nemmere at importere den fra underbiblioteket af SymPy, som hedder <code>sympy.matrices</code>. Dette gøres med kommandoen <code>from sympy.matrices import hessian</code>. Herefter kan vi nu benytte <code>hessian(udtryk, variabelliste)</code> på samme måde, som vi brugte <code>sp.derive_by_array</code> til at udregne gradienten:
 
-# In[9]:
+# In[2]:
 
 
 from sympy.matrices import hessian        # Importer Hessematricen
@@ -123,8 +123,14 @@ display(H)
 
 # Og hvis vi nu vil beregne værdien for $(x, y) = (0, 1)$, kan vi benytte <code>.subs()</code> to gange:
 
-# In[10]:
+# In[3]:
 
 
 H.subs(x, 0).subs(y, 1)
+
+
+# In[ ]:
+
+
+
 

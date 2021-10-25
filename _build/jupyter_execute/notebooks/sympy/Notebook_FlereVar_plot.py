@@ -2,9 +2,9 @@
 # coding: utf-8
 
 # # Graftegning for funktioner af flere variable
-# Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.
+# Så snart man bevæger sig op i flere dimensioner, begynder det at blive sværere at visualisere de funktioner, man arbejder med. SymPy har en række indbyggede funktioner, der især kan hjælpe os med at analysere funktioner af 2 variable. Den flade, som repræsenterer en funktion af to variable, kan tegnes i 3 dimensioner, og vi vil også give eksempler på hvordan man tegner konturplot og niveaukurver.
 # 
-# _Plotting i flere dimensioner kan hurtigt blive en omstændig proces. Vi regner derfor ikke med, at I skal kunne komme op med disse kodestumper selv, men snarere at I kan tilpasse dem til den opgave, I står overfor._
+# _Plotting i flere dimensioner kan hurtigt blive en omstændelig proces. Vi regner derfor ikke med, at I skal kunne komme op med disse kodestumper selv, men snarere at I kan tilpasse dem til den opgave, I står overfor._
 # 
 
 # In[1]:
@@ -15,7 +15,7 @@ from sympy.abc import x, y
 
 
 # ## Graftegning i 3D
-# For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D-tilfældet, men i stedet for at importere <code>plot</code> fra <code>sympy.plotting</code>, importerer vi nu i stedet <code>plot3d</code>. Herefter kan vi skrive <code>plot3d(expr, (x, y))</code> eller f.eks. <code>plot3d(expr, (x, -2, 2), (y, -2, 2))</code> hvis vi vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figures, så vi benytter her <code>%matplotlib notebook</code> som gør vores figurer interaktiv. Hvis man eksempelvis vil plotte $xy^2$ i området omkring origo, kan man gøre følgende:
+# For at tegne flader i 3D starter vi på samme måde som vi gjorde for 2D-tilfældet, men i stedet for at importere <code>plot</code> fra <code>sympy.plotting</code>, importerer vi nu i stedet <code>plot3d</code>. Herefter kan vi skrive <code>plot3d(expr, (x, y))</code> eller f.eks. <code>plot3d(expr, (x, -2, 2), (y, -2, 2))</code> hvis vi manuelt vil bestemme akseskaleringen. Der er oftest nødendigt at kunne rotere flader i 3D for at få et fyldestgørende indtryk af figurer, så vi benytter her <code>%matplotlib notebook</code> som gør vores figurer interaktive. Hvis man eksempelvis vil plotte $xy^2$ i området omkring origo, kan man gøre følgende:
 
 # In[2]:
 
@@ -35,7 +35,7 @@ plot3d(expr, (x, -2.5, 2.5), (y, -2, 2),      # Plot med fastsatte akse-interval
 # 
 # $f(x,y) = 2x^2+ 4x - y^2 + 4y$
 # 
-# Vi kan altså lave et konturplot ved at kigge på funktionens variation med $x$ mens vi eksempelvis sætter $y = 1$:
+# Vi kan lave et konturplot ved at kigge på funktionens variation når $x$ varierer mens vi eksempelvis sætter $y = 1$:
 
 # In[3]:
 
@@ -53,7 +53,7 @@ plot(f.subs(y, 1), (x, -5, 5));
 # ```python
 # PlotGrid(antal_rækker, antal_kolonner, plot1, plot2 ...)
 # ```
-# Vi kan altså nu lave flere plots og så sætte dem sammen. Hvis vi nu vil lave seks plots hvor $y = -1,...,4$ kan vi lave de enkelte grafen i en løkke og sætte dem sammen til sidst:
+# Vi kan altså nu lave flere plots og så sætte dem sammen. Hvis vi nu vil lave seks plots hvor $y = -1,...,4$ kan vi lave de enkelte grafer ved hjælp af en løkke og sætte dem sammen til sidst:
 
 # In[4]:
 
@@ -78,7 +78,7 @@ for y_val in y_værdier:  # Pas på med at skrive y her, da vi allerede bruger d
 figurer
 
 
-# Men hvis vi nu inporterer `PlotGrid` og indsætter figurene med `*figurer`, så får vi en en samling af figurene. 
+# Men hvis vi nu importerer `PlotGrid` og indsætter figurerne med `*figurer`, så får vi en en samling af figurerne. 
 # 
 # __Tip:__ `*` foran en liste, betyder at man "udpakker" listen. Derfor vil `*[1, 2, 3]` svarer til at skrive `1, 2, 3`. Dette bruges primært til at kalde funktioner, som kan tage et arbitært antal input.  
 
@@ -89,7 +89,7 @@ from sympy.plotting import PlotGrid            # Importer gitterplottefunktion
 PlotGrid(2, 3, *figurer);                      # Nu samler vi de 6 figurer i et gitterplot
 
 
-# Det er værd at lægge mærke til at vi eskplicit sætter akseafgrænsningen til at være ens for alle 6 grafer. Ellers vil Python skalere dem fra figure til figur efter de enkelte grafers placering, hvilket vil gøre det svært at sammenligne de seks plots. 
+# Det er værd at lægge mærke til at vi eksplicit har sat akseafgrænsningen til at være ens for alle 6 grafer. Ellers vil Python skalere dem fra figur til figur efter de enkelte grafers placering, hvilket vil gøre det svært at sammenligne de seks grafer. 
 #     
 # Vi kan nu gentage overstående, men skifte x-værdier:
 
@@ -112,7 +112,7 @@ PlotGrid(2, 3, *figurer);                          # Nu samler vi de 6 figurer i
 
 # ## Niveaukurver
 
-# Mens konturer er snit mellem grafen for en funktion og "opretstående planer", er niveaukurver snit med vandrette planer $z=c$ (se TK 1.2.2). Vi vil altså tegne løsninger til $f(x,y) = c$ i $xy$-planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen <code>plot_contour</code> (bemærk at <code>plot_contour</code> her bliver brugt til at tegne niveaukurver og _ikke_ konturplot) som importeres fra <code>sympy.plotting.plot</code>. 
+# Mens konturer er snit mellem grafen for en funktion og "opretstående planer", er niveaukurver snit med vandrette planer $z=c$ (se TK 1.2.2). Vi vil altså tegne løsninger til $f(x,y) = c$ i $xy$-planen. I SymPy kan vi få et hurtigt overblik ved at benytte funktionen <code>plot_contour</code> (bemærk at <code>plot_contour</code> her tegner niveaukurver og _ikke_ konturplot som navnet ellers kunne antyde) som importeres fra <code>sympy.plotting.plot</code>. 
 # 
 # Funktionen følger samme syntaks som <code>3dplot</code>, og giver os et bud på, hvordan niveaukurverne ligger. Desværre har vi ret begrænsede muligheder for selv at vælge indstillinger for denne funktion.
 # 
@@ -129,7 +129,9 @@ f = x ** 2 + 4 * y ** 2
 niveau = plot_contour(f, (x, -5, 5), (y, -5, 5));
 
 
-# Linjerne i plottet markere altså de sammenhængende $(x,y)$-værdier, hvor $f$ antager en bestemt værdi. Da funktionen her er meget ny i SymPy-biblioteket og ikke helt færdigudviklet, er det desværre ikke muligt at bestemme hvilken værdier, linjerne skal tegnes ved. Til gengæld har vi også muligheder for selv at gøre arbejdet. Vi kan nemlig benytte sympy til at tegne såkaldte implicitte udtryk, altså eksempelvis alle punkter i $xy$-planen, der opfylder, at $f(x,y) = c$ for et givet c. 
+# Linjerne i plottet markere altså de sammenhørende $(x,y)$-værdier, hvor $f$ antager en bestemt værdi. Vi kan se at grafen for funktionen er en aflang bakke (eller fordybning), der er symmetrisk omkring x-aksen. Funktionen <code>plot_contour</code> er ret ny i SymPy-biblioteket og er ikke helt færdigudviklet, og det er desværre ikke muligt manuelt at bestemme hvilken værdier, linjerne skal tegnes ved. 
+# 
+# Vi har også muligheder for selv at gøre arbejdet ved at benytte sympy til at tegne såkaldte implicitte udtryk, altså eksempelvis alle punkter i $xy$-planen, der opfylder, at $f(x,y) = c$ for et givet c. Dette illustreres herunder for den interesserede læser.
 # 
 # Vi betragter nu (jvf TK 1.11) $f$ givet ved:
 # $$f(x,y) = x^2 - xy + y$$
@@ -145,9 +147,9 @@ from sympy.plotting import plot_implicit
 plot_implicit(sp.Eq(f, 3), (x, -5, 5), (y, -5, 5));
 
 
-# Hvis vi vil tegne niveaukurve for værdier, vi selv kan bestemme, kan vi på samme måde som ved konturplottene lave en løkke, hvor vi går igennem de ønskede værdier:
+# Hvis vi vil tegne flere niveaukurver i samme koordinatsystem og selv vil bestemme hvilke værdier, der skal tegnes kurver for, kan vi på samme måde som ved konturplottene ovenfor lave en løkke, hvor vi går igennem de ønskede værdier:
 # 
-# __Tip:__ Her benytter vi os af `enumerate()`. Når looper over `i, val in enumerate(liste)`, så bliver `i` til indekset for `val` i listen. Desuden benytter vi `line_color = f"C{i}"`, hvilket fortæller plotting-værktøjet at den skal tage den i'te farve i biblioteket.
+# __Tip__: Når vi skriver `line_color = f"C{i}"`, så vælger SymPy at plotte med den i'te farve i matplotlibs bibliotek. Vi kan derfor loope over `range(len(c_værdier))` i nedenstående, således at  `i` angiver en bestemt niveaukurve, og så kan vi få værdien for c ved `c_værdier[i]`.
 
 # In[10]:
 
@@ -156,10 +158,10 @@ c_værdier = [-3, -1, 1, 3, 5]
 figurer   = []
 
 # Vi sætter et loop op over vores værdier for c
-for i, c_val in enumerate(c_værdier):
+for i in range(len(c_værdier)):
     
     # Lav et nyt implicit plot for hver værdi af c:
-    ny_figur = plot_implicit(sp.Eq(f, c_val), 
+    ny_figur = plot_implicit(sp.Eq(f, c_værdier[i]), 
                              line_color = f"C{i}",
                              show       = False)
     
@@ -184,47 +186,14 @@ for tilføj_figur in figurer[1:]:
 vis_figur.show()
 
 
-# Desværre understøtter `plot_implicit` ikke, at vi kan give linjerne labels. Det bedste bud er at kende de første par farver i matplotlib, som er blå, orange, grøn, og så må man prøve at danne sig et overblik ud fra dette.
+# Desværre understøtter `plot_implicit` ikke, at vi kan give linjerne labels. Det bedste bud er at kende rækkefølgen af de første kurve-farver i matplotlib, som er blå, orange, grøn, og så må man prøve at danne sig et overblik ud fra dette.
 
 # Vi ser at Python finder at $f=1$ ikke kun er opfyldt langs linjerne $x = 1$ og $y=1+x$ (hvilket vi nemt kan indse ved at indsætte i udtrykket for $f$), men også i et område nær hvor disse to linjer krydser. Dette skyldes at Python/SymPy løser $f(x,y)=c$ numerisk med en given (og tilsyneladende ikke ret høj) opløsning. Ved at betragte $f$ i 3D kan vi se at funktionen rigtigt nok er meget flad omkring $(x,y)=(1,2)$:
 
-# In[14]:
+# In[12]:
 
 
 figur = plot3d(f, (x, 0.8, 1.2), (y, 1.8, 2.2),
               xlabel = "x",
               ylabel = "y");
-
-
-# Lidt omstændigt kan vi også plotte kurven, $f(x,y) = 1$ på dette 3d plot. Det kræver dog, at vi benytte os lidt kreativt af funktionen `plot3d_parametric_line`. 
-# 
-# __kommentar: Dette blev meget omstændigt, så man kan sagtens fjerne det__
-# 
-# Det er ikke nødvendigt at gå ind i detaljerne her, men til de interesserede så kræver `plot3d_paramtetric_line` en paramtetrisk fremstilling af vores linje, som er defineret for alle værdier i vores plan. Vi henter derfor en ny paramteter `u`, som vi skal bruge til at beskrive $x$, $y$ og $z$ koordinatet. 
-# 
-# Da plot3d_paramtetric skal returener en værdi for alle værdier af $u$, men faktisk er konstant, så definerer vi en heavyside funktion, som er $0$ for $u < 0$ og $1$ ellers. Nu kan vi så bruge denne i stedet for at skrive $1$, når variablerne er konstante. 
-# 
-# Vi definerer nu linjerne givet ved $x=1, y = 1 + u$ og $z = 1$
-# 
-# og den anden linje: $x=u$, $y = 1 + u$ og $z = 1$
-
-# In[15]:
-
-
-from sympy.abc import u
-from sympy import Piecewise
-from sympy.plotting import plot3d_parametric_line 
-
-heavyside = Piecewise((0,u<0),(1,True))  # Mærkeligt trik som åbenbart virker ret godt
-
-# Vi benytter nu heavyside i stedet for 1, da u er positiv i det interval vi bruger:
-figur.append(plot3d_parametric_line(heavyside, 1 + u, heavyside,(u,0.75,1.25), show=False, line_color='red')[0])
-figur.append(plot3d_parametric_line(u,         1 + u, heavyside,(u,0.75,1.25), show=False, line_color='red')[0])
-figur.show()
-
-
-# In[ ]:
-
-
-
 

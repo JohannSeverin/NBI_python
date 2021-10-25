@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -411,7 +416,7 @@
 <li><p><code>xlabel</code> og <code>ylabel</code> sætter navne på hhv. <span class="math notranslate nohighlight">\(x-\)</span> og <span class="math notranslate nohighlight">\(y-\)</span>akse. Angiv som string.</p></li>
 </ul>
 <p>Andre keywords kan findes i <a class="reference external" href="https://docs.sympy.org/latest/modules/plotting.html">dokumentationen her</a></p>
-<p><strong>Tip:</strong> Når vi angiver tekststrenge på et plot, kan vi skrive <code class="docutils literal notranslate"><span class="pre">r&quot;$MATEMATIK$&quot;</span></code> for at skrive udtryk ved hjælp af Latex. <code class="docutils literal notranslate"><span class="pre">r</span></code> betyder, at tekststrengen skal læses rå, så man ikke eksempelvis laver et linje skift, når man skriver <code class="docutils literal notranslate"><span class="pre">\n</span></code>, som python ellers ville gøre.</p>
+<p><strong>Tip:</strong> Når vi angiver tekststrenge på et plot, kan vi skrive <code class="docutils literal notranslate"><span class="pre">r&quot;$LaTeXkode$&quot;</span></code> hvis vi gerne vil have <em>LaTeXkode</em> formatteret ved hjælp af Latex. <code class="docutils literal notranslate"><span class="pre">r</span></code> betyder, at tekststrengen skal læses rå og ikke som Python normalt ville fortolke teksten (f.eks. giver <code class="docutils literal notranslate"><span class="pre">\n</span></code> et linjeskift i Python). At kunne bruge LaTeX er særligt praktisk når man vil bruge græske bogstaver som variable.</p>
 <p>Med disse muligheder kan vi forbedre vores seneste figur:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -427,7 +432,7 @@
 <img alt="../../_images/Notebook3_plot_13_0.png" src="../../_images/Notebook3_plot_13_0.png" />
 </div>
 </div>
-<p><strong>Tip:</strong> Bemærk her, at vi kan foretage linjeskift efter <code class="docutils literal notranslate"><span class="pre">,</span></code> i et funktionskald for at gøre koden mere overskuelig.</p>
+<p><strong>Tip:</strong> Bemærk her, at vi opdeler et funktionskald på flere linjer ved at indsætte linjeskift efter <code class="docutils literal notranslate"><span class="pre">,</span></code> for at gøre koden mere overskuelig.</p>
 <p>Den kompakte kommando til plotning af to grafer tillader desværre ikke umiddelbart at vi giver dem forskellige farver. For at gøre det, kan vi gemme selve figuren som et objekt med et navn ligesom en variabel, hvorefter det er muligt at ændre på de forskellige indstillinger. Vi benytter her <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">=</span> <span class="pre">False</span></code> til ikke at vise vores plot, mens vi stadig redigerer det. Når vi er klar til at vise plottet, skriver vi <code class="docutils literal notranslate"><span class="pre">figur.show()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -453,7 +458,7 @@
 </div>
 </div>
 </div>
-<p>Og for at ændre de enkelte plot, betragter vi det som en liste. Så for at ændre det i’te plot (husk nulindeksering), skriver vi:</p>
+<p>Indstillingerne til de enkelte grafer er elementer i en liste, så for at ændre indstillingerne for det i’te plot (husk nulindeksering, så den første kurve er nummer 0), skriver vi:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figurnavn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">keyword</span> <span class="o">=</span> <span class="n">ny_værdi</span>
 </pre></div>
 </div>
@@ -521,7 +526,7 @@
 </div>
 <div class="section" id="gaffelfunktioner">
 <h2><span class="section-number">5.4.3. </span>Gaffelfunktioner<a class="headerlink" href="#gaffelfunktioner" title="Permalink to this headline">¶</a></h2>
-<p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Kaldesekvenser er:</p>
+<p>Hvis vi ønsker at lave stykvis definerede funktioner, der har forskellige funktionsudtryk i forskellige intervaller (også kendt som “gaffelfunktioner”), kan vi benytte <code>sp.Piecewise()</code>. Kaldesekvensen er:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">((</span><span class="n">udtryk1</span><span class="p">,</span> <span class="n">intervalbetingelse1</span><span class="p">),</span> <span class="p">(</span><span class="n">udtryk2</span><span class="p">,</span> <span class="n">intervalbetingelse2</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -540,7 +545,7 @@
 <img alt="../../_images/Notebook3_plot_31_0.png" src="../../_images/Notebook3_plot_31_0.png" />
 </div>
 </div>
-<p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde, hvis man skal tegne en gaffelfunktion, hvor samme udtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Et eksempel på dette kunne være at betragte gaffelfunktionen:</p>
+<p><code>sp.Piecewise</code> kan arbejde med et større antal udtryk og intervalbetingelser end blot to som i eksemplet. Hvis nogle <span class="math notranslate nohighlight">\(x\)</span>-værdier opfylder flere af intervalbetingelserne, anvender SymPy det første udtryk hvor et givet <span class="math notranslate nohighlight">\(x\)</span> opfylder betingelsen. Man kan bruge dette på en smart måde, hvis man skal tegne en gaffelfunktion, hvor samme funktionsudtryk gælder i flere intervaller for <span class="math notranslate nohighlight">\(x\)</span>. Man kan eksempelvis lade det andet udtryk gælde alle steder, hvor den første ikke gælder, ved blot at angive andet udtryks intervalbetingelse som <code>True</code> og angive det som det sidste udtryk. Et eksempel på dette kunne være at betragte gaffelfunktionen:</p>
 <p><span class="math notranslate nohighlight">\(g_1(x) = \begin{cases} -2x \quad &amp;x &lt; -2 \\ x^2 \quad &amp;-2\leq x\leq 2\\ 2x \quad &amp;2 &lt; x\quad \end{cases}\)</span></p>
 <p>som kan skrives kortere som:</p>
 <p><span class="math notranslate nohighlight">\(g_2(x) = \begin{cases} x^2 \quad &amp;|x|\leq 2\\ 2|x| \quad &amp;\mbox{ellers}\end{cases}\)</span></p>
@@ -554,7 +559,7 @@
 </div>
 </div>
 <p>Bemærk at vi for andet udtryk med vilje ikke skriver nogen betingelse for x, men blot ‘True’, som altid er opfyldt, idet vi ønsker at bruge det andet udtryk når betingelsen for første udtryk <code class="docutils literal notranslate"><span class="pre">(abs(x)&lt;=2)</span></code> ikke er opfyldt.</p>
-<p>Plotter vi nu de to figurer (her sepereret med en konstant for at kunne se dem begge får vi:</p>
+<p>Plotter vi nu de to kurver (her separeret visuelt ved at vi har lagt en konstant til den ene), får vi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figur</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Gaffelfunktion 2&quot;</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -568,7 +573,7 @@
 <img alt="../../_images/Notebook3_plot_35_0.png" src="../../_images/Notebook3_plot_35_0.png" />
 </div>
 </div>
-<p>Dette giver altså samme resultat.</p>
+<p>Hvilket viser at de to notationsmetoder som forventet giver samme resultat.</p>
 <p>Angives udtrykkene derimod i omvendt rækkefølge, kommer udtrykket <span class="math notranslate nohighlight">\(x^2\)</span> aldrig i brug, da betingelsen <code>True</code> altid er opfyldt, og det er blot <code>abs(x)</code>, dvs. <span class="math notranslate nohighlight">\(|x|\)</span>, der tegnes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

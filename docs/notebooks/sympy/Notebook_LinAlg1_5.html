@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.9. Matrix reduktion, ligningsløsning og inverse matricer &#8212; Python i LinAlys og MekRel</title>
+    <title>5.9. Matrix-reduktion, ligningsløsning og inverse matricer &#8212; Python i LinAlys og MekRel</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -353,7 +358,16 @@
               <div>
                 
   <div class="section" id="matrix-reduktion-ligningslosning-og-inverse-matricer">
-<h1><span class="section-number">5.9. </span>Matrix reduktion, ligningsløsning og inverse matricer<a class="headerlink" href="#matrix-reduktion-ligningslosning-og-inverse-matricer" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.9. </span>Matrix-reduktion, ligningsløsning og inverse matricer<a class="headerlink" href="#matrix-reduktion-ligningslosning-og-inverse-matricer" title="Permalink to this headline">¶</a></h1>
+<p>En af de store fordele ved lineær algebra er, at vi nemt kan løse lineære ligningssystemer. Til dette kan vi gøre brug af lidt forskellige værktøjer i SymPy, som vil blive gennemgået i denne sektion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>          <span class="c1"># Importer SymPy</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>    <span class="c1"># Vi kommer til at definerer mange matricer i denne Notebook</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="matrix-reduktion">
 <h2><span class="section-number">5.9.1. </span>Matrix-reduktion<a class="headerlink" href="#matrix-reduktion" title="Permalink to this headline">¶</a></h2>
 <p>Python/SymPy indeholder en række indbyggede metoder til at reducere matricer. Særligt brugbart i LinALys er funktionen, der bringer en matrix på reduceret række-echelonform. For en matrix <span class="math notranslate nohighlight">\(A\)</span> kan vi finde den ækvivalente matrix på reduceret række-echelonform ved <code>.rref()</code>:</p>
@@ -366,22 +380,40 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_2_0.png" src="../../_images/Notebook_LinAlg1_5_2_0.png" />
-<img alt="../../_images/Notebook_LinAlg1_5_2_1.png" src="../../_images/Notebook_LinAlg1_5_2_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 1 &amp; -2 &amp; 1\\3 &amp; 2 &amp; 1 &amp; -5\\2 &amp; 1 &amp; 3 &amp; -6\end{matrix}\right]\end{split}\]</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Matrix([
+ [1, 0,  5, -7],
+ [0, 1, -7,  8],
+ [0, 0,  0,  0]]),
+ (0, 1))
+</pre></div>
 </div>
 </div>
-<p>Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>.</p>
+</div>
+<p>Resultatet er den reducerede række-echelonform og en liste over nummeret på de kolonner, der har en ledende indgang. Hvis man vil udelade denne liste, kan man i stedet skrive <code>.rref(pivots = False)</code>. <em>Man kan få printet tingene fint, hvis man i starten af Notebooken kalder <code class="docutils literal notranslate"><span class="pre">sp.init_printing()</span></code>, men det giver lidt bøvl med vores noteformat, og vi har derfor udeladt dette. Alternativt kan man blot indeksere løsningen:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 5 &amp; -7\\0 &amp; 1 &amp; -7 &amp; 8\\0 &amp; 0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 1)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ligningssystemer-med-een-losning">
 <h2><span class="section-number">5.9.2. </span>Ligningssystemer med een løsning<a class="headerlink" href="#ligningssystemer-med-een-losning" title="Permalink to this headline">¶</a></h2>
-<p>Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælpe af matrixregning. Vi kan f.eks. omskrive:</p>
-<p>\begin{align*}
-x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 136
-\end{align*}</p>
+<p>Som det nok er gået op for de fleste, anviser lineær algebra en effektiv måde til at bestemme løsningerne til lineære ligningssystemer ved hjælp af matrixregning. Vi kan f.eks. omskrive:</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned} x_1 + 3 x_3 &amp;= 20 \\ 4x_2 + 6 x_3 &amp;= 74 \\ 3 x_1 + 6x_2 + 11 x_3 &amp;= 136 \end{aligned}\)</span></p>
 <p>til:</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}20\74\136\end{matrix}\right]
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\\0 &amp; 4 &amp; 6\\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}20\\74\\136\end{matrix}\right]\)</span></p>
 <p>Når vi har et ligningssystem på denne form, og der findes en entydig løsning, kan vi uden videre beregne løsningen med SymPy. Vi benytter blot <code>LUsolve</code>-metoden på en matrix, og giver den højre side af vores ligningssystem som inputparameter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,13 +428,12 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_10_0.png" src="../../_images/Notebook_LinAlg1_5_10_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}5\\11\\5\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Skulle vi være mistroiske overfor moderne datamater, kan vi nu verificere at</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}5 \11\5\end{matrix}\right]
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}5 \\11\\5\end{matrix}\right]\)</span></p>
 <p>virkelig er en løsning ved at multiplicere matricen <span class="math notranslate nohighlight">\(A\)</span> med løsningsvektoren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -411,13 +442,26 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_12_0.png" src="../../_images/Notebook_LinAlg1_5_12_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}20\\74\\136\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Vi kan lave tilsvarende operationer med symbolske variable. Lad <span class="math notranslate nohighlight">\(A\)</span> være matricen angivet ovenfor, men i stedet ønsker vi nu at finde en generel løsning til</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}d\e\f\end{matrix}\right]
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\\0 &amp; 4 &amp; 6\\3 &amp; 6 &amp; 11\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}d\\e\\f\end{matrix}\right]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">])</span>
+
+<span class="n">A</span><span class="o">.</span><span class="n">LUsolve</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2 d}{7} - \frac{9 e}{14} + \frac{3 f}{7}\\- \frac{9 d}{14} - \frac{e}{14} + \frac{3 f}{14}\\\frac{3 d}{7} + \frac{3 e}{14} - \frac{f}{7}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
 </div>
 <div class="section" id="omvendte-inverse-matricer">
 <h2><span class="section-number">5.9.3. </span>Omvendte/inverse matricer<a class="headerlink" href="#omvendte-inverse-matricer" title="Permalink to this headline">¶</a></h2>
@@ -429,30 +473,30 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_15_0.png" src="../../_images/Notebook_LinAlg1_5_15_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2}{7} &amp; - \frac{9}{14} &amp; \frac{3}{7}\\- \frac{9}{14} &amp; - \frac{1}{14} &amp; \frac{3}{14}\\\frac{3}{7} &amp; \frac{3}{14} &amp; - \frac{1}{7}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Såfremt den omvendte/inverse matrix for <span class="math notranslate nohighlight">\(A\)</span> eksisterer, kan vi derfor også løse det ovenstående ligningssystem som</p>
-<p>\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] =
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\0 &amp; 4 &amp; 6\3 &amp; 6 &amp; 11\end{matrix}\right]^{-1}
-\displaystyle \left[\begin{matrix}d\e\f\end{matrix}\right]
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = 
+    \displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3\\0 &amp; 4 &amp; 6\\3 &amp; 6 &amp; 11\end{matrix}\right]^{-1}
+    \displaystyle \left[\begin{matrix}d\\e\\f\end{matrix}\right]\)</span></p>
 <p>hvilket i Python-syntax gøres ved</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="o">*</span><span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_17_0.png" src="../../_images/Notebook_LinAlg1_5_17_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2 d}{7} - \frac{9 e}{14} + \frac{3 f}{7}\\- \frac{9 d}{14} - \frac{e}{14} + \frac{3 f}{14}\\\frac{3 d}{7} + \frac{3 e}{14} - \frac{f}{7}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="matrixrang">
 <h2><span class="section-number">5.9.4. </span>Matrixrang<a class="headerlink" href="#matrixrang" title="Permalink to this headline">¶</a></h2>
-<p>Bemærk at hverken man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis  ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.</p>
+<p>Bemærk at man hverken kan finde løsninger med <code>LUsolve</code> eller ved at beregne den inverse matrix hvis ikke ligningssystemet har netop én løsning (dvs. hvis ligningerne i ligningssystemet har indbygget en modstrid eller løsningen har en eller flere frie variable). I disse tilfælde vil begge metoder give fejlmeddelelser.</p>
 <p>Årsagen hertil er at koefficientmatricen ikke har fuld rang. Rangen for en matrix <span class="math notranslate nohighlight">\(A\)</span> kan findes ved <code>A.rank()</code>, og angiver antallet af ledende et-taller i den matrix, der fremkommer ved at føre <span class="math notranslate nohighlight">\(A\)</span> på reduceret række-echelonform.</p>
 <p>Af denne grund, og i overensstemmelse med Messer sætning 5.12, er det derfor ingen overraskelse at se at <span class="math notranslate nohighlight">\(A\)</span> fra overfor, der repræsenterer 3 lineært uafgængige ligninger med 3 ubekendte, har rang 3:</p>
 <div class="cell docutils container">
@@ -462,48 +506,52 @@ x_1 + 3 x_3 &amp;= 20 \ 4x_2 + 6 x_3 &amp;= 74 \ 3 x_1 + 6x_2 + 11 x_3 &amp;= 13
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_19_0.png" src="../../_images/Notebook_LinAlg1_5_19_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="ligningssystemer-med-flere-losninger-frie-parametre">
 <h2><span class="section-number">5.9.5. </span>Ligningssystemer med flere løsninger: frie parametre<a class="headerlink" href="#ligningssystemer-med-flere-losninger-frie-parametre" title="Permalink to this headline">¶</a></h2>
-<p>Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal fri variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix <span class="math notranslate nohighlight">\(A\)</span> er mindre end antallet af variable i ligningssystemet.
+<p>Vi kommer dog ofte ud for ligningssystemer med flere ubekendte end der er lineært uafhængige ligninger, svarende til at løsningen kan parametriseres med et antal frie variable/parametre. Dette svarer til at rangen af den tilsvarende koefficientmatrix <span class="math notranslate nohighlight">\(A\)</span> er mindre end antallet af variable i ligningssystemet.
 I sådanne tilfælde er A ikke invertibel og <code>LU-solve</code> vil derfor ikke virke.</p>
-<p>Eksempel: Vi vil gerne finde den fuldstændige løsning til
-\begin{equation*}
-\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3 &amp; 1\0 &amp; 4 &amp; 6 &amp; 1-1 &amp; 4 &amp; 3 &amp; 0\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}0\0\0\end{matrix}\right]
-\end{equation*}</p>
+<p>Eksempel: Vi vil gerne finde den fuldstændige løsning til:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3 &amp; 1\\0 &amp; 4 &amp; 6 &amp; 1\\-1 &amp; 4 &amp; 3 &amp; 0\end{matrix}\right] \displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right] = \displaystyle \left[\begin{matrix}0\\0\\0\end{matrix}\right]\)</span></p>
 <p>En mulighed er at føre <span class="math notranslate nohighlight">\(A\)</span> på reduceret række-echelonform:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="n">A</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_21_0.png" src="../../_images/Notebook_LinAlg1_5_21_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 3 &amp; 1\\0 &amp; 1 &amp; \frac{3}{2} &amp; \frac{1}{4}\\0 &amp; 0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
-<p>Vi sætter <span class="math notranslate nohighlight">\(x_3 = r\)</span> og <span class="math notranslate nohighlight">\(x_4 = s\)</span> da der ikke er ledende indgange i 3. og 4. kolonne. Herefter opskriver vi løsningen som
-\begin{equation*}
-\displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\x_4\end{matrix}\right] =
-\displaystyle \left[\begin{matrix}-3-\frac32\1\0\end{matrix}\right]\cdot r +
-\displaystyle \left[\begin{matrix}-1-\frac14\0\1\end{matrix}\right]\cdot s, \hspace{1cm}r,s\in {\rm I!R}
-\end{equation*}</p>
+<p>Vi sætter <span class="math notranslate nohighlight">\(x_3 = r\)</span> og <span class="math notranslate nohighlight">\(x_4 = s\)</span> da der ikke er ledende indgange i 3. og 4. kolonne. Herefter opskriver vi løsningen som</p>
+<p><span class="math notranslate nohighlight">\(   \displaystyle \left[\begin{matrix}x_{1}\\x_{2}\\x_{3}\\x_4\end{matrix}\right] = 
+    \displaystyle \left[\begin{matrix}-3\\-\frac32\\1\\0\end{matrix}\right]\cdot r +
+    \displaystyle \left[\begin{matrix}-1\\-\frac14\\0\\1\end{matrix}\right]\cdot s, \hspace{1cm}r,s\in {\rm I\!R}\)</span></p>
 <p>Men vi kan også benytte metoden <code>.gauss_jordan_solve()</code> som efterligner denne metode, blot med en lidt anden typografi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">A</span><span class="o">.</span><span class="n">gauss_jordan_solve</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">gauss_jordan_solve</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">gauss_jordan_solve</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg1_5_23_0.png" src="../../_images/Notebook_LinAlg1_5_23_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- 3 \tau_{0} - \tau_{1}\\- \frac{3 \tau_{0}}{2} - \frac{\tau_{1}}{4}\\\tau_{0}\\\tau_{1}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\tau_{0}\\\tau_{1}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
+<p>Her får vi altså først en løsning parametriseret ved <span class="math notranslate nohighlight">\(\tau_0 ... \tau_n\)</span>, og dernæst en vektor over de frie parametre.</p>
 </div>
 </div>
 

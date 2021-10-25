@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.7.25)  26 JUL 2021 12:25
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.7.25)  3 AUG 2021 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1529,13 +1529,13 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
  [1
 
-] [2]
+] [2
+
+]
 LaTeX Info: Redefining \rmfamily on input line 121.
 LaTeX Info: Redefining \sffamily on input line 121.
 LaTeX Info: Redefining \ttfamily on input line 121.
- [1
-
-]
+ [1]
 LaTeX Info: Redefining \rmfamily on input line 121.
 LaTeX Info: Redefining \sffamily on input line 121.
 LaTeX Info: Redefining \ttfamily on input line 121.
@@ -1597,814 +1597,376 @@ Chapter 2.
 [7
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 265.
-LaTeX Info: Redefining \sffamily on input line 265.
-LaTeX Info: Redefining \ttfamily on input line 265.
+LaTeX Info: Redefining \rmfamily on input line 266.
+LaTeX Info: Redefining \sffamily on input line 266.
+LaTeX Info: Redefining \ttfamily on input line 266.
  [8]
-LaTeX Info: Redefining \rmfamily on input line 337.
-LaTeX Info: Redefining \sffamily on input line 337.
-LaTeX Info: Redefining \ttfamily on input line 337.
+LaTeX Info: Redefining \rmfamily on input line 338.
+LaTeX Info: Redefining \sffamily on input line 338.
+LaTeX Info: Redefining \ttfamily on input line 338.
  [9]
-LaTeX Info: Redefining \rmfamily on input line 393.
-LaTeX Info: Redefining \sffamily on input line 393.
-LaTeX Info: Redefining \ttfamily on input line 393.
+LaTeX Info: Redefining \rmfamily on input line 394.
+LaTeX Info: Redefining \sffamily on input line 394.
+LaTeX Info: Redefining \ttfamily on input line 394.
  [10]
-LaTeX Info: Redefining \rmfamily on input line 466.
-LaTeX Info: Redefining \sffamily on input line 466.
-LaTeX Info: Redefining \ttfamily on input line 466.
+LaTeX Info: Redefining \rmfamily on input line 467.
+LaTeX Info: Redefining \sffamily on input line 467.
+LaTeX Info: Redefining \ttfamily on input line 467.
  [11]
-LaTeX Info: Redefining \rmfamily on input line 517.
-LaTeX Info: Redefining \sffamily on input line 517.
-LaTeX Info: Redefining \ttfamily on input line 517.
+LaTeX Info: Redefining \rmfamily on input line 518.
+LaTeX Info: Redefining \sffamily on input line 518.
+LaTeX Info: Redefining \ttfamily on input line 518.
  [12]
-LaTeX Info: Redefining \rmfamily on input line 575.
-LaTeX Info: Redefining \sffamily on input line 575.
-LaTeX Info: Redefining \ttfamily on input line 575.
+LaTeX Info: Redefining \rmfamily on input line 576.
+LaTeX Info: Redefining \sffamily on input line 576.
+LaTeX Info: Redefining \ttfamily on input line 576.
  [13]
-LaTeX Info: Redefining \rmfamily on input line 575.
-LaTeX Info: Redefining \sffamily on input line 575.
-LaTeX Info: Redefining \ttfamily on input line 575.
+LaTeX Info: Redefining \rmfamily on input line 576.
+LaTeX Info: Redefining \sffamily on input line 576.
+LaTeX Info: Redefining \ttfamily on input line 576.
  [14
 
 ]
 Chapter 3.
 [15]
-File: Intro_til_pakker_7_0.png Graphic file (type bmp)
-<Intro_til_pakker_7_0.png>
-LaTeX Info: Redefining \rmfamily on input line 660.
-LaTeX Info: Redefining \sffamily on input line 660.
-LaTeX Info: Redefining \ttfamily on input line 660.
+File: Intro_til_pakker_7_1.png Graphic file (type bmp)
+<Intro_til_pakker_7_1.png>
+LaTeX Info: Redefining \rmfamily on input line 663.
+LaTeX Info: Redefining \sffamily on input line 663.
+LaTeX Info: Redefining \ttfamily on input line 663.
  [16]
-LaTeX Info: Redefining \rmfamily on input line 738.
-LaTeX Info: Redefining \sffamily on input line 738.
-LaTeX Info: Redefining \ttfamily on input line 738.
+LaTeX Info: Redefining \rmfamily on input line 705.
+LaTeX Info: Redefining \sffamily on input line 705.
+LaTeX Info: Redefining \ttfamily on input line 705.
  [17]
 File: Intro_til_pakker_25_0.png Graphic file (type bmp)
 <Intro_til_pakker_25_0.png>
-LaTeX Info: Redefining \rmfamily on input line 769.
-LaTeX Info: Redefining \sffamily on input line 769.
-LaTeX Info: Redefining \ttfamily on input line 769.
+LaTeX Info: Redefining \rmfamily on input line 751.
+LaTeX Info: Redefining \sffamily on input line 751.
+LaTeX Info: Redefining \ttfamily on input line 751.
  [18]
-LaTeX Info: Redefining \rmfamily on input line 832.
-LaTeX Info: Redefining \sffamily on input line 832.
-LaTeX Info: Redefining \ttfamily on input line 832.
+LaTeX Info: Redefining \rmfamily on input line 817.
+LaTeX Info: Redefining \sffamily on input line 817.
+LaTeX Info: Redefining \ttfamily on input line 817.
  [19]
-LaTeX Info: Redefining \rmfamily on input line 832.
-LaTeX Info: Redefining \sffamily on input line 832.
-LaTeX Info: Redefining \ttfamily on input line 832.
- [20
+LaTeX Info: Redefining \rmfamily on input line 848.
+LaTeX Info: Redefining \sffamily on input line 848.
+LaTeX Info: Redefining \ttfamily on input line 848.
+ [20]
+Chapter 4.
+[21
 
 ]
-Chapter 4.
-[21]
-LaTeX Info: Redefining \rmfamily on input line 942.
-LaTeX Info: Redefining \sffamily on input line 942.
-LaTeX Info: Redefining \ttfamily on input line 942.
+LaTeX Info: Redefining \rmfamily on input line 958.
+LaTeX Info: Redefining \sffamily on input line 958.
+LaTeX Info: Redefining \ttfamily on input line 958.
  [22]
-LaTeX Info: Redefining \rmfamily on input line 995.
-LaTeX Info: Redefining \sffamily on input line 995.
-LaTeX Info: Redefining \ttfamily on input line 995.
+LaTeX Info: Redefining \rmfamily on input line 1011.
+LaTeX Info: Redefining \sffamily on input line 1011.
+LaTeX Info: Redefining \ttfamily on input line 1011.
  [23]
-LaTeX Info: Redefining \rmfamily on input line 1050.
-LaTeX Info: Redefining \sffamily on input line 1050.
-LaTeX Info: Redefining \ttfamily on input line 1050.
+LaTeX Info: Redefining \rmfamily on input line 1066.
+LaTeX Info: Redefining \sffamily on input line 1066.
+LaTeX Info: Redefining \ttfamily on input line 1066.
  [24]
 File: Matplotlib_pyplot_4_0.png Graphic file (type bmp)
 <Matplotlib_pyplot_4_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1083.
-LaTeX Info: Redefining \sffamily on input line 1083.
-LaTeX Info: Redefining \ttfamily on input line 1083.
+LaTeX Info: Redefining \rmfamily on input line 1100.
+LaTeX Info: Redefining \sffamily on input line 1100.
+LaTeX Info: Redefining \ttfamily on input line 1100.
  [25]
-File: Matplotlib_pyplot_6_0.png Graphic file (type bmp)
-<Matplotlib_pyplot_6_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1112.
-LaTeX Info: Redefining \sffamily on input line 1112.
-LaTeX Info: Redefining \ttfamily on input line 1112.
+File: Matplotlib_pyplot_6_1.png Graphic file (type bmp)
+<Matplotlib_pyplot_6_1.png>
+LaTeX Info: Redefining \rmfamily on input line 1135.
+LaTeX Info: Redefining \sffamily on input line 1135.
+LaTeX Info: Redefining \ttfamily on input line 1135.
  [26]
+LaTeX Info: Redefining \rmfamily on input line 1166.
+LaTeX Info: Redefining \sffamily on input line 1166.
+LaTeX Info: Redefining \ttfamily on input line 1166.
+ [27]
 File: Funktioner_og_Scipy_optimize-checkpoint_8_0.png Graphic file (type bmp)
 <Funktioner_og_Scipy_optimize-checkpoint_8_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1169.
-LaTeX Info: Redefining \sffamily on input line 1169.
-LaTeX Info: Redefining \ttfamily on input line 1169.
- [27]
-LaTeX Info: Redefining \rmfamily on input line 1205.
-LaTeX Info: Redefining \sffamily on input line 1205.
-LaTeX Info: Redefining \ttfamily on input line 1205.
+LaTeX Info: Redefining \rmfamily on input line 1197.
+LaTeX Info: Redefining \sffamily on input line 1197.
+LaTeX Info: Redefining \ttfamily on input line 1197.
  [28]
-LaTeX Info: Redefining \rmfamily on input line 1256.
-LaTeX Info: Redefining \sffamily on input line 1256.
-LaTeX Info: Redefining \ttfamily on input line 1256.
+LaTeX Info: Redefining \rmfamily on input line 1252.
+LaTeX Info: Redefining \sffamily on input line 1252.
+LaTeX Info: Redefining \ttfamily on input line 1252.
  [29]
 File: Funktioner_og_Scipy_optimize-checkpoint_21_0.png Graphic file (type bmp)
 <Funktioner_og_Scipy_optimize-checkpoint_21_0.png>
+LaTeX Info: Redefining \rmfamily on input line 1288.
+LaTeX Info: Redefining \sffamily on input line 1288.
+LaTeX Info: Redefining \ttfamily on input line 1288.
+ [30]
 File: Funktioner_og_Scipy_optimize-checkpoint_25_0.png Graphic file (type bmp)
 <Funktioner_og_Scipy_optimize-checkpoint_25_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1289.
-LaTeX Info: Redefining \sffamily on input line 1289.
-LaTeX Info: Redefining \ttfamily on input line 1289.
- [30]
-LaTeX Info: Redefining \rmfamily on input line 1306.
-LaTeX Info: Redefining \sffamily on input line 1306.
-LaTeX Info: Redefining \ttfamily on input line 1306.
+LaTeX Info: Redefining \rmfamily on input line 1317.
+LaTeX Info: Redefining \sffamily on input line 1317.
+LaTeX Info: Redefining \ttfamily on input line 1317.
  [31]
-LaTeX Info: Redefining \rmfamily on input line 1306.
-LaTeX Info: Redefining \sffamily on input line 1306.
-LaTeX Info: Redefining \ttfamily on input line 1306.
- [32
+LaTeX Info: Redefining \rmfamily on input line 1334.
+LaTeX Info: Redefining \sffamily on input line 1334.
+LaTeX Info: Redefining \ttfamily on input line 1334.
+ [32]
+Chapter 5.
+[33
 
 ]
-Chapter 5.
-[33]
-LaTeX Info: Redefining \rmfamily on input line 1410.
-LaTeX Info: Redefining \sffamily on input line 1410.
-LaTeX Info: Redefining \ttfamily on input line 1410.
+LaTeX Info: Redefining \rmfamily on input line 1438.
+LaTeX Info: Redefining \sffamily on input line 1438.
+LaTeX Info: Redefining \ttfamily on input line 1438.
  [34]
-LaTeX Info: Redefining \rmfamily on input line 1451.
-LaTeX Info: Redefining \sffamily on input line 1451.
-LaTeX Info: Redefining \ttfamily on input line 1451.
+LaTeX Info: Redefining \rmfamily on input line 1479.
+LaTeX Info: Redefining \sffamily on input line 1479.
+LaTeX Info: Redefining \ttfamily on input line 1479.
  [35]
-LaTeX Info: Redefining \rmfamily on input line 1514.
-LaTeX Info: Redefining \sffamily on input line 1514.
-LaTeX Info: Redefining \ttfamily on input line 1514.
+LaTeX Info: Redefining \rmfamily on input line 1542.
+LaTeX Info: Redefining \sffamily on input line 1542.
+LaTeX Info: Redefining \ttfamily on input line 1542.
  [36]
-LaTeX Info: Redefining \rmfamily on input line 1579.
-LaTeX Info: Redefining \sffamily on input line 1579.
-LaTeX Info: Redefining \ttfamily on input line 1579.
+LaTeX Info: Redefining \rmfamily on input line 1607.
+LaTeX Info: Redefining \sffamily on input line 1607.
+LaTeX Info: Redefining \ttfamily on input line 1607.
  [37]
-LaTeX Info: Redefining \rmfamily on input line 1626.
-LaTeX Info: Redefining \sffamily on input line 1626.
-LaTeX Info: Redefining \ttfamily on input line 1626.
+LaTeX Info: Redefining \rmfamily on input line 1653.
+LaTeX Info: Redefining \sffamily on input line 1653.
+LaTeX Info: Redefining \ttfamily on input line 1653.
  [38]
-LaTeX Info: Redefining \rmfamily on input line 1686.
-LaTeX Info: Redefining \sffamily on input line 1686.
-LaTeX Info: Redefining \ttfamily on input line 1686.
+LaTeX Info: Redefining \rmfamily on input line 1714.
+LaTeX Info: Redefining \sffamily on input line 1714.
+LaTeX Info: Redefining \ttfamily on input line 1714.
  [39]
-LaTeX Info: Redefining \rmfamily on input line 1749.
-LaTeX Info: Redefining \sffamily on input line 1749.
-LaTeX Info: Redefining \ttfamily on input line 1749.
+LaTeX Info: Redefining \rmfamily on input line 1770.
+LaTeX Info: Redefining \sffamily on input line 1770.
+LaTeX Info: Redefining \ttfamily on input line 1770.
  [40]
-File: Notebook3_ligninger_34_0.png Graphic file (type bmp)
-<Notebook3_ligninger_34_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1795.
-LaTeX Info: Redefining \sffamily on input line 1795.
-LaTeX Info: Redefining \ttfamily on input line 1795.
+LaTeX Info: Redefining \rmfamily on input line 1821.
+LaTeX Info: Redefining \sffamily on input line 1821.
+LaTeX Info: Redefining \ttfamily on input line 1821.
  [41]
-LaTeX Info: Redefining \rmfamily on input line 1829.
-LaTeX Info: Redefining \sffamily on input line 1829.
-LaTeX Info: Redefining \ttfamily on input line 1829.
+File: Notebook3_ligninger_36_0.png Graphic file (type bmp)
+<Notebook3_ligninger_36_0.png>
+LaTeX Info: Redefining \rmfamily on input line 1859.
+LaTeX Info: Redefining \sffamily on input line 1859.
+LaTeX Info: Redefining \ttfamily on input line 1859.
  [42]
 File: Notebook3_plot_6_0.png Graphic file (type bmp)
 <Notebook3_plot_6_0.png>
 File: Notebook3_plot_8_0.png Graphic file (type bmp)
 <Notebook3_plot_8_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1856.
-LaTeX Info: Redefining \sffamily on input line 1856.
-LaTeX Info: Redefining \ttfamily on input line 1856.
+LaTeX Info: Redefining \rmfamily on input line 1897.
+LaTeX Info: Redefining \sffamily on input line 1897.
+LaTeX Info: Redefining \ttfamily on input line 1897.
  [43]
 File: Notebook3_plot_10_0.png Graphic file (type bmp)
 <Notebook3_plot_10_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1865.
-LaTeX Info: Redefining \sffamily on input line 1865.
-LaTeX Info: Redefining \ttfamily on input line 1865.
+LaTeX Info: Redefining \rmfamily on input line 1906.
+LaTeX Info: Redefining \sffamily on input line 1906.
+LaTeX Info: Redefining \ttfamily on input line 1906.
  [44]
 File: Notebook3_plot_13_0.png Graphic file (type bmp)
 <Notebook3_plot_13_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1900.
-LaTeX Info: Redefining \sffamily on input line 1900.
-LaTeX Info: Redefining \ttfamily on input line 1900.
+LaTeX Info: Redefining \rmfamily on input line 1943.
+LaTeX Info: Redefining \sffamily on input line 1943.
+LaTeX Info: Redefining \ttfamily on input line 1943.
  [45]
-File: Notebook3_plot_15_0.png Graphic file (type bmp)
-<Notebook3_plot_15_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1909.
-LaTeX Info: Redefining \sffamily on input line 1909.
-LaTeX Info: Redefining \ttfamily on input line 1909.
+LaTeX Info: Redefining \rmfamily on input line 1976.
+LaTeX Info: Redefining \sffamily on input line 1976.
+LaTeX Info: Redefining \ttfamily on input line 1976.
  [46]
-File: Notebook3_plot_17_0.png Graphic file (type bmp)
-<Notebook3_plot_17_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1926.
-LaTeX Info: Redefining \sffamily on input line 1926.
-LaTeX Info: Redefining \ttfamily on input line 1926.
+File: Notebook3_plot_23_0.png Graphic file (type bmp)
+<Notebook3_plot_23_0.png>
+File: Notebook3_plot_26_0.png Graphic file (type bmp)
+<Notebook3_plot_26_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2008.
+LaTeX Info: Redefining \sffamily on input line 2008.
+LaTeX Info: Redefining \ttfamily on input line 2008.
  [47]
-File: Notebook3_plot_20_0.png Graphic file (type bmp)
-<Notebook3_plot_20_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1938.
-LaTeX Info: Redefining \sffamily on input line 1938.
-LaTeX Info: Redefining \ttfamily on input line 1938.
+File: Notebook3_plot_28_0.png Graphic file (type bmp)
+<Notebook3_plot_28_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2018.
+LaTeX Info: Redefining \sffamily on input line 2018.
+LaTeX Info: Redefining \ttfamily on input line 2018.
 
 [48]
-File: Notebook3_plot_22_0.png Graphic file (type bmp)
-<Notebook3_plot_22_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1948.
-LaTeX Info: Redefining \sffamily on input line 1948.
-LaTeX Info: Redefining \ttfamily on input line 1948.
+File: Notebook3_plot_31_0.png Graphic file (type bmp)
+<Notebook3_plot_31_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2050.
+LaTeX Info: Redefining \sffamily on input line 2050.
+LaTeX Info: Redefining \ttfamily on input line 2050.
  [49]
-File: Notebook3_plot_25_0.png Graphic file (type bmp)
-<Notebook3_plot_25_0.png>
-
-Overfull \vbox (10.19121pt too high) detected at line 1977
- []
-
-LaTeX Info: Redefining \rmfamily on input line 1977.
-LaTeX Info: Redefining \sffamily on input line 1977.
-LaTeX Info: Redefining \ttfamily on input line 1977.
-[50]
-File: Notebook3_plot_27_0.png Graphic file (type bmp)
-<Notebook3_plot_27_0.png>
-File: Notebook3_plot_29_0.png Graphic file (type bmp)
-<Notebook3_plot_29_0.png>
-LaTeX Info: Redefining \rmfamily on input line 1991.
-LaTeX Info: Redefining \sffamily on input line 1991.
-LaTeX Info: Redefining \ttfamily on input line 1991.
+File: Notebook3_plot_35_0.png Graphic file (type bmp)
+<Notebook3_plot_35_0.png>
+File: Notebook3_plot_38_0.png Graphic file (type bmp)
+<Notebook3_plot_38_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2087.
+LaTeX Info: Redefining \sffamily on input line 2087.
+LaTeX Info: Redefining \ttfamily on input line 2087.
+ [50]
+LaTeX Info: Redefining \rmfamily on input line 2116.
+LaTeX Info: Redefining \sffamily on input line 2116.
+LaTeX Info: Redefining \ttfamily on input line 2116.
  [51]
-LaTeX Info: Redefining \rmfamily on input line 2012.
-LaTeX Info: Redefining \sffamily on input line 2012.
-LaTeX Info: Redefining \ttfamily on input line 2012.
+LaTeX Info: Redefining \rmfamily on input line 2179.
+LaTeX Info: Redefining \sffamily on input line 2179.
+LaTeX Info: Redefining \ttfamily on input line 2179.
  [52]
-File: Notebook4_6_0.png Graphic file (type bmp)
-<Notebook4_6_0.png>
-File: Notebook4_6_1.png Graphic file (type bmp)
-<Notebook4_6_1.png>
-File: Notebook4_8_0.png Graphic file (type bmp)
-<Notebook4_8_0.png>
-File: Notebook4_8_1.png Graphic file (type bmp)
-<Notebook4_8_1.png>
-File: Notebook4_10_0.png Graphic file (type bmp)
-<Notebook4_10_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2067.
-LaTeX Info: Redefining \sffamily on input line 2067.
-LaTeX Info: Redefining \ttfamily on input line 2067.
+File: Notebook4_21_2.png Graphic file (type bmp)
+<Notebook4_21_2.png>
+LaTeX Info: Redefining \rmfamily on input line 2236.
+LaTeX Info: Redefining \sffamily on input line 2236.
+LaTeX Info: Redefining \ttfamily on input line 2236.
  [53]
-File: Notebook4_12_0.png Graphic file (type bmp)
-<Notebook4_12_0.png>
-File: Notebook4_12_1.png Graphic file (type bmp)
-<Notebook4_12_1.png>
-File: Notebook4_14_0.png Graphic file (type bmp)
-<Notebook4_14_0.png>
-File: Notebook4_16_0.png Graphic file (type bmp)
-<Notebook4_16_0.png>
-File: Notebook4_16_1.png Graphic file (type bmp)
-<Notebook4_16_1.png>
-File: Notebook4_18_0.png Graphic file (type bmp)
-<Notebook4_18_0.png>
-File: Notebook4_20_0.png Graphic file (type bmp)
-<Notebook4_20_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2122.
-LaTeX Info: Redefining \sffamily on input line 2122.
-LaTeX Info: Redefining \ttfamily on input line 2122.
+LaTeX Info: Redefining \rmfamily on input line 2265.
+LaTeX Info: Redefining \sffamily on input line 2265.
+LaTeX Info: Redefining \ttfamily on input line 2265.
  [54]
-File: Notebook4_22_2.png Graphic file (type bmp)
-<Notebook4_22_2.png>
-File: Notebook4_24_0.png Graphic file (type bmp)
-<Notebook4_24_0.png>
-File: Notebook4_24_1.png Graphic file (type bmp)
-<Notebook4_24_1.png>
-LaTeX Info: Redefining \rmfamily on input line 2153.
-LaTeX Info: Redefining \sffamily on input line 2153.
-LaTeX Info: Redefining \ttfamily on input line 2153.
+File: Notebook4_32_0.png Graphic file (type bmp)
+<Notebook4_32_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2309.
+LaTeX Info: Redefining \sffamily on input line 2309.
+LaTeX Info: Redefining \ttfamily on input line 2309.
  [55]
-File: Notebook4_27_0.png Graphic file (type bmp)
-<Notebook4_27_0.png>
-File: Notebook4_29_0.png Graphic file (type bmp)
-<Notebook4_29_0.png>
-File: Notebook4_31_0.png Graphic file (type bmp)
-<Notebook4_31_0.png>
-File: Notebook4_33_0.png Graphic file (type bmp)
-<Notebook4_33_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2198.
-LaTeX Info: Redefining \sffamily on input line 2198.
-LaTeX Info: Redefining \ttfamily on input line 2198.
+File: Notebook4_34_0.png Graphic file (type bmp)
+<Notebook4_34_0.png>
+LaTeX Info: Redefining \rmfamily on input line 2332.
+LaTeX Info: Redefining \sffamily on input line 2332.
+LaTeX Info: Redefining \ttfamily on input line 2332.
  [56]
-File: Notebook4_35_0.png Graphic file (type bmp)
-<Notebook4_35_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2217.
-LaTeX Info: Redefining \sffamily on input line 2217.
-LaTeX Info: Redefining \ttfamily on input line 2217.
+LaTeX Info: Redefining \rmfamily on input line 2395.
+LaTeX Info: Redefining \sffamily on input line 2395.
+LaTeX Info: Redefining \ttfamily on input line 2395.
  [57]
-File: Notebook4_38_0.png Graphic file (type bmp)
-<Notebook4_38_0.png>
-File: Notebook4_40_0.png Graphic file (type bmp)
-<Notebook4_40_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2247.
-LaTeX Info: Redefining \sffamily on input line 2247.
-LaTeX Info: Redefining \ttfamily on input line 2247.
+LaTeX Info: Redefining \rmfamily on input line 2450.
+LaTeX Info: Redefining \sffamily on input line 2450.
+LaTeX Info: Redefining \ttfamily on input line 2450.
  [58]
-File: Notebook4_42_0.png Graphic file (type bmp)
-<Notebook4_42_0.png>
-File: Notebook4_43_0.png Graphic file (type bmp)
-<Notebook4_43_0.png>
-File: Notebook4_46_0.png Graphic file (type bmp)
-<Notebook4_46_0.png>
-File: Notebook4_47_0.png Graphic file (type bmp)
-<Notebook4_47_0.png>
-File: Notebook4_49_0.png Graphic file (type bmp)
-<Notebook4_49_0.png>
-File: Notebook4_50_0.png Graphic file (type bmp)
-<Notebook4_50_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2306.
-LaTeX Info: Redefining \sffamily on input line 2306.
-LaTeX Info: Redefining \ttfamily on input line 2306.
+LaTeX Info: Redefining \rmfamily on input line 2506.
+LaTeX Info: Redefining \sffamily on input line 2506.
+LaTeX Info: Redefining \ttfamily on input line 2506.
  [59]
-File: Notebook4_51_0.png Graphic file (type bmp)
-<Notebook4_51_0.png>
-File: Notebook_FlereVar_analyse_6_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_6_0.png>
-File: Notebook_FlereVar_analyse_6_1.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_6_1.png>
-LaTeX Info: Redefining \rmfamily on input line 2350.
-LaTeX Info: Redefining \sffamily on input line 2350.
-LaTeX Info: Redefining \ttfamily on input line 2350.
+LaTeX Info: Redefining \rmfamily on input line 2560.
+LaTeX Info: Redefining \sffamily on input line 2560.
+LaTeX Info: Redefining \ttfamily on input line 2560.
  [60]
-File: Notebook_FlereVar_analyse_8_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_8_0.png>
-File: Notebook_FlereVar_analyse_8_1.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_8_1.png>
-File: Notebook_FlereVar_analyse_8_2.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_8_2.png>
-File: Notebook_FlereVar_analyse_8_3.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_8_3.png>
-File: Notebook_FlereVar_analyse_11_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_11_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2404.
-LaTeX Info: Redefining \sffamily on input line 2404.
-LaTeX Info: Redefining \ttfamily on input line 2404.
- [61]
-File: Notebook_FlereVar_analyse_13_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_13_0.png>
-File: Notebook_FlereVar_analyse_13_1.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_13_1.png>
-File: Notebook_FlereVar_analyse_13_2.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_13_2.png>
-File: Notebook_FlereVar_analyse_13_3.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_13_3.png>
-File: Notebook_FlereVar_analyse_15_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_15_0.png>
-File: Notebook_FlereVar_analyse_17_0.png Graphic file (type bmp)
-<Notebook_FlereVar_analyse_17_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2440.
-LaTeX Info: Redefining \sffamily on input line 2440.
-LaTeX Info: Redefining \ttfamily on input line 2440.
- [62]
-Missing character: There is no å in font cmmi10!
-Missing character: There is no å in font cmmi10!
-Missing character: There is no æ in font cmmi10!
-LaTeX Info: Redefining \rmfamily on input line 2495.
-LaTeX Info: Redefining \sffamily on input line 2495.
-LaTeX Info: Redefining \ttfamily on input line 2495.
- [63]
-LaTeX Info: Redefining \rmfamily on input line 2548.
-LaTeX Info: Redefining \sffamily on input line 2548.
-LaTeX Info: Redefining \ttfamily on input line 2548.
- [64]
 LaTeX Info: Redefining \rmfamily on input line 2613.
 LaTeX Info: Redefining \sffamily on input line 2613.
 LaTeX Info: Redefining \ttfamily on input line 2613.
+ [61]
+LaTeX Info: Redefining \rmfamily on input line 2678.
+LaTeX Info: Redefining \sffamily on input line 2678.
+LaTeX Info: Redefining \ttfamily on input line 2678.
+ [62]
+LaTeX Info: Redefining \rmfamily on input line 2735.
+LaTeX Info: Redefining \sffamily on input line 2735.
+LaTeX Info: Redefining \ttfamily on input line 2735.
 
-[65]
-LaTeX Info: Redefining \rmfamily on input line 2668.
-LaTeX Info: Redefining \sffamily on input line 2668.
-LaTeX Info: Redefining \ttfamily on input line 2668.
+[63]
+LaTeX Info: Redefining \rmfamily on input line 2804.
+LaTeX Info: Redefining \sffamily on input line 2804.
+LaTeX Info: Redefining \ttfamily on input line 2804.
+ [64]
+LaTeX Info: Redefining \rmfamily on input line 2861.
+LaTeX Info: Redefining \sffamily on input line 2861.
+LaTeX Info: Redefining \ttfamily on input line 2861.
+ [65]
+LaTeX Info: Redefining \rmfamily on input line 2917.
+LaTeX Info: Redefining \sffamily on input line 2917.
+LaTeX Info: Redefining \ttfamily on input line 2917.
  [66]
-Missing character: There is no å in font cmmi10!
-Missing character: There is no å in font cmmi10!
-Missing character: There is no æ in font cmmi10!
-LaTeX Info: Redefining \rmfamily on input line 2733.
-LaTeX Info: Redefining \sffamily on input line 2733.
-LaTeX Info: Redefining \ttfamily on input line 2733.
+LaTeX Info: Redefining \rmfamily on input line 2969.
+LaTeX Info: Redefining \sffamily on input line 2969.
+LaTeX Info: Redefining \ttfamily on input line 2969.
  [67]
-LaTeX Info: Redefining \rmfamily on input line 2771.
-LaTeX Info: Redefining \sffamily on input line 2771.
-LaTeX Info: Redefining \ttfamily on input line 2771.
+LaTeX Info: Redefining \rmfamily on input line 3019.
+LaTeX Info: Redefining \sffamily on input line 3019.
+LaTeX Info: Redefining \ttfamily on input line 3019.
  [68]
-LaTeX Info: Redefining \rmfamily on input line 2836.
-LaTeX Info: Redefining \sffamily on input line 2836.
-LaTeX Info: Redefining \ttfamily on input line 2836.
+LaTeX Info: Redefining \rmfamily on input line 3073.
+LaTeX Info: Redefining \sffamily on input line 3073.
+LaTeX Info: Redefining \ttfamily on input line 3073.
  [69]
-LaTeX Info: Redefining \rmfamily on input line 2888.
-LaTeX Info: Redefining \sffamily on input line 2888.
-LaTeX Info: Redefining \ttfamily on input line 2888.
+LaTeX Info: Redefining \rmfamily on input line 3113.
+LaTeX Info: Redefining \sffamily on input line 3113.
+LaTeX Info: Redefining \ttfamily on input line 3113.
  [70]
-File: Notebook_LinAlg1_7_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_7_0.png>
-File: Notebook_LinAlg1_9_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_9_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2935.
-LaTeX Info: Redefining \sffamily on input line 2935.
-LaTeX Info: Redefining \ttfamily on input line 2935.
+LaTeX Info: Redefining \rmfamily on input line 3166.
+LaTeX Info: Redefining \sffamily on input line 3166.
+LaTeX Info: Redefining \ttfamily on input line 3166.
  [71]
-File: Notebook_LinAlg1_11_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_11_0.png>
-File: Notebook_LinAlg1_12_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_12_0.png>
-File: Notebook_LinAlg1_14_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_14_0.png>
-File: Notebook_LinAlg1_18_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_18_0.png>
-File: Notebook_LinAlg1_20_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_20_0.png>
-LaTeX Info: Redefining \rmfamily on input line 2984.
-LaTeX Info: Redefining \sffamily on input line 2984.
-LaTeX Info: Redefining \ttfamily on input line 2984.
+LaTeX Info: Redefining \rmfamily on input line 3210.
+LaTeX Info: Redefining \sffamily on input line 3210.
+LaTeX Info: Redefining \ttfamily on input line 3210.
  [72]
-File: Notebook_LinAlg1_22_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_22_0.png>
-File: Notebook_LinAlg1_23_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_23_0.png>
-File: Notebook_LinAlg1_25_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_25_0.png>
-File: Notebook_LinAlg1_27_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_27_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3024.
-LaTeX Info: Redefining \sffamily on input line 3024.
-LaTeX Info: Redefining \ttfamily on input line 3024.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
+(Font)              scaled to size 10.00107pt on input line 3268.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
+(Font)              scaled to size 7.00075pt on input line 3268.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
+(Font)              scaled to size 5.00053pt on input line 3268.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
+(Font)              scaled to size 9.99893pt on input line 3268.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
+(Font)              scaled to size 6.99925pt on input line 3268.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
+(Font)              scaled to size 4.99947pt on input line 3268.
+LaTeX Info: Redefining \rmfamily on input line 3270.
+LaTeX Info: Redefining \sffamily on input line 3270.
+LaTeX Info: Redefining \ttfamily on input line 3270.
  [73]
-File: Notebook_LinAlg1_29_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_29_0.png>
-File: Notebook_LinAlg1_30_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_30_0.png>
-File: Notebook_LinAlg1_32_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_32_0.png>
-File: Notebook_LinAlg1_34_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_34_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3065.
-LaTeX Info: Redefining \sffamily on input line 3065.
-LaTeX Info: Redefining \ttfamily on input line 3065.
+LaTeX Info: Redefining \rmfamily on input line 3315.
+LaTeX Info: Redefining \sffamily on input line 3315.
+LaTeX Info: Redefining \ttfamily on input line 3315.
  [74]
-File: Notebook_LinAlg1_35_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_35_0.png>
-File: Notebook_LinAlg1_38_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_38_0.png>
-File: Notebook_LinAlg1_38_1.png Graphic file (type bmp)
-<Notebook_LinAlg1_38_1.png>
+LaTeX Info: Redefining \rmfamily on input line 3372.
+LaTeX Info: Redefining \sffamily on input line 3372.
+LaTeX Info: Redefining \ttfamily on input line 3372.
+ [75]
+LaTeX Info: Redefining \rmfamily on input line 3423.
+LaTeX Info: Redefining \sffamily on input line 3423.
+LaTeX Info: Redefining \ttfamily on input line 3423.
+ [76]
+LaTeX Info: Redefining \rmfamily on input line 3485.
+LaTeX Info: Redefining \sffamily on input line 3485.
+LaTeX Info: Redefining \ttfamily on input line 3485.
+ [77]
+LaTeX Info: Redefining \rmfamily on input line 3531.
+LaTeX Info: Redefining \sffamily on input line 3531.
+LaTeX Info: Redefining \ttfamily on input line 3531.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3103--3106
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}1
- & 0 & 3\0 & 4 & 6\3 & 6 &
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3103--3106
-\TU/FreeSerif(0)/m/n/10 11\end{matrix}\right] \displaystyle \left[\begin{matrix
-}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle
- []
-
-LaTeX Info: Redefining \rmfamily on input line 3109.
-LaTeX Info: Redefining \sffamily on input line 3109.
-LaTeX Info: Redefining \ttfamily on input line 3109.
-[75]
-File: Notebook_LinAlg1_46_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_46_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3123--3126
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}x
-_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle
- []
-
-File: Notebook_LinAlg1_48_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_48_0.png>
-File: Notebook_LinAlg1_51_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_51_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3154--3159
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}x
-_{1}\x_{2}\x_{3}\end{matrix}\right] = \dis-
- []
-
-
-Underfull \hbox (badness 6691) in paragraph at lines 3154--3159
-\TU/FreeSerif(0)/m/n/10 playstyle \left[\begin{matrix}1 & 0 & 3\0 & 4 & 6\3 & 6
- & 11\end{matrix}\right]^{-1} \displaystyle
- []
-
-LaTeX Info: Redefining \rmfamily on input line 3162.
-LaTeX Info: Redefining \sffamily on input line 3162.
-LaTeX Info: Redefining \ttfamily on input line 3162.
-[76]
-File: Notebook_LinAlg1_53_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_53_0.png>
-File: Notebook_LinAlg1_55_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_55_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3189--3193
-[]\TU/FreeSerif(0)/m/n/10 Eksempel: Vi vil gerne finde den fuldstændige løsning
- til \begin{equation*} \displaystyle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3189--3193
-\TU/FreeSerif(0)/m/n/10 \left[\begin{matrix}1 & 0 & 3 & 1\0 & 4 & 6 & 1-1 & 4 &
- 3 & 0\end{matrix}\right]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3189--3193
-\TU/FreeSerif(0)/m/n/10 \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end
-{matrix}\right] = \displaystyle
- []
-
-File: Notebook_LinAlg1_57_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_57_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3212.
-LaTeX Info: Redefining \sffamily on input line 3212.
-LaTeX Info: Redefining \ttfamily on input line 3212.
-[77]
-File: Notebook_LinAlg1_59_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_59_0.png>
-File: Notebook_LinAlg1_5_2_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_2_0.png>
-File: Notebook_LinAlg1_5_2_1.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_2_1.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3250--3253
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}1
- & 0 & 3\0 & 4 & 6\3 & 6 &
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3250--3253
-\TU/FreeSerif(0)/m/n/10 11\end{matrix}\right] \displaystyle \left[\begin{matrix
-}x_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle
- []
-
-LaTeX Info: Redefining \rmfamily on input line 3256.
-LaTeX Info: Redefining \sffamily on input line 3256.
-LaTeX Info: Redefining \ttfamily on input line 3256.
 [78]
-File: Notebook_LinAlg1_5_10_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_10_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3270--3273
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}x
-_{1}\x_{2}\x_{3}\end{matrix}\right] = \displaystyle
- []
-
-File: Notebook_LinAlg1_5_12_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_12_0.png>
-File: Notebook_LinAlg1_5_15_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_15_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3301--3306
-[]\TU/FreeSerif(0)/m/n/10 \begin{equation*} \displaystyle \left[\begin{matrix}x
-_{1}\x_{2}\x_{3}\end{matrix}\right] = \dis-
- []
-
-
-Underfull \hbox (badness 6691) in paragraph at lines 3301--3306
-\TU/FreeSerif(0)/m/n/10 playstyle \left[\begin{matrix}1 & 0 & 3\0 & 4 & 6\3 & 6
- & 11\end{matrix}\right]^{-1} \displaystyle
- []
-
-LaTeX Info: Redefining \rmfamily on input line 3309.
-LaTeX Info: Redefining \sffamily on input line 3309.
-LaTeX Info: Redefining \ttfamily on input line 3309.
-[79]
-File: Notebook_LinAlg1_5_17_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_17_0.png>
-File: Notebook_LinAlg1_5_19_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_19_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3336--3340
-[]\TU/FreeSerif(0)/m/n/10 Eksempel: Vi vil gerne finde den fuldstændige løsning
- til \begin{equation*} \displaystyle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3336--3340
-\TU/FreeSerif(0)/m/n/10 \left[\begin{matrix}1 & 0 & 3 & 1\0 & 4 & 6 & 1-1 & 4 &
- 3 & 0\end{matrix}\right]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3336--3340
-\TU/FreeSerif(0)/m/n/10 \displaystyle \left[\begin{matrix}x_{1}\x_{2}\x_{3}\end
-{matrix}\right] = \displaystyle
- []
-
-File: Notebook_LinAlg1_5_21_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_21_0.png>
-File: Notebook_LinAlg1_5_23_0.png Graphic file (type bmp)
-<Notebook_LinAlg1_5_23_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3366.
-LaTeX Info: Redefining \sffamily on input line 3366.
-LaTeX Info: Redefining \ttfamily on input line 3366.
-[80]
-File: Notebook_LinAlg_2_4_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_4_0.png>
-File: Notebook_LinAlg_2_6_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_6_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3410.
-LaTeX Info: Redefining \sffamily on input line 3410.
-LaTeX Info: Redefining \ttfamily on input line 3410.
+LaTeX Info: Redefining \rmfamily on input line 3588.
+LaTeX Info: Redefining \sffamily on input line 3588.
+LaTeX Info: Redefining \ttfamily on input line 3588.
+ [79]
+LaTeX Info: Redefining \rmfamily on input line 3648.
+LaTeX Info: Redefining \sffamily on input line 3648.
+LaTeX Info: Redefining \ttfamily on input line 3648.
+ [80]
+LaTeX Info: Redefining \rmfamily on input line 3712.
+LaTeX Info: Redefining \sffamily on input line 3712.
+LaTeX Info: Redefining \ttfamily on input line 3712.
  [81]
-File: Notebook_LinAlg_2_8_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_8_0.png>
-File: Notebook_LinAlg_2_8_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_8_1.png>
-File: Notebook_LinAlg_2_10_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_10_0.png>
-File: Notebook_LinAlg_2_12_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_12_0.png>
-File: Notebook_LinAlg_2_12_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_12_1.png>
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 10.00107pt on input line 3444.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 7.00075pt on input line 3444.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 5.00053pt on input line 3444.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 9.99893pt on input line 3444.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 6.99925pt on input line 3444.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 4.99947pt on input line 3444.
-File: Notebook_LinAlg_2_14_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_14_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3455.
-LaTeX Info: Redefining \sffamily on input line 3455.
-LaTeX Info: Redefining \ttfamily on input line 3455.
+LaTeX Info: Redefining \rmfamily on input line 3765.
+LaTeX Info: Redefining \sffamily on input line 3765.
+LaTeX Info: Redefining \ttfamily on input line 3765.
  [82]
-File: Notebook_LinAlg_2_16_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_16_0.png>
-File: Notebook_LinAlg_2_19_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_19_0.png>
-File: Notebook_LinAlg_2_20_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_20_0.png>
-File: Notebook_LinAlg_2_21_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_21_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3498.
-LaTeX Info: Redefining \sffamily on input line 3498.
-LaTeX Info: Redefining \ttfamily on input line 3498.
+LaTeX Info: Redefining \rmfamily on input line 3831.
+LaTeX Info: Redefining \sffamily on input line 3831.
+LaTeX Info: Redefining \ttfamily on input line 3831.
  [83]
-File: Notebook_LinAlg_2_24_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_24_0.png>
-File: Notebook_LinAlg_2_24_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_24_1.png>
-File: Notebook_LinAlg_2_26_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_26_0.png>
-File: Notebook_LinAlg_2_26_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_26_1.png>
-File: Notebook_LinAlg_2_29_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_29_0.png>
-File: Notebook_LinAlg_2_29_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_29_1.png>
-LaTeX Info: Redefining \rmfamily on input line 3549.
-LaTeX Info: Redefining \sffamily on input line 3549.
-LaTeX Info: Redefining \ttfamily on input line 3549.
+LaTeX Info: Redefining \rmfamily on input line 3885.
+LaTeX Info: Redefining \sffamily on input line 3885.
+LaTeX Info: Redefining \ttfamily on input line 3885.
  [84]
-File: Notebook_LinAlg_2_31_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_31_0.png>
-File: Notebook_LinAlg_2_31_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_31_1.png>
-File: Notebook_LinAlg_2_31_2.png Graphic file (type bmp)
-<Notebook_LinAlg_2_31_2.png>
-File: Notebook_LinAlg_2_33_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_33_0.png>
-File: Notebook_LinAlg_2_34_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_34_0.png>
-File: Notebook_LinAlg_2_36_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_36_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3597.
-LaTeX Info: Redefining \sffamily on input line 3597.
-LaTeX Info: Redefining \ttfamily on input line 3597.
- [85]
-File: Notebook_LinAlg_2_37_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_37_0.png>
-File: Notebook_LinAlg_2_39_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_39_0.png>
-File: Notebook_LinAlg_2_41_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_41_0.png>
-File: Notebook_LinAlg_2_44_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_44_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3632.
-LaTeX Info: Redefining \sffamily on input line 3632.
-LaTeX Info: Redefining \ttfamily on input line 3632.
- [86]
-File: Notebook_LinAlg_2_45_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_45_0.png>
-File: Notebook_LinAlg_2_47_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_47_0.png>
-File: Notebook_LinAlg_2_47_1.png Graphic file (type bmp)
-<Notebook_LinAlg_2_47_1.png>
-File: Notebook_LinAlg_2_49_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_49_0.png>
-File: Notebook_LinAlg_2_51_0.png Graphic file (type bmp)
-<Notebook_LinAlg_2_51_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3668.
-LaTeX Info: Redefining \sffamily on input line 3668.
-LaTeX Info: Redefining \ttfamily on input line 3668.
- [87]
-File: Notebook_kompleks_6_0.png Graphic file (type bmp)
-<Notebook_kompleks_6_0.png>
-File: Notebook_kompleks_8_0.png Graphic file (type bmp)
-<Notebook_kompleks_8_0.png>
-File: Notebook_kompleks_10_0.png Graphic file (type bmp)
-<Notebook_kompleks_10_0.png>
-File: Notebook_kompleks_11_0.png Graphic file (type bmp)
-<Notebook_kompleks_11_0.png>
-File: Notebook_kompleks_12_0.png Graphic file (type bmp)
-<Notebook_kompleks_12_0.png>
-File: Notebook_kompleks_14_0.png Graphic file (type bmp)
-<Notebook_kompleks_14_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3733.
-LaTeX Info: Redefining \sffamily on input line 3733.
-LaTeX Info: Redefining \ttfamily on input line 3733.
- [88]
-File: Notebook_kompleks_15_0.png Graphic file (type bmp)
-<Notebook_kompleks_15_0.png>
-File: Notebook_kompleks_15_1.png Graphic file (type bmp)
-<Notebook_kompleks_15_1.png>
-File: Notebook_kompleks_17_0.png Graphic file (type bmp)
-<Notebook_kompleks_17_0.png>
-File: Notebook_kompleks_19_0.png Graphic file (type bmp)
-<Notebook_kompleks_19_0.png>
-File: Notebook_kompleks_21_0.png Graphic file (type bmp)
-<Notebook_kompleks_21_0.png>
-File: Notebook_kompleks_25_0.png Graphic file (type bmp)
-<Notebook_kompleks_25_0.png>
-File: Notebook_kompleks_25_1.png Graphic file (type bmp)
-<Notebook_kompleks_25_1.png>
-File: Notebook_kompleks_25_2.png Graphic file (type bmp)
-<Notebook_kompleks_25_2.png>
-File: Notebook_kompleks_27_0.png Graphic file (type bmp)
-<Notebook_kompleks_27_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3800.
-LaTeX Info: Redefining \sffamily on input line 3800.
-LaTeX Info: Redefining \ttfamily on input line 3800.
- [89]
-File: Notebook_kompleks_27_1.png Graphic file (type bmp)
-<Notebook_kompleks_27_1.png>
-File: Notebook_kompleks_27_2.png Graphic file (type bmp)
-<Notebook_kompleks_27_2.png>
-File: Notebook_kompleks_30_0.png Graphic file (type bmp)
-<Notebook_kompleks_30_0.png>
-File: Notebook_kompleks_30_1.png Graphic file (type bmp)
-<Notebook_kompleks_30_1.png>
-File: Notebook_kompleks_32_0.png Graphic file (type bmp)
-<Notebook_kompleks_32_0.png>
-File: Notebook_kompleks_32_1.png Graphic file (type bmp)
-<Notebook_kompleks_32_1.png>
-File: Notebook_kompleks_34_0.png Graphic file (type bmp)
-<Notebook_kompleks_34_0.png>
-File: Notebook_kompleks_37_0.png Graphic file (type bmp)
-<Notebook_kompleks_37_0.png>
-File: Notebook_kompleks_37_1.png Graphic file (type bmp)
-<Notebook_kompleks_37_1.png>
-File: Notebook_kompleks_37_2.png Graphic file (type bmp)
-<Notebook_kompleks_37_2.png>
-LaTeX Info: Redefining \rmfamily on input line 3854.
-LaTeX Info: Redefining \sffamily on input line 3854.
-LaTeX Info: Redefining \ttfamily on input line 3854.
- [90]
-File: Notebook_kompleks_38_0.png Graphic file (type bmp)
-<Notebook_kompleks_38_0.png>
-File: Notebook_kompleks_38_1.png Graphic file (type bmp)
-<Notebook_kompleks_38_1.png>
-File: Notebook_kompleks_41_0.png Graphic file (type bmp)
-<Notebook_kompleks_41_0.png>
-File: Notebook_kompleks_42_0.png Graphic file (type bmp)
-<Notebook_kompleks_42_0.png>
-File: Notebook_kompleks_44_0.png Graphic file (type bmp)
-<Notebook_kompleks_44_0.png>
-File: Notebook_kompleks_44_1.png Graphic file (type bmp)
-<Notebook_kompleks_44_1.png>
-File: Notebook_kompleks_46_0.png Graphic file (type bmp)
-<Notebook_kompleks_46_0.png>
-File: Notebook_kompleks_48_0.png Graphic file (type bmp)
-<Notebook_kompleks_48_0.png>
-File: Notebook_kompleks_48_1.png Graphic file (type bmp)
-<Notebook_kompleks_48_1.png>
-LaTeX Info: Redefining \rmfamily on input line 3916.
-LaTeX Info: Redefining \sffamily on input line 3916.
-LaTeX Info: Redefining \ttfamily on input line 3916.
- [91]
-File: Notebook_kompleks_48_2.png Graphic file (type bmp)
-<Notebook_kompleks_48_2.png>
-File: Notebook_kompleks_48_3.png Graphic file (type bmp)
-<Notebook_kompleks_48_3.png>
-File: Notebook_kompleks_50_0.png Graphic file (type bmp)
-<Notebook_kompleks_50_0.png>
-File: Notebook_kompleks_50_1.png Graphic file (type bmp)
-<Notebook_kompleks_50_1.png>
-File: Notebook_kompleks_54_0.png Graphic file (type bmp)
-<Notebook_kompleks_54_0.png>
-LaTeX Info: Redefining \rmfamily on input line 3964.
-LaTeX Info: Redefining \sffamily on input line 3964.
-LaTeX Info: Redefining \ttfamily on input line 3964.
- [92]
-File: Notebook_kompleks_57_0.png Graphic file (type bmp)
-<Notebook_kompleks_57_0.png>
-LaTeX Info: Redefining \rmfamily on input line 4003.
-LaTeX Info: Redefining \sffamily on input line 4003.
-LaTeX Info: Redefining \ttfamily on input line 4003.
- [93]
-File: Notebook_kompleks_59_0.png Graphic file (type bmp)
-<Notebook_kompleks_59_0.png>
-File: Notebook_kompleks_61_0.png Graphic file (type bmp)
-<Notebook_kompleks_61_0.png>
-File: Notebook_kompleks_63_0.png Graphic file (type bmp)
-<Notebook_kompleks_63_0.png>
-
-(./book.ind)
+File: Notebook_kompleks_58_1.png Graphic file (type bmp)
+<Notebook_kompleks_58_1.png>
+File: Notebook_kompleks_60_0.png Graphic file (type bmp)
+<Notebook_kompleks_60_0.png>
+ (./book.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2439,34 +2001,34 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-LaTeX Info: Redefining \rmfamily on input line 4039.
-LaTeX Info: Redefining \sffamily on input line 4039.
-LaTeX Info: Redefining \ttfamily on input line 4039.
- [94]
-LaTeX Info: Redefining \rmfamily on input line 4039.
-LaTeX Info: Redefining \sffamily on input line 4039.
-LaTeX Info: Redefining \ttfamily on input line 4039.
- [95]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4039.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4039.
+LaTeX Info: Redefining \rmfamily on input line 3928.
+LaTeX Info: Redefining \sffamily on input line 3928.
+LaTeX Info: Redefining \ttfamily on input line 3928.
+ [85]
+LaTeX Info: Redefining \rmfamily on input line 3928.
+LaTeX Info: Redefining \sffamily on input line 3928.
+LaTeX Info: Redefining \ttfamily on input line 3928.
+ [86]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3928.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3928.
  (./book.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4039.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4039.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3928.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3928.
 
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 06BC85ECC47EDFEE07D761575AB60853;2664.
+(rerunfilecheck)             Checksum: A2A79E9AAB94745329C1EF7B0FF295B5;2203.
  ) 
 Here is how much of TeX's memory you used:
- 42841 strings out of 481804
- 973354 string characters out of 5937876
- 1657916 words of memory out of 5000000
- 58890 multiletter control sequences out of 15000+600000
+ 41941 strings out of 481804
+ 948554 string characters out of 5937876
+ 1641916 words of memory out of 5000000
+ 58138 multiletter control sequences out of 15000+600000
  539323 words of font info for 119 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
- 71i,23n,109p,996b,2172s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,24n,109p,996b,2172s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (99 pages).
+Output written on book.pdf (90 pages).

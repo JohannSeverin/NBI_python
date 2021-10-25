@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="sympy/Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -358,19 +363,20 @@
                 
   <div class="section" id="kom-i-gang-med-python">
 <h1><span class="section-number">2. </span>Kom i gang med Python<a class="headerlink" href="#kom-i-gang-med-python" title="Permalink to this headline">¶</a></h1>
-<p>På fysik stifter i bekendtskab med Python både i MekRel og i LinAlys. Der er mange forskellige måder at skrive Python på, men vi vil foreslå, at I benytter Jupyter Notebooks, som kan findes i en installation af Anaconda.</p>
-<p>I Notebooks skriver man sin kode i celler. Der bliver primært brugt to slags celler: “Code” eller “Markdown”. Denne celle er en Markdown celle og indholdet formateres som tekst, når cellen køres. Kodeceller er de celler vi skriver vores kode i. Markdown celler kan bruges til at skrive noter i. Dette kunne være ens overvejelser i forbindelse med et forsøg i laboratoriet.</p>
+<p>På fysik stifter I bekendtskab med Python i de to førsteårskurser MekRel og LinAlys. Der er mange forskellige måder at skrive Python på, men vi vil foreslå, at I benytter Jupyter Notebooks, som kan findes i en installation af Anaconda.</p>
+<p>I Notebooks skriver man sin kode i celler, som derefter kan “køres”. Der bliver primært brugt to slags celler: “Code” eller “Markdown”. Denne celle er en Markdown-celle og indholdet formateres som tekst, når cellen køres (der laves altså ingen beregninger). Markdown-celler kan bruges til at skrive noter i: det kunne være ens overvejelser i forbindelse med et forsøg i laboratoriet eller en forklaring af tankegangen bag en beregning.
+Kodeceller er de celler, der indeholder de kommandoer, der laver vores beregninger når cellen køres.</p>
 <p><strong>Tip:</strong> Man kan med fordel bruge tastaturgenvejen <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">enter</span></code> for at køre en celle, og bevæge sig videre til den næste celle i rækken.</p>
 <div class="section" id="hvordan-virker-python">
 <h2><span class="section-number">2.1. </span>Hvordan virker Python?<a class="headerlink" href="#hvordan-virker-python" title="Permalink to this headline">¶</a></h2>
-<p>Når  vi skriver kode i en celle og kører det, så bliver det læst linje for linje. Et computerprogram bliver altså en liste af computer-operationer, som skal foretages i en bestemt rækkefølge. Hvis man vil markere noget, som comptueren ikke skal køre, kan det markeres med <code>#</code>. Dette bruges ofte til kommentar til den, der læser koden.</p>
-<p>Når man arbejder i Python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definere en variabel. Dette kunne eksempelvis være <code> a = 5 </code>. Da vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu blive betragtet som <code>5</code>.</p>
+<p>Når  vi skriver kode i en celle og kører cellen, bliver koden læst linje for linje. Et computerprogram bliver altså en liste af computer-operationer, som skal foretages i en bestemt rækkefølge. Hvis man vil markere noget, som comptueren ikke skal køre, kan det markeres med <code>#</code>. Dette bruges ofte til kommentar til den, der læser koden.</p>
+<p>Når man arbejder i Python, gemmes svaret på en operation ikke nødvendigvis. Vi benytter derfor <code> = </code> til at definere en variabel. Dette kunne eksempelvis være <code> a = 5 </code>. Da vil vi kunne indsætte <code>a</code> i et udtryk, og <code>a</code> vil nu have værdien <code>5</code>.</p>
 <p>En god måde at se en værdi på, er ved at bede Python om at printe den. Dette gøres ved at skrive <code>print(X)</code>, hvor X kan være et hvilket som helst variabelnavn.</p>
-<p>Eksempelvis kan vi definere variablen <code>hello</code> og printe den.</p>
+<p>Eksempelvis kan vi definere variablen <code>hilsen</code> og printe den.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span> <span class="c1"># Anførselstegnene (eller &quot;gåseøjnene&quot;) indikerer at variablen tildeles et tekstudtryk, en såkaldt &quot;string&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hilsen</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span> <span class="c1"># Anførselstegnene (eller &quot;gåseøjnene&quot;) indikerer at variablen tildeles et tekstudtryk, en såkaldt &quot;string&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hilsen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -383,7 +389,7 @@
 <p>I en notebook er det faktisk ikke nødvendigt at printe den <em>sidste</em> linje, man kan blot skrive variabelnavnet, og så vil Jupyter selv printe det:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hilsen</span>
 </pre></div>
 </div>
 </div>
@@ -395,19 +401,19 @@
 </div>
 <div class="section" id="variabeltyper">
 <h3><span class="section-number">2.1.1. </span>Variabeltyper<a class="headerlink" href="#variabeltyper" title="Permalink to this headline">¶</a></h3>
-<p>Udover tekststrenge, som vi så i ovenstående eksempel, findes flere forskellige typer variable, som man kan benytte sig af. I Python er det dog ikke nødvendigt at angive disse, da computeren selv finder ud af det fra kontekst.</p>
+<p>Udover tekststrenge, som vi så i ovenstående eksempel, findes flere forskellige typer variable, som man kan benytte sig af. I Python er det ikke nødvendigt at angive typen af en variabel, da Python selv finder ud af det fra konteksten.</p>
 <p>De mest almindelige variabeltyper er:</p>
 <ul class="simple">
 <li><p>Integers (heltal): her skriver vi blot et helt tal, som eksempelvis <code>a = 6</code></p></li>
 <li><p>Float (decimaltal): indgår der et decimalpunktum, ‘.’, får vi automatisk en float-variabel, som eksempelvis <code>kroner_per_euro = 7.46</code>.</p></li>
-<li><p>String (tekststreng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code>hello = “Hello World”</code></p></li>
+<li><p>String (tekststreng): Når vi vil have en variabel til at indeholde tekst, markeres det med anførselstegn/gåseøjne, f.eks. som ovenfor <code>hilsen = “Hello World”</code></p></li>
 <li><p>Boolean (sandt/falsk): Hvis vi skal angive en værdi som enten sandt eller falsk, bruger vi en “boolean variable” og kan skrive <code>switch = True</code>. Falsk skal gives ved <code>False</code>, og bemærk igen at der er forskel på <code>Svar = True</code> og <code>Svar = “True”</code>, idet <code>Svar</code> i sidstnævnte tilfælde istedet bliver en string, som indeholder ordet True, og ikke et logisk udtryk.</p></li>
 </ul>
 </div>
 <div class="section" id="lister-af-variable">
 <h3><span class="section-number">2.1.2. </span>Lister af variable<a class="headerlink" href="#lister-af-variable" title="Permalink to this headline">¶</a></h3>
 <p>Vi kan sammensætte lister af flere værdier, eksempelvis en samling af tal. Dette gøres mest almindeligt ved at lave en liste.:
-<code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste, kan vi hente dem ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen vi ønsker at få ud.</p>
+<code>tal = [4, 7, 10]</code>. Nu vil <code>tal</code> altså indeholde værdierne 4, 7 og 10. Hvis vi ønsker et enkelt element fra vores liste, kan vi referere til det ved at skrive <code>tal[index]</code>, hvor værdien af index angiver placeringen i listen af det ønskede tal.</p>
 <p><strong>Tip:</strong> Python starter ved nul (nul-indeksering), så det første element er altså <code>tal[0]</code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,7 +428,7 @@
 </div>
 </div>
 </div>
-<p>Vi ser altså, at når vi kalder <code>tal[1]</code> får vi det andet element ud, som i definitionen var givet ved 7. Dette er et resultat af nul-indeksering. Man kan ofte få en fejl her, når man ikke er vant til Python, så tjek det, hvis koden ikke virker eller giver uventede resultater.</p>
+<p>Vi ser altså, at når vi kalder <code>tal[1]</code> får vi det andet element ud, som i definitionen var givet ved 7. Dette er et resultat af nul-indeksering. Dette er en hyppig kilde til fejl, når man ikke er vant til Python, så tjek det, hvis koden ikke virker eller giver uventede resultater.</p>
 <p>Elementer kan tilføjes til listen ved at benytte koden <code>.append(element)</code> efter vores liste. Dette tilføjer elementet til den pågældende variabel i slutningen af listen. Eksempelvis, hvis vi ønsker at udvide vores tal-liste, kan vi skrive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -437,12 +443,12 @@
 </div>
 </div>
 </div>
-<p>og vi har nu tilføjet 6 til vores liste.</p>
+<p>og vi har nu tilføjet 6 som et ekstra element i vores liste.</p>
 </div>
 </div>
 <div class="section" id="basale-regneoperationer">
 <h2><span class="section-number">2.2. </span>Basale regneoperationer<a class="headerlink" href="#basale-regneoperationer" title="Permalink to this headline">¶</a></h2>
-<p>Python indeholder som udgangspunkt de mest basale regneoperationer, som man kender fra sin lommeregner. Eksempelvis kan vi lægge til, trække fra, gange og dividere ved blot at skrive udtrykket op med ‘+’, ‘-‘, ‘*’ og ‘/’. På sædvanligvis  kan vi også benytte parenteser til at give rækkefølgen for operationerne. Nogle enkelte eksempler er givet nedenunder:</p>
+<p>Python indeholder som udgangspunkt de mest basale regneoperationer, som man kender fra sin lommeregner. Eksempelvis kan vi lægge til, trække fra, gange og dividere ved blot at skrive udtrykket op med ‘+’, ‘-‘, ‘*’ og ‘/’. På sædvanlig vis kan vi også benytte parenteser til at give rækkefølgen for operationerne. Nogle enkelte eksempler er givet nedenunder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi adderer blot to tal</span>
@@ -492,7 +498,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mf">5e10904</span><span class="n">e16be</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mf">5e10904</span><span class="n">e16be</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Og vi skal selvfølgelig ikke dividere med 0, hvis ikke vi ønsker en fejl</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">0</span>
 
@@ -519,7 +525,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">81</span> <span class="o">**</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Bemærk at dette IKKE beregner kvadratroden af 81 ligesom ovenfor:forskellen er parentesen</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">81</span> <span class="o">**</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Bemærk at dette IKKE beregner kvadratroden af 81 ligesom ovenfor: forskellen er parentesen.</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +535,7 @@
 </div>
 </div>
 </div>
-<p>Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lign., bliver man ofte nødt til at importere et modul, som kan gøre det. Men det vil vi komme ind på senere i noterne om SymPy og NumPy.</p>
+<p>Ønsker man at benytte funktioner som logaritmer, trigonometriske funktioner eller lignende, bliver man ofte nødt til at importere et modul, som kan indeholder disse funktioner. Men det vil vi komme ind på senere i noterne om SymPy og NumPy.</p>
 <div class="section" id="aendring-af-variable">
 <h3><span class="section-number">2.2.1. </span>Ændring af variable<a class="headerlink" href="#aendring-af-variable" title="Permalink to this headline">¶</a></h3>
 <p>Der kan være mange årsager til, at man skal ændre værdien på en varibel. Det kunne f. eks. være i en simulation, hvor positionen af et objekt skal opdateres efter et lille tidsskridt. Benytter vi samme variabelnavn i en ny definition ændrer vi blot værdien:</p>
@@ -554,7 +560,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vari</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vari</span><span class="p">)</span>      <span class="c1"># Sat til 7</span>
-<span class="n">vari</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">vari</span> <span class="c1"># `vari` bruges til at udregne en ny værdi for sig selv</span>
+<span class="n">vari</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">vari</span> <span class="c1"># `vari` bruges til at udregne en ny værdi for samme variabel</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vari</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -566,14 +572,14 @@
 </div>
 </div>
 </div>
-<p>Der er dog også nogle indbyggede smutveje til at ændre variables værdier i faste trin. Hvis man gerne vil lade en variabel vokse i skridt af <code>increment = 2.5</code>, kan man benytte smutvejs-notationen <code>+=</code> til at ændre variablen i skridt af <code>increment</code></p>
+<p>Der er dog også nogle indbyggede smutveje til at ændre værdien af variable i faste trin. Hvis man gerne vil lade en variabel vokse i skridt af <code>increment = 2.5</code>, kan man benytte smutvejs-notationen <code>+=</code> til at ændre variablen i skridt af <code>increment</code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">increment</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-<span class="n">value</span> <span class="o">+=</span> <span class="n">increment</span> <span class="c1"># Vi øger value med værdien af vores increment</span>
+<span class="n">value</span> <span class="o">+=</span> <span class="n">increment</span> <span class="c1"># Vi øger value med værdien af den variable increment</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>

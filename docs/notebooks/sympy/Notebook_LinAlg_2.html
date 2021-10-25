@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.11. Komplekse tal i SymPy" href="Notebook_kompleks.html" />
-    <link rel="prev" title="5.9. Matrix reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
+    <link rel="next" title="5.11. Egenværdier og -vektorer" href="Notebook_Linalg_2-5_Eigen.html" />
+    <link rel="prev" title="5.9. Matrix-reduktion, ligningsløsning og inverse matricer" href="Notebook_LinAlg1_5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -346,16 +351,6 @@
    5.10.6. Krydsprodukt, vektorprodukt / Cross product
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#egenvaerdier-og-vektorer">
-   5.10.7. Egenværdier og -vektorer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diagonalisering">
-   5.10.8. Diagonalisering
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -367,26 +362,20 @@
         
               <div>
                 
-  <p><strong>Foreslået ændringer</strong><br />
-Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilpasse den til at overholde de nye konventioner, som vi sætter for os selv. Dvs tænke over import og lign.. Ellers burde den være good to go</p>
-<div class="section" id="flere-metoder-i-linaer-algebra">
+  <div class="section" id="flere-metoder-i-linaer-algebra">
 <h1><span class="section-number">5.10. </span>Flere metoder i Linær Algebra<a class="headerlink" href="#flere-metoder-i-linaer-algebra" title="Permalink to this headline">¶</a></h1>
-<p>Målet for denne notebook er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra. Vi arbejder videre hvor den første notebook om lineær algebra slap, så fra starten antager vi at læseren kan lave matrix- og vektormanipulationer.</p>
+<p>Målet for denne sektion er at give en oversigt over de funktioner, som man kan få brug for, når man benytter SymPy som redskab i lineær algebra.</p>
 <p>Langt de fleste funktioner i denne notebook virker på samme måde som matrixinversion, som for en matrix <span class="math notranslate nohighlight">\(A\)</span> findes ved <code>A.inv()</code>.</p>
 <p>Først importerer vi de rette pakker:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>              <span class="c1"># Importer sympy </span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>              <span class="c1"># Flot print</span>
-
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="n">I</span>     <span class="c1"># Symboler, som det er smart at have klar</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>        <span class="c1"># Vi kommer til at lave mange matricer i denne notebook</span>
-
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>        <span class="c1"># Vi kommer til at lave mange matricer</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><strong>Tip:</strong> Mange metoder i SymPy returnerer en liste over forskellige løsninger. Da disse ikke automatisk bliver vist som matematik, har vi mange steder sat en <code class="docutils literal notranslate"><span class="pre">*</span></code> foran metoden inde i <code class="docutils literal notranslate"><span class="pre">display</span></code>. I stedet for at skrive <code class="docutils literal notranslate"><span class="pre">display(*liste)</span></code> kan man i sin egen Notebook benytte sig af <code class="docutils literal notranslate"><span class="pre">sp.init_printing()</span></code> i starten af notebooken. Dette giver SymPy muligheden for at vælge, hvordan lister skal printes. Vi har desværre ikke kunne bruge denne mulighed på grund af formatteringen af vores notesbøger.</p>
 <div class="section" id="transponering-adjungering-og-konjugering">
 <h2><span class="section-number">5.10.1. </span>Transponering, adjungering og konjugering<a class="headerlink" href="#transponering-adjungering-og-konjugering" title="Permalink to this headline">¶</a></h2>
 <p>Hvis vi har givet en matrix, kan vi nemt beregne den transponerede matrix med at ombytte rækker og kolonner:</p>
@@ -398,7 +387,8 @@ Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_4_0.png" src="../../_images/Notebook_LinAlg_2_4_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 2\\3 &amp; 4\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Den transponerede beregnes med <code>.T</code></p>
@@ -409,22 +399,27 @@ Der er ikke meget, som skal ændres i denne Notebook. Vi skal sandsynligvis tilp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_6_0.png" src="../../_images/Notebook_LinAlg_2_6_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 3\\2 &amp; 4\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Messer arbejder ikke med komplekse tal som indgange i matricer, men hvis man gør (og det er der mange gode grunde til, f.eks. i kvantemekanik), vil man også møde den såkaldte konjugerede matrix <code>A.conjugate()</code> (der fremkommer ved kompleks konjugering af indgangene af <span class="math notranslate nohighlight">\(A\)</span>) og den såkaldte adjungerede (matricen der er <span class="math notranslate nohighlight">\(A\)</span>s transponerede konjugerede matrix) <code>A.adjoint()</code> eller nemmere <code>A.H</code> . Notationen med H kommer af at den adjungerede matrix også kaldes den hermitisk konjugerede.
 Eksempelvis kan vi finde den konjugerede matrix her:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="n">I</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="o">-</span><span class="n">I</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span><span class="p">,</span> <span class="n">pi</span> <span class="c1"># Imaginære tal og pi skal hentes</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="n">I</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="o">-</span><span class="n">I</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)]])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_8_0.png" src="../../_images/Notebook_LinAlg_2_8_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_8_1.png" src="../../_images/Notebook_LinAlg_2_8_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 3 + i\\2 - i &amp; e^{\frac{i \pi}{3}}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 3 - i\\2 + i &amp; e^{- \frac{i \pi}{3}}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>hvor vi ser at alle imaginærdelene har skiftet fortegn.
@@ -436,7 +431,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_10_0.png" src="../../_images/Notebook_LinAlg_2_10_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 2 + i\\3 - i &amp; e^{- \frac{i \pi}{3}}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -447,36 +443,45 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">nullspace</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">M</span><span class="o">.</span><span class="n">nullspace</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_12_0.png" src="../../_images/Notebook_LinAlg_2_12_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_12_1.png" src="../../_images/Notebook_LinAlg_2_12_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 1 &amp; 2\\2 &amp; 1 &amp; 3\\3 &amp; 1 &amp; 4\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}-1\\-1\\1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Hvilket giver en liste (her med eet element) af vektorer som er basis for matricens nulrum. Altså vektorer som opfylder ligningen <span class="math notranslate nohighlight">\(M\boldsymbol{x} = \boldsymbol{0}\)</span>. Dette gælder derfor også for linearkombinationer af vektorerne i nulrummet.</p>
 <p>Søjlerummet findes helt tilsvarende:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">columnspace</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">M</span><span class="o">.</span><span class="n">columnspace</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_14_0.png" src="../../_images/Notebook_LinAlg_2_14_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\2\\3\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\1\\1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>Herved får vi en liste af vektorer, som udspænder søjlerummet, og som består af de søjler fra <span class="math notranslate nohighlight">\(M\)</span>, der indeholder ledende indgange når <span class="math notranslate nohighlight">\(M\)</span> er bragt på række-echelonform. Dette verificerer vi ved at betragte <span class="math notranslate nohighlight">\(M\)</span>s ækvivalente matrix på reduceret række-echelonform:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">M</span><span class="o">.</span><span class="n">rref</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_16_0.png" src="../../_images/Notebook_LinAlg_2_16_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 1\\0 &amp; 1 &amp; 1\\0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 1)
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -491,39 +496,53 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 
 <span class="c1"># Definer en liste med matrix indgange, som nu er vektorer</span>
 <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_19_0.png" src="../../_images/Notebook_LinAlg_2_19_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\2\\2\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\1\\0\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\0\\1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi benytter nu GramScmidt</span>
-<span class="n">GramSchmidt</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">GramSchmidt</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_20_0.png" src="../../_images/Notebook_LinAlg_2_20_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\2\\2\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2}{9}\\\frac{5}{9}\\- \frac{4}{9}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2}{5}\\0\\\frac{1}{5}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eller hvis vi vil inkluderer en normalisering gør vi følgende:</span>
-<span class="n">GramSchmidt</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="o">*</span><span class="n">GramSchmidt</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_21_0.png" src="../../_images/Notebook_LinAlg_2_21_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{1}{3}\\\frac{2}{3}\\\frac{2}{3}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2 \sqrt{5}}{15}\\\frac{\sqrt{5}}{3}\\- \frac{4 \sqrt{5}}{15}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}- \frac{2 \sqrt{5}}{5}\\0\\\frac{\sqrt{5}}{5}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>hvilket kan ses at passe med Messers</p>
-<div class="math notranslate nohighlight">
-\[\left\{ \left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right), \left(\frac{-2}{\sqrt{45}}, \frac{5}{\sqrt{45}}, \frac{-4}{\sqrt{45}}\right),\left(\frac{-2}{\sqrt{5}}, 0, \frac{1}{\sqrt{5}}\right)\right\}\]</div>
+<p><span class="math notranslate nohighlight">\(\left\{ \left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right), \left(\frac{-2}{\sqrt{45}}, \frac{5}{\sqrt{45}}, \frac{-4}{\sqrt{45}}\right),\left(\frac{-2}{\sqrt{5}}, 0, \frac{1}{\sqrt{5}}\right)\right\}\)</span></p>
 <p>ved anvendelse af kvadratrods- og brøkregneregler.</p>
 </div>
 <div class="section" id="determinant">
@@ -538,8 +557,10 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_24_0.png" src="../../_images/Notebook_LinAlg_2_24_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_24_1.png" src="../../_images/Notebook_LinAlg_2_24_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 2\\3 &amp; 4\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -2\]</div>
 </div>
 </div>
 <p>Vi kan også beregne determinanten for en symbolsk matrix:</p>
@@ -555,8 +576,10 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_26_0.png" src="../../_images/Notebook_LinAlg_2_26_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_26_1.png" src="../../_images/Notebook_LinAlg_2_26_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}a &amp; b\\c &amp; d\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a d - b c\]</div>
 </div>
 </div>
 <p>i overensstemmelse med, hvordan vi selv ville regne den.</p>
@@ -573,14 +596,16 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_29_0.png" src="../../_images/Notebook_LinAlg_2_29_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_29_1.png" src="../../_images/Notebook_LinAlg_2_29_1.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\pi &amp; 1 &amp; 1\\0 &amp; \pi &amp; 1\\0 &amp; 0 &amp; \pi^{2}\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \pi + \pi^{2}\]</div>
 </div>
 </div>
 </div>
 <div class="section" id="krydsprodukt-vektorprodukt-cross-product">
 <h2><span class="section-number">5.10.6. </span>Krydsprodukt, vektorprodukt / Cross product<a class="headerlink" href="#krydsprodukt-vektorprodukt-cross-product" title="Permalink to this headline">¶</a></h2>
-<p>For to vektorer i tre dimensioner kan vi benytte beregne krydsproduktet mellem <code>v</code> og <code>w</code> med <code>v.cross(w)</code> (i analogi med syntaksen for det indre produkt):</p>
+<p>For to vektorer i tre dimensioner kan vi benytte beregne krydsproduktet mellem <code>v</code> og <code>w</code> med <code>v.cross(w)</code> (i analogi med hvordan vi beregner det indre produkt):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -592,140 +617,12 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_31_0.png" src="../../_images/Notebook_LinAlg_2_31_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_31_1.png" src="../../_images/Notebook_LinAlg_2_31_1.png" />
-<img alt="../../_images/Notebook_LinAlg_2_31_2.png" src="../../_images/Notebook_LinAlg_2_31_2.png" />
-</div>
-</div>
-</div>
-<div class="section" id="egenvaerdier-og-vektorer">
-<h2><span class="section-number">5.10.7. </span>Egenværdier og -vektorer<a class="headerlink" href="#egenvaerdier-og-vektorer" title="Permalink to this headline">¶</a></h2>
-<p>For en matrix findes egenværdier og -vektorer med <code>A.eigenvals()</code> og <code>A.eigenvects()</code>.</p>
-<p><code>A.eigenvals()</code> giver os blot alle egenværdierne til en bestemt matrice i sorteret rækkefølge:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_33_0.png" src="../../_images/Notebook_LinAlg_2_33_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_34_0.png" src="../../_images/Notebook_LinAlg_2_34_0.png" />
-</div>
-</div>
-<p>Dette giver os nu en liste over egenværdierne (altså, 1, 2 og 11) og deres algebraiske multiplicitet, altså hvor mange gange den pågældende egenværdi er rod i det karakteristiske polynomium (her har alle egenværdierne algebraiske multiplicitet 1). For at illustrere hvordan resultaterne vises, “beregner” vi her egenværdierne for et trivielt eksempel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">eye</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_36_0.png" src="../../_images/Notebook_LinAlg_2_36_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_37_0.png" src="../../_images/Notebook_LinAlg_2_37_0.png" />
-</div>
-</div>
-<p>Funktionen <code>.eigenvects</code> virker på samme måde og giver både egenværdier og -vektorerne:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_39_0.png" src="../../_images/Notebook_LinAlg_2_39_0.png" />
-</div>
-</div>
-<p>Her er resultatet altså givet som en liste med (egenværdi, multiplictet, egenvektorer). Vi kan igen prøve eksemplet med det trivielle eksempel for at vise, hvad der sker, når en egenværdi har flere tilhørende egenvektorer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_41_0.png" src="../../_images/Notebook_LinAlg_2_41_0.png" />
-</div>
-</div>
-<p>I matematikkurser har matricerne gerne pæne (ofte heltallige) egenværdier, mens man i praksis sjældent oplever matricer med så velopdragne egenværdier. Dertil kommer, at store matricer kan gøre det meget hårdt for computeren at regne det hele symbolsk. Derfor vil man (når man eksempelvis beregner egenværdier i kvantemekanik) i stedet bruge NumPy, da der her er nogle ret hurtige implementeringer til at give gode numeriske løsninger. Heldigvis ligner metoderne meget hinanden, og hvis man skulle komme ud for at skulle løse et problem, der er for krævende med sumbolske beregninger, kan man finde NumPys LinAlg værktøjer <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">i den relevante dokumentation</a>.</p>
-</div>
-<div class="section" id="diagonalisering">
-<h2><span class="section-number">5.10.8. </span>Diagonalisering<a class="headerlink" href="#diagonalisering" title="Permalink to this headline">¶</a></h2>
-<p>En afgørende pointe i kurset er at undersøge hvornår der kan findes en base hvor vores matrix <span class="math notranslate nohighlight">\(A\)</span> er på diagonalform, altså hvornår der findes en matrix <span class="math notranslate nohighlight">\(P\)</span>, der opfylder: <span class="math notranslate nohighlight">\(D = P^{-1}AP\)</span>, hvor <span class="math notranslate nohighlight">\(D\)</span> er en diagonalmatrix. For at finde denne kan vi benytte <code>A.diagonalize()</code>. Vi regner videre med matricen <code>A</code> defineret ovenfor:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_44_0.png" src="../../_images/Notebook_LinAlg_2_44_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_45_0.png" src="../../_images/Notebook_LinAlg_2_45_0.png" />
-</div>
-</div>
-<p>Outputtet for denne funktion er matricerne <span class="math notranslate nohighlight">\(P\)</span> og <span class="math notranslate nohighlight">\(D\)</span>. Vi genkender at matricen <span class="math notranslate nohighlight">\(D\)</span> netop indeholder egenværdierne langs diagonalen og at <span class="math notranslate nohighlight">\(P\)</span> består at (multipla af) egenvektorerne. Vi kan få de pågældende matricer ud så vi kan regne videre med dem på følgende måde:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_47_0.png" src="../../_images/Notebook_LinAlg_2_47_0.png" />
-<img alt="../../_images/Notebook_LinAlg_2_47_1.png" src="../../_images/Notebook_LinAlg_2_47_1.png" />
-</div>
-</div>
-<p>Og vi demonstrerer endelig at matricerne sammensættes som forventet. Først <span class="math notranslate nohighlight">\(D = P^{-1}AP\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="n">P</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_49_0.png" src="../../_images/Notebook_LinAlg_2_49_0.png" />
-</div>
-</div>
-<p>Eller omvendt <span class="math notranslate nohighlight">\(A = P D P^{-1}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">*</span> <span class="n">D</span> <span class="o">*</span> <span class="n">P</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Notebook_LinAlg_2_51_0.png" src="../../_images/Notebook_LinAlg_2_51_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\0\\1\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\2\\0\end{matrix}\right]\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}-2\\1\\2\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -756,8 +653,8 @@ Som eksempel på den adjungerede (altså komplekst konjugerede og transponerede)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1_5.html" title="previous page"><span class="section-number">5.9. </span>Matrix reduktion, ligningsløsning og inverse matricer</a>
-    <a class='right-next' id="next-link" href="Notebook_kompleks.html" title="next page"><span class="section-number">5.11. </span>Komplekse tal i SymPy</a>
+    <a class='left-prev' id="prev-link" href="Notebook_LinAlg1_5.html" title="previous page"><span class="section-number">5.9. </span>Matrix-reduktion, ligningsløsning og inverse matricer</a>
+    <a class='right-next' id="next-link" href="Notebook_Linalg_2-5_Eigen.html" title="next page"><span class="section-number">5.11. </span>Egenværdier og -vektorer</a>
 
         </div>
         

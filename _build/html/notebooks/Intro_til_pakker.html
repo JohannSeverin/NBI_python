@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="sympy/Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="sympy/Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -368,11 +373,11 @@
 <li><p>Matplotlib (Mathematical ploting library) er til at lave plots</p></li>
 <li><p>Scipy (Scientific Python) her skal vi kun bruge en funktion</p></li>
 </ul>
-<p>Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollere svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrere jeres data fra og Scipy til at lave fits.</p>
-<p>Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med, vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en kilde til fejl.</p>
+<p>Ligesom det er vigtigt at bruge den rigtige metode til at løse en ligning, er det ligeså vigtigt at bruge den rigtige pakke til et programmeringsproblem. Som tommelfingerregel skal I bruge Sympy i LinAlys til at foretage symbolske udreginger for at kontrollere svar og lave nogle simple plots af funktioner. I laboratoriet skal I bruge Numpy og Matplotlib til at behandle og illustrere jeres data og Scipy til at lave fits.</p>
+<p>Nogle af pakkerne har noget overlap, og de er lavet til at kunne bruges sammen. Til at starte med vil vi dog prøve at undgå dette, da det hurtig kan blive meget kompliceret og nok en kilde til fejl.</p>
 <div class="section" id="import">
 <h2><span class="section-number">3.1. </span>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
-<p>For at hente en af de 4 ovenstående pakker ind i et python script benytter vi os af <code class="docutils literal notranslate"><span class="pre">import</span></code> nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med <code class="docutils literal notranslate"><span class="pre">as</span></code> kan vi desuden give dem et navn, så man slipper for at skrive hele navnet hver gang man bruger pakken. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> specificerer vi her, at vi kun vil hente én funktion derfra, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</p>
+<p>For at hente en af de 4 ovenstående pakker ind i et python script benytter vi os af <code class="docutils literal notranslate"><span class="pre">import</span></code> nøgleordet, som fortæller python, at funktionerne skal hentes fra den pågældende pakke. Med <code class="docutils literal notranslate"><span class="pre">as</span></code> kan vi desuden give dem et andet (ofte kortere) navn, så man slipper for at skrive hele navnet hver gang man bruger pakken. Vi kan hente de fire pakker ved at skrive følgende i en celle: (i <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> specificerer vi her, at vi kun vil hente én funktion derfra, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -383,17 +388,17 @@
 </div>
 </div>
 </div>
-<p>Selvom det er fristende altid at hente alle pakkerne ind, så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, hvis ikke den skal til at hente et stort bibliotek af funktioner, for at man bruger en enkel funktion. Det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker og funktioner, som skal bruges for at køre ens kode.</p>
+<p>Selvom det er fristende altid at hente alle pakkerne, så er det en fordel kun at hente de pakker ind, som man skal bruge. Dette vil både gøre koden hurtigere, fordi Python ikke skal hente et stort bibliotek af funktioner, for at man kan bruge en enkel funktion. Det er også en fordel, hvis andre personer skal læse koden, at man tydeligt kan se, hvilke pakker og funktioner, som skal bruges for at køre ens kode.</p>
 <p>Nogle pakker bruger vi så ofte, at vi gerne forkorter deres navne, så vi slipper for at skrive det fulde navn mange gange i løbet af en enkel notebook. Det er her vi bruger <code class="docutils literal notranslate"><span class="pre">as</span></code> nøgleordet. Når I gør dette, så brug dog gerne den konventionelle forkortelse (altså den som vi har brugt i cellen overfor), så vil det nemlig være nemmere for jer selv, jeres medstuderende og jeres instruktorer at læse og forstå den kode, som I skriver.</p>
 </div>
 <div class="section" id="hvordan-bruger-man-en-pakke">
 <h2><span class="section-number">3.2. </span>Hvordan bruger man en pakke?<a class="headerlink" href="#hvordan-bruger-man-en-pakke" title="Permalink to this headline">¶</a></h2>
-<p>Når man har hentet sin pakke ind, kan man kalde de funktioner, som er i den. Hvis man har gjort som <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> ovenover, kan man blot skrive <code class="docutils literal notranslate"><span class="pre">curve_fit(_input_)</span></code> i sin kode. Hvis man til gengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man ville generelt skrive det op som: <code class="docutils literal notranslate"><span class="pre">[forkortelse</span> <span class="pre">for</span> <span class="pre">pakke].[funktion]([variable]</span></code> f. eks. <code class="docutils literal notranslate"><span class="pre">np.exp(2)</span></code> giver <span class="math notranslate nohighlight">\(e^2\)</span>.</p>
-<p>Tænk på det som et bibliotek af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion, skal du altså først fortælle, hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner. Fx bruger vi udelukkende pyplot afdelingen af matplotlib biblioteket.</p>
-<p>Herunder kan man se nogle få eksempler på funktionkald:</p>
+<p>Når man har hentet sin pakke, kan man kalde de funktioner, som er i den. Hvis man har gjort som <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> ovenfor og kun importeret en enkelt funktion, kan man blot skrive <code class="docutils literal notranslate"><span class="pre">curve_fit(_input_)</span></code> i sin kode. Hvis man til gengæld har hentet en hel pakke, skal man også specificere pakken for at benytte en funktion. Man vil generelt skrive det som: <code class="docutils literal notranslate"><span class="pre">[forkortelse</span> <span class="pre">for</span> <span class="pre">pakke].[funktion]([variable]</span></code>. F.eks. giver <code class="docutils literal notranslate"><span class="pre">np.exp(2)</span></code> værdien af pakken np’s eksponentialfunktion i punktet 2, altså <span class="math notranslate nohighlight">\(e^2\)</span>.</p>
+<p>Tænk på det som et bibliotek af funktioner. Numpy er biblioteket og exp er en bog i biblioteket. For at Python kan finde en funktion, skal du altså først fortælle, hvilket bibliotek Python skal gå til og derefter hvilken bog/funktion skal findes. Nogle biblioteker har også sektioner. Fx bruger vi udelukkende afdelingen “pyplot” af matplotlib-biblioteket.</p>
+<p>Herunder kan man se nogle få eksempler på funktionskald:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Både sympy og numpy har de kendte matematiske funktioner, husk ikke at blande dem.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Både sympy og numpy har de kendte trigonometriske funktioner samt værdien for pi</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div>
@@ -408,21 +413,25 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># denne funktion laver en liste af tal startende i 0, sluttende i 2*pi og med 1001 elementer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span> <span class="c1"># Plotter cosinus mellem 0 og 2 pi.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Intro_til_pakker_7_0.png" src="../_images/Intro_til_pakker_7_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.00628319 0.01256637 ... 6.27061894 6.27690212 6.28318531]
+</pre></div>
+</div>
+<img alt="../_images/Intro_til_pakker_7_1.png" src="../_images/Intro_til_pakker_7_1.png" />
 </div>
 </div>
 <p>Flere eksempler kan ses  herunder, hvor de mest brugte pakker: numpy, matplotlib og sympy er kort gennemgået. Dette er dog kun en oversigt, for at se en mere grundig gennemgang skal man finde noterne under enten “Python i Mekrel” eller “Python i LinAlys”.</p>
 </div>
 <div class="section" id="numpy">
 <h2><span class="section-number">3.3. </span>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
-<p>Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader matematiske operationer på alle elementer samtidig. Vi starter med at importere numpy:</p>
+<p>Numpy er den pakke, som vi bruger til numeriske udregninger. Helt centralt er numpy arrays, som er lister, der tillader os at udføre matematiske operationer på alle listens elementer samtidig. Vi starter med at importere numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -444,7 +453,7 @@
 </div>
 </div>
 </div>
-<p>Hvis vi nu benytter dette array i regneoperation, foretages operationer på alle elementer af gangen:</p>
+<p>Hvis vi nu benytter en regneoperation, foretages operationen på alle elementerne:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_af_tal</span> <span class="o">+</span> <span class="mi">5</span> 
@@ -457,7 +466,7 @@
 </div>
 </div>
 </div>
-<p>Derudover har numpy også en del indbygget matematiske operationer, som eksempelvis <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> mm., som også kan bruges på enten et enkelt tal, eller på et helt array:</p>
+<p>Derudover har numpy også en del indbyggede matematiske funktioner, som eksempelvis <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> mm., som også kan bruges på enten et enkelt tal, eller på et helt array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span>
@@ -482,7 +491,7 @@
 </div>
 </div>
 </div>
-<p>Yderligere benyttes numpy ofte til at regne statistik på et helt array, eksempelvis gennemsnittet af overstående array:</p>
+<p>Yderligere benyttes numpy ofte til at lave statistik på et helt array, eksempelvis gennemsnittet af overstående array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array_af_tal</span><span class="p">)</span>
@@ -499,7 +508,7 @@
 </div>
 <div class="section" id="matplotlib-pyplot">
 <h2><span class="section-number">3.4. </span>Matplotlib Pyplot<a class="headerlink" href="#matplotlib-pyplot" title="Permalink to this headline">¶</a></h2>
-<p>Matplotlib bruges til at plotte numeriske værdier fra eksempelvis laboratoriet. Vi importerer det ved:</p>
+<p>Matplotlib bruges til at plotte numeriske værdier, der f.eks. kunne være måledata fra laboratoriet. Vi importerer det ved:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -528,19 +537,19 @@
 </div>
 <div class="section" id="sympy">
 <h2><span class="section-number">3.5. </span>SymPy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
-<p>Når vi skal foretage symbolske udregninger såsom at udregne grænser, foretage differentialregning eller løse ligninger benytter vi SymPy.</p>
+<p>Når vi skal foretage symbolske udregninger såsom at udregne grænseværdier, foretage differentialregning eller løse ligninger benytter vi SymPy.</p>
 <p>Når vi benytter SymPy starter vi oftest med at gøre Python opmærksom på, at vi ikke har med numeriske værdier at gøre, men i stedet noget mere abstrakt, som altså ikke skal afrundes eller udregnes, men lige præcis behandles som et symbol.</p>
-<p>For at starte op i SymPy importerer man biblioteket samt de symboler, som man gerne vil bruge fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code></p>
+<p>Først importerer man SymPy-biblioteket samt de symboler, som man gerne vil bruge fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                   <span class="c1"># Importer biblioteket</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                   <span class="c1"># Importér biblioteket</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">phi</span>   <span class="c1"># Og de symboler som vi vil bruge. Vi kan altid hente flere   </span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Når man nu benytter sympy kan blot kombinerer symbolerne til nye udtryk.
-Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med hinanden:</p>
+<p>Vi kan nu kombinere symbolerne til nye udtryk.
+Eksempelvis kan vi danne et udtryk ved at gange og dividerer vores symboler med hinanden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">/</span> <span class="n">x</span> 
@@ -552,7 +561,7 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 \[\displaystyle \frac{a b}{x}\]</div>
 </div>
 </div>
-<p>Eller vi kan sammensætte dette i nye udtryk, som vi nu kan behandle sammen:</p>
+<p>Eller vi kan sammensætte de variable til nye variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
@@ -570,7 +579,20 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 \[\displaystyle \phi^{x}\]</div>
 </div>
 </div>
-<p>Her benytter vi <code class="docutils literal notranslate"><span class="pre">display()</span></code> i stedet for <code class="docutils literal notranslate"><span class="pre">print()</span></code>, da vi ikke vil have en tekst version af vores symboler, men i stedet fortæller vi jupyter, at symbolerne skal skrives. Vi kan nu kombinere de to udtryk med hinanden:</p>
+<p>Her benytter vi <code class="docutils literal notranslate"><span class="pre">display()</span></code> i stedet for <code class="docutils literal notranslate"><span class="pre">print()</span></code>, da dette viser symbolerne med matematisk formattering istedet for en tekst-version svarende til det, vi selv skrev ovenfor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>phi**x
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan nu kombinere de to udtryk med hinanden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">*</span> <span class="n">g</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
@@ -586,7 +608,7 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>                       <span class="c1"># Udtryk med cosinus</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Udtryk med ekspoential funktioner og kvadratrødder </span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Udtryk med ekspoentialfunktionen og kvadratrødder </span>
 </pre></div>
 </div>
 </div>
@@ -597,9 +619,9 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 \[\displaystyle \phi^{x} + e^{2 a b x}\]</div>
 </div>
 </div>
-<p>Der, hvor vi virkelig får glæde af SymPy er, når vi benytte det til differentiering, integration og til eksempelvis at finde grænser. Hvis vi nu har funktionen:<br />
+<p>Der, hvor vi virkelig får glæde af SymPy er, når vi benytte det til differentiering, integration og til eksempelvis at finde grænseværdier. Betragt f.eks. funktionen:<br />
 <span class="math notranslate nohighlight">\( f(x) = \frac{x^2 - 4}{x + 2} \cdot e^{-x}\)</span></p>
-<p>kan vi benytte sympy til at finde grænser for <span class="math notranslate nohighlight">\(x \longrightarrow 2\)</span></p>
+<p>kan vi benytte sympy til at finde grænseværdien for <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(x \rightarrow 2\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
@@ -613,7 +635,7 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 \[\displaystyle 0\]</div>
 </div>
 </div>
-<p>Den afledte funktion:</p>
+<p>Vi kan også bestemme den afledte (eller differenterede) funktion:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -625,7 +647,7 @@ Eksempelvis kan vi danne et udtryk  ved at gange og dividerer vores symboler med
 \[\displaystyle \frac{2 x e^{- x}}{x + 2} - \frac{\left(x^{2} - 4\right) e^{- x}}{x + 2} - \frac{\left(x^{2} - 4\right) e^{- x}}{\left(x + 2\right)^{2}}\]</div>
 </div>
 </div>
-<p>Eller til integration:</p>
+<p>Eller det bestemte integral for <span class="math notranslate nohighlight">\(f(x)\)</span> mellem grænserne <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>

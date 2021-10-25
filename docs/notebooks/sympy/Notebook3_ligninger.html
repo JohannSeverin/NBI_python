@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -344,7 +349,7 @@
                 
   <div class="section" id="ligninger">
 <h1><span class="section-number">5.3. </span>Ligninger<a class="headerlink" href="#ligninger" title="Permalink to this headline">¶</a></h1>
-<p>Første trin for at løse ligninger er at få skrevet ligninger op i et sprog, Pyhton kan forstå. Det afgørende er her at indse at et lighedstegn kan have flere fundamentalt forskellige betydninger. Tidligere har vi tildelt variable bestemte værdier ved f.eks. at skrive <code>k = 4</code>, mens vi her vil bruge lighedstegnet til at beskrive et udsagn om sammenhængen mellem to udtryk. I SymPy-sprog er dette en <em>equality</em> og syntaksen er (når vi har importeret SymPy som <code>sp</code> som vi plejer) givet ved <code>sp.Eq(venstre side, højre side)</code>. Pythagoras’ læresætning kan f.eks. opskrives som:</p>
+<p>Første trin for at løse ligninger er at få skrevet ligninger op i et sprog, Python kan forstå. Det afgørende er her at indse at et lighedstegn kan have flere fundamentalt forskellige betydninger. Tidligere har vi tildelt variable bestemte værdier ved f.eks. at skrive <code>k = 4</code>, mens vi her vil bruge lighedstegnet til at beskrive et udsagn om sammenhængen mellem to udtryk. I SymPy-sprog er dette en <em>equality</em> og syntaksen er (når vi har importeret SymPy som <code>sp</code> som vi plejer) givet ved <code>sp.Eq(venstre side, højre side)</code>. Pythagoras’ læresætning kan f.eks. opskrives som:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -365,10 +370,10 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">theta</span>
 
-<span class="n">expr</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># Vi laver nu blot den ene side af ligningen som et udtryk (&quot;expression&quot;)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># Vi laver nu blot den ene side af ligningen som et udtryk (expr for &quot;expression&quot;)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
 
-<span class="n">cos_relation</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>         <span class="c1"># Og vi kan nu sammensætte det</span>
+<span class="n">cos_relation</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>         <span class="c1"># Og vi kan nu sammensætte højre- og venstresiderne</span>
 <span class="n">display</span><span class="p">(</span><span class="n">cos_relation</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -376,6 +381,19 @@
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle c^{2} = a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\]</div>
+</div>
+</div>
+<p>Vi kunne selvfølgelig også have gjort det hele i ét hug:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cos_relation</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cos_relation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle c^{2} = a^{2} - 2 a b \cos{\left(\theta \right)} + b^{2}\]</div>
 </div>
@@ -445,7 +463,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 <span class="n">expr</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="n">solutions</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solveset</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#Da vi har angivet et udtryk, sætter SymPy udtrykket lig med 0 og løser.</span>
+<span class="n">solutions</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solveset</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Da vi har angivet et udtryk, sætter SymPy udtrykket lig med 0 og løser.</span>
 <span class="n">display</span><span class="p">(</span><span class="n">solutions</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -496,7 +514,7 @@
 \[\displaystyle \left\{\theta \mid \theta \in \mathbb{C} \wedge - a^{2} + 2 a b \cos{\left(\theta \right)} - b^{2} + c^{2} = 0 \right\}\]</div>
 </div>
 </div>
-<p>Hvilket jo er rigtig nok (sammenlign med selve cosinusrelationen!), men ikke fortæller os så meget, vi ikke vidste i forvejen. Det leder os videre til den anden metode til ligningsløsning:</p>
+<p>Hvilket kan læses som “De værdier <span class="math notranslate nohighlight">\(\theta\)</span> for hvilket det gælder at <span class="math notranslate nohighlight">\(\theta\)</span> er et komplekst tal og at cosinusrelationen er opfyldt”. Det er jo rigtig nok (sammenlign med selve cosinusrelationen!), men fortæller os ikke så meget, vi ikke vidste i forvejen. Det leder os videre til den anden metode til ligningsløsning:</p>
 </div>
 <div class="section" id="solve">
 <h2><span class="section-number">5.3.2. </span>Solve<a class="headerlink" href="#solve" title="Permalink to this headline">¶</a></h2>
@@ -514,23 +532,28 @@
 </div>
 </div>
 </div>
-<p><em>Vær opmærksom på formatet, da vi her får en liste kan vi loope over den og bruge <code class="docutils literal notranslate"><span class="pre">display</span></code> på løsninger</em></p>
+<p>Når der som her er flere løsninger, giver <code>Solve()</code>løsningerne som elementer i en liste, som <code>display</code> ikke kan konvertere til LaTeX. Vi må derfor nøjes med output i tekstformat eller vi kan bruge en løkke til at vise løsningerne en af gangen med <code class="docutils literal notranslate"><span class="pre">display</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sols</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">cos_relation</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">løsning</span> <span class="ow">in</span> <span class="n">sols</span><span class="p">:</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sols</span><span class="p">)</span>           <span class="c1"># Viser listen med løsninger som tekst ... OK, men ikke så kønt</span>
+<span class="k">for</span> <span class="n">løsning</span> <span class="ow">in</span> <span class="n">sols</span><span class="p">:</span>    <span class="c1"># Løkke, der viser løsningerne en af gangen med LaTeX-formattering</span>
     <span class="n">display</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-acos((a**2 + b**2 - c**2)/(2*a*b)) + 2*pi,
+ acos((a**2 + b**2 - c**2)/(2*a*b))]
+</pre></div>
+</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle - \operatorname{acos}{\left(\frac{a^{2} + b^{2} - c^{2}}{2 a b} \right)} + 2 \pi\]</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \operatorname{acos}{\left(\frac{a^{2} + b^{2} - c^{2}}{2 a b} \right)}\]</div>
 </div>
 </div>
-<p>Yderligere, kan vi angive et domæne for løsningen. I stedet kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen <span class="math notranslate nohighlight">\(b\)</span> ved hjælp af Pythagoras’ sætning, vil opgaven i solve-sprog lyde:</p>
+<p>Når man bruger <code>solve</code> kan man angive en liste af ligheder (eller uligheder), som afgrænser den variable. Hvis vi vil bestemme sidelængen <span class="math notranslate nohighlight">\(b\)</span> (som er nul eller positiv) ved hjælp af Pythagoras’ sætning, kan opgaven i solve-sprog lyde:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Pytha_indsat</span><span class="p">)</span>
@@ -560,7 +583,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 </div>
-<p>Her får vi altså en løsning, og det vil ofte være den løsning, vi leder efter. Men da <span class="math notranslate nohighlight">\(\sin(x)\)</span> er periodisk, ved vi, at der er flere løsninger. Så svaret er ikke fuldkomment.</p>
+<p>Her får vi altså en løsning, og det vil ofte være den løsning, vi leder efter. Men da <span class="math notranslate nohighlight">\(\sin(x)\)</span> er periodisk, ved vi, at der er flere løsninger. Så svaret er ikke udtømmende.</p>
 <p>I modsætning hertil har <code>solveset</code> den fordel, at den giver et  matematisk stringent svar, og den vil altså returnere hele løsningen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,12 +600,11 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 <div class="section" id="numerisk-losning">
 <h2><span class="section-number">5.3.3. </span>Numerisk løsning<a class="headerlink" href="#numerisk-losning" title="Permalink to this headline">¶</a></h2>
 <p>Nogle gange kan vi komme ud for en situation, hvor en opgave ikke har en brugbar eksakt, symbolsk løsning, eller at hverken <code>solve</code> eller <code>solveset</code> giver et svar, vi kan bruge. Vi kan så benytte <code>sp.nsolve</code> til numerisk løsning af ligninger. Vi bruger således SymPy (som er designet til at være et symbolsk værktøj) til et formål, der er på kanten af dets anvendelsesområde, og vi skal derfor bruge værktøjet med forsigtighed. Det er derfor en god idé i disse tilfælde at tegne grafer for at illustrere opgaven. Derved kan vi checke at svaret rent faktisk giver mening i forhold til opgaven, og det tillader os også at give et ret godt gæt på en løsning.</p>
-<p>Derefter indskriver man den numeriske løsning som:</p>
+<p>Kaldesekvensen for at bestemme en numeriske løsning er:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">variabel</span><span class="p">,</span> <span class="n">startgæt</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>og dette vil nu prøve at udregne en numerisk værdi for en løsning.</p>
-<p>Hvis nu vi eksempelvis vil finde en løsning til <span class="math notranslate nohighlight">\(x\log(x) = \sin(x)\)</span>, starter vi med at lave et plot (se den anden Notebook til uge 3 for en mere grundig forklaring af syntaksen).</p>
+<p>Hvis nu vi eksempelvis vil finde en løsning til <span class="math notranslate nohighlight">\(x\log(x+1) = \sin(x)\)</span>, starter vi med at lave et plot (se notesbogen om plotning for en mere grundig forklaring af syntaksen).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
@@ -593,15 +615,15 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Notebook3_ligninger_34_0.png" src="../../_images/Notebook3_ligninger_34_0.png" />
+<img alt="../../_images/Notebook3_ligninger_36_0.png" src="../../_images/Notebook3_ligninger_36_0.png" />
 </div>
 </div>
-<p>Heraf ser vi altså, at et godt start gæt ville være omkring <span class="math notranslate nohighlight">\(x=1.3\)</span>. Dette vil vi nu bruge.</p>
+<p>Heraf ser vi altså, at et godt startgæt vil være omkring <span class="math notranslate nohighlight">\(x=1.2\)</span>. Dette vil vi nu bruge.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lign</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">display</span><span class="p">(</span><span class="n">lign</span><span class="p">)</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">lign</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">lign</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -624,7 +646,7 @@ Eksempel: Vi løser <span class="math notranslate nohighlight">\(\sin(\theta) = 
 \[\displaystyle 1.64437672593563 \cdot 10^{-51}\]</div>
 </div>
 </div>
-<p>som er en numerisk værdi, som må betragtes som 0. Vi har altså her fundet den anden løsning. Det er derfor rigtig vigtigt at være opmærksom på, hvilken løsning vi kigger efter, og lave vores gæt efter dette.</p>
+<p>som er en numerisk værdi meget tæt på 0, der også er en løsning til ligningen. Det er derfor vigtigt at være opmærksom på, hvilken løsning, der er relevant i en konkret sammenhæng, og lave et godt startgæt inspireret af dette.</p>
 </div>
 </div>
 

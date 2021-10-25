@@ -1,0 +1,30 @@
+
+image: ruby:2.3
+
+variables:
+  JEKYLL_ENV: production
+
+before_script:
+  - bundle install
+
+test:
+  stage: test
+  script:
+  - bundle exec jekyll build -d test
+  artifacts:
+    paths:
+    - test
+    expire_in: 48h
+  except:
+  - master
+
+pages:
+  stage: deploy
+  script:
+  - bundle exec jekyll build -d public
+  artifacts:
+    paths:
+    - public
+    expire_in: 48h
+  only:
+  - master

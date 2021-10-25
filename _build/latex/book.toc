@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {3.1}Import}{15}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Hvordan bruger man en pakke?}{16}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Numpy}{17}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Matplotlib Pyplot}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}SymPy}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.4}Matplotlib Pyplot}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.5}SymPy}{19}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Python i MekRel}{21}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Numpy}{21}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Numpy arrays}{21}{subsection.4.1.1}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Plots}{25}{subsection.4.2.1}%
 \contentsline {section}{\numberline {4.3}Funktioner, fits og usikkerheder i Python}{27}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Funktioner}{27}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Fitting}{28}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Fitting}{29}{subsection.4.3.2}%
 \contentsline {chapter}{\numberline {5}Python i LinAlys}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Hvad er SymPy?}{33}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Symboler og tal}{33}{subsection.5.1.1}%
@@ -39,61 +39,48 @@
 \contentsline {subsection}{\numberline {5.3.1}Solveset}{39}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Solve}{40}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Numerisk løsning}{41}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Plotting i SymPy}{42}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Plotting i SymPy}{43}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Parametre for Plot}{45}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Figurer som lister}{48}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Gaffelfunktioner}{50}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Differential\sphinxhyphen {} og integralregning for funktioner af en variabel}{52}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Reduktion}{53}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Differentiation}{54}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Taylorudvikling}{56}{subsection.5.8.1}%
-\contentsline {section}{\numberline {5.9}Integration}{58}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Alternativ Syntaks}{59}{section.5.10}%
-\contentsline {section}{\numberline {5.11}Funktioner af flere variable}{60}{section.5.11}%
-\contentsline {section}{\numberline {5.12}Differentiation af funktioner af flere variable}{60}{section.5.12}%
-\contentsline {subsection}{\numberline {5.12.1}Partielt afledede}{60}{subsection.5.12.1}%
-\contentsline {subsection}{\numberline {5.12.2}Gradienter og retningsafledede}{61}{subsection.5.12.2}%
-\contentsline {subsection}{\numberline {5.12.3}Hessematricen}{62}{subsection.5.12.3}%
-\contentsline {section}{\numberline {5.13}Graftegning for funktioner af flere variable}{63}{section.5.13}%
-\contentsline {subsection}{\numberline {5.13.1}Graftegning i 3D}{63}{subsection.5.13.1}%
-\contentsline {subsection}{\numberline {5.13.2}Konturer}{63}{subsection.5.13.2}%
-\contentsline {subsection}{\numberline {5.13.3}Niveaukurver}{65}{subsection.5.13.3}%
-\contentsline {section}{\numberline {5.14}Graftegning for funktioner af flere variable}{66}{section.5.14}%
-\contentsline {subsection}{\numberline {5.14.1}Graftegning i 3D}{67}{subsection.5.14.1}%
-\contentsline {subsection}{\numberline {5.14.2}Konturer}{67}{subsection.5.14.2}%
-\contentsline {subsection}{\numberline {5.14.3}Niveaukurver}{69}{subsection.5.14.3}%
-\contentsline {section}{\numberline {5.15}Vektorer og matricer}{71}{section.5.15}%
-\contentsline {subsection}{\numberline {5.15.1}Vektorer og matricer}{71}{subsection.5.15.1}%
-\contentsline {subsubsection}{Vektorer \sphinxhyphen {} definition og regneoperationer}{71}{subsubsection*.3}%
-\contentsline {subsubsection}{Matricer \sphinxhyphen {} definition og regneoperationer}{72}{subsubsection*.4}%
-\contentsline {subsubsection}{Nogle indbyggede matricer: Identitets\sphinxhyphen {}, nul\sphinxhyphen {}, et\sphinxhyphen {} og diagonalmatricer}{73}{subsubsection*.5}%
-\contentsline {subsection}{\numberline {5.15.2}Matrix\sphinxhyphen {}reduktion}{75}{subsection.5.15.2}%
-\contentsline {subsection}{\numberline {5.15.3}Ligningssystemer med een løsning}{75}{subsection.5.15.3}%
-\contentsline {subsection}{\numberline {5.15.4}Omvendte/inverse matricer}{76}{subsection.5.15.4}%
-\contentsline {subsection}{\numberline {5.15.5}Matrixrang}{77}{subsection.5.15.5}%
-\contentsline {subsection}{\numberline {5.15.6}Ligningssystemer med flere løsninger: frie parametre}{77}{subsection.5.15.6}%
-\contentsline {section}{\numberline {5.16}Matrix reduktion, ligningsløsning og inverse matricer}{78}{section.5.16}%
-\contentsline {subsection}{\numberline {5.16.1}Matrix\sphinxhyphen {}reduktion}{78}{subsection.5.16.1}%
-\contentsline {subsection}{\numberline {5.16.2}Ligningssystemer med een løsning}{78}{subsection.5.16.2}%
-\contentsline {subsection}{\numberline {5.16.3}Omvendte/inverse matricer}{79}{subsection.5.16.3}%
-\contentsline {subsection}{\numberline {5.16.4}Matrixrang}{80}{subsection.5.16.4}%
-\contentsline {subsection}{\numberline {5.16.5}Ligningssystemer med flere løsninger: frie parametre}{80}{subsection.5.16.5}%
-\contentsline {section}{\numberline {5.17}Flere metoder i Linær Algebra}{81}{section.5.17}%
-\contentsline {subsection}{\numberline {5.17.1}Transponering, adjungering og konjugering}{81}{subsection.5.17.1}%
-\contentsline {subsection}{\numberline {5.17.2}Nulrum og søjlerum}{82}{subsection.5.17.2}%
-\contentsline {subsection}{\numberline {5.17.3}Gram\sphinxhyphen {}Schmidt\sphinxhyphen {}ortogonalisering}{83}{subsection.5.17.3}%
-\contentsline {subsection}{\numberline {5.17.4}Determinant}{84}{subsection.5.17.4}%
-\contentsline {subsection}{\numberline {5.17.5}Sporet / Trace}{84}{subsection.5.17.5}%
-\contentsline {subsection}{\numberline {5.17.6}Krydsprodukt, vektorprodukt / Cross product}{85}{subsection.5.17.6}%
-\contentsline {subsection}{\numberline {5.17.7}Egenværdier og \sphinxhyphen {}vektorer}{85}{subsection.5.17.7}%
-\contentsline {subsection}{\numberline {5.17.8}Diagonalisering}{86}{subsection.5.17.8}%
-\contentsline {section}{\numberline {5.18}Komplekse tal i SymPy}{88}{section.5.18}%
-\contentsline {subsection}{\numberline {5.18.1}Almindelige regneoperationer med komplekse tal}{88}{subsection.5.18.1}%
-\contentsline {subsection}{\numberline {5.18.2}Notationsformer og skift mellem disse}{89}{subsection.5.18.2}%
-\contentsline {subsubsection}{Kartesiske koordinater, real og imaginærdel.}{89}{subsubsection*.6}%
-\contentsline {subsubsection}{Modulus og argument}{90}{subsubsection*.7}%
-\contentsline {subsubsection}{Kompleks konjugering}{90}{subsubsection*.8}%
-\contentsline {subsection}{\numberline {5.18.3}Rødder og ligninger}{91}{subsection.5.18.3}%
-\contentsline {subsection}{\numberline {5.18.4}Visualisering i det komplekse plan}{92}{subsection.5.18.4}%
-\contentsline {subsubsection}{Visualisering i SymPy}{93}{subsubsection*.9}%
-\contentsline {subsubsection}{Visualisering i NumPy}{93}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {5.4.2}Figurer som lister}{47}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Gaffelfunktioner}{49}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Differential\sphinxhyphen {} og integralregning (en variabel)}{51}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Reduktion}{51}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Differentiation}{53}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Taylorudvikling}{54}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Integration}{56}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Alternativ Syntaks}{57}{subsection.5.5.5}%
+\contentsline {section}{\numberline {5.6}Analyse for funktioner af flere variable}{58}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Partielt afledede}{58}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Gradienter og retningsafledede}{59}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Hessematricen}{60}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}Graftegning for funktioner af flere variable}{61}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Graftegning i 3D}{61}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Konturer}{61}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Niveaukurver}{63}{subsection.5.7.3}%
+\contentsline {section}{\numberline {5.8}Vektorer og matricer}{65}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Vektorer \sphinxhyphen {} definition og regneoperationer}{65}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Matricer \sphinxhyphen {} definition og regneoperationer}{66}{subsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.8.3}Indbyggede matricer}{67}{subsection.5.8.3}%
+\contentsline {section}{\numberline {5.9}Matrix\sphinxhyphen {}reduktion, ligningsløsning og inverse matricer}{69}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Matrix\sphinxhyphen {}reduktion}{69}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Ligningssystemer med een løsning}{69}{subsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.9.3}Omvendte/inverse matricer}{71}{subsection.5.9.3}%
+\contentsline {subsection}{\numberline {5.9.4}Matrixrang}{71}{subsection.5.9.4}%
+\contentsline {subsection}{\numberline {5.9.5}Ligningssystemer med flere løsninger: frie parametre}{71}{subsection.5.9.5}%
+\contentsline {section}{\numberline {5.10}Flere metoder i Linær Algebra}{72}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Transponering, adjungering og konjugering}{73}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Nulrum og søjlerum}{73}{subsection.5.10.2}%
+\contentsline {subsection}{\numberline {5.10.3}Gram\sphinxhyphen {}Schmidt\sphinxhyphen {}ortogonalisering}{74}{subsection.5.10.3}%
+\contentsline {subsection}{\numberline {5.10.4}Determinant}{75}{subsection.5.10.4}%
+\contentsline {subsection}{\numberline {5.10.5}Sporet / Trace}{76}{subsection.5.10.5}%
+\contentsline {subsection}{\numberline {5.10.6}Krydsprodukt, vektorprodukt / Cross product}{76}{subsection.5.10.6}%
+\contentsline {section}{\numberline {5.11}Egenværdier og \sphinxhyphen {}vektorer}{76}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Diagonalisering}{78}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}Komplekse tal i SymPy}{79}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Almindelige regneoperationer med komplekse tal}{79}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Notationsformer og skift mellem disse}{81}{subsection.5.12.2}%
+\contentsline {subsubsection}{Kartesiske koordinater, real og imaginærdel.}{81}{subsubsection*.3}%
+\contentsline {subsubsection}{Modulus og argument}{81}{subsubsection*.4}%
+\contentsline {subsubsection}{Kompleks konjugering}{82}{subsubsection*.5}%
+\contentsline {subsection}{\numberline {5.12.3}Rødder og ligninger}{82}{subsection.5.12.3}%
+\contentsline {subsection}{\numberline {5.12.4}Visualisering i det komplekse plan}{84}{subsection.5.12.4}%

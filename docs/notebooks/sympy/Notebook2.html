@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -345,7 +350,7 @@
   <div class="section" id="hvad-er-sympy">
 <h1><span class="section-number">5.1. </span>Hvad er SymPy?<a class="headerlink" href="#hvad-er-sympy" title="Permalink to this headline">¶</a></h1>
 <p>I denne sektion vil vi kigge på, hvordan vi benytter SymPy. Selve SymPy er en pakke i Python, der lader os arbejde med symbolske udtryk. Vi starter med at importere SymPy på samme måde. Derfor vil vi starte alle notebooks med at importere SymPy og benytte forkortelsen “sp” for pakken: <code>import sympy as sp</code>.<br />
-SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at se symbolske udtryk som LaTeX. Vi skal dog være opmærksom på, at den normale <code>print()</code> i Python printer output i “string”-format, mens funktionen <code>display()</code> (som er indbygget i Jupyter) vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX. <em>Hvis vi skriver udtrykket til sidst i en celle, vil Jupyter automatisk bruge <code class="docutils literal notranslate"><span class="pre">display</span></code></em></p>
+SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at vise symbolske udtryk i LaTeX, som er et <em>typesetting</em>-system der er særligt velegnet til matematisk notation (du kender måske LaTeX fra Words Wordmat-plugin). Den normale <code>print()</code> i Python skriver output i “string”-format, mens funktionen <code>display()</code> (som er indbygget i Jupyter) vil være vores foretrukne valg til at vise SymPy-udtryk som LaTeX. Når vi skriver et udtryk til sidst i en celle, vil Jupyter oftest skrive resultatet og vil automatisk bruge <code class="docutils literal notranslate"><span class="pre">display</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer SymPy</span>
@@ -355,7 +360,7 @@ SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at se symbol
 </div>
 <div class="section" id="symboler-og-tal">
 <h2><span class="section-number">5.1.1. </span>Symboler og tal<a class="headerlink" href="#symboler-og-tal" title="Permalink to this headline">¶</a></h2>
-<p>På samme måde som vi kan have variable i Python som <em>strings</em>, logiske booleans eller talværdier, så tilføjer SymPy muligheden for symbolske variable, f.eks. svarende til hvad vi normalt kalder en ubekendt i ligningsløsning eller den (uafhængige) variabel i en funktion. Vi ønsker således at have muligheden for angive en variabel som <span class="math notranslate nohighlight">\(x\)</span> i <span class="math notranslate nohighlight">\(f(x) = x^2+3x-2\)</span> og opfatte den som et abstrakt objekt i modsætning til at tildele <span class="math notranslate nohighlight">\(x\)</span> en værdi. Den nemmeste måde at definere symboler på er at importere dem fra underbiblioteket <code>sympy.abc</code>, som indeholder de fleste symboler, som vi til dagligt bruger. Vi kan altså definere f.eks. <span class="math notranslate nohighlight">\(x, a, b\)</span> og <span class="math notranslate nohighlight">\(\phi\)</span> som symboler ved at skrive:</p>
+<p>På samme måde som vi kan have variable i Python som <em>strings</em>, logiske booleans eller talværdier, så tilføjer SymPy muligheden for symbolske variable, svarende til hvad vi f.eks. kalder en ubekendt i ligningsløsning eller den (uafhængige) variabel i en funktion. Vi ønsker således at have muligheden for angive en variabel som <span class="math notranslate nohighlight">\(x\)</span> i <span class="math notranslate nohighlight">\(f(x) = x^2+3x-2\)</span> og opfatte den som et abstrakt objekt i modsætning til at tildele <span class="math notranslate nohighlight">\(x\)</span> en værdi. Den nemmeste måde at definere symboler på er at importere dem fra underbiblioteket <code>sympy.abc</code>, som indeholder de fleste symboler, som vi til dagligt bruger. Vi kan definere f.eks. <span class="math notranslate nohighlight">\(x, a, b\)</span> og <span class="math notranslate nohighlight">\(\phi\)</span> som symboler ved at skrive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">phi</span>
@@ -378,10 +383,10 @@ SymPy har flere indbyggeret printe-værktøjer, der gør det muligt at se symbol
 <p>Vi kan også danne nye udtryk med symbolske værdier. Udtrykkene kan sættes sammen ved at benytte normale Python-operationer såsom: <code>+</code>, <code>-</code>, <code>*</code>,<code>/</code> eller <code>**</code>. Derudover kan vi benytte en del andre regneoperationer ved at skrive <code>sp.</code> foran operationen.
 Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 <ul class="simple">
-<li><p>Kvadratrødder: <code>sp.sqrt(x)</code> (benyt <code class="docutils literal notranslate"><span class="pre">sp.root(x,</span> <span class="pre">n)</span></code> til at tage n’te rod af x)</p></li>
-<li><p>Trigonometriske funktioner: <code>sp.cos(x), sp.sin(x), sp.tan(x)</code>. (de inverse findes ved eksempelvis <code>acos(x)</code>)</p></li>
+<li><p>Kvadratrødder: <code>sp.sqrt(x)</code> (benyt <code class="docutils literal notranslate"><span class="pre">sp.root(x,</span> <span class="pre">n)</span></code> til at beregne <span class="math notranslate nohighlight">\(\sqrt[n]{x}\)</span>, altså den n’te rod af x)</p></li>
+<li><p>Trigonometriske funktioner: <code>sp.cos(x), sp.sin(x), sp.tan(x)</code>. De inverse trigonometriske funktioner findes ved eksempelvis <code>acos(x)</code></p></li>
 <li><p>Exponentialfunktion <code>sp.exp(x)</code></p></li>
-<li><p>Logaritmer: <code>sp.log(x)</code>. For at få 10-talslogaritmefunktionen skrives <code>log(x, 10)</code></p></li>
+<li><p>Logaritmer: <code>sp.log(x)</code>. For at få 10-tals-logaritmefunktionen skrives <code>log(x, 10)</code></p></li>
 </ul>
 <p>En mere omfattende <a class="reference external" href="https://docs.sympy.org/latest/modules/functions/elementary.html">liste over regneoperationer kan findes her.</a></p>
 <p>Så eksempelvis kan vi sammensætte et udtryk ved at benytte exponentialfunktionen <code>sp.exp</code> sammen med vores symboler:</p>
@@ -465,7 +470,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 \[\displaystyle \frac{a}{3 b} - \frac{2}{5}\]</div>
 </div>
 </div>
-<p>Vi får ofte brug for eksakte værdier af <span class="math notranslate nohighlight">\(\pi\)</span> og evt. andre særlige tal. En eksakt værdi af <span class="math notranslate nohighlight">\(\pi\)</span> får vi ved at skrive <code>from sympy import pi</code>. Når vi sammensætter symbolske variable og <span class="math notranslate nohighlight">\(\pi\)</span> med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for <code>sp.Rational(tæller, nævner)</code>, da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede tal (<em>floats</em>):</p>
+<p>Vi får ofte brug for eksakte værdier af <span class="math notranslate nohighlight">\(\pi\)</span> og evt. andre særlige tal. En eksakt værdi af <span class="math notranslate nohighlight">\(\pi\)</span> får vi ved at skrive <code>from sympy import pi</code>. Når vi sammensætter symbolske variable og <span class="math notranslate nohighlight">\(\pi\)</span> med tal i brøker, kan vi som nævnt ovenfor godt bruge almindelige division istedet for <code>sp.Rational(tæller, nævner)</code>, da Python på grund af symbolerne ikke kan behandle udtrykkene som numerisk repræsenterede decimaltal (<em>floats</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
@@ -515,14 +520,14 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 <h2><span class="section-number">5.1.3. </span>Evaluer udtryk<a class="headerlink" href="#evaluer-udtryk" title="Permalink to this headline">¶</a></h2>
 <p>Forestil dig at vi har et symbolsk udtryk, der indeholder den variable <span class="math notranslate nohighlight">\(a\)</span>, og vi ønsker at indsætte værdien <span class="math notranslate nohighlight">\(a = 2\)</span>. Til dette vil vi nu indføre de to metoder <code>.subs()</code> og <code>.evalf()</code>. For et udtryk <span class="math notranslate nohighlight">\(f\)</span>, som eksempelvis kunne være <code>f = a ** 2 + b</code>, kan vi indsætte <span class="math notranslate nohighlight">\(a = 2\)</span> ved at skrive <code>f.subs(a, 2)</code>.</p>
 <p><strong>Symbolsk substituering</strong>:</p>
-<p>Vi kunne for eksempel for et udtryk <span class="math notranslate nohighlight">\(cos(x \cdot \pi / 4)\)</span> ønske at finde værdien for forskellige værdier af x:</p>
+<p>Vi kunne for eksempel for et funktion <span class="math notranslate nohighlight">\(f(x) = cos(x \cdot \pi / 4)\)</span> ønske at finde værdien af <span class="math notranslate nohighlight">\(f\)</span> for forskellige værdier af x:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi definerer funktionen f:</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="c1"># Vi kan nu finde værdien, hvis x var 2 ved at skrive:</span>
+<span class="c1"># Vi kan nu finde værdien for x = 1 ved at skrive:</span>
 <span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -592,7 +597,7 @@ Her er samlet de typiske regneoperationer, som man kan finde i SymPy</p>
 <span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="n">f_3</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Substituerer x med 3 og gemmer det i en variabel, der hedder f_3.</span>
-<span class="c1"># Det er sådan vi gerne vil have svaret skrevet i pointopgaverne i LinALys: så simpelt som muligt men stadig eksakt.</span>
+<span class="c1"># Det er sådan vi gerne vil have svaret skrevet i opgaverne i LinALys: så simpelt som muligt men stadig eksakt.</span>
 <span class="n">display</span><span class="p">(</span><span class="n">f_3</span><span class="p">)</span>
 
 <span class="n">f_3</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Lad os finde værdien som decimaltal med 3 cifre.</span>

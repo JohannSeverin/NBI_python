@@ -197,7 +197,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Notebook_LinAlg1_5.html">
-     5.9. Matrix reduktion, ligningsløsning og inverse matricer
+     5.9. Matrix-reduktion, ligningsløsning og inverse matricer
     </a>
    </li>
    <li class="toctree-l2">
@@ -206,8 +206,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Notebook_Linalg_2-5_Eigen.html">
+     5.11. Egenværdier og -vektorer
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Notebook_kompleks.html">
-     5.11. Komplekse tal i SymPy
+     5.12. Komplekse tal i SymPy
     </a>
    </li>
   </ul>
@@ -344,7 +349,7 @@
                 
   <div class="section" id="analyse-for-funktioner-af-flere-variable">
 <h1><span class="section-number">5.6. </span>Analyse for funktioner af flere variable<a class="headerlink" href="#analyse-for-funktioner-af-flere-variable" title="Permalink to this headline">¶</a></h1>
-<p>Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Til at starte med sørger vi for, også at importerer variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> fram <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code>, men vi kunne også tilføje flere symboler her, hvorefter tingene på denne side kan udvides til 3D eller videre.</p>
+<p>Vi har nu udvidet vores funktionsdefinition til at omfatte funktioner af flere variable. Som udgangspunkt kan vi bruge Python/SymPy på samme måde som for funktioner af en variabel. Til at starte med sørger vi for også at importerer variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code>, men vi kunne også tilføje flere variable og gennemføre tilsvarende beregninger for funktioner af 3 eller flere variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>                    <span class="c1"># Importer sympy</span>
@@ -423,11 +428,11 @@
 \[\displaystyle \left[\begin{matrix}- 2 x e^{- x^{2} - y^{2}} &amp; - 2 y e^{- x^{2} - y^{2}}\end{matrix}\right]\]</div>
 </div>
 </div>
-<p>Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra <a class="reference internal" href="Notebook_LinAlg1.html"><span class="doc std std-doc">sektionen om linær algebra</span></a>.</p>
+<p>Resultatet kan umiddelbart aflæses, men hvis vi vil regne videre med gradienten som en vektor, bliver vi nødt til at benytte <code>sp.Matrix()</code> til at konvertere resultatet til matrixform, som vi kender fra <a class="reference internal" href="Notebook_LinAlg1.html"><span class="doc std std-doc">afsnittet om linær algebra</span></a>.</p>
 <p>Lad os nu eksempelvis beregne den retningsafledede for ovenstående funktion i retningen <span class="math notranslate nohighlight">\(\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\)</span> i punktet med <span class="math notranslate nohighlight">\((x, y) = (1, 2)\)</span>. Vi beregner nu jvf. TK sætning 2.57:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad_vec</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>       <span class="c1"># Kovnerterer til vektor/matrix-format</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad_vec</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>    <span class="c1"># Konverterer til vektor/matrix-format</span>
 <span class="n">grad_vec</span>                      <span class="c1"># Vi viser det lige</span>
 </pre></div>
 </div>
@@ -479,7 +484,7 @@
 </div>
 <div class="section" id="hessematricen">
 <h2><span class="section-number">5.6.3. </span>Hessematricen<a class="headerlink" href="#hessematricen" title="Permalink to this headline">¶</a></h2>
-<p>Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en <span class="math notranslate nohighlight">\(n\times n\)</span>-matrix, der indeholder alle andenordens afledede for en funktion af <span class="math notranslate nohighlight">\(n\)</span> variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variables omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).</p>
+<p>Sidst i kurset vil vi bruge den såkaldte Hessematrix, der er en <span class="math notranslate nohighlight">\(n\times n\)</span>-matrix, der indeholder alle andenordens afledede for en funktion af <span class="math notranslate nohighlight">\(n\)</span> variable. Vi vil specielt bruge determinanten af Hessematricen til at undersøge opførslen af funktioner af 2 variable omkring et stationært punkt (se TK sætning 3.4, der som det fremgår af kommentaren lige under sætningen kan formuleres ved hjælp af Hessematricen).</p>
 <p>Man kunne beregne Hessematricen ved at beregne de dobbelt afledede som beskrevet ovenfor, men det er nemmere at importere den fra underbiblioteket af SymPy, som hedder <code>sympy.matrices</code>. Dette gøres med kommandoen <code>from sympy.matrices import hessian</code>. Herefter kan vi nu benytte <code>hessian(udtryk, variabelliste)</code> på samme måde, som vi brugte <code>sp.derive_by_array</code> til at udregne gradienten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
